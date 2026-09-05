@@ -100,16 +100,12 @@ def resolve_family_fasta(family: str) -> Path:
         candidates.append(Path(preprocessed) / "by_family" / f"{family}_cleaned.fasta")
     if project:
         project_path = Path(project)
-        candidates.extend(
-            [
-                project_path / "results6" / "preprocessed" / "by_family" / f"{family}_cleaned.fasta",
-                project_path / "results5" / "preprocessed" / "by_family" / f"{family}_cleaned.fasta",
-            ]
+        candidates.append(
+            project_path / "work" / "results" / "preprocessed" / "by_family" / f"{family}_cleaned.fasta"
         )
     candidates.extend(
         [
-            Path("results6") / "preprocessed" / "by_family" / f"{family}_cleaned.fasta",
-            Path("results5") / "preprocessed" / "by_family" / f"{family}_cleaned.fasta",
+            Path("work") / "results" / "preprocessed" / "by_family" / f"{family}_cleaned.fasta",
         ]
     )
     for candidate in candidates:

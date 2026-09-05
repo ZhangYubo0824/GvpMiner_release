@@ -12,8 +12,8 @@
       structural_enrichment_results.csv
 
 示例:
-    python regenerate_figures.py results6/exp4_motif_structure_analysis/GvpA/M2
-    python regenerate_figures.py results6/exp4_motif_structure_analysis/GvpA/M2 --formats pdf
+    python regenerate_exp4_figures.py work/results/exp4_motif_structure_analysis/GvpA/M2
+    python regenerate_exp4_figures.py work/results/exp4_motif_structure_analysis/GvpA/M2 --formats pdf
 
 Note: 功能富集 (functional enrichment) 由 Exp5 外部工具流程生成，
     对应的输入、富集表和 motif-window 文件请通过 exp5_external_functional_enrichment/run.py 生成。

@@ -236,7 +236,12 @@ def cli(argv: Sequence[str] | None = None) -> int:
     parser = argparse.ArgumentParser(
         description="Build centroid-nearest real-window representations for Exp3 motifs."
     )
-    parser.add_argument("--exp3-dir", type=Path, default=Path("result6") / "exp3_domain_discovery")
+    project_root = Path(__file__).resolve().parent.parent
+    parser.add_argument(
+        "--exp3-dir",
+        type=Path,
+        default=project_root / "work" / "results" / "exp3_domain_discovery",
+    )
     parser.add_argument("--families", nargs="*", default=None)
     parser.add_argument("--methods", nargs="+", choices=["M2", "M3"], default=["M2", "M3"])
     args = parser.parse_args(argv)

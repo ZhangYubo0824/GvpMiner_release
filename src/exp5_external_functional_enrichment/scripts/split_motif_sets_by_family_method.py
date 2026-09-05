@@ -2,9 +2,9 @@
 #python \
 #  src/exp5_external_functional_enrichment/scripts/split_motif_sets_by_family_method.py \
 #  --input \
-#    results6/exp5_external_functional_enrichment/clusterprofiler/motif_sets_long.csv \
+#    work/results/exp5_external_functional_enrichment/clusterprofiler/motif_sets_long.csv \
 #  --output-dir \
-#    results6/exp5_external_functional_enrichment/clusterprofiler/family_method_sets
+#    work/results/exp5_external_functional_enrichment/clusterprofiler/family_method_sets
 import argparse
 import csv
 from pathlib import Path

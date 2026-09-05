@@ -8,23 +8,22 @@ from pathlib import Path
 import pandas as pd
 
 
-ROOT = Path(__file__).resolve().parents[1]
-INPUT = ROOT / "result6" / "motif_validation" / "motif_evidence_integration.csv"
+ROOT = Path(__file__).resolve().parents[2]
+RESULTS = ROOT / "work" / "results"
+INPUT = RESULTS / "motif_validation" / "motif_evidence_integration.csv"
 INTERPRO = (
-    ROOT
-    / "result6"
+    RESULTS
     / "exp5_external_functional_enrichment"
     / "interproscan"
     / "all_gvp_proteins.fasta.tsv"
 )
 EGGNOG = (
-    ROOT
-    / "result6"
+    RESULTS
     / "exp5_external_functional_enrichment"
     / "eggnog"
     / "gvp_eggnog.emapper.annotations"
 )
-OUTDIR = ROOT / "result6" / "motif_validation" / "literature_validation"
+OUTDIR = RESULTS / "motif_validation" / "literature_validation"
 TARGET_PER_FAMILY = 5
 OUTPUT_TAG = "expanded5"
 

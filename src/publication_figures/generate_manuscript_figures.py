@@ -11,19 +11,19 @@ import matplotlib as mpl
 
 mpl.use("Agg", force=True)
 import matplotlib.pyplot as plt
-from matplotlib.colors import Normalize
 from matplotlib.lines import Line2D
 from matplotlib.patches import Rectangle
 import numpy as np
 import pandas as pd
 
 
-ROOT = Path(__file__).resolve().parents[1]
-OUTPUT_DIR = ROOT / "manuscript" / "v40_svg_figures"
-QA_COMPANION_DIR = ROOT / "tmp" / "v40_svg_figure_companions"
-PUBLICATION_DIR = ROOT / "result6" / "publication_figures"
-EXP1_DIR = ROOT / "result6" / "exp1_classification"
-PRECISION_YIELD_DIR = ROOT / "results7" / "exp5_precision_yield_exploratory"
+ROOT = Path(__file__).resolve().parents[2]
+OUTPUT_DIR = ROOT / "work" / "results" / "publication_figures"
+QA_COMPANION_DIR = ROOT / "work" / "figure_qa"
+PUBLICATION_DIR = ROOT / "results" / "publication_figures"
+EXP1_DIR = ROOT / "results" / "exp1_classification"
+PRECISION_YIELD_DIR = ROOT / "results" / "precision_yield"
+ASSET_DIR = Path(__file__).resolve().parent / "assets"
 
 EXPECTED_STEMS = (
     "figure_1_gvpminer_architecture",
@@ -163,7 +163,7 @@ def _save_svg(figure: plt.Figure, stem: str) -> Path:
 
 
 def _normalize_architecture_svg() -> None:
-    source = ROOT / "deliverables" / "GvpMiner_architecture_editable_revised_v3.svg"
+    source = ASSET_DIR / "gvpminer_architecture.svg"
     destination = OUTPUT_DIR / "figure_1_gvpminer_architecture.svg"
     text = source.read_text(encoding="utf-8")
     text = re.sub(r'width="[^"]+"', 'width="7.5in"', text, count=1)
@@ -724,7 +724,7 @@ def _s1() -> None:
 
 
 def _s2() -> None:
-    source = ROOT / "analysis-output" / "publication-figures-v31" / "supplementary_figure_s2_structural_method_comparison_data.csv"
+    source = PUBLICATION_DIR / "supplementary_figure_s2_structural_method_comparison_data.csv"
     frame = pd.read_csv(source)
     x_lookup = {feature: index for index, feature in enumerate(DISPLAY_ENDPOINTS)}
     y_order = ("M2", "M3", "GLAM2", "MEME", "MotifAE", "STREME")

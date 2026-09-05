@@ -11,7 +11,7 @@
     python exp1_classification.py --methods M2 M3    # 运行ESM-2和ProtBERT
 
 输出:
-    results6/exp1_classification/
+    work/results/exp1_classification/
         exp1_results_summary.csv       — 方法性能对比表
         exp1_confusion_matrix_*.png    — 混淆矩阵
         exp1_classification_comparison.png — 柱状图对比

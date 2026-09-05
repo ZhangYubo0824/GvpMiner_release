@@ -22,8 +22,8 @@ try:
     )
 except ImportError:
     _root = Path(__file__).resolve().parents[2]
-    OUTPUT_DIR = _root / "results7"
-    _prior_results = _root / "result6"
+    OUTPUT_DIR = _root / "work" / "results"
+    _prior_results = OUTPUT_DIR
     EXP4_SEQUENCE_TABLE = _prior_results / "preprocessed" / "cleaned_gvp_dataset.csv"
     EXP4_EXP3_INPUT_DIR = _prior_results / "exp3_domain_discovery"
     EXP4_STRUCTURE_INPUT_DIR = _prior_results / "structures"

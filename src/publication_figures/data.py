@@ -16,7 +16,7 @@ def resolve_results_dir(explicit: Path | None, *, project_root: Path) -> Path:
     candidates = (
         [Path(explicit)]
         if explicit is not None
-        else [Path(project_root) / "result6", Path(project_root) / "results6"]
+        else [Path(project_root) / "results"]
     )
     for candidate in candidates:
         if candidate.is_dir():

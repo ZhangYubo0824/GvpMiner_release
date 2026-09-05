@@ -158,7 +158,7 @@ class ESMFoldBackend(StructureBackend):
         def forward_(attention_logits, rows, cols):
             attention_logits.copy_(torch.softmax(attention_logits, dim=-1))
 
-        def backward_(attention_logits, grad_output, v, rows, cols, value_dim):
+        def backward_(attention_logits, grad_output, v, rows, cols, _value_dim):
             grad_attention = torch.matmul(grad_output, v.transpose(-1, -2))
             grad_logits = attention_logits * (
                 grad_attention - torch.sum(grad_attention * attention_logits, dim=-1, keepdim=True)

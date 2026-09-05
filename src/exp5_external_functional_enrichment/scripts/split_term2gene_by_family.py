@@ -1,11 +1,11 @@
 #!/usr/bin/env python3
 # python src/exp5_external_functional_enrichment/scripts/split_term2gene_by_family.py \
 #  --sequence-index \
-#    results6/exp5_external_functional_enrichment/input/sequence_index.csv \
+#    work/results/exp5_external_functional_enrichment/input/sequence_index.csv \
 #  --term2gene \
-#    results6/exp5_external_functional_enrichment/annotations/term2gene.csv \
+#    work/results/exp5_external_functional_enrichment/annotations/term2gene.csv \
 #  --output-dir \
-#    results6/exp5_external_functional_enrichment/clusterprofiler/family_term2gene
+#    work/results/exp5_external_functional_enrichment/clusterprofiler/family_term2gene
 import argparse
 import csv
 from pathlib import Path

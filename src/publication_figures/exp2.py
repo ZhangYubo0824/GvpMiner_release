@@ -10,7 +10,6 @@ from .style import (
     GRID,
     METHOD_COLORS,
     METHOD_MARKERS,
-    NEUTRAL,
     add_panel_label,
     apply_publication_style,
     clean_axis,

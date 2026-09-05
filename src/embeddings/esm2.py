@@ -7,7 +7,6 @@ M2: ESM-2 蛋白质语言模型嵌入
 
 import numpy as np
 import torch
-import sys
 from tqdm import tqdm
 
 

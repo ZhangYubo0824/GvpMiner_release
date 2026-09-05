@@ -933,8 +933,10 @@ def build_external_audit_outputs(
 
 def validation_cli(argv: Sequence[str] | None = None) -> int:
     parser = argparse.ArgumentParser(description="Build structural and external motif validation tables.")
-    parser.add_argument("--result-root", type=Path, default=Path("result6"))
-    parser.add_argument("--output-dir", type=Path, default=Path("result6") / "motif_validation")
+    project_root = Path(__file__).resolve().parent.parent
+    work_results = project_root / "work" / "results"
+    parser.add_argument("--result-root", type=Path, default=work_results)
+    parser.add_argument("--output-dir", type=Path, default=work_results / "motif_validation")
     parser.add_argument("--literature-input", type=Path, default=None)
     parser.add_argument("--alpha", type=float, default=SIGNIFICANCE_THRESHOLD)
     args = parser.parse_args(argv)
@@ -962,10 +964,18 @@ def external_audit_cli(argv: Sequence[str] | None = None) -> int:
     parser.add_argument(
         "--external-root",
         type=Path,
-        default=Path("result6") / "exp5_external_functional_enrichment",
+        default=Path(__file__).resolve().parent.parent / "work" / "results" / "exp5_external_functional_enrichment",
     )
-    parser.add_argument("--catalog-root", type=Path, default=Path("result6") / "exp3_domain_discovery")
-    parser.add_argument("--output-dir", type=Path, default=Path("result6") / "motif_validation")
+    parser.add_argument(
+        "--catalog-root",
+        type=Path,
+        default=Path(__file__).resolve().parent.parent / "work" / "results" / "exp3_domain_discovery",
+    )
+    parser.add_argument(
+        "--output-dir",
+        type=Path,
+        default=Path(__file__).resolve().parent.parent / "work" / "results" / "motif_validation",
+    )
     parser.add_argument("--alpha", type=float, default=SIGNIFICANCE_THRESHOLD)
     args = parser.parse_args(argv)
     summary = build_external_audit_outputs(

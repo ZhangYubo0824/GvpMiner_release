@@ -4,61 +4,49 @@ GvpMiner 鍏ㄥ眬閰嶇疆
 鎵€鏈夎矾寰勩€佹ā鍨嬪弬鏁般€佸疄楠岃秴鍙傛暟闆嗕腑绠＄悊銆?
 """
 
+import os
 from pathlib import Path
 
 # ============================================================
 # 椤圭洰璺緞
 # ============================================================
-PROJECT_ROOT = Path(__file__).parent.parent.resolve()  # Task1/
-SRC_DIR = PROJECT_ROOT / "src2"
-DATA3_DIR = PROJECT_ROOT / "data3"
-NCBI_DIR = DATA3_DIR / "ncbi"
-UNIPROT_DIR = DATA3_DIR / "uniprot"
-INTERPRO_DIR = DATA3_DIR / "interpro"
-ALPHAFOLD_DIR = DATA3_DIR / "alphafold"
+SRC_DIR = Path(__file__).resolve().parent
+PROJECT_ROOT = SRC_DIR.parent.resolve()
+DATA_DIR = (PROJECT_ROOT / "data").resolve()
+DATA3_DIR = DATA_DIR
+NCBI_DIR = (DATA_DIR / "ncbi").resolve()
+UNIPROT_DIR = (DATA_DIR / "uniprot").resolve()
+INTERPRO_DIR = (DATA_DIR / "interpro").resolve()
+ALPHAFOLD_DIR = (DATA_DIR / "alphafold").resolve()
 
-# Structural-analysis inputs are reused read-only from the previous result set.
-PRIOR_RESULTS_DIR = PROJECT_ROOT / "result6"
-EXP4_SEQUENCE_TABLE = PRIOR_RESULTS_DIR / "preprocessed" / "cleaned_gvp_dataset.csv"
-EXP4_EXP3_INPUT_DIR = PRIOR_RESULTS_DIR / "exp3_domain_discovery"
-EXP4_STRUCTURE_INPUT_DIR = PRIOR_RESULTS_DIR / "structures"
+# The bundled results are a read-only snapshot used to reproduce paper figures.
+SNAPSHOT_RESULTS_DIR = (PROJECT_ROOT / "results").resolve()
 
-# New outputs from src2 are isolated under results7.
-OUTPUT_DIR = PROJECT_ROOT / "results7"
-OUTPUT_DIR.mkdir(parents=True, exist_ok=True)
+# New runs are isolated from the bundled snapshot. Override this location on a
+# server with GVPMINER_OUTPUT_DIR.
+OUTPUT_DIR = Path(
+    os.environ.get("GVPMINER_OUTPUT_DIR", PROJECT_ROOT / "work" / "results")
+).resolve()
 
 PREPROCESSED_DIR = OUTPUT_DIR / "preprocessed"
-PREPROCESSED_DIR.mkdir(parents=True, exist_ok=True)
-
 EXP1_DIR = OUTPUT_DIR / "exp1_classification"
-EXP1_DIR.mkdir(parents=True, exist_ok=True)
-
 EXP2_DIR = OUTPUT_DIR / "exp2_generation_validation"
-EXP2_DIR.mkdir(parents=True, exist_ok=True)
-
 EXP3_DIR = OUTPUT_DIR / "exp3_domain_discovery"
-EXP3_DIR.mkdir(parents=True, exist_ok=True)
-
 EXP4_DIR = OUTPUT_DIR / "exp4_motif_structure_analysis"
-EXP4_DIR.mkdir(parents=True, exist_ok=True)
-
 EXP5_EXTERNAL_DIR = OUTPUT_DIR / "exp5_external_functional_enrichment"
-EXP5_EXTERNAL_DIR.mkdir(parents=True, exist_ok=True)
-
 RESULT_BASELINE_DIR = OUTPUT_DIR / "result_baseline"
-RESULT_BASELINE_DIR.mkdir(parents=True, exist_ok=True)
-
 GLOBAL_RESIDUE_CACHE_DIR = OUTPUT_DIR / "residue_embeddings"
-GLOBAL_RESIDUE_CACHE_DIR.mkdir(parents=True, exist_ok=True)
-
 STRUCTURES_DIR = OUTPUT_DIR / "structures"
-STRUCTURES_DIR.mkdir(parents=True, exist_ok=True)
-
 EXP_CONTROL_DIR = OUTPUT_DIR / "exp3_control"
-EXP_CONTROL_DIR.mkdir(parents=True, exist_ok=True)
+MOTIF_STRUCTURE_DIR = EXP4_DIR
 
-MOTIF_STRUCTURE_DIR = OUTPUT_DIR / "exp4_motif_structure_analysis"
-MOTIF_STRUCTURE_DIR.mkdir(parents=True, exist_ok=True)
+# Exp4 consumes the current run's preprocessing, motif, and structure outputs.
+# The snapshot can be selected explicitly through the Exp4 CLI when figures or
+# summaries must be regenerated without rerunning the upstream experiments.
+PRIOR_RESULTS_DIR = OUTPUT_DIR
+EXP4_SEQUENCE_TABLE = PREPROCESSED_DIR / "cleaned_gvp_dataset.csv"
+EXP4_EXP3_INPUT_DIR = EXP3_DIR
+EXP4_STRUCTURE_INPUT_DIR = STRUCTURES_DIR
 
 # ============================================================
 # Gvp 瀹舵棌鍒楄〃
@@ -92,7 +80,7 @@ STANDARD_AA = "ACDEFGHIKLMNPQRSTVWY"
 # 宓屽叆妯″瀷鍙傛暟
 # ============================================================
 # 鏈湴妯″瀷鐩綍
-MODELS_DIR = PROJECT_ROOT / "models"
+MODELS_DIR = PROJECT_ROOT / "work" / "models"
 
 # M2: ESM-2 (650M 鐗堟湰)
 ESM2_MODEL_NAME = "esm2_t33_650M_UR50D"  # 650M鍙傛暟, 1280D

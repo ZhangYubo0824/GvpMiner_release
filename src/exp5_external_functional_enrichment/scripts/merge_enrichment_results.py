@@ -1,11 +1,7 @@
 #!/usr/bin/env python3
+"""Merge per-family and cluster-batch enrichment result tables."""
 
-#python \
-#  src/exp5_external_functional_enrichment/scripts/merge_enrichment_results.py \
-#  --input-dir \
-#    results6/exp5_external_functional_enrichment/clusterprofiler/batch_results \
-#  --output \
-#    results6/exp5_external_functional_enrichment/clusterprofiler/clusterprofiler_enrichment.csv
+from __future__ import annotations
 
 import argparse
 from pathlib import Path
@@ -41,34 +37,19 @@ def main() -> None:
     args = parse_args()
     args.output.parent.mkdir(parents=True, exist_ok=True)
 
-    result_files: list[Path] = []
+    result_files = sorted(args.input_dir.glob("Gvp*_M[23].csv"))
+    result_files.extend(sorted(args.input_dir.glob("*_batches/*.csv")))
 
-    # 直接按 family-method 运行的结果
-    result_files.extend(
-        sorted(args.input_dir.glob("Gvp*_M[23].csv"))
-    )
-
-    # 按 cluster batch 运行的结果
-    result_files.extend(
-        sorted(args.input_dir.glob("*_batches/*.csv"))
-    )
-
-    # 避免把已合并的输出重新读入
     output_resolved = args.output.resolve()
     result_files = [
-        path
-        for path in result_files
-        if path.resolve() != output_resolved
+        path for path in result_files if path.resolve() != output_resolved
     ]
 
     frames = []
-
     for path in result_files:
         frame = load_result(path)
-
         if frame is None:
             continue
-
         frames.append(frame)
         print(f"{path}: {len(frame):,} rows")
 
@@ -76,33 +57,18 @@ def main() -> None:
         raise RuntimeError("No non-empty result files found")
 
     merged = pd.concat(frames, ignore_index=True)
-
     duplicate_columns = [
         column
-        for column in [
-            "family",
-            "method",
-            "motif_cluster",
-            "ID",
-        ]
+        for column in ("family", "method", "motif_cluster", "ID")
         if column in merged.columns
     ]
-
     if duplicate_columns:
         before = len(merged)
-        merged = merged.drop_duplicates(
-            subset=duplicate_columns,
-            keep="first",
-        )
-        print(
-            f"Removed {before - len(merged):,} duplicate rows"
-        )
+        merged = merged.drop_duplicates(subset=duplicate_columns, keep="first")
+        print(f"Removed {before - len(merged):,} duplicate rows")
 
     merged.to_csv(args.output, index=False)
-
-    print(
-        f"Wrote {len(merged):,} rows to {args.output}"
-    )
+    print(f"Wrote {len(merged):,} rows to {args.output}")
 
 
 if __name__ == "__main__":

@@ -172,7 +172,7 @@ class TwoStageClustering:
 
         # 诊断输出
         if verbose:
-            print(f"  [诊断] K-Means Silhouette分数:")
+            print("  [诊断] K-Means Silhouette分数:")
             for k, score in zip(k_values, scores):
                 marker = " ← 最优" if k == k_values[int(np.argmax(scores))] else ""
                 status = "✓" if score > 0 else "✗"
@@ -180,10 +180,10 @@ class TwoStageClustering:
             
             min_score = min(scores)
             if min_score < 0:
-                print(f"  [警告] 所有k值的Silhouette都为负! 建议:")
-                print(f"    • 降低k_range (如改为 (2,8))")
-                print(f"    • 检查数据是否有明显聚类结构")
-                print(f"    • 调整PCA参数或特征预处理")
+                print("  [警告] 所有k值的Silhouette都为负! 建议:")
+                print("    • 降低k_range (如改为 (2,8))")
+                print("    • 检查数据是否有明显聚类结构")
+                print("    • 调整PCA参数或特征预处理")
 
         k_optimal = k_values[int(np.argmax(scores))]
         return k_optimal, scores

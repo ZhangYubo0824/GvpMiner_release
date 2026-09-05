@@ -1414,7 +1414,7 @@ def _write_chinese_report(
 ## 材料护照
 
 - 分析日期：{date.today().isoformat()}
-- 数据来源：`result6/`
+- 数据来源：发布包 `results/` 或命令行指定目录
 - 验证状态：**ANALYZED**
 - 分析单位：Gvp 家族
 - 完整评价家族数：{len(family_scores)}
@@ -1649,10 +1649,11 @@ def _build_parser() -> argparse.ArgumentParser:
     parser = argparse.ArgumentParser(
         description="分析 GvpMiner 家族内部与家族之间的模型效果。"
     )
-    parser.add_argument("--results-dir", default="result6")
+    project_root = Path(__file__).resolve().parent.parent
+    parser.add_argument("--results-dir", default=project_root / "results")
     parser.add_argument(
         "--output-dir",
-        default="analysis-output/family-performance-analysis",
+        default=project_root / "work" / "results" / "family_performance_analysis",
     )
     parser.add_argument("--bootstrap-iterations", type=int, default=10_000)
     return parser

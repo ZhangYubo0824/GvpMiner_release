@@ -25,11 +25,11 @@ def _default_project_root() -> Path:
 
 
 def _default_results_dir() -> Path:
-    return _default_project_root() / "results6"
+    return _default_project_root() / "work" / "results"
 
 
 def _default_ncbi_root() -> Path:
-    return _default_project_root() / "data3" / "ncbi"
+    return _default_project_root() / "data" / "ncbi"
 
 
 def _default_exp3_dir() -> Path:

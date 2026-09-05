@@ -2,9 +2,9 @@
 #python \
 #  src/exp5_external_functional_enrichment/scripts/split_motif_sets_by_cluster.py \
 #  --input \
-#    results6/exp5_external_functional_enrichment/clusterprofiler/family_method_sets/motif_sets_GvpK_M2.csv \
+#    work/results/exp5_external_functional_enrichment/clusterprofiler/family_method_sets/motif_sets_GvpK_M2.csv \
 #  --output-dir \
-#    results6/exp5_external_functional_enrichment/clusterprofiler/cluster_batches/GvpK \
+#    work/results/exp5_external_functional_enrichment/clusterprofiler/cluster_batches/GvpK \
 #  --family GvpK \
 #  --method M2 \
 #  --clusters-per-batch 10
@@ -12,9 +12,9 @@
 #python \
 #  src/exp5_external_functional_enrichment/scripts/split_motif_sets_by_cluster.py \
 #  --input \
-#    results6/exp5_external_functional_enrichment/clusterprofiler/family_method_sets/motif_sets_GvpK_M3.csv \
+#    work/results/exp5_external_functional_enrichment/clusterprofiler/family_method_sets/motif_sets_GvpK_M3.csv \
 #  --output-dir \
-#    results6/exp5_external_functional_enrichment/clusterprofiler/cluster_batches/GvpK \
+#    work/results/exp5_external_functional_enrichment/clusterprofiler/cluster_batches/GvpK \
 #  --family GvpK \
 #  --method M3 \
 #  --clusters-per-batch 10

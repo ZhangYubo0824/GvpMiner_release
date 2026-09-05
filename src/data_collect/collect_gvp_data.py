@@ -20,10 +20,8 @@ Usage:
     python collect_gvp_data.py [--email YOUR_EMAIL] [--skip-alphafold] [--families A,C,N]
 """
 
-import os
 import sys
 import csv
-import json
 import time
 import logging
 import argparse
@@ -816,7 +814,7 @@ def generate_readme(output_dir: Path, ncbi_summary, uniprot_summary, interpro_su
 
     lines = [
         "# Gvp Multi-Database Data Collection (v2 - Comprehensive, No Limits)",
-        f"",
+        "",
         f"Generated: {now}",
         "",
         "## Changes from v1",
@@ -866,8 +864,8 @@ def generate_readme(output_dir: Path, ncbi_summary, uniprot_summary, interpro_su
 
     lines += [
         "",
-        f"## AlphaFold Structures",
-        f"",
+        "## AlphaFold Structures",
+        "",
         f"Downloaded {sum(1 for r in (af_log or []) if r.get('status') == 'ok')} structures",
         "",
         "## Gvp Family Overview",

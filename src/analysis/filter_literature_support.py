@@ -10,10 +10,10 @@ from typing import Iterable
 import build_region_literature_validation as regional
 
 
-ROOT = Path(__file__).resolve().parents[1]
+ROOT = Path(__file__).resolve().parents[2]
+RESULTS = ROOT / "work" / "results"
 DEFAULT_INPUT = (
-    ROOT
-    / "result6"
+    RESULTS
     / "motif_validation"
     / "cluster_commonality_validation"
     / "region_literature_validation"

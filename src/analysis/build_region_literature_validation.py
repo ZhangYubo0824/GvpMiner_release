@@ -9,7 +9,7 @@ from typing import Mapping
 import pandas as pd
 
 
-ROOT = Path(__file__).resolve().parents[1]
+ROOT = Path(__file__).resolve().parents[2]
 SRC = ROOT / "src"
 if str(SRC) not in sys.path:
     sys.path.insert(0, str(SRC))
@@ -19,33 +19,31 @@ from gvp_literature_enrichment import (
     load_literature_sources,
     load_reference_sequences as _load_reference_sequences,
     map_motifs_to_regions,
-    read_fasta,
     run_literature_enrichment,
 )
 
 
 DATA_DIR = ROOT / "data" / "literature"
+RESULTS = ROOT / "work" / "results"
 SOURCE_CSV = DATA_DIR / "literature_sources.csv"
 REGION_CSV = DATA_DIR / "experimental_regions.csv"
 REFERENCE_FASTA_DIR = DATA_DIR / "reference_sequences"
 FULL_FASTA = (
-    ROOT
-    / "result6"
+    RESULTS
     / "exp5_external_functional_enrichment"
     / "input"
     / "all_gvp_proteins.fasta"
 )
-INPUT = ROOT / "result6" / "motif_validation" / "motif_evidence_integration.csv"
+INPUT = RESULTS / "motif_validation" / "motif_evidence_integration.csv"
 INTERPRO = (
-    ROOT
-    / "result6"
+    RESULTS
     / "exp5_external_functional_enrichment"
     / "interproscan"
     / "all_gvp_proteins.fasta.tsv"
 )
 SEARCH_LOG = DATA_DIR / "literature_search_log.csv"
-OUTDIR = ROOT / "result6" / "motif_validation" / "literature_enrichment"
-OCCURRENCE_ROOT = ROOT / "result6" / "exp3_domain_discovery"
+OUTDIR = RESULTS / "motif_validation" / "literature_enrichment"
+OCCURRENCE_ROOT = RESULTS / "exp3_domain_discovery"
 
 
 ALL_REGIONS = load_experimental_regions(REGION_CSV)

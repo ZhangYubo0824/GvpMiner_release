@@ -175,8 +175,8 @@ try:
     from config import PREPROCESSED_DIR, STRUCTURES_DIR
 except ImportError:
     _root = Path(__file__).resolve().parents[2]
-    PREPROCESSED_DIR = _root / "results6" / "preprocessed"
-    STRUCTURES_DIR = _root / "results6" / "structures"
+    PREPROCESSED_DIR = _root / "work" / "results" / "preprocessed"
+    STRUCTURES_DIR = _root / "work" / "results" / "structures"
 
 
 def default_project_root() -> Path:

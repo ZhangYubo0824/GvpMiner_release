@@ -2,10 +2,10 @@
 """Validate enrichment CSVs using the unchanged p.adjust decision boundary.
 
 Example:
-  python src2/exp5_external_functional_enrichment/scripts/validate_enrichment_results.py \
-    --input results7/exp5_corrected/clusterprofiler/clusterprofiler_enrichment.csv \
-    --significant-output results7/exp5_corrected/clusterprofiler/significant.csv \
-    --summary-output results7/exp5_corrected/clusterprofiler/summary.csv \
+  python src/exp5_external_functional_enrichment/scripts/validate_enrichment_results.py \
+    --input work/results/exp5_corrected/clusterprofiler/clusterprofiler_enrichment.csv \
+    --significant-output work/results/exp5_corrected/clusterprofiler/significant.csv \
+    --summary-output work/results/exp5_corrected/clusterprofiler/summary.csv \
     --padj-cutoff 0.05
 """
 

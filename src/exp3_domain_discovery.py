@@ -15,7 +15,7 @@
     python exp3_domain_discovery.py --families GvpA --methods M2  # 组合
 
 输出:
-    results6/exp3_domain_discovery/
+    work/results/exp3_domain_discovery/
         {family}/
             windows_metadata.csv              — 滑动窗口元数据
             embeddings_{M2|M3}.npy            — 窗口嵌入缓存
@@ -40,10 +40,9 @@ sys.path.insert(0, str(Path(__file__).parent.resolve()))
 from config import (
     EXP3_DIR, PREPROCESSED_DIR, INTERPRO_DIR, GLOBAL_RESIDUE_CACHE_DIR,
     EXP3_WINDOW_SIZE, EXP3_WINDOW_STEP,
-    EXP3_KMEANS_K_RANGE, EXP3_DBSCAN_MIN_SAMPLES, EXP3_DBSCAN_EPS_PERCENTILE,
+    EXP3_DBSCAN_MIN_SAMPLES,
     MIN_FAMILY_SIZE,
 )
-from clustering.two_stage import TwoStageClustering
 from motif_representative_windows import build_family_method_representatives
 
 
@@ -202,7 +201,6 @@ def run_clustering(X, method_name, cache_dir):
 
     import umap
     import hdbscan
-    from sklearn.metrics import silhouette_score
 
     if len(X) < 10:
         print("      - [警告] 样本太少")
@@ -821,7 +819,7 @@ def process_family(family_name, family_records, methods, output_dir):
 
         X = embed_windows(method, sequences, windows, family_dir).astype(np.float32)
         if np.isnan(X).any():
-            print(f"    [璀﹀憡] 宓屽叆鍚玁aN, 鏇挎崲涓?0")
+            print("    [璀﹀憡] 宓屽叆鍚玁aN, 鏇挎崲涓?0")
             X = np.nan_to_num(X)
 
         windows_full = windows

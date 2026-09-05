@@ -1,6 +1,7 @@
 from __future__ import annotations
 
 import csv
+import json
 import pickle
 from collections import Counter, defaultdict
 from dataclasses import dataclass
@@ -477,7 +478,6 @@ def build_motif_essentiality_with_natural_fragments(
     if motif_len == 0:
         raise ValueError("motif_consensus must be non-empty.")
 
-    rng = np.random.default_rng(seed)
     probs = aa_distribution(natural_sequences)
 
     scored = []

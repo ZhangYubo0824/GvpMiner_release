@@ -13,6 +13,8 @@ from typing import Iterable
 import pandas as pd
 
 
+PROJECT_ROOT = Path(__file__).resolve().parents[2]
+WORK_RESULTS = PROJECT_ROOT / "work" / "results"
 DEFAULT_METHODS = ("M2", "M3", "MEME", "GLAM2", "STREME", "MotifAE")
 DEFAULT_PRIMARY_METHODS = ("M2", "M3")
 ENRICHMENT_COLUMNS = {
@@ -504,17 +506,17 @@ def build_arg_parser() -> argparse.ArgumentParser:
     parser.add_argument(
         "--results-root",
         type=Path,
-        default=Path("results7") / "exp5_external_functional_enrichment",
+        default=WORK_RESULTS / "exp5_external_functional_enrichment",
     )
     parser.add_argument(
         "--exp3-summary",
         type=Path,
-        default=Path("result6") / "exp3_domain_discovery" / "clustering_comparison.csv",
+        default=WORK_RESULTS / "exp3_domain_discovery" / "clustering_comparison.csv",
     )
     parser.add_argument(
         "--output-dir",
         type=Path,
-        default=Path("results7") / "exp5_external_functional_enrichment" / "comparison",
+        default=WORK_RESULTS / "exp5_external_functional_enrichment" / "comparison",
     )
     parser.add_argument("--methods", nargs="+", default=list(DEFAULT_METHODS))
     parser.add_argument("--primary-methods", nargs="+", default=list(DEFAULT_PRIMARY_METHODS))

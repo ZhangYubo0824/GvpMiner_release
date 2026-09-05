@@ -6,7 +6,10 @@
 
 set -u
 
-ROOT="results6/exp5_external_functional_enrichment"
+SCRIPT_DIR="$(cd "$(dirname "${BASH_SOURCE[0]}")" && pwd)"
+PROJECT_ROOT="$(cd "$SCRIPT_DIR/../../.." && pwd)"
+RESULTS="${GVPMINER_OUTPUT_DIR:-$PROJECT_ROOT/work/results}"
+ROOT="$RESULTS/exp5_external_functional_enrichment"
 
 R_SCRIPT="$ROOT/clusterprofiler/run_clusterprofiler_enricher.R"
 TERM2NAME="$ROOT/annotations/term2name.csv"

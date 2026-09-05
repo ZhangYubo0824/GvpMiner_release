@@ -756,7 +756,6 @@ def _build_profile_for_motif(
     )
 
     counts_by_pos = _column_counts(used_sequences)
-    total = len(used_sequences)
     profile: list[dict[str, float]] = []
     profile_rows: list[dict[str, object]] = []
     consensus_tokens: list[str] = []
@@ -1025,7 +1024,7 @@ def _project_root() -> Path:
 try:
     from config import OUTPUT_DIR as _default_results_dir
 except ImportError:
-    _default_results_dir = _project_root() / "results6"
+    _default_results_dir = _project_root() / "work" / "results"
 
 
 def build_parser() -> argparse.ArgumentParser:

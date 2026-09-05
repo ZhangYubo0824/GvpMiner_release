@@ -7,6 +7,9 @@
 
 set -u
 
+SCRIPT_DIR="$(cd "$(dirname "${BASH_SOURCE[0]}")" && pwd)"
+PROJECT_ROOT="$(cd "$SCRIPT_DIR/../../.." && pwd)"
+
 if [[ "$#" -ne 1 ]]; then
     echo "Usage: $0 FAMILY"
     exit 1
@@ -19,7 +22,8 @@ else
     methods=(M2 M3 MEME GLAM2 STREME SLiMFinder DiMotif MotifAE)
 fi
 
-ROOT="results6/exp5_external_functional_enrichment"
+RESULTS="${GVPMINER_OUTPUT_DIR:-$PROJECT_ROOT/work/results}"
+ROOT="$RESULTS/exp5_external_functional_enrichment"
 
 R_SCRIPT="$ROOT/clusterprofiler/run_clusterprofiler_enricher.R"
 TERM2GENE="$ROOT/clusterprofiler/family_term2gene/term2gene_${FAMILY}.csv"

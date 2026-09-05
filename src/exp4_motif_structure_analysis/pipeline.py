@@ -31,7 +31,7 @@ from .io import CsvRowWriter, iter_csv_rows, read_csv_rows, write_csv_rows, writ
 from .parsing import ParsedStructure, parse_structure_file, resolve_structure_path
 from .reporting_outputs import summarize_motif_clusters, write_analysis_report
 from .resume import load_resume_state
-from .rmsd import _backfill_local_rmsd, _kabsch_rmsd, backfill_local_rmsd_resumable
+from .rmsd import backfill_local_rmsd_resumable
 from .stats import (
     ControlFeatureAccumulator,
     PRIMARY_ENDPOINTS,

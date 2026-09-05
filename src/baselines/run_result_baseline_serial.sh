@@ -1,10 +1,10 @@
 #!/usr/bin/env bash
 set -Eeuo pipefail
 
-PROJECT="$(cd "$(dirname "${BASH_SOURCE[0]}")/.." && pwd -P)"
-RESULTS="${RESULTS:-$PROJECT/results6}"
+PROJECT="$(cd "$(dirname "${BASH_SOURCE[0]}")/../.." && pwd -P)"
+RESULTS="${RESULTS:-${GVPMINER_OUTPUT_DIR:-$PROJECT/work/results}}"
 PREPROCESSED="${PREPROCESSED:-$RESULTS/preprocessed}"
-RESULT_BASELINE="${RESULT_BASELINE:-$PROJECT/results6/result_baseline}"
+RESULT_BASELINE="${RESULT_BASELINE:-$RESULTS/result_baseline}"
 EXP4_OUTPUT="${EXP4_OUTPUT:-$RESULTS/exp4_motif_structure_analysis/baseline}"
 EXP5_OUTPUT="${EXP5_OUTPUT:-$RESULTS/exp5_external_functional_enrichment}"
 CLEAN_NCBI="${CLEAN_NCBI:-$RESULT_BASELINE/baseline_inputs/ncbi_cleaned}"
@@ -35,7 +35,7 @@ METHODS=()
 usage() {
   cat <<'USAGE'
 Usage:
-  scripts/run_result_baseline_serial.sh [options]
+  src/baselines/run_result_baseline_serial.sh [options]
 
 Options:
   --stage all|preflight|baselines|adapters|exp4|exp5
@@ -314,7 +314,7 @@ check_adapter_available() {
   local method="$1"
   local lower adapter env_name adapter_command
   lower="$(model_lower "$method")"
-  adapter="$PROJECT/scripts/baseline_adapters/${lower}_adapter.py"
+  adapter="$PROJECT/src/baselines/adapters/${lower}_adapter.py"
   env_name="$(adapter_env_name "$method")"
   adapter_command="${!env_name:-}"
 
@@ -515,7 +515,7 @@ run_adapters() {
       fi
 
       lower="$(model_lower "$method")"
-      adapter="$PROJECT/scripts/baseline_adapters/${lower}_adapter.py"
+      adapter="$PROJECT/src/baselines/adapters/${lower}_adapter.py"
       env_name="$(adapter_env_name "$method")"
       adapter_command="${!env_name:-}"
 

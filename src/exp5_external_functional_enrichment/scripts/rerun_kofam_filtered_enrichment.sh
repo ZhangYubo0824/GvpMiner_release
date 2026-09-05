@@ -191,8 +191,8 @@ fi
 
 SCRIPT_DIR="$(cd "$(dirname "${BASH_SOURCE[0]}")" && pwd)"
 PROJECT_ROOT="$(cd "$SCRIPT_DIR/../../.." && pwd)"
-RUN_PY="$PROJECT_ROOT/src2/exp5_external_functional_enrichment/run.py"
-PACKAGE_DIR="$PROJECT_ROOT/src2/exp5_external_functional_enrichment/package"
+RUN_PY="$PROJECT_ROOT/src/exp5_external_functional_enrichment/run.py"
+PACKAGE_DIR="$PROJECT_ROOT/src/exp5_external_functional_enrichment/package"
 SPLIT_TERM2GENE="$SCRIPT_DIR/split_term2gene_by_family.py"
 MERGE_RESULTS="$SCRIPT_DIR/merge_clusterprofiler_results.py"
 SUPPORT_SCRIPT="$SCRIPT_DIR/build_fair_support_tables.py"

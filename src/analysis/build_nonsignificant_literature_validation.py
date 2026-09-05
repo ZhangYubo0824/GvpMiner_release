@@ -14,7 +14,7 @@ from pathlib import Path
 import pandas as pd
 
 
-ROOT = Path(__file__).resolve().parents[1]
+ROOT = Path(__file__).resolve().parents[2]
 SRC = ROOT / "src"
 if str(SRC) not in sys.path:
     sys.path.insert(0, str(SRC))
@@ -27,23 +27,21 @@ from motif_validation_tables import (
 )
 
 
-EXP3 = ROOT / "result6" / "exp3_domain_discovery"
+RESULTS = ROOT / "work" / "results"
+EXP3 = RESULTS / "exp3_domain_discovery"
 BATCH = (
-    ROOT
-    / "result6"
+    RESULTS
     / "exp5_external_functional_enrichment"
     / "clusterprofiler"
     / "batch_results"
 )
 OUTDIR = (
-    ROOT
-    / "result6"
+    RESULTS
     / "motif_validation"
     / "cluster_commonality_validation"
 )
 EVIDENCE_SOURCES = (
-    ROOT
-    / "result6"
+    RESULTS
     / "motif_validation"
     / "literature_validation"
     / "evidence_sources_expanded5.csv"

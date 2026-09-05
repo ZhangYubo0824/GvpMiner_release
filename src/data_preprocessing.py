@@ -108,7 +108,7 @@ def quality_filter(records):
         filtered.append(rec)
 
     stats["passed"] = len(filtered)
-    print(f"\n质量过滤结果:")
+    print("\n质量过滤结果:")
     for reason, count in sorted(stats.items()):
         print(f"  {reason}: {count}")
 
@@ -138,7 +138,7 @@ def run_cdhit(records, threshold=0.90):
     """
     # 检查 CD-HIT 是否可用
     try:
-        result = subprocess.run(["cd-hit", "--help"], capture_output=True, timeout=5)
+        subprocess.run(["cd-hit", "--help"], capture_output=True, timeout=5)
         cdhit_available = True
     except (FileNotFoundError, subprocess.TimeoutExpired):
         cdhit_available = False
@@ -298,13 +298,13 @@ def save_outputs(records, small_families, load_stats, filter_stats):
 
     # 5. 打印最终统计
     print(f"\n{'='*50}")
-    print(f"最终数据集统计:")
+    print("最终数据集统计:")
     print(f"{'='*50}")
     print(f"  总序列数: {len(records)}")
     print(f"  家族数: {len(family_counts)}")
     print(f"  序列长度: {min(int(r['sequence_length']) for r in records)}"
           f" - {max(int(r['sequence_length']) for r in records)} aa")
-    print(f"\n各家族分布:")
+    print("\n各家族分布:")
     for family in sorted(family_counts.keys()):
         marker = " ⚠" if family in small_families else ""
         print(f"  {family:20s}: {family_counts[family]:6d}{marker}")

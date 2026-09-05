@@ -7,7 +7,6 @@ import subprocess
 import sys
 import tempfile
 from pathlib import Path
-from statistics import median
 from typing import Mapping, Sequence
 
 import numpy as np

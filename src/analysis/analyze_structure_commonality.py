@@ -10,10 +10,9 @@ from pathlib import Path
 import pandas as pd
 
 
-ROOT = Path(__file__).resolve().parents[1]
+ROOT = Path(__file__).resolve().parents[2]
 SRC = ROOT / "src"
-PYDSSP_DIR = ROOT / ".codex_tmp" / "pydssp"
-for path in [SRC, PYDSSP_DIR]:
+for path in [SRC]:
     if str(path) not in sys.path:
         sys.path.insert(0, str(path))
 
@@ -25,12 +24,12 @@ from motif_cluster_secondary_structure import (
 )
 
 
-EXP3 = ROOT / "result6" / "exp3_domain_discovery"
-EXP4 = ROOT / "result6" / "exp4_motif_structure_analysis"
-STRUCTURES = ROOT / "result6" / "structures" / "esmfold"
+RESULTS = ROOT / "work" / "results"
+EXP3 = RESULTS / "exp3_domain_discovery"
+EXP4 = RESULTS / "exp4_motif_structure_analysis"
+STRUCTURES = RESULTS / "structures" / "esmfold"
 OUTDIR = (
-    ROOT
-    / "result6"
+    RESULTS
     / "motif_validation"
     / "cluster_commonality_validation"
 )

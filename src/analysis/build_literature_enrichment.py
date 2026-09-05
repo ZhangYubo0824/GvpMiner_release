@@ -7,7 +7,7 @@ import sys
 from pathlib import Path
 
 
-ROOT = Path(__file__).resolve().parents[1]
+ROOT = Path(__file__).resolve().parents[2]
 SRC = ROOT / "src"
 if str(SRC) not in sys.path:
     sys.path.insert(0, str(SRC))
@@ -15,12 +15,10 @@ if str(SRC) not in sys.path:
 from gvp_literature_enrichment import run_literature_enrichment
 
 
-DEFAULT_MOTIFS = (
-    ROOT / "result6" / "motif_validation" / "motif_evidence_integration.csv"
-)
+RESULTS = ROOT / "work" / "results"
+DEFAULT_MOTIFS = RESULTS / "motif_validation" / "motif_evidence_integration.csv"
 DEFAULT_FULL_FASTA = (
-    ROOT
-    / "result6"
+    RESULTS
     / "exp5_external_functional_enrichment"
     / "input"
     / "all_gvp_proteins.fasta"
@@ -29,8 +27,7 @@ DEFAULT_SOURCES = ROOT / "data" / "literature" / "literature_sources.csv"
 DEFAULT_REGIONS = ROOT / "data" / "literature" / "experimental_regions.csv"
 DEFAULT_REFERENCES = ROOT / "data" / "literature" / "reference_sequences"
 DEFAULT_INTERPRO = (
-    ROOT
-    / "result6"
+    RESULTS
     / "exp5_external_functional_enrichment"
     / "interproscan"
     / "all_gvp_proteins.fasta.tsv"
@@ -39,9 +36,9 @@ DEFAULT_SEARCH_LOG = (
     ROOT / "data" / "literature" / "literature_search_log.csv"
 )
 DEFAULT_OUTPUT = (
-    ROOT / "result6" / "motif_validation" / "literature_enrichment"
+    RESULTS / "motif_validation" / "literature_enrichment"
 )
-DEFAULT_OCCURRENCES = ROOT / "result6" / "exp3_domain_discovery"
+DEFAULT_OCCURRENCES = RESULTS / "exp3_domain_discovery"
 
 
 def build_arg_parser() -> argparse.ArgumentParser:

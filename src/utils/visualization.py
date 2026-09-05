@@ -10,7 +10,6 @@ import matplotlib
 matplotlib.use("Agg")  # 无头模式
 
 import seaborn as sns
-from pathlib import Path
 
 # 统一样式
 plt.rcParams.update({
@@ -39,7 +38,6 @@ def plot_confusion_matrices(cms, method_names, class_names, save_path):
         axes = [axes]
 
     for ax, cm, name in zip(axes, cms, method_names):
-        color = METHOD_COLORS.get(name, "#666666")
         sns.heatmap(cm, annot=True, fmt="d", cmap="Blues", ax=ax,
                     xticklabels=class_names, yticklabels=class_names)
         ax.set_title(name.replace("_", " "), fontweight="bold")
@@ -67,8 +65,7 @@ def plot_classification_comparison(results_dict, save_path):
     fig, ax = plt.subplots(figsize=(8, 5))
     for i, (metric, label) in enumerate(zip(metrics, metric_labels)):
         values = [results_dict[m].get(metric, 0) for m in methods]
-        colors = [METHOD_COLORS.get(m, "#999") for m in methods]
-        bars = ax.bar(x + i * width, values, width, label=label, alpha=0.85)
+        ax.bar(x + i * width, values, width, label=label, alpha=0.85)
 
     ax.set_ylabel("Score")
     ax.set_title("Classification Performance Comparison", fontweight="bold")
@@ -184,16 +181,16 @@ def plot_dimensionality_reduction(X, y_labels, method_name, class_names, save_pa
     if n_plots == 1:
         axes = [axes]
         
-    print(f"  进行 PCA 降维...")
+    print("  进行 PCA 降维...")
     X_pca = PCA(n_components=2, random_state=42).fit_transform(X)
     
-    print(f"  进行 t-SNE 降维...")
+    print("  进行 t-SNE 降维...")
     X_tsne = TSNE(n_components=2, random_state=42, n_jobs=-1).fit_transform(X)
     
     points_list = [(X_pca, "PCA"), (X_tsne, "t-SNE")]
     
     if has_umap:
-        print(f"  进行 UMAP 降维...")
+        print("  进行 UMAP 降维...")
         # 针对一些新版本umap，如果不加n_jobs可能会有warning，这里通常默认
         X_umap = umap.UMAP(n_components=2, random_state=42).fit_transform(X)
         points_list.append((X_umap, "UMAP"))
