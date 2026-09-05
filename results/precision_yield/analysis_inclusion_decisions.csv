@@ -1,0 +1,7 @@
+analysis_id,destination,validity_status,decision_basis,result_direction,raw_p,adjusted_q,result_used_for_destination,notes
+candidate_yield,main_candidate,valid,complete status decomposition; six-method completeness disclosed,descriptive scale and conversion,,,False,six_method_inventory=True
+precision_yield_map,main_candidate,valid,finite count-derived precision and yield measures,trade-off visualization,,,False,no method is declared best
+evidence_chain,main_narrative_candidate,partial,evidence units remain separate with explicit provenance,architecture only,,,False,structural/literature layers not integrated without machine-readable sources
+topk_sensitivity,supplement_candidate,valid,all declared K values computed; rank-source heterogeneity retained,"K=1,3,5,10,20,50",,,False,"sensitivity analysis, not a cross-method score"
+rank_trend,report_only,not_estimable,destination depends only on numerical identifiability and stability,method-specific rank association,,,False,family fixed effects and family-cluster-robust SE
+global_matched_background,supplement_candidate,valid,matched draws conserved and null distribution reproducible,GLAM2:+0.000pp;M2:+0.753pp;M3:-0.162pp;MEME:-0.141pp;MotifAE:-3.537pp;STREME:-0.445pp,0.1867813218678132,1.0,False,effect direction and p/q do not determine destination

@@ -1,0 +1,7 @@
+evidence_layer,unit,count,source,linkage_status,interpretation_boundary
+sequence_candidates,protein sequence,,not supplied to this downstream analysis,not_integrated,No sequence-level total is inferred from motif rows.
+family_resolved_candidate_motifs,family-method candidate motif unit,20663.0,motif_level_fairness.csv,directly_derived,Method-specific candidate units are not unique biological sites.
+annotation_testable_motifs,family-method candidate motif unit,5454.0,motif_level_fairness.csv,directly_derived,"Testability reflects eligible annotation coverage, not motif function."
+functionally_supported_motifs,family-method candidate motif unit,4315.0,motif_level_fairness.csv,directly_derived,"Support is annotation enrichment evidence, not causal validation."
+structurally_characterized_subset,candidate motif unit,,not supplied to this downstream analysis,not_integrated,Structural counts require a separately hashed motif-level linkage source.
+literature_audited_subset,candidate motif unit,,not supplied to this downstream analysis,not_integrated,Historical manuscript counts are not reclassified as newly computed results.

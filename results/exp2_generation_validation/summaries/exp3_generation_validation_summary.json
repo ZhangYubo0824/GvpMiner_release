@@ -1,0 +1,623 @@
+[
+  {
+    "experiment": "exp3_generation_validation",
+    "generation_logic": "T02_BioGPT",
+    "classifier_source": "exp1_saved_bundle",
+    "target_family": "GvpA",
+    "num_generated": 310,
+    "method_summaries": {
+      "M2": {
+        "method": "M2",
+        "target_family": "GvpA",
+        "num_generated": 310,
+        "predicted_target_ratio": 0.6870967741935484,
+        "mean_target_probability": 0.6899967229902715
+      },
+      "M3": {
+        "method": "M3",
+        "target_family": "GvpA",
+        "num_generated": 310,
+        "predicted_target_ratio": 0.6838709677419355,
+        "mean_target_probability": 0.6896427419354838
+      }
+    },
+    "classifier_sources": {
+      "M2": "/data/coding/results6/exp1_classification/classifier_bundle_M2_sk1_3_2.pkl",
+      "M3": "/data/coding/results6/exp1_classification/classifier_bundle_M3_sk1_3_2.pkl"
+    }
+  },
+  {
+    "experiment": "exp3_generation_validation",
+    "generation_logic": "T02_BioGPT",
+    "classifier_source": "exp1_saved_bundle",
+    "target_family": "GvpB",
+    "num_generated": 251,
+    "method_summaries": {
+      "M2": {
+        "method": "M2",
+        "target_family": "GvpB",
+        "num_generated": 251,
+        "predicted_target_ratio": 0.0,
+        "mean_target_probability": 0.0
+      },
+      "M3": {
+        "method": "M3",
+        "target_family": "GvpB",
+        "num_generated": 251,
+        "predicted_target_ratio": 0.0,
+        "mean_target_probability": 0.0
+      }
+    },
+    "classifier_sources": {
+      "M2": "/data/coding/results6/exp1_classification/classifier_bundle_M2_sk1_3_2.pkl",
+      "M3": "/data/coding/results6/exp1_classification/classifier_bundle_M3_sk1_3_2.pkl"
+    }
+  },
+  {
+    "experiment": "exp3_generation_validation",
+    "generation_logic": "T02_BioGPT",
+    "classifier_source": "exp1_saved_bundle",
+    "target_family": "GvpC",
+    "num_generated": 297,
+    "method_summaries": {
+      "M2": {
+        "method": "M2",
+        "target_family": "GvpC",
+        "num_generated": 297,
+        "predicted_target_ratio": 1.0,
+        "mean_target_probability": 0.9466329966329966
+      },
+      "M3": {
+        "method": "M3",
+        "target_family": "GvpC",
+        "num_generated": 297,
+        "predicted_target_ratio": 1.0,
+        "mean_target_probability": 0.9553703703703704
+      }
+    },
+    "classifier_sources": {
+      "M2": "/data/coding/results6/exp1_classification/classifier_bundle_M2_sk1_3_2.pkl",
+      "M3": "/data/coding/results6/exp1_classification/classifier_bundle_M3_sk1_3_2.pkl"
+    }
+  },
+  {
+    "experiment": "exp3_generation_validation",
+    "generation_logic": "T02_BioGPT",
+    "classifier_source": "exp1_saved_bundle",
+    "target_family": "GvpD",
+    "num_generated": 500,
+    "method_summaries": {
+      "M2": {
+        "method": "M2",
+        "target_family": "GvpD",
+        "num_generated": 500,
+        "predicted_target_ratio": 0.08,
+        "mean_target_probability": 0.08017
+      },
+      "M3": {
+        "method": "M3",
+        "target_family": "GvpD",
+        "num_generated": 500,
+        "predicted_target_ratio": 0.026,
+        "mean_target_probability": 0.056850000000000005
+      }
+    },
+    "classifier_sources": {
+      "M2": "/data/coding/results6/exp1_classification/classifier_bundle_M2_sk1_3_2.pkl",
+      "M3": "/data/coding/results6/exp1_classification/classifier_bundle_M3_sk1_3_2.pkl"
+    }
+  },
+  {
+    "experiment": "exp3_generation_validation",
+    "generation_logic": "T02_BioGPT",
+    "classifier_source": "exp1_saved_bundle",
+    "target_family": "GvpE",
+    "num_generated": 500,
+    "method_summaries": {
+      "M2": {
+        "method": "M2",
+        "target_family": "GvpE",
+        "num_generated": 500,
+        "predicted_target_ratio": 0.0,
+        "mean_target_probability": 0.0
+      },
+      "M3": {
+        "method": "M3",
+        "target_family": "GvpE",
+        "num_generated": 500,
+        "predicted_target_ratio": 0.0,
+        "mean_target_probability": 0.0
+      }
+    },
+    "classifier_sources": {
+      "M2": "/data/coding/results6/exp1_classification/classifier_bundle_M2_sk1_3_2.pkl",
+      "M3": "/data/coding/results6/exp1_classification/classifier_bundle_M3_sk1_3_2.pkl"
+    }
+  },
+  {
+    "experiment": "exp3_generation_validation",
+    "generation_logic": "T02_BioGPT",
+    "classifier_source": "exp1_saved_bundle",
+    "target_family": "GvpF",
+    "num_generated": 468,
+    "method_summaries": {
+      "M2": {
+        "method": "M2",
+        "target_family": "GvpF",
+        "num_generated": 468,
+        "predicted_target_ratio": 0.8739316239316239,
+        "mean_target_probability": 0.8106837606837607
+      },
+      "M3": {
+        "method": "M3",
+        "target_family": "GvpF",
+        "num_generated": 468,
+        "predicted_target_ratio": 0.9145299145299145,
+        "mean_target_probability": 0.8241346153846154
+      }
+    },
+    "classifier_sources": {
+      "M2": "/data/coding/results6/exp1_classification/classifier_bundle_M2_sk1_3_2.pkl",
+      "M3": "/data/coding/results6/exp1_classification/classifier_bundle_M3_sk1_3_2.pkl"
+    }
+  },
+  {
+    "experiment": "exp3_generation_validation",
+    "generation_logic": "T02_BioGPT",
+    "classifier_source": "exp1_saved_bundle",
+    "target_family": "GvpG",
+    "num_generated": 465,
+    "method_summaries": {
+      "M2": {
+        "method": "M2",
+        "target_family": "GvpG",
+        "num_generated": 465,
+        "predicted_target_ratio": 0.864516129032258,
+        "mean_target_probability": 0.8076129032258064
+      },
+      "M3": {
+        "method": "M3",
+        "target_family": "GvpG",
+        "num_generated": 465,
+        "predicted_target_ratio": 0.9139784946236559,
+        "mean_target_probability": 0.8055053763440859
+      }
+    },
+    "classifier_sources": {
+      "M2": "/data/coding/results6/exp1_classification/classifier_bundle_M2_sk1_3_2.pkl",
+      "M3": "/data/coding/results6/exp1_classification/classifier_bundle_M3_sk1_3_2.pkl"
+    }
+  },
+  {
+    "experiment": "exp3_generation_validation",
+    "generation_logic": "T02_BioGPT",
+    "classifier_source": "exp1_saved_bundle",
+    "target_family": "GvpH",
+    "num_generated": 500,
+    "method_summaries": {
+      "M2": {
+        "method": "M2",
+        "target_family": "GvpH",
+        "num_generated": 500,
+        "predicted_target_ratio": 0.52,
+        "mean_target_probability": 0.24039
+      },
+      "M3": {
+        "method": "M3",
+        "target_family": "GvpH",
+        "num_generated": 500,
+        "predicted_target_ratio": 0.74,
+        "mean_target_probability": 0.34832
+      }
+    },
+    "classifier_sources": {
+      "M2": "/data/coding/results6/exp1_classification/classifier_bundle_M2_sk1_3_2.pkl",
+      "M3": "/data/coding/results6/exp1_classification/classifier_bundle_M3_sk1_3_2.pkl"
+    }
+  },
+  {
+    "experiment": "exp3_generation_validation",
+    "generation_logic": "T02_BioGPT",
+    "classifier_source": "exp1_saved_bundle",
+    "target_family": "GvpI",
+    "num_generated": 484,
+    "method_summaries": {
+      "M2": {
+        "method": "M2",
+        "target_family": "GvpI",
+        "num_generated": 484,
+        "predicted_target_ratio": 0.0,
+        "mean_target_probability": 0.0
+      },
+      "M3": {
+        "method": "M3",
+        "target_family": "GvpI",
+        "num_generated": 484,
+        "predicted_target_ratio": 0.0,
+        "mean_target_probability": 0.0
+      }
+    },
+    "classifier_sources": {
+      "M2": "/data/coding/results6/exp1_classification/classifier_bundle_M2_sk1_3_2.pkl",
+      "M3": "/data/coding/results6/exp1_classification/classifier_bundle_M3_sk1_3_2.pkl"
+    }
+  },
+  {
+    "experiment": "exp3_generation_validation",
+    "generation_logic": "T02_BioGPT",
+    "classifier_source": "exp1_saved_bundle",
+    "target_family": "GvpJ",
+    "num_generated": 483,
+    "method_summaries": {
+      "M2": {
+        "method": "M2",
+        "target_family": "GvpJ",
+        "num_generated": 483,
+        "predicted_target_ratio": 0.9233954451345756,
+        "mean_target_probability": 0.8099872531138058
+      },
+      "M3": {
+        "method": "M3",
+        "target_family": "GvpJ",
+        "num_generated": 483,
+        "predicted_target_ratio": 0.9233954451345756,
+        "mean_target_probability": 0.788251766407046
+      }
+    },
+    "classifier_sources": {
+      "M2": "/data/coding/results6/exp1_classification/classifier_bundle_M2_sk1_3_2.pkl",
+      "M3": "/data/coding/results6/exp1_classification/classifier_bundle_M3_sk1_3_2.pkl"
+    }
+  },
+  {
+    "experiment": "exp3_generation_validation",
+    "generation_logic": "T02_BioGPT",
+    "classifier_source": "exp1_saved_bundle",
+    "target_family": "GvpK",
+    "num_generated": 460,
+    "method_summaries": {
+      "M2": {
+        "method": "M2",
+        "target_family": "GvpK",
+        "num_generated": 460,
+        "predicted_target_ratio": 1.0,
+        "mean_target_probability": 0.9934565217391305
+      },
+      "M3": {
+        "method": "M3",
+        "target_family": "GvpK",
+        "num_generated": 460,
+        "predicted_target_ratio": 0.9978260869565218,
+        "mean_target_probability": 0.9893586956521738
+      }
+    },
+    "classifier_sources": {
+      "M2": "/data/coding/results6/exp1_classification/classifier_bundle_M2_sk1_3_2.pkl",
+      "M3": "/data/coding/results6/exp1_classification/classifier_bundle_M3_sk1_3_2.pkl"
+    }
+  },
+  {
+    "experiment": "exp3_generation_validation",
+    "generation_logic": "T02_BioGPT",
+    "classifier_source": "exp1_saved_bundle",
+    "target_family": "GvpL",
+    "num_generated": 500,
+    "method_summaries": {
+      "M2": {
+        "method": "M2",
+        "target_family": "GvpL",
+        "num_generated": 500,
+        "predicted_target_ratio": 0.19,
+        "mean_target_probability": 0.15587
+      },
+      "M3": {
+        "method": "M3",
+        "target_family": "GvpL",
+        "num_generated": 500,
+        "predicted_target_ratio": 0.778,
+        "mean_target_probability": 0.44354999999999994
+      }
+    },
+    "classifier_sources": {
+      "M2": "/data/coding/results6/exp1_classification/classifier_bundle_M2_sk1_3_2.pkl",
+      "M3": "/data/coding/results6/exp1_classification/classifier_bundle_M3_sk1_3_2.pkl"
+    }
+  },
+  {
+    "experiment": "exp3_generation_validation",
+    "generation_logic": "T02_BioGPT",
+    "classifier_source": "exp1_saved_bundle",
+    "target_family": "GvpM",
+    "num_generated": 500,
+    "method_summaries": {
+      "M2": {
+        "method": "M2",
+        "target_family": "GvpM",
+        "num_generated": 500,
+        "predicted_target_ratio": 0.972,
+        "mean_target_probability": 0.88185
+      },
+      "M3": {
+        "method": "M3",
+        "target_family": "GvpM",
+        "num_generated": 500,
+        "predicted_target_ratio": 0.898,
+        "mean_target_probability": 0.7035399999999999
+      }
+    },
+    "classifier_sources": {
+      "M2": "/data/coding/results6/exp1_classification/classifier_bundle_M2_sk1_3_2.pkl",
+      "M3": "/data/coding/results6/exp1_classification/classifier_bundle_M3_sk1_3_2.pkl"
+    }
+  },
+  {
+    "experiment": "exp3_generation_validation",
+    "generation_logic": "T02_BioGPT",
+    "classifier_source": "exp1_saved_bundle",
+    "target_family": "GvpN",
+    "num_generated": 328,
+    "method_summaries": {
+      "M2": {
+        "method": "M2",
+        "target_family": "GvpN",
+        "num_generated": 328,
+        "predicted_target_ratio": 0.9298780487804879,
+        "mean_target_probability": 0.838689024390244
+      },
+      "M3": {
+        "method": "M3",
+        "target_family": "GvpN",
+        "num_generated": 328,
+        "predicted_target_ratio": 0.9329268292682927,
+        "mean_target_probability": 0.8365548780487805
+      }
+    },
+    "classifier_sources": {
+      "M2": "/data/coding/results6/exp1_classification/classifier_bundle_M2_sk1_3_2.pkl",
+      "M3": "/data/coding/results6/exp1_classification/classifier_bundle_M3_sk1_3_2.pkl"
+    }
+  },
+  {
+    "experiment": "exp3_generation_validation",
+    "generation_logic": "T02_BioGPT",
+    "classifier_source": "exp1_saved_bundle",
+    "target_family": "GvpO",
+    "num_generated": 474,
+    "method_summaries": {
+      "M2": {
+        "method": "M2",
+        "target_family": "GvpO",
+        "num_generated": 474,
+        "predicted_target_ratio": 0.9831223628691983,
+        "mean_target_probability": 0.8808966244725739
+      },
+      "M3": {
+        "method": "M3",
+        "target_family": "GvpO",
+        "num_generated": 474,
+        "predicted_target_ratio": 0.9578059071729957,
+        "mean_target_probability": 0.8636286919831224
+      }
+    },
+    "classifier_sources": {
+      "M2": "/data/coding/results6/exp1_classification/classifier_bundle_M2_sk1_3_2.pkl",
+      "M3": "/data/coding/results6/exp1_classification/classifier_bundle_M3_sk1_3_2.pkl"
+    }
+  },
+  {
+    "experiment": "exp3_generation_validation",
+    "generation_logic": "T02_BioGPT",
+    "classifier_source": "exp1_saved_bundle",
+    "target_family": "GvpP",
+    "num_generated": 1,
+    "method_summaries": {
+      "M2": {
+        "method": "M2",
+        "target_family": "GvpP",
+        "num_generated": 1,
+        "predicted_target_ratio": 0.0,
+        "mean_target_probability": 0.0
+      },
+      "M3": {
+        "method": "M3",
+        "target_family": "GvpP",
+        "num_generated": 1,
+        "predicted_target_ratio": 0.0,
+        "mean_target_probability": 0.0
+      }
+    },
+    "classifier_sources": {
+      "M2": "/data/coding/results6/exp1_classification/classifier_bundle_M2_sk1_3_2.pkl",
+      "M3": "/data/coding/results6/exp1_classification/classifier_bundle_M3_sk1_3_2.pkl"
+    }
+  },
+  {
+    "experiment": "exp3_generation_validation",
+    "generation_logic": "T02_BioGPT",
+    "classifier_source": "exp1_saved_bundle",
+    "target_family": "GvpQ",
+    "num_generated": 275,
+    "method_summaries": {
+      "M2": {
+        "method": "M2",
+        "target_family": "GvpQ",
+        "num_generated": 275,
+        "predicted_target_ratio": 0.9927272727272727,
+        "mean_target_probability": 0.9524363636363635
+      },
+      "M3": {
+        "method": "M3",
+        "target_family": "GvpQ",
+        "num_generated": 275,
+        "predicted_target_ratio": 0.9927272727272727,
+        "mean_target_probability": 0.9558181818181819
+      }
+    },
+    "classifier_sources": {
+      "M2": "/data/coding/results6/exp1_classification/classifier_bundle_M2_sk1_3_2.pkl",
+      "M3": "/data/coding/results6/exp1_classification/classifier_bundle_M3_sk1_3_2.pkl"
+    }
+  },
+  {
+    "experiment": "exp3_generation_validation",
+    "generation_logic": "T02_BioGPT",
+    "classifier_source": "exp1_saved_bundle",
+    "target_family": "GvpR",
+    "num_generated": 466,
+    "method_summaries": {
+      "M2": {
+        "method": "M2",
+        "target_family": "GvpR",
+        "num_generated": 466,
+        "predicted_target_ratio": 0.0,
+        "mean_target_probability": 0.0
+      },
+      "M3": {
+        "method": "M3",
+        "target_family": "GvpR",
+        "num_generated": 466,
+        "predicted_target_ratio": 0.0,
+        "mean_target_probability": 0.0
+      }
+    },
+    "classifier_sources": {
+      "M2": "/data/coding/results6/exp1_classification/classifier_bundle_M2_sk1_3_2.pkl",
+      "M3": "/data/coding/results6/exp1_classification/classifier_bundle_M3_sk1_3_2.pkl"
+    }
+  },
+  {
+    "experiment": "exp3_generation_validation",
+    "generation_logic": "T02_BioGPT",
+    "classifier_source": "exp1_saved_bundle",
+    "target_family": "GvpS",
+    "num_generated": 479,
+    "method_summaries": {
+      "M2": {
+        "method": "M2",
+        "target_family": "GvpS",
+        "num_generated": 479,
+        "predicted_target_ratio": 0.0,
+        "mean_target_probability": 0.0
+      },
+      "M3": {
+        "method": "M3",
+        "target_family": "GvpS",
+        "num_generated": 479,
+        "predicted_target_ratio": 0.0,
+        "mean_target_probability": 0.0
+      }
+    },
+    "classifier_sources": {
+      "M2": "/data/coding/results6/exp1_classification/classifier_bundle_M2_sk1_3_2.pkl",
+      "M3": "/data/coding/results6/exp1_classification/classifier_bundle_M3_sk1_3_2.pkl"
+    }
+  },
+  {
+    "experiment": "exp3_generation_validation",
+    "generation_logic": "T02_BioGPT",
+    "classifier_source": "exp1_saved_bundle",
+    "target_family": "GvpT",
+    "num_generated": 453,
+    "method_summaries": {
+      "M2": {
+        "method": "M2",
+        "target_family": "GvpT",
+        "num_generated": 453,
+        "predicted_target_ratio": 0.9955849889624724,
+        "mean_target_probability": 0.9574282560706401
+      },
+      "M3": {
+        "method": "M3",
+        "target_family": "GvpT",
+        "num_generated": 453,
+        "predicted_target_ratio": 1.0,
+        "mean_target_probability": 0.9602207505518764
+      }
+    },
+    "classifier_sources": {
+      "M2": "/data/coding/results6/exp1_classification/classifier_bundle_M2_sk1_3_2.pkl",
+      "M3": "/data/coding/results6/exp1_classification/classifier_bundle_M3_sk1_3_2.pkl"
+    }
+  },
+  {
+    "experiment": "exp3_generation_validation",
+    "generation_logic": "T02_BioGPT",
+    "classifier_source": "exp1_saved_bundle",
+    "target_family": "GvpU",
+    "num_generated": 386,
+    "method_summaries": {
+      "M2": {
+        "method": "M2",
+        "target_family": "GvpU",
+        "num_generated": 386,
+        "predicted_target_ratio": 0.966321243523316,
+        "mean_target_probability": 0.9073254071058475
+      },
+      "M3": {
+        "method": "M3",
+        "target_family": "GvpU",
+        "num_generated": 386,
+        "predicted_target_ratio": 0.9974093264248705,
+        "mean_target_probability": 0.9373834196891191
+      }
+    },
+    "classifier_sources": {
+      "M2": "/data/coding/results6/exp1_classification/classifier_bundle_M2_sk1_3_2.pkl",
+      "M3": "/data/coding/results6/exp1_classification/classifier_bundle_M3_sk1_3_2.pkl"
+    }
+  },
+  {
+    "experiment": "exp3_generation_validation",
+    "generation_logic": "T02_BioGPT",
+    "classifier_source": "exp1_saved_bundle",
+    "target_family": "GvpV",
+    "num_generated": 406,
+    "method_summaries": {
+      "M2": {
+        "method": "M2",
+        "target_family": "GvpV",
+        "num_generated": 406,
+        "predicted_target_ratio": 0.7832512315270936,
+        "mean_target_probability": 0.5581527093596059
+      },
+      "M3": {
+        "method": "M3",
+        "target_family": "GvpV",
+        "num_generated": 406,
+        "predicted_target_ratio": 0.8694581280788177,
+        "mean_target_probability": 0.5455665024630542
+      }
+    },
+    "classifier_sources": {
+      "M2": "/data/coding/results6/exp1_classification/classifier_bundle_M2_sk1_3_2.pkl",
+      "M3": "/data/coding/results6/exp1_classification/classifier_bundle_M3_sk1_3_2.pkl"
+    }
+  },
+  {
+    "experiment": "exp3_generation_validation",
+    "generation_logic": "T02_BioGPT",
+    "classifier_source": "exp1_saved_bundle",
+    "target_family": "GvpW",
+    "num_generated": 491,
+    "method_summaries": {
+      "M2": {
+        "method": "M2",
+        "target_family": "GvpW",
+        "num_generated": 491,
+        "predicted_target_ratio": 0.0,
+        "mean_target_probability": 0.0
+      },
+      "M3": {
+        "method": "M3",
+        "target_family": "GvpW",
+        "num_generated": 491,
+        "predicted_target_ratio": 0.0,
+        "mean_target_probability": 0.0
+      }
+    },
+    "classifier_sources": {
+      "M2": "/data/coding/results6/exp1_classification/classifier_bundle_M2_sk1_3_2.pkl",
+      "M3": "/data/coding/results6/exp1_classification/classifier_bundle_M3_sk1_3_2.pkl"
+    }
+  }
+]

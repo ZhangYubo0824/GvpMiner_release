@@ -1,0 +1,9 @@
+{
+  "k_optimal": 405,
+  "n_motifs": 405,
+  "n_core_samples": 20512,
+  "noise_ratio": 0.13524451939291737,
+  "silhouette_final": 0.794525682926178,
+  "davies_bouldin": 0.4283995964167173,
+  "calinski_harabasz": 33389.790279007124
+}

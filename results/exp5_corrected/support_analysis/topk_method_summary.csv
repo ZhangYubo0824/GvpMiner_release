@@ -1,0 +1,7 @@
+method,family_count,selected_motif_count,testable_motif_count,supported_motif_count,supported_fraction_of_selected,supported_fraction_of_testable
+GLAM2,16,160,120,93,0.58125,0.775
+M2,16,160,82,71,0.44375,0.8658536585365854
+M3,16,160,79,67,0.41875,0.8481012658227848
+MEME,16,160,94,72,0.45,0.7659574468085106
+MotifAE,16,160,118,70,0.4375,0.5932203389830508
+STREME,16,155,100,61,0.3935483870967742,0.61

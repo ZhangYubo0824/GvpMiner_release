@@ -1,0 +1,11 @@
+motif_cluster,n_instances,n_sequences,n_homology_clusters,mean_motif_pLDDT,high_confidence_fraction,best_feature,best_control_type,best_q_value,best_effect_median_difference,significant_endpoints
+GvpD_GLAM2_001,104,104,0,92.7582235283771,0.9903846153846154,contact_density,composition_matched,1.0160532126511521e-16,-0.013632653061224485,25
+GvpD_GLAM2_002,104,104,0,93.92941168207928,0.9903846153846154,long_range_contact_count,composition_matched,1.0160532126511521e-16,-6.2,26
+GvpD_GLAM2_003,101,101,0,91.29891227638382,1.0,long_range_contact_count,composition_matched,1.0160532126511521e-16,11.899999999999999,22
+GvpD_GLAM2_004,99,99,0,91.2155204843398,1.0,relative_SASA,position_matched,2.743238828777361e-16,-0.0015888791911343736,20
+GvpD_GLAM2_005,100,100,0,91.94773173502391,0.99,long_range_contact_count,composition_matched,1.0160532126511521e-16,-7.65,24
+GvpD_GLAM2_006,98,98,0,91.80462147634667,0.9897959183673469,distance_to_protein_centroid,position_matched,1.698083761980826e-15,-2.7749931740168665,18
+GvpD_GLAM2_007,77,77,0,85.2047789634535,1.0,distance_to_protein_centroid,within_random,1.847123074517861e-13,11.239270465511103,18
+GvpD_GLAM2_008,97,97,0,95.35026004369723,0.9896907216494846,motif_min_pLDDT,composition_matched,3.0293161666193964e-16,21.164000000000016,26
+GvpD_GLAM2_009,84,84,0,93.41848825470665,1.0,relative_SASA,position_matched,1.7159365282294545e-13,-0.0010541095117689858,21
+GvpD_GLAM2_010,82,82,0,88.49706080139373,1.0,distance_to_protein_centroid,within_random,9.814138593534332e-14,22.563159728591764,25

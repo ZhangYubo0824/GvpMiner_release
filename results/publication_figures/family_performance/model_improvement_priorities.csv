@@ -1,0 +1,9 @@
+priority,problem,problem_zh,affected_families,poor_families,evidence,recommended_change,validation_experiment
+P1,low_function_support,外部功能支持比例偏低,GvpH;GvpM;GvpO;GvpU,GvpH;GvpM,2 poor families; 4 families total,采用多来源外部注释并校准功能证据评分,在独立注释源上复核低支持 motif 的功能富集
+P1,low_generation_fidelity,生成家族一致性偏低,GvpA;GvpD;GvpH;GvpL,GvpA;GvpH;GvpL,3 poor families; 4 families total,采用分类器引导解码和生成后过滤,比较引导解码前后的目标家族恢复率
+P1,low_structure_confidence,motif 结构置信度偏低,GvpA;GvpJ;GvpM;GvpQ,GvpA;GvpM,2 poor families; 4 families total,采用结构置信度加权并过滤低 pLDDT motif,按 pLDDT 分层过滤后重复结构验证
+P1,method_disagreement,M2/M3 方法分歧较大,GvpD;GvpH;GvpL;GvpM;GvpO;GvpU;GvpV,GvpH;GvpL;GvpM,3 poor families; 7 families total,校准嵌入集成并对方法分歧家族进行重点复核,在分歧家族上评估校准后的 M2/M3 集成模型
+P2,high_fragmentation,motif 聚类碎片化,GvpA;GvpC;GvpJ;GvpT,GvpA,1 poor families; 4 families total,采用家族自适应聚类阈值并合并重叠 motif,使用家族特异最小簇规模重新运行聚类
+P2,length_shift,生成长度分布偏移,GvpD;GvpN,,0 poor families; 2 families total,加入家族条件长度建模和长度约束解码,逐家族比较改进前后的生成与天然长度分布
+P3,low_precision,分类精确率偏低,GvpA,GvpA,1 poor families; 1 families total,引入对比学习、层级分类器和拒识机制,在近邻家族上比较平面分类器与层级分类器
+P3,low_recall,分类召回率偏低,GvpA,GvpA,1 poor families; 1 families total,采用类别平衡和困难负样本挖掘,加入困难负样本后重新进行分层家族分类验证

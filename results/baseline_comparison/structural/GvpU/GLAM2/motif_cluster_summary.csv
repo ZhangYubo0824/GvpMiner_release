@@ -1,0 +1,11 @@
+motif_cluster,n_instances,n_sequences,n_homology_clusters,mean_motif_pLDDT,high_confidence_fraction,best_feature,best_control_type,best_q_value,best_effect_median_difference,significant_endpoints
+GvpU_GLAM2_001,1080,1080,0,79.14378987596797,0.9833333333333333,long_range_contact_count,composition_matched,1.2371346599912126e-178,34.0,25
+GvpU_GLAM2_002,1078,1078,0,83.97409007449083,0.9981447124304267,long_range_contact_count,composition_matched,6.350641874653827e-178,27.0,27
+GvpU_GLAM2_003,1079,1079,0,86.63699549873155,1.0,long_range_contact_count,composition_matched,5.669942389625754e-178,27.0,27
+GvpU_GLAM2_004,1079,1079,0,79.15613482255696,0.9814643188137164,long_range_contact_count,composition_matched,1.2986064535716007e-178,34.0,26
+GvpU_GLAM2_005,1081,1081,0,86.58344364808931,1.0,contact_density,composition_matched,8.37567764579885e-178,0.0586938775510204,26
+GvpU_GLAM2_006,1081,1081,0,86.83440993328595,1.0,contact_density,composition_matched,8.37567764579885e-178,0.05602836879432624,26
+GvpU_GLAM2_007,1081,1081,0,86.74664710579306,0.9990749306197965,contact_density,composition_matched,8.37567764579885e-178,0.06156862745098041,25
+GvpU_GLAM2_008,1079,1079,0,87.0571367450034,1.0,long_range_contact_count,composition_matched,8.37567764579885e-178,28.0,27
+GvpU_GLAM2_009,1080,1080,0,86.47687930479194,0.9962962962962963,contact_density,composition_matched,8.37567764579885e-178,0.060734693877550996,25
+GvpU_GLAM2_010,1076,1076,0,80.96588434543717,0.9869888475836431,long_range_contact_count,composition_matched,1.08795409752667e-177,21.0,24

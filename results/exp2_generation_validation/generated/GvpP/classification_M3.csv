@@ -1,0 +1,2 @@
+generated_id,sequence,length,predicted_family,predicted_confidence,target_family,target_probability,is_target_family,prob_GvpP
+gen_0000,MKASRILFGIGVGVAAGFVVALQGRDDKSVKNNTIDRTAPTGSKSELQREFETIKQSFNDILNYGVQIKNESAEFGSSIGGEIKSLLGNFKSDINPNIERLQSHIENLQNRGEDIGNEISK,121,GvpT,0.505,GvpP,0.0,False,0.0

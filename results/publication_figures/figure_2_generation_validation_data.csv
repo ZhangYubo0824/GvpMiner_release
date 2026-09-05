@@ -1,0 +1,47 @@
+family,method,num_generated,predicted_target_ratio,mean_target_probability,evaluation_status,display_status
+GvpA,M2,310,0.6870967741935484,0.6899967229902715,supported,Evaluable
+GvpA,M3,310,0.6838709677419355,0.6896427419354838,supported,Evaluable
+GvpB,M2,251,0.0,0.0,outside_classifier_label_space,Not evaluable
+GvpB,M3,251,0.0,0.0,outside_classifier_label_space,Not evaluable
+GvpC,M2,297,1.0,0.9466329966329966,supported,Evaluable
+GvpC,M3,297,1.0,0.9553703703703704,supported,Evaluable
+GvpD,M2,500,0.08,0.08017,supported,Evaluable
+GvpD,M3,500,0.026,0.056850000000000005,supported,Evaluable
+GvpE,M2,500,0.0,0.0,outside_classifier_label_space,Not evaluable
+GvpE,M3,500,0.0,0.0,outside_classifier_label_space,Not evaluable
+GvpF,M2,468,0.8739316239316239,0.8106837606837607,supported,Evaluable
+GvpF,M3,468,0.9145299145299145,0.8241346153846154,supported,Evaluable
+GvpG,M2,465,0.864516129032258,0.8076129032258064,supported,Evaluable
+GvpG,M3,465,0.9139784946236559,0.8055053763440859,supported,Evaluable
+GvpH,M2,500,0.52,0.24039,supported,Evaluable
+GvpH,M3,500,0.74,0.34832,supported,Evaluable
+GvpI,M2,484,0.0,0.0,outside_classifier_label_space,Not evaluable
+GvpI,M3,484,0.0,0.0,outside_classifier_label_space,Not evaluable
+GvpJ,M2,483,0.9233954451345756,0.8099872531138058,supported,Evaluable
+GvpJ,M3,483,0.9233954451345756,0.788251766407046,supported,Evaluable
+GvpK,M2,460,1.0,0.9934565217391305,supported,Evaluable
+GvpK,M3,460,0.9978260869565218,0.9893586956521738,supported,Evaluable
+GvpL,M2,500,0.19,0.15587,supported,Evaluable
+GvpL,M3,500,0.778,0.44354999999999994,supported,Evaluable
+GvpM,M2,500,0.972,0.88185,supported,Evaluable
+GvpM,M3,500,0.898,0.7035399999999999,supported,Evaluable
+GvpN,M2,328,0.9298780487804879,0.838689024390244,supported,Evaluable
+GvpN,M3,328,0.9329268292682927,0.8365548780487805,supported,Evaluable
+GvpO,M2,474,0.9831223628691983,0.8808966244725739,supported,Evaluable
+GvpO,M3,474,0.9578059071729957,0.8636286919831224,supported,Evaluable
+GvpP,M2,1,0.0,0.0,outside_classifier_label_space,Not evaluable
+GvpP,M3,1,0.0,0.0,outside_classifier_label_space,Not evaluable
+GvpQ,M2,275,0.9927272727272727,0.9524363636363635,supported,Evaluable
+GvpQ,M3,275,0.9927272727272727,0.9558181818181819,supported,Evaluable
+GvpR,M2,466,0.0,0.0,outside_classifier_label_space,Not evaluable
+GvpR,M3,466,0.0,0.0,outside_classifier_label_space,Not evaluable
+GvpS,M2,479,0.0,0.0,outside_classifier_label_space,Not evaluable
+GvpS,M3,479,0.0,0.0,outside_classifier_label_space,Not evaluable
+GvpT,M2,453,0.9955849889624724,0.9574282560706401,supported,Evaluable
+GvpT,M3,453,1.0,0.9602207505518764,supported,Evaluable
+GvpU,M2,386,0.966321243523316,0.9073254071058475,supported,Evaluable
+GvpU,M3,386,0.9974093264248705,0.9373834196891191,supported,Evaluable
+GvpV,M2,406,0.7832512315270936,0.5581527093596059,supported,Evaluable
+GvpV,M3,406,0.8694581280788177,0.5455665024630542,supported,Evaluable
+GvpW,M2,491,0.0,0.0,outside_classifier_label_space,Not evaluable
+GvpW,M3,491,0.0,0.0,outside_classifier_label_space,Not evaluable

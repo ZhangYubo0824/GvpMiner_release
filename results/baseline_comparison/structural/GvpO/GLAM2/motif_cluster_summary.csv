@@ -1,0 +1,11 @@
+motif_cluster,n_instances,n_sequences,n_homology_clusters,mean_motif_pLDDT,high_confidence_fraction,best_feature,best_control_type,best_q_value,best_effect_median_difference,significant_endpoints
+GvpO_GLAM2_001,2745,2745,0,86.2614821958324,0.990528233151184,contact_density,position_matched,0.0,0.02407407407407411,15
+GvpO_GLAM2_002,2739,2739,0,86.36894220066402,0.9923329682365827,contact_density,position_matched,0.0,0.024338624338624326,15
+GvpO_GLAM2_003,2746,2746,0,86.21050410621487,0.9905316824471959,contact_density,position_matched,0.0,0.02407407407407411,15
+GvpO_GLAM2_004,2740,2740,0,86.52027687926066,0.9875912408759124,long_range_contact_count,position_matched,0.0,-10.2,17
+GvpO_GLAM2_005,2751,2751,0,87.21689922947155,0.9858233369683751,long_range_contact_count,position_matched,0.0,12.7,15
+GvpO_GLAM2_006,2753,2753,0,86.7345368773567,0.9883763167453687,contact_density,position_matched,0.0,-0.0415584415584416,18
+GvpO_GLAM2_007,2753,2753,0,86.7330651062413,0.9883763167453687,contact_density,position_matched,0.0,-0.0415584415584416,18
+GvpO_GLAM2_008,2677,2677,0,86.263567801365,0.9843107956667911,motif_mean_pLDDT,position_matched,0.0,9.578833333333336,17
+GvpO_GLAM2_009,2734,2734,0,87.400216037625,0.9868324798829554,radius_of_gyration,position_matched,0.0,-1.388556460025372,20
+GvpO_GLAM2_010,2329,2329,0,88.79060561719886,0.9879776728209532,long_range_contact_count,within_random,0.0,7.0,16

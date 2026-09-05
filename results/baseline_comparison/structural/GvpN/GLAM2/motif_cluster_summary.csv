@@ -1,0 +1,11 @@
+motif_cluster,n_instances,n_sequences,n_homology_clusters,mean_motif_pLDDT,high_confidence_fraction,best_feature,best_control_type,best_q_value,best_effect_median_difference,significant_endpoints
+GvpN_GLAM2_001,1536,1536,0,92.29164390877251,1.0,relative_SASA,composition_matched,2.4819799892141245e-251,-0.011338036105936422,27
+GvpN_GLAM2_002,1534,1534,0,94.06158539706284,0.999348109517601,surface_residue_fraction,position_matched,2.4697305151058063e-251,-0.043396226415094344,27
+GvpN_GLAM2_003,1534,1534,0,91.48003120638086,0.999348109517601,long_range_contact_count,position_matched,2.4697305151058063e-251,-2.0,27
+GvpN_GLAM2_004,1535,1535,0,83.21221202531947,0.9980456026058632,long_range_contact_count,position_matched,2.4697305151058063e-251,-5.6,26
+GvpN_GLAM2_005,1533,1533,0,91.67229953950579,1.0,distance_to_protein_centroid,composition_matched,2.9749464265081447e-251,-20.41950507970738,27
+GvpN_GLAM2_006,1535,1535,0,77.50991584540377,0.9785016286644951,long_range_contact_count,composition_matched,2.4819799892141245e-251,26.4,26
+GvpN_GLAM2_007,1536,1536,0,78.08062832184348,0.9895833333333334,long_range_contact_count,composition_matched,2.4819799892141245e-251,30.1,27
+GvpN_GLAM2_008,1535,1535,0,75.74187012864304,0.9413680781758957,long_range_contact_count,composition_matched,2.4819799892141245e-251,19.5,27
+GvpN_GLAM2_009,1537,1537,0,71.82269804351711,0.6460637605725439,long_range_contact_count,composition_matched,2.4819799892141245e-251,11.4,26
+GvpN_GLAM2_010,1515,1515,0,93.04586285992923,1.0,motif_mean_pLDDT,composition_matched,1.5952437315257982e-245,11.423919999999981,27
