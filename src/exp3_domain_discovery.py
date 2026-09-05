@@ -795,10 +795,10 @@ def process_family(family_name, family_records, methods, output_dir):
         sequences, seq_ids, families,
         EXP3_WINDOW_SIZE, EXP3_WINDOW_STEP,
     )
-    print(f"    鐢熸垚 {len(windows)} 涓獥鍙?(鏉ヨ嚜 {len(sequences)} 鏉″簭鍒?)")
+    print(f"    Generated {len(windows)} windows from {len(sequences)} sequences")
 
     if len(windows) < EXP3_DBSCAN_MIN_SAMPLES * 3:
-        print(f"    [璺宠繃] 绐楀彛鏁板お灏?({len(windows)})")
+        print(f"    [SKIP] Too few windows ({len(windows)})")
         return None
 
     windows_csv_path = family_dir / "windows_metadata.csv"
@@ -819,7 +819,7 @@ def process_family(family_name, family_records, methods, output_dir):
 
         X = embed_windows(method, sequences, windows, family_dir).astype(np.float32)
         if np.isnan(X).any():
-            print("    [璀﹀憡] 宓屽叆鍚玁aN, 鏇挎崲涓?0")
+            print("    [WARNING] Embeddings contain NaN values; replacing them with zero")
             X = np.nan_to_num(X)
 
         windows_full = windows
@@ -906,7 +906,7 @@ def process_family(family_name, family_records, methods, output_dir):
             with open(occurrence_json, "w", encoding="utf-8") as f:
                 json.dump(motif_occurrences, f, indent=2, ensure_ascii=False)
 
-        print(f"    鍙戠幇 {len(motifs)} 涓€欓€塎otif鍖哄煙")
+        print(f"    Identified {len(motifs)} candidate motif regions")
 
     try:
         from utils.visualization import plot_motif_heatmap
@@ -928,7 +928,7 @@ def process_family(family_name, family_records, methods, output_dir):
             family_dir / f"motif_heatmap_{family_name}.png",
         )
     except Exception as e:
-        print(f"  [璀﹀憡] 鐑浘缁樺埗澶辫触: {e}")
+        print(f"  [WARNING] Motif heatmap generation failed: {e}")
 
     return all_metrics
 
