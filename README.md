@@ -53,7 +53,7 @@ python scripts/summarize_results.py
 python tools/verify_results.py --hashes
 ```
 
-The results include candidate catalogues, structural analyses, annotation-enrichment results, method comparisons and cross-representation analyses. Unsupported, no-output and unevaluable cases are retained. See [the results guide](docs/RESULTS_GUIDE.md) for per-method candidate counts, field meanings and denominators.
+The results include GvpMiner motif candidates, sequence representations, structural analyses and annotation-enrichment results. See [the results guide](docs/RESULTS_GUIDE.md) for file organization, field definitions and interpretation.
 
 ## Run analyses
 
