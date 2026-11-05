@@ -53,7 +53,7 @@ python scripts/summarize_results.py
 python tools/verify_results.py --hashes
 ```
 
-The main comparison evaluates 10,784 candidates across six methods, including 522 GvpMiner candidates and 8,378 MotifAE candidates. A separate analysis compares results obtained with different protein representations. Unsupported, no-output and unevaluable cases are retained. See [the results guide](docs/RESULTS_GUIDE.md) for field meanings and denominators.
+The results include candidate catalogues, structural analyses, annotation-enrichment results, method comparisons and cross-representation analyses. Unsupported, no-output and unevaluable cases are retained. See [the results guide](docs/RESULTS_GUIDE.md) for per-method candidate counts, field meanings and denominators.
 
 ## Run analyses
 
