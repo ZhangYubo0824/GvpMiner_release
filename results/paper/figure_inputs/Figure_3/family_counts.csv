@@ -1,0 +1,17 @@
+family,raw,retained,excluded,selection_strategy
+GvpA,41,21,20,stability_plateau
+GvpC,51,29,22,stability_plateau
+GvpD,109,56,53,stability_plateau
+GvpF,139,66,73,stability_plateau
+GvpG,30,21,9,stability_plateau
+GvpH,2,0,2,exploratory_fallback
+GvpJ,204,69,135,stability_plateau
+GvpK,257,77,180,stability_plateau
+GvpL,21,1,20,stability_plateau
+GvpM,6,6,0,stability_plateau
+GvpN,174,84,90,stability_plateau
+GvpO,65,17,48,exploratory_fallback
+GvpQ,17,7,10,stability_plateau
+GvpT,35,17,18,stability_plateau
+GvpU,74,35,39,stability_plateau
+GvpV,19,16,3,stability_plateau

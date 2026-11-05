@@ -1,6 +1,7 @@
 from __future__ import annotations
 
 import json
+import shutil
 from dataclasses import dataclass
 from pathlib import Path
 
@@ -38,6 +39,7 @@ class ParsedStructure:
     ca_coords: np.ndarray
     secondary_structure: list[str]
     source_path: Path
+    relative_sasa: np.ndarray | None = None
 
 
 def _validate_structure(structure: ParsedStructure) -> ParsedStructure:
@@ -50,6 +52,10 @@ def _validate_structure(structure: ParsedStructure) -> ParsedStructure:
         raise ValueError(
             f"secondary-structure length mismatch for {structure.source_path}: expected {n}, got {len(structure.secondary_structure)}"
         )
+    if structure.relative_sasa is not None and structure.relative_sasa.shape != (n,):
+        raise ValueError(
+            f"relative SASA length mismatch for {structure.source_path}: expected {n}, got {structure.relative_sasa.shape}"
+        )
     return structure
 
 
@@ -58,7 +64,8 @@ def _parse_json_structure(path: Path) -> ParsedStructure:
     sequence = str(payload.get("sequence", ""))
     plddt = np.asarray(payload.get("plddt", []), dtype=float)
     ca_coords = np.asarray(payload.get("ca_coords", []), dtype=float)
-    secondary_structure = [str(item) for item in payload.get("secondary_structure", ["C"] * len(sequence))]
+    secondary_structure = [str(item) for item in payload.get("secondary_structure", [""] * len(sequence))]
+    relative_sasa = payload.get("relative_sasa")
     return _validate_structure(
         ParsedStructure(
             sequence=sequence,
@@ -66,8 +73,59 @@ def _parse_json_structure(path: Path) -> ParsedStructure:
             ca_coords=ca_coords,
             secondary_structure=secondary_structure,
             source_path=path,
+            relative_sasa=np.asarray(relative_sasa, dtype=float) if relative_sasa is not None else None,
         )
     )
+
+
+def _pdb_residue_annotations(
+    path: Path,
+    residue_keys: list[tuple[str, int, str]],
+) -> tuple[np.ndarray, list[str]]:
+    """Measure full-atom RSA; use DSSP assignments only when it is installed."""
+    from Bio.PDB import PDBParser, ShrakeRupley
+    from Bio.PDB.DSSP import DSSP, residue_max_acc
+
+    model = next(PDBParser(QUIET=True).get_structure("model", str(path)).get_models())
+    residues = {
+        (chain.id, residue.id[1], residue.id[2].strip()): residue
+        for chain in model
+        for residue in chain
+        if residue.id[0] == " "
+    }
+    ShrakeRupley(n_points=100).compute(model, level="R")
+    rsa = []
+    for key in residue_keys:
+        residue = residues.get(key)
+        if residue is None or not {"N", "CA", "C", "O"}.issubset(residue.child_dict):
+            rsa.append(float("nan"))
+            continue
+        maximum = residue_max_acc["Sander"].get(residue.resname.upper())
+        rsa.append(
+            min(1.0, max(0.0, float(residue.sasa) / maximum))
+            if maximum else float("nan")
+        )
+
+    secondary = [""] * len(residue_keys)
+    executable = shutil.which("mkdssp") or shutil.which("dssp")
+    if executable:
+        try:
+            dssp = DSSP(model, str(path), dssp=executable)
+            for index, key in enumerate(residue_keys):
+                residue = residues.get(key)
+                if residue is None or (key[0], residue.id) not in dssp:
+                    continue
+                assignment = dssp[(key[0], residue.id)][2]
+                secondary[index] = (
+                    "H" if assignment in {"H", "G", "I"}
+                    else "E" if assignment in {"E", "B"}
+                    else "C"
+                )
+        except Exception:
+            # DSSP is an optional annotation; its failures must not erase valid
+            # coordinates or SASA measured directly from the PDB atoms.
+            pass
+    return np.asarray(rsa, dtype=float), secondary
 
 
 def _parse_pdb_structure(path: Path) -> ParsedStructure:
@@ -79,7 +137,7 @@ def _parse_pdb_structure(path: Path) -> ParsedStructure:
         if atom_name != "CA":
             continue
         res_name = line[17:20].strip().upper()
-        chain_id = line[21].strip() or "A"
+        chain_id = line[21]
         res_seq_text = line[22:26].strip()
         insertion_code = line[26].strip()
         try:
@@ -95,7 +153,8 @@ def _parse_pdb_structure(path: Path) -> ParsedStructure:
     sequence = "".join(str(item["aa"]) for item in ordered)
     plddt = np.asarray([float(item["plddt"]) for item in ordered], dtype=float)
     ca_coords = np.asarray([item["coord"] for item in ordered], dtype=float)
-    secondary_structure = ["C"] * len(sequence)
+    residue_keys = sorted(residues.keys(), key=lambda item: (item[0], item[1], item[2]))
+    relative_sasa, secondary_structure = _pdb_residue_annotations(path, residue_keys)
     return _validate_structure(
         ParsedStructure(
             sequence=sequence,
@@ -103,6 +162,7 @@ def _parse_pdb_structure(path: Path) -> ParsedStructure:
             ca_coords=ca_coords,
             secondary_structure=secondary_structure,
             source_path=path,
+            relative_sasa=relative_sasa,
         )
     )
 

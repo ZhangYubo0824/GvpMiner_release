@@ -1,0 +1,11 @@
+motif_cluster,n_instances,n_sequences,mean_motif_pLDDT,high_confidence_fraction,best_feature,best_control_type,best_q_value,best_effect_median_difference,primary_n_proteins,primary_structural_association,low_prediction_confidence,exploratory_best_q_value,significant_endpoints
+GvpO_GLAM2_001,2745,2745,86.2614821958324,0.990528233151184,contact_density,composition_matched,0.0,0.04523809523809527,2745,True,False,0.0,3
+GvpO_GLAM2_002,2739,2739,86.36894220066402,0.9923329682365827,contact_density,composition_matched,0.0,0.04523809523809527,2739,True,False,0.0,3
+GvpO_GLAM2_003,2746,2746,86.21050410621487,0.9905316824471959,contact_density,composition_matched,0.0,0.044973544973544985,2746,True,False,0.0,3
+GvpO_GLAM2_004,2740,2740,86.52027687926066,0.9875912408759124,relative_SASA,composition_matched,0.0,-0.1743099420868058,2740,True,False,0.0,3
+GvpO_GLAM2_005,2751,2751,87.21689922947155,0.9858233369683751,contact_density,composition_matched,0.0,0.019999999999999934,2751,True,False,0.0,3
+GvpO_GLAM2_006,2753,2753,86.7345368773567,0.9883763167453687,relative_SASA,composition_matched,0.0,-0.2204720121833113,2753,True,False,0.0,3
+GvpO_GLAM2_007,2753,2753,86.7330651062413,0.9883763167453687,relative_SASA,composition_matched,0.0,-0.2204720121833113,2753,True,False,0.0,3
+GvpO_GLAM2_008,2677,2677,86.263567801365,0.9843107956667911,relative_SASA,composition_matched,0.0,-0.11946681113701874,2677,True,False,0.0,3
+GvpO_GLAM2_009,2734,2734,87.400216037625,0.9868324798829554,relative_SASA,composition_matched,0.0,-0.19386908166748773,2734,True,False,0.0,3
+GvpO_GLAM2_010,2329,2329,88.79060561719886,0.9879776728209532,contact_density,composition_matched,0.0,0.03333333333333338,2329,True,False,0.0,3

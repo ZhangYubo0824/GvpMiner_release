@@ -20,12 +20,6 @@ class MotifWindow:
     sequence: str
 
 
-@dataclass(frozen=True)
-class HmmerCommandPlan:
-    hmmscan: str
-    mafft: str
-    hmmbuild: str
-    hmmsearch: str
 
 
 def _to_int(value: object, default: int = 0) -> int:
@@ -86,20 +80,3 @@ def write_motif_window_fastas(
     return paths
 
 
-def build_hmmer_command_plan(
-    *,
-    motif_fasta: Path,
-    all_protein_fasta: Path,
-    pfam_hmm: Path,
-    output_dir: Path,
-) -> HmmerCommandPlan:
-    output_dir = Path(output_dir)
-    stem = Path(motif_fasta).stem
-    alignment = output_dir / f"{stem}.mafft.fasta"
-    motif_hmm = output_dir / f"{stem}.hmm"
-    return HmmerCommandPlan(
-        hmmscan=f'hmmscan --tblout "{output_dir / (stem + ".pfam.tbl")}" "{pfam_hmm}" "{motif_fasta}"',
-        mafft=f'mafft --auto "{motif_fasta}" > "{alignment}"',
-        hmmbuild=f'hmmbuild "{motif_hmm}" "{alignment}"',
-        hmmsearch=f'hmmsearch --tblout "{output_dir / (stem + ".all_gvp.tbl")}" "{motif_hmm}" "{all_protein_fasta}"',
-    )

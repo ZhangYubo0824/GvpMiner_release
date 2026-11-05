@@ -172,19 +172,17 @@ def build_arg_parser() -> argparse.ArgumentParser:
 
 
 try:
-    from config import PREPROCESSED_DIR, STRUCTURES_DIR
+    from config import SEQUENCE_TABLE, STRUCTURES_DIR
 except ImportError:
     _root = Path(__file__).resolve().parents[2]
-    PREPROCESSED_DIR = _root / "work" / "results" / "preprocessed"
+    SEQUENCE_TABLE = _root / "data" / "reference" / "preprocessed" / "cleaned_gvp_dataset.csv"
     STRUCTURES_DIR = _root / "work" / "results" / "structures"
 
 
-def default_project_root() -> Path:
-    return Path(__file__).resolve().parents[2]
 
 
 def _default_sequence_table() -> Path:
-    return PREPROCESSED_DIR / "cleaned_gvp_dataset.csv"
+    return SEQUENCE_TABLE
 
 
 def main(argv: Sequence[str] | None = None) -> None:

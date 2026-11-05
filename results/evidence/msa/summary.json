@@ -1,0 +1,1150 @@
+{
+  "analysis": "absolute_descriptive_unweighted_v2",
+  "n_candidates": 522,
+  "n_occurrences": 84012,
+  "n_aligned_families": 15,
+  "n_aligned_sequences": 26492,
+  "distribution": {
+    "n_candidates": 522,
+    "n_candidates_with_score": 492,
+    "mean_candidate_conservation": 0.5768309084265606,
+    "median_candidate_conservation": 0.5634013423122504,
+    "min_candidate_conservation": 0.2785854921406503,
+    "max_candidate_conservation": 0.8612267425944542,
+    "n_valid_occurrences": 74232,
+    "n_occurrences": 84012
+  },
+  "family_distributions": [
+    {
+      "family": "GvpA",
+      "n_candidates": 21,
+      "n_candidates_with_score": 21,
+      "mean_candidate_conservation": 0.6173792778655622,
+      "median_candidate_conservation": 0.6646045522391717,
+      "min_candidate_conservation": 0.3890798267881234,
+      "max_candidate_conservation": 0.8544044844136743,
+      "n_valid_occurrences": 4979,
+      "n_occurrences": 6312
+    },
+    {
+      "family": "GvpC",
+      "n_candidates": 29,
+      "n_candidates_with_score": 23,
+      "mean_candidate_conservation": 0.5431270644900927,
+      "median_candidate_conservation": 0.5339565750722916,
+      "min_candidate_conservation": 0.4865568814829409,
+      "max_candidate_conservation": 0.6595468415274774,
+      "n_valid_occurrences": 1192,
+      "n_occurrences": 1752
+    },
+    {
+      "family": "GvpD",
+      "n_candidates": 56,
+      "n_candidates_with_score": 55,
+      "mean_candidate_conservation": 0.47719393895516515,
+      "median_candidate_conservation": 0.46413936239008985,
+      "min_candidate_conservation": 0.37318670586787667,
+      "max_candidate_conservation": 0.6227438327891252,
+      "n_valid_occurrences": 1403,
+      "n_occurrences": 1444
+    },
+    {
+      "family": "GvpF",
+      "n_candidates": 66,
+      "n_candidates_with_score": 66,
+      "mean_candidate_conservation": 0.5865935662889479,
+      "median_candidate_conservation": 0.5749531110674736,
+      "min_candidate_conservation": 0.45648954346717857,
+      "max_candidate_conservation": 0.7233927827617863,
+      "n_valid_occurrences": 4363,
+      "n_occurrences": 4364
+    },
+    {
+      "family": "GvpG",
+      "n_candidates": 21,
+      "n_candidates_with_score": 20,
+      "mean_candidate_conservation": 0.4520830593435513,
+      "median_candidate_conservation": 0.4560156787098582,
+      "min_candidate_conservation": 0.3736924196393936,
+      "max_candidate_conservation": 0.534936937442178,
+      "n_valid_occurrences": 2286,
+      "n_occurrences": 2352
+    },
+    {
+      "family": "GvpJ",
+      "n_candidates": 69,
+      "n_candidates_with_score": 66,
+      "mean_candidate_conservation": 0.602828920304562,
+      "median_candidate_conservation": 0.6225398709808189,
+      "min_candidate_conservation": 0.40927232811362474,
+      "max_candidate_conservation": 0.7553362534975303,
+      "n_valid_occurrences": 13850,
+      "n_occurrences": 15478
+    },
+    {
+      "family": "GvpK",
+      "n_candidates": 77,
+      "n_candidates_with_score": 70,
+      "mean_candidate_conservation": 0.6979312721762019,
+      "median_candidate_conservation": 0.7021024285100848,
+      "min_candidate_conservation": 0.5454376339729172,
+      "max_candidate_conservation": 0.8280992750749204,
+      "n_valid_occurrences": 17423,
+      "n_occurrences": 20743
+    },
+    {
+      "family": "GvpL",
+      "n_candidates": 1,
+      "n_candidates_with_score": 1,
+      "mean_candidate_conservation": 0.5577292002500319,
+      "median_candidate_conservation": 0.5577292002500319,
+      "min_candidate_conservation": 0.5577292002500319,
+      "max_candidate_conservation": 0.5577292002500319,
+      "n_valid_occurrences": 75,
+      "n_occurrences": 75
+    },
+    {
+      "family": "GvpM",
+      "n_candidates": 6,
+      "n_candidates_with_score": 6,
+      "mean_candidate_conservation": 0.6699635387560807,
+      "median_candidate_conservation": 0.7720738981595131,
+      "min_candidate_conservation": 0.2999849657597701,
+      "max_candidate_conservation": 0.8612267425944542,
+      "n_valid_occurrences": 1280,
+      "n_occurrences": 1372
+    },
+    {
+      "family": "GvpN",
+      "n_candidates": 84,
+      "n_candidates_with_score": 80,
+      "mean_candidate_conservation": 0.5707526264330682,
+      "median_candidate_conservation": 0.5823264732986827,
+      "min_candidate_conservation": 0.2785854921406503,
+      "max_candidate_conservation": 0.8140585237279747,
+      "n_valid_occurrences": 15127,
+      "n_occurrences": 15823
+    },
+    {
+      "family": "GvpO",
+      "n_candidates": 17,
+      "n_candidates_with_score": 11,
+      "mean_candidate_conservation": 0.4971923383748388,
+      "median_candidate_conservation": 0.5431997479071965,
+      "min_candidate_conservation": 0.3704080541326597,
+      "max_candidate_conservation": 0.6090509142376471,
+      "n_valid_occurrences": 3124,
+      "n_occurrences": 4354
+    },
+    {
+      "family": "GvpQ",
+      "n_candidates": 7,
+      "n_candidates_with_score": 7,
+      "mean_candidate_conservation": 0.650452595235997,
+      "median_candidate_conservation": 0.640402374510316,
+      "min_candidate_conservation": 0.5514193057235854,
+      "max_candidate_conservation": 0.7091662143122489,
+      "n_valid_occurrences": 1762,
+      "n_occurrences": 1776
+    },
+    {
+      "family": "GvpT",
+      "n_candidates": 17,
+      "n_candidates_with_score": 15,
+      "mean_candidate_conservation": 0.6475515684566986,
+      "median_candidate_conservation": 0.663509528483065,
+      "min_candidate_conservation": 0.4940940748479824,
+      "max_candidate_conservation": 0.7487304797804557,
+      "n_valid_occurrences": 2544,
+      "n_occurrences": 3294
+    },
+    {
+      "family": "GvpU",
+      "n_candidates": 35,
+      "n_candidates_with_score": 35,
+      "mean_candidate_conservation": 0.4945116398391433,
+      "median_candidate_conservation": 0.49330795610666933,
+      "min_candidate_conservation": 0.30486478686475904,
+      "max_candidate_conservation": 0.6446072117906695,
+      "n_valid_occurrences": 4314,
+      "n_occurrences": 4362
+    },
+    {
+      "family": "GvpV",
+      "n_candidates": 16,
+      "n_candidates_with_score": 16,
+      "mean_candidate_conservation": 0.5261458295675194,
+      "median_candidate_conservation": 0.5332517115012614,
+      "min_candidate_conservation": 0.47308295243729714,
+      "max_candidate_conservation": 0.5879036774314924,
+      "n_valid_occurrences": 510,
+      "n_occurrences": 511
+    }
+  ],
+  "candidate_status_counts": {
+    "scored": 394,
+    "partially_scored": 98,
+    "no_valid_occurrences": 30
+  },
+  "occurrence_status_counts": {
+    "scored": 74232,
+    "inadequate_valid_positions": 9780
+  },
+  "families": [
+    {
+      "family": "GvpA",
+      "n_candidates": 21,
+      "n_occurrences": 6312,
+      "n_valid_occurrences": 4979,
+      "n_candidates_with_score": 21,
+      "occurrence_status_counts": {
+        "scored": 4979,
+        "inadequate_valid_positions": 1333
+      },
+      "alignment": {
+        "family": "GvpA",
+        "software": "MAFFT v7.526 Windows official signed distribution",
+        "method": "FFT-NS-1",
+        "download_url": "https://mafft.ddbj.nig.ac.jp/alignment/software/mafft-7.526-win64-signed.zip",
+        "input_sha256": "7d1c45f99da931357f927f4283d0b474c718b86ef3784fd90b53f823ca5f7fa9",
+        "alignment_sha256": "e5c25e4b4061baa0f38bb80a5ce0e0a754095c4ddcf3826b4968c1cc11b79b64",
+        "mafft_bat_sha256": "705d28f1143ced805c2de187911c68a3ec409434cb6a4c07a80d95419dc27819",
+        "alignment_generation_command": [
+          "C:\\Users\\Administrator\\.codex\\worktrees\\candidate-evidence\\Task1\\tools\\mafft\\mafft-win\\mafft.bat",
+          "--amino",
+          "--retree",
+          "1",
+          "--maxiterate",
+          "0",
+          "--thread",
+          "4",
+          "--out",
+          "C:\\Users\\Administrator\\.codex\\worktrees\\candidate-evidence\\Task1\\results\\candidate_evidence\\msa\\GvpA\\alignment.fasta",
+          "C:\\Users\\Administrator\\.codex\\worktrees\\candidate-evidence\\Task1\\results\\candidate_evidence\\msa\\GvpA\\input.fasta"
+        ],
+        "would_be_command_on_cache_miss": [
+          "C:\\Users\\Administrator\\.codex\\worktrees\\candidate-evidence\\Task1\\tools\\mafft\\mafft-win\\mafft.bat",
+          "--amino",
+          "--retree",
+          "1",
+          "--maxiterate",
+          "0",
+          "--thread",
+          "4",
+          "--out",
+          "C:\\Users\\Administrator\\.codex\\worktrees\\candidate-evidence\\Task1\\cache\\msa_alignments\\GvpA\\alignment.fasta",
+          "C:\\Users\\Administrator\\.codex\\worktrees\\candidate-evidence\\Task1\\cache\\msa_alignments\\GvpA\\input.fasta"
+        ],
+        "threads": 4,
+        "n_sequences": 1757,
+        "alignment_columns": 1173,
+        "validated_ungapped_identity": true,
+        "reused_validated_alignment": true,
+        "elapsed_seconds_this_invocation": 0.024,
+        "distribution_archive_sha256": "7c3a508c8512af04007d68019c6fbd4ff00d891244b58f87ec9aa0e53fbae8a7"
+      }
+    },
+    {
+      "family": "GvpC",
+      "n_candidates": 29,
+      "n_occurrences": 1752,
+      "n_valid_occurrences": 1192,
+      "n_candidates_with_score": 23,
+      "occurrence_status_counts": {
+        "scored": 1192,
+        "inadequate_valid_positions": 560
+      },
+      "alignment": {
+        "family": "GvpC",
+        "software": "MAFFT v7.526 Windows official signed distribution",
+        "method": "FFT-NS-1",
+        "download_url": "https://mafft.ddbj.nig.ac.jp/alignment/software/mafft-7.526-win64-signed.zip",
+        "input_sha256": "04efb01b2aa0c7d13414a073d4fa6e71ba16ce75a0ada8a1e0d635ff1aba6481",
+        "alignment_sha256": "a46c4de7e6b3258b824cbdacdf28d6632bc310805f8cd46706c98ad956addda6",
+        "mafft_bat_sha256": "705d28f1143ced805c2de187911c68a3ec409434cb6a4c07a80d95419dc27819",
+        "alignment_generation_command": [
+          "C:\\Users\\Administrator\\.codex\\worktrees\\candidate-evidence\\Task1\\tools\\mafft\\mafft-win\\mafft.bat",
+          "--amino",
+          "--retree",
+          "1",
+          "--maxiterate",
+          "0",
+          "--thread",
+          "4",
+          "--out",
+          "C:\\Users\\Administrator\\.codex\\worktrees\\candidate-evidence\\Task1\\results\\candidate_evidence\\msa\\GvpC\\alignment.fasta",
+          "C:\\Users\\Administrator\\.codex\\worktrees\\candidate-evidence\\Task1\\results\\candidate_evidence\\msa\\GvpC\\input.fasta"
+        ],
+        "would_be_command_on_cache_miss": [
+          "C:\\Users\\Administrator\\.codex\\worktrees\\candidate-evidence\\Task1\\tools\\mafft\\mafft-win\\mafft.bat",
+          "--amino",
+          "--retree",
+          "1",
+          "--maxiterate",
+          "0",
+          "--thread",
+          "4",
+          "--out",
+          "C:\\Users\\Administrator\\.codex\\worktrees\\candidate-evidence\\Task1\\cache\\msa_alignments\\GvpC\\alignment.fasta",
+          "C:\\Users\\Administrator\\.codex\\worktrees\\candidate-evidence\\Task1\\cache\\msa_alignments\\GvpC\\input.fasta"
+        ],
+        "threads": 4,
+        "n_sequences": 440,
+        "alignment_columns": 2533,
+        "validated_ungapped_identity": true,
+        "reused_validated_alignment": true,
+        "elapsed_seconds_this_invocation": 0.013,
+        "distribution_archive_sha256": "7c3a508c8512af04007d68019c6fbd4ff00d891244b58f87ec9aa0e53fbae8a7"
+      }
+    },
+    {
+      "family": "GvpD",
+      "n_candidates": 56,
+      "n_occurrences": 1444,
+      "n_valid_occurrences": 1403,
+      "n_candidates_with_score": 55,
+      "occurrence_status_counts": {
+        "scored": 1403,
+        "inadequate_valid_positions": 41
+      },
+      "alignment": {
+        "family": "GvpD",
+        "software": "MAFFT v7.526 Windows official signed distribution",
+        "method": "FFT-NS-1",
+        "download_url": "https://mafft.ddbj.nig.ac.jp/alignment/software/mafft-7.526-win64-signed.zip",
+        "input_sha256": "96723be6fadfc0baa0a8fc764c389e44c0ed99eddd1402635322d5041c855f68",
+        "alignment_sha256": "33d34c41106796d2b4581c17793ffb1598af71df9f92f1d8d56390299e6e8cf8",
+        "mafft_bat_sha256": "705d28f1143ced805c2de187911c68a3ec409434cb6a4c07a80d95419dc27819",
+        "alignment_generation_command": [
+          "C:\\Users\\Administrator\\.codex\\worktrees\\candidate-evidence\\Task1\\tools\\mafft\\mafft-win\\mafft.bat",
+          "--amino",
+          "--retree",
+          "1",
+          "--maxiterate",
+          "0",
+          "--thread",
+          "4",
+          "--out",
+          "C:\\Users\\Administrator\\.codex\\worktrees\\candidate-evidence\\Task1\\results\\candidate_evidence\\msa\\GvpD\\alignment.fasta",
+          "C:\\Users\\Administrator\\.codex\\worktrees\\candidate-evidence\\Task1\\results\\candidate_evidence\\msa\\GvpD\\input.fasta"
+        ],
+        "would_be_command_on_cache_miss": [
+          "C:\\Users\\Administrator\\.codex\\worktrees\\candidate-evidence\\Task1\\tools\\mafft\\mafft-win\\mafft.bat",
+          "--amino",
+          "--retree",
+          "1",
+          "--maxiterate",
+          "0",
+          "--thread",
+          "4",
+          "--out",
+          "C:\\Users\\Administrator\\.codex\\worktrees\\candidate-evidence\\Task1\\cache\\msa_alignments\\GvpD\\alignment.fasta",
+          "C:\\Users\\Administrator\\.codex\\worktrees\\candidate-evidence\\Task1\\cache\\msa_alignments\\GvpD\\input.fasta"
+        ],
+        "threads": 4,
+        "n_sequences": 108,
+        "alignment_columns": 1243,
+        "validated_ungapped_identity": true,
+        "reused_validated_alignment": true,
+        "elapsed_seconds_this_invocation": 0.002,
+        "distribution_archive_sha256": "7c3a508c8512af04007d68019c6fbd4ff00d891244b58f87ec9aa0e53fbae8a7"
+      }
+    },
+    {
+      "family": "GvpF",
+      "n_candidates": 66,
+      "n_occurrences": 4364,
+      "n_valid_occurrences": 4363,
+      "n_candidates_with_score": 66,
+      "occurrence_status_counts": {
+        "scored": 4363,
+        "inadequate_valid_positions": 1
+      },
+      "alignment": {
+        "family": "GvpF",
+        "software": "MAFFT v7.526 Windows official signed distribution",
+        "method": "FFT-NS-1",
+        "download_url": "https://mafft.ddbj.nig.ac.jp/alignment/software/mafft-7.526-win64-signed.zip",
+        "input_sha256": "45414a34d294af5beadc6a5257c4d2aeaf71f53af5363118f7dfc64a54b69ce6",
+        "alignment_sha256": "53658f7ef3bf6adb8e3244d735a385ce6fd727254663aea29c99eac4f644a17a",
+        "mafft_bat_sha256": "705d28f1143ced805c2de187911c68a3ec409434cb6a4c07a80d95419dc27819",
+        "alignment_generation_command": [
+          "C:\\Users\\Administrator\\.codex\\worktrees\\candidate-evidence\\Task1\\tools\\mafft\\mafft-win\\mafft.bat",
+          "--amino",
+          "--retree",
+          "1",
+          "--maxiterate",
+          "0",
+          "--thread",
+          "4",
+          "--out",
+          "C:\\Users\\Administrator\\.codex\\worktrees\\candidate-evidence\\Task1\\results\\candidate_evidence\\msa\\GvpF\\alignment.fasta",
+          "C:\\Users\\Administrator\\.codex\\worktrees\\candidate-evidence\\Task1\\results\\candidate_evidence\\msa\\GvpF\\input.fasta"
+        ],
+        "would_be_command_on_cache_miss": [
+          "C:\\Users\\Administrator\\.codex\\worktrees\\candidate-evidence\\Task1\\tools\\mafft\\mafft-win\\mafft.bat",
+          "--amino",
+          "--retree",
+          "1",
+          "--maxiterate",
+          "0",
+          "--thread",
+          "4",
+          "--out",
+          "C:\\Users\\Administrator\\.codex\\worktrees\\candidate-evidence\\Task1\\cache\\msa_alignments\\GvpF\\alignment.fasta",
+          "C:\\Users\\Administrator\\.codex\\worktrees\\candidate-evidence\\Task1\\cache\\msa_alignments\\GvpF\\input.fasta"
+        ],
+        "threads": 4,
+        "n_sequences": 599,
+        "alignment_columns": 563,
+        "validated_ungapped_identity": true,
+        "reused_validated_alignment": true,
+        "elapsed_seconds_this_invocation": 0.004,
+        "distribution_archive_sha256": "7c3a508c8512af04007d68019c6fbd4ff00d891244b58f87ec9aa0e53fbae8a7"
+      }
+    },
+    {
+      "family": "GvpG",
+      "n_candidates": 21,
+      "n_occurrences": 2352,
+      "n_valid_occurrences": 2286,
+      "n_candidates_with_score": 20,
+      "occurrence_status_counts": {
+        "scored": 2286,
+        "inadequate_valid_positions": 66
+      },
+      "alignment": {
+        "family": "GvpG",
+        "software": "MAFFT v7.526 Windows official signed distribution",
+        "method": "FFT-NS-1",
+        "download_url": "https://mafft.ddbj.nig.ac.jp/alignment/software/mafft-7.526-win64-signed.zip",
+        "input_sha256": "8543059bc14702846d5ef0779c89ad3b6f12c48f04be05db815c6dd684554e42",
+        "alignment_sha256": "32481b66b225eaa086b4426e82f1bc08adbafc447c0c174757bea36ce6aabbde",
+        "mafft_bat_sha256": "705d28f1143ced805c2de187911c68a3ec409434cb6a4c07a80d95419dc27819",
+        "alignment_generation_command": [
+          "C:\\Users\\Administrator\\.codex\\worktrees\\candidate-evidence\\Task1\\tools\\mafft\\mafft-win\\mafft.bat",
+          "--amino",
+          "--retree",
+          "1",
+          "--maxiterate",
+          "0",
+          "--thread",
+          "4",
+          "--out",
+          "C:\\Users\\Administrator\\.codex\\worktrees\\candidate-evidence\\Task1\\results\\candidate_evidence\\msa\\GvpG\\alignment.fasta",
+          "C:\\Users\\Administrator\\.codex\\worktrees\\candidate-evidence\\Task1\\results\\candidate_evidence\\msa\\GvpG\\input.fasta"
+        ],
+        "would_be_command_on_cache_miss": [
+          "C:\\Users\\Administrator\\.codex\\worktrees\\candidate-evidence\\Task1\\tools\\mafft\\mafft-win\\mafft.bat",
+          "--amino",
+          "--retree",
+          "1",
+          "--maxiterate",
+          "0",
+          "--thread",
+          "4",
+          "--out",
+          "C:\\Users\\Administrator\\.codex\\worktrees\\candidate-evidence\\Task1\\cache\\msa_alignments\\GvpG\\alignment.fasta",
+          "C:\\Users\\Administrator\\.codex\\worktrees\\candidate-evidence\\Task1\\cache\\msa_alignments\\GvpG\\input.fasta"
+        ],
+        "threads": 4,
+        "n_sequences": 664,
+        "alignment_columns": 915,
+        "validated_ungapped_identity": true,
+        "reused_validated_alignment": true,
+        "elapsed_seconds_this_invocation": 0.008,
+        "distribution_archive_sha256": "7c3a508c8512af04007d68019c6fbd4ff00d891244b58f87ec9aa0e53fbae8a7"
+      }
+    },
+    {
+      "family": "GvpJ",
+      "n_candidates": 69,
+      "n_occurrences": 15478,
+      "n_valid_occurrences": 13850,
+      "n_candidates_with_score": 66,
+      "occurrence_status_counts": {
+        "scored": 13850,
+        "inadequate_valid_positions": 1628
+      },
+      "alignment": {
+        "family": "GvpJ",
+        "software": "MAFFT v7.526 Windows official signed distribution",
+        "method": "FFT-NS-1",
+        "download_url": "https://mafft.ddbj.nig.ac.jp/alignment/software/mafft-7.526-win64-signed.zip",
+        "input_sha256": "91ea9139d398d1245a3623d6f1dbe2652eae6762d667ab30c04fe9043ece14a8",
+        "alignment_sha256": "03ad8398bc1c79676fbfc39e4821f72a57df0054d9440f67f5d9d2c08743f362",
+        "mafft_bat_sha256": "705d28f1143ced805c2de187911c68a3ec409434cb6a4c07a80d95419dc27819",
+        "alignment_generation_command": [
+          "C:\\Users\\Administrator\\.codex\\worktrees\\candidate-evidence\\Task1\\tools\\mafft\\mafft-win\\mafft.bat",
+          "--amino",
+          "--retree",
+          "1",
+          "--maxiterate",
+          "0",
+          "--thread",
+          "4",
+          "--out",
+          "C:\\Users\\Administrator\\.codex\\worktrees\\candidate-evidence\\Task1\\results\\candidate_evidence\\msa\\GvpJ\\alignment.fasta",
+          "C:\\Users\\Administrator\\.codex\\worktrees\\candidate-evidence\\Task1\\results\\candidate_evidence\\msa\\GvpJ\\input.fasta"
+        ],
+        "would_be_command_on_cache_miss": [
+          "C:\\Users\\Administrator\\.codex\\worktrees\\candidate-evidence\\Task1\\tools\\mafft\\mafft-win\\mafft.bat",
+          "--amino",
+          "--retree",
+          "1",
+          "--maxiterate",
+          "0",
+          "--thread",
+          "4",
+          "--out",
+          "C:\\Users\\Administrator\\.codex\\worktrees\\candidate-evidence\\Task1\\cache\\msa_alignments\\GvpJ\\alignment.fasta",
+          "C:\\Users\\Administrator\\.codex\\worktrees\\candidate-evidence\\Task1\\cache\\msa_alignments\\GvpJ\\input.fasta"
+        ],
+        "threads": 4,
+        "n_sequences": 6044,
+        "alignment_columns": 3698,
+        "validated_ungapped_identity": true,
+        "reused_validated_alignment": true,
+        "elapsed_seconds_this_invocation": 0.245,
+        "distribution_archive_sha256": "7c3a508c8512af04007d68019c6fbd4ff00d891244b58f87ec9aa0e53fbae8a7"
+      }
+    },
+    {
+      "family": "GvpK",
+      "n_candidates": 77,
+      "n_occurrences": 20743,
+      "n_valid_occurrences": 17423,
+      "n_candidates_with_score": 70,
+      "occurrence_status_counts": {
+        "inadequate_valid_positions": 3320,
+        "scored": 17423
+      },
+      "alignment": {
+        "family": "GvpK",
+        "software": "MAFFT v7.526 Windows official signed distribution",
+        "method": "FFT-NS-1",
+        "download_url": "https://mafft.ddbj.nig.ac.jp/alignment/software/mafft-7.526-win64-signed.zip",
+        "input_sha256": "45e92c63fb88da3a72338f076e971c4ba92e645ca60d0817132fc4c51ba7a78b",
+        "alignment_sha256": "68267bfa028927ffdd8adf57e10d6137e17f0fb5f86d5d649f1492ec02261132",
+        "mafft_bat_sha256": "705d28f1143ced805c2de187911c68a3ec409434cb6a4c07a80d95419dc27819",
+        "alignment_generation_command": [
+          "C:\\Users\\Administrator\\.codex\\worktrees\\candidate-evidence\\Task1\\tools\\mafft\\mafft-win\\mafft.bat",
+          "--amino",
+          "--retree",
+          "1",
+          "--maxiterate",
+          "0",
+          "--thread",
+          "4",
+          "--out",
+          "C:\\Users\\Administrator\\.codex\\worktrees\\candidate-evidence\\Task1\\results\\candidate_evidence\\msa\\GvpK\\alignment.fasta",
+          "C:\\Users\\Administrator\\.codex\\worktrees\\candidate-evidence\\Task1\\results\\candidate_evidence\\msa\\GvpK\\input.fasta"
+        ],
+        "would_be_command_on_cache_miss": [
+          "C:\\Users\\Administrator\\.codex\\worktrees\\candidate-evidence\\Task1\\tools\\mafft\\mafft-win\\mafft.bat",
+          "--amino",
+          "--retree",
+          "1",
+          "--maxiterate",
+          "0",
+          "--thread",
+          "4",
+          "--out",
+          "C:\\Users\\Administrator\\.codex\\worktrees\\candidate-evidence\\Task1\\cache\\msa_alignments\\GvpK\\alignment.fasta",
+          "C:\\Users\\Administrator\\.codex\\worktrees\\candidate-evidence\\Task1\\cache\\msa_alignments\\GvpK\\input.fasta"
+        ],
+        "threads": 4,
+        "n_sequences": 9695,
+        "alignment_columns": 2081,
+        "validated_ungapped_identity": true,
+        "reused_validated_alignment": true,
+        "elapsed_seconds_this_invocation": 0.389,
+        "distribution_archive_sha256": "7c3a508c8512af04007d68019c6fbd4ff00d891244b58f87ec9aa0e53fbae8a7"
+      }
+    },
+    {
+      "family": "GvpL",
+      "n_candidates": 1,
+      "n_occurrences": 75,
+      "n_valid_occurrences": 75,
+      "n_candidates_with_score": 1,
+      "occurrence_status_counts": {
+        "scored": 75
+      },
+      "alignment": {
+        "family": "GvpL",
+        "software": "MAFFT v7.526 Windows official signed distribution",
+        "method": "FFT-NS-1",
+        "download_url": "https://mafft.ddbj.nig.ac.jp/alignment/software/mafft-7.526-win64-signed.zip",
+        "input_sha256": "45f3e0ae5726f26247ab6a242c74b651a880ae1597591bf79cfb7fd32e6fb263",
+        "alignment_sha256": "85bd6596b823a2a32b0f218ffed8161165aaa0d36057cb99201d00987c48bebb",
+        "mafft_bat_sha256": "705d28f1143ced805c2de187911c68a3ec409434cb6a4c07a80d95419dc27819",
+        "alignment_generation_command": [
+          "C:\\Users\\Administrator\\.codex\\worktrees\\candidate-evidence\\Task1\\tools\\mafft\\mafft-win\\mafft.bat",
+          "--amino",
+          "--retree",
+          "1",
+          "--maxiterate",
+          "0",
+          "--thread",
+          "4",
+          "--out",
+          "C:\\Users\\Administrator\\.codex\\worktrees\\candidate-evidence\\Task1\\results\\candidate_evidence\\msa\\GvpL\\alignment.fasta",
+          "C:\\Users\\Administrator\\.codex\\worktrees\\candidate-evidence\\Task1\\results\\candidate_evidence\\msa\\GvpL\\input.fasta"
+        ],
+        "would_be_command_on_cache_miss": [
+          "C:\\Users\\Administrator\\.codex\\worktrees\\candidate-evidence\\Task1\\tools\\mafft\\mafft-win\\mafft.bat",
+          "--amino",
+          "--retree",
+          "1",
+          "--maxiterate",
+          "0",
+          "--thread",
+          "4",
+          "--out",
+          "C:\\Users\\Administrator\\.codex\\worktrees\\candidate-evidence\\Task1\\cache\\msa_alignments\\GvpL\\alignment.fasta",
+          "C:\\Users\\Administrator\\.codex\\worktrees\\candidate-evidence\\Task1\\cache\\msa_alignments\\GvpL\\input.fasta"
+        ],
+        "threads": 4,
+        "n_sequences": 358,
+        "alignment_columns": 918,
+        "validated_ungapped_identity": true,
+        "reused_validated_alignment": true,
+        "elapsed_seconds_this_invocation": 0.005,
+        "distribution_archive_sha256": "7c3a508c8512af04007d68019c6fbd4ff00d891244b58f87ec9aa0e53fbae8a7"
+      }
+    },
+    {
+      "family": "GvpM",
+      "n_candidates": 6,
+      "n_occurrences": 1372,
+      "n_valid_occurrences": 1280,
+      "n_candidates_with_score": 6,
+      "occurrence_status_counts": {
+        "scored": 1280,
+        "inadequate_valid_positions": 92
+      },
+      "alignment": {
+        "family": "GvpM",
+        "software": "MAFFT v7.526 Windows official signed distribution",
+        "method": "FFT-NS-1",
+        "download_url": "https://mafft.ddbj.nig.ac.jp/alignment/software/mafft-7.526-win64-signed.zip",
+        "input_sha256": "b6ea4b4f4765a980283efba5e1339d2ac1fdf18c056ed18fa387fdec97c318a1",
+        "alignment_sha256": "db52d7676e58777c2f2fdd39a8ae6147dd0d7e86d86c93a348b032c61d92dc26",
+        "mafft_bat_sha256": "705d28f1143ced805c2de187911c68a3ec409434cb6a4c07a80d95419dc27819",
+        "alignment_generation_command": [
+          "C:\\Users\\Administrator\\.codex\\worktrees\\candidate-evidence\\Task1\\tools\\mafft\\mafft-win\\mafft.bat",
+          "--amino",
+          "--retree",
+          "1",
+          "--maxiterate",
+          "0",
+          "--thread",
+          "4",
+          "--out",
+          "C:\\Users\\Administrator\\.codex\\worktrees\\candidate-evidence\\Task1\\results\\candidate_evidence\\msa\\GvpM\\alignment.fasta",
+          "C:\\Users\\Administrator\\.codex\\worktrees\\candidate-evidence\\Task1\\results\\candidate_evidence\\msa\\GvpM\\input.fasta"
+        ],
+        "would_be_command_on_cache_miss": [
+          "C:\\Users\\Administrator\\.codex\\worktrees\\candidate-evidence\\Task1\\tools\\mafft\\mafft-win\\mafft.bat",
+          "--amino",
+          "--retree",
+          "1",
+          "--maxiterate",
+          "0",
+          "--thread",
+          "4",
+          "--out",
+          "C:\\Users\\Administrator\\.codex\\worktrees\\candidate-evidence\\Task1\\cache\\msa_alignments\\GvpM\\alignment.fasta",
+          "C:\\Users\\Administrator\\.codex\\worktrees\\candidate-evidence\\Task1\\cache\\msa_alignments\\GvpM\\input.fasta"
+        ],
+        "threads": 4,
+        "n_sequences": 247,
+        "alignment_columns": 382,
+        "validated_ungapped_identity": true,
+        "reused_validated_alignment": true,
+        "elapsed_seconds_this_invocation": 0.002,
+        "distribution_archive_sha256": "7c3a508c8512af04007d68019c6fbd4ff00d891244b58f87ec9aa0e53fbae8a7"
+      }
+    },
+    {
+      "family": "GvpN",
+      "n_candidates": 84,
+      "n_occurrences": 15823,
+      "n_valid_occurrences": 15127,
+      "n_candidates_with_score": 80,
+      "occurrence_status_counts": {
+        "scored": 15127,
+        "inadequate_valid_positions": 696
+      },
+      "alignment": {
+        "family": "GvpN",
+        "software": "MAFFT v7.526 Windows official signed distribution",
+        "method": "FFT-NS-1",
+        "download_url": "https://mafft.ddbj.nig.ac.jp/alignment/software/mafft-7.526-win64-signed.zip",
+        "input_sha256": "f20563d2e73c97d535d80c477bb1c16d06850f5b71b9c8dff07db3e9693a2c65",
+        "alignment_sha256": "c90878296a34a3bb579876559b184040fc24d062f0c145bf48426fd480530f2a",
+        "mafft_bat_sha256": "705d28f1143ced805c2de187911c68a3ec409434cb6a4c07a80d95419dc27819",
+        "alignment_generation_command": [
+          "C:\\Users\\Administrator\\.codex\\worktrees\\candidate-evidence\\Task1\\tools\\mafft\\mafft-win\\mafft.bat",
+          "--amino",
+          "--retree",
+          "1",
+          "--maxiterate",
+          "0",
+          "--thread",
+          "4",
+          "--out",
+          "C:\\Users\\Administrator\\.codex\\worktrees\\candidate-evidence\\Task1\\results\\candidate_evidence\\msa\\GvpN\\alignment.fasta",
+          "C:\\Users\\Administrator\\.codex\\worktrees\\candidate-evidence\\Task1\\results\\candidate_evidence\\msa\\GvpN\\input.fasta"
+        ],
+        "would_be_command_on_cache_miss": [
+          "C:\\Users\\Administrator\\.codex\\worktrees\\candidate-evidence\\Task1\\tools\\mafft\\mafft-win\\mafft.bat",
+          "--amino",
+          "--retree",
+          "1",
+          "--maxiterate",
+          "0",
+          "--thread",
+          "4",
+          "--out",
+          "C:\\Users\\Administrator\\.codex\\worktrees\\candidate-evidence\\Task1\\cache\\msa_alignments\\GvpN\\alignment.fasta",
+          "C:\\Users\\Administrator\\.codex\\worktrees\\candidate-evidence\\Task1\\cache\\msa_alignments\\GvpN\\input.fasta"
+        ],
+        "threads": 4,
+        "n_sequences": 1542,
+        "alignment_columns": 1771,
+        "validated_ungapped_identity": true,
+        "reused_validated_alignment": true,
+        "elapsed_seconds_this_invocation": 0.029,
+        "distribution_archive_sha256": "7c3a508c8512af04007d68019c6fbd4ff00d891244b58f87ec9aa0e53fbae8a7"
+      }
+    },
+    {
+      "family": "GvpO",
+      "n_candidates": 17,
+      "n_occurrences": 4354,
+      "n_valid_occurrences": 3124,
+      "n_candidates_with_score": 11,
+      "occurrence_status_counts": {
+        "scored": 3124,
+        "inadequate_valid_positions": 1230
+      },
+      "alignment": {
+        "family": "GvpO",
+        "software": "MAFFT v7.526 Windows official signed distribution",
+        "method": "FFT-NS-1",
+        "download_url": "https://mafft.ddbj.nig.ac.jp/alignment/software/mafft-7.526-win64-signed.zip",
+        "input_sha256": "57d745193f4f3296ecf31c7b9d20d6531ffd1114b93e84348c83d1a7f894b372",
+        "alignment_sha256": "e4d09b1414aaf7ca7f9cae228fbb69ae24d81eba6ead2b4377d57cfae13fd52c",
+        "mafft_bat_sha256": "705d28f1143ced805c2de187911c68a3ec409434cb6a4c07a80d95419dc27819",
+        "alignment_generation_command": [
+          "C:\\Users\\Administrator\\.codex\\worktrees\\candidate-evidence\\Task1\\tools\\mafft\\mafft-win\\mafft.bat",
+          "--amino",
+          "--retree",
+          "1",
+          "--maxiterate",
+          "0",
+          "--thread",
+          "4",
+          "--out",
+          "C:\\Users\\Administrator\\.codex\\worktrees\\candidate-evidence\\Task1\\results\\candidate_evidence\\msa\\GvpO\\alignment.fasta",
+          "C:\\Users\\Administrator\\.codex\\worktrees\\candidate-evidence\\Task1\\results\\candidate_evidence\\msa\\GvpO\\input.fasta"
+        ],
+        "would_be_command_on_cache_miss": [
+          "C:\\Users\\Administrator\\.codex\\worktrees\\candidate-evidence\\Task1\\tools\\mafft\\mafft-win\\mafft.bat",
+          "--amino",
+          "--retree",
+          "1",
+          "--maxiterate",
+          "0",
+          "--thread",
+          "4",
+          "--out",
+          "C:\\Users\\Administrator\\.codex\\worktrees\\candidate-evidence\\Task1\\cache\\msa_alignments\\GvpO\\alignment.fasta",
+          "C:\\Users\\Administrator\\.codex\\worktrees\\candidate-evidence\\Task1\\cache\\msa_alignments\\GvpO\\input.fasta"
+        ],
+        "threads": 4,
+        "n_sequences": 2804,
+        "alignment_columns": 2661,
+        "validated_ungapped_identity": true,
+        "reused_validated_alignment": true,
+        "elapsed_seconds_this_invocation": 0.131,
+        "distribution_archive_sha256": "7c3a508c8512af04007d68019c6fbd4ff00d891244b58f87ec9aa0e53fbae8a7"
+      }
+    },
+    {
+      "family": "GvpQ",
+      "n_candidates": 7,
+      "n_occurrences": 1776,
+      "n_valid_occurrences": 1762,
+      "n_candidates_with_score": 7,
+      "occurrence_status_counts": {
+        "scored": 1762,
+        "inadequate_valid_positions": 14
+      },
+      "alignment": {
+        "family": "GvpQ",
+        "software": "MAFFT v7.526 Windows official signed distribution",
+        "method": "FFT-NS-1",
+        "download_url": "https://mafft.ddbj.nig.ac.jp/alignment/software/mafft-7.526-win64-signed.zip",
+        "input_sha256": "f42bbd5b78667be7ff2961edeec53d8f5abc87430e5f8ae7232a8cbebf604336",
+        "alignment_sha256": "ea842ac3c96af8b59298a922c80f26c372b0338008fe781cdf818928c1059d56",
+        "mafft_bat_sha256": "705d28f1143ced805c2de187911c68a3ec409434cb6a4c07a80d95419dc27819",
+        "alignment_generation_command": [
+          "C:\\Users\\Administrator\\.codex\\worktrees\\candidate-evidence\\Task1\\tools\\mafft\\mafft-win\\mafft.bat",
+          "--amino",
+          "--retree",
+          "1",
+          "--maxiterate",
+          "0",
+          "--thread",
+          "4",
+          "--out",
+          "C:\\Users\\Administrator\\.codex\\worktrees\\candidate-evidence\\Task1\\results\\candidate_evidence\\msa\\GvpQ\\alignment.fasta",
+          "C:\\Users\\Administrator\\.codex\\worktrees\\candidate-evidence\\Task1\\results\\candidate_evidence\\msa\\GvpQ\\input.fasta"
+        ],
+        "would_be_command_on_cache_miss": [
+          "C:\\Users\\Administrator\\.codex\\worktrees\\candidate-evidence\\Task1\\tools\\mafft\\mafft-win\\mafft.bat",
+          "--amino",
+          "--retree",
+          "1",
+          "--maxiterate",
+          "0",
+          "--thread",
+          "4",
+          "--out",
+          "C:\\Users\\Administrator\\.codex\\worktrees\\candidate-evidence\\Task1\\cache\\msa_alignments\\GvpQ\\alignment.fasta",
+          "C:\\Users\\Administrator\\.codex\\worktrees\\candidate-evidence\\Task1\\cache\\msa_alignments\\GvpQ\\input.fasta"
+        ],
+        "threads": 4,
+        "n_sequences": 471,
+        "alignment_columns": 923,
+        "validated_ungapped_identity": true,
+        "reused_validated_alignment": true,
+        "elapsed_seconds_this_invocation": 0.009,
+        "distribution_archive_sha256": "7c3a508c8512af04007d68019c6fbd4ff00d891244b58f87ec9aa0e53fbae8a7"
+      }
+    },
+    {
+      "family": "GvpT",
+      "n_candidates": 17,
+      "n_occurrences": 3294,
+      "n_valid_occurrences": 2544,
+      "n_candidates_with_score": 15,
+      "occurrence_status_counts": {
+        "scored": 2544,
+        "inadequate_valid_positions": 750
+      },
+      "alignment": {
+        "family": "GvpT",
+        "software": "MAFFT v7.526 Windows official signed distribution",
+        "method": "FFT-NS-1",
+        "download_url": "https://mafft.ddbj.nig.ac.jp/alignment/software/mafft-7.526-win64-signed.zip",
+        "input_sha256": "4dd253ba5374c3ce18eb49b569c7b5711bec8c388f36e4add032e0567cb05ce6",
+        "alignment_sha256": "854aad25ce5bcc3c6604ed558ce0e98a0a2c74542d5b20ebf237e67120fd1240",
+        "mafft_bat_sha256": "705d28f1143ced805c2de187911c68a3ec409434cb6a4c07a80d95419dc27819",
+        "alignment_generation_command": [
+          "C:\\Users\\Administrator\\.codex\\worktrees\\candidate-evidence\\Task1\\tools\\mafft\\mafft-win\\mafft.bat",
+          "--amino",
+          "--retree",
+          "1",
+          "--maxiterate",
+          "0",
+          "--thread",
+          "4",
+          "--out",
+          "C:\\Users\\Administrator\\.codex\\worktrees\\candidate-evidence\\Task1\\results\\candidate_evidence\\msa\\GvpT\\alignment.fasta",
+          "C:\\Users\\Administrator\\.codex\\worktrees\\candidate-evidence\\Task1\\results\\candidate_evidence\\msa\\GvpT\\input.fasta"
+        ],
+        "would_be_command_on_cache_miss": [
+          "C:\\Users\\Administrator\\.codex\\worktrees\\candidate-evidence\\Task1\\tools\\mafft\\mafft-win\\mafft.bat",
+          "--amino",
+          "--retree",
+          "1",
+          "--maxiterate",
+          "0",
+          "--thread",
+          "4",
+          "--out",
+          "C:\\Users\\Administrator\\.codex\\worktrees\\candidate-evidence\\Task1\\cache\\msa_alignments\\GvpT\\alignment.fasta",
+          "C:\\Users\\Administrator\\.codex\\worktrees\\candidate-evidence\\Task1\\cache\\msa_alignments\\GvpT\\input.fasta"
+        ],
+        "threads": 4,
+        "n_sequences": 572,
+        "alignment_columns": 1410,
+        "validated_ungapped_identity": true,
+        "reused_validated_alignment": true,
+        "elapsed_seconds_this_invocation": 0.011,
+        "distribution_archive_sha256": "7c3a508c8512af04007d68019c6fbd4ff00d891244b58f87ec9aa0e53fbae8a7"
+      }
+    },
+    {
+      "family": "GvpU",
+      "n_candidates": 35,
+      "n_occurrences": 4362,
+      "n_valid_occurrences": 4314,
+      "n_candidates_with_score": 35,
+      "occurrence_status_counts": {
+        "scored": 4314,
+        "inadequate_valid_positions": 48
+      },
+      "alignment": {
+        "family": "GvpU",
+        "software": "MAFFT v7.526 Windows official signed distribution",
+        "method": "FFT-NS-1",
+        "download_url": "https://mafft.ddbj.nig.ac.jp/alignment/software/mafft-7.526-win64-signed.zip",
+        "input_sha256": "defb38e1c3f9c15054da54ef47c4aa9d8d899407708805a730bfcd31a6034fa0",
+        "alignment_sha256": "681293cac63faeac4003c563bb29b405876a3335d129779d7a9b476806bb3a69",
+        "mafft_bat_sha256": "705d28f1143ced805c2de187911c68a3ec409434cb6a4c07a80d95419dc27819",
+        "alignment_generation_command": [
+          "C:\\Users\\Administrator\\.codex\\worktrees\\candidate-evidence\\Task1\\tools\\mafft\\mafft-win\\mafft.bat",
+          "--amino",
+          "--retree",
+          "1",
+          "--maxiterate",
+          "0",
+          "--thread",
+          "4",
+          "--out",
+          "C:\\Users\\Administrator\\.codex\\worktrees\\candidate-evidence\\Task1\\results\\candidate_evidence\\msa\\GvpU\\alignment.fasta",
+          "C:\\Users\\Administrator\\.codex\\worktrees\\candidate-evidence\\Task1\\results\\candidate_evidence\\msa\\GvpU\\input.fasta"
+        ],
+        "would_be_command_on_cache_miss": [
+          "C:\\Users\\Administrator\\.codex\\worktrees\\candidate-evidence\\Task1\\tools\\mafft\\mafft-win\\mafft.bat",
+          "--amino",
+          "--retree",
+          "1",
+          "--maxiterate",
+          "0",
+          "--thread",
+          "4",
+          "--out",
+          "C:\\Users\\Administrator\\.codex\\worktrees\\candidate-evidence\\Task1\\cache\\msa_alignments\\GvpU\\alignment.fasta",
+          "C:\\Users\\Administrator\\.codex\\worktrees\\candidate-evidence\\Task1\\cache\\msa_alignments\\GvpU\\input.fasta"
+        ],
+        "threads": 4,
+        "n_sequences": 1084,
+        "alignment_columns": 679,
+        "validated_ungapped_identity": true,
+        "reused_validated_alignment": true,
+        "elapsed_seconds_this_invocation": 0.016,
+        "distribution_archive_sha256": "7c3a508c8512af04007d68019c6fbd4ff00d891244b58f87ec9aa0e53fbae8a7"
+      }
+    },
+    {
+      "family": "GvpV",
+      "n_candidates": 16,
+      "n_occurrences": 511,
+      "n_valid_occurrences": 510,
+      "n_candidates_with_score": 16,
+      "occurrence_status_counts": {
+        "scored": 510,
+        "inadequate_valid_positions": 1
+      },
+      "alignment": {
+        "family": "GvpV",
+        "software": "MAFFT v7.526 Windows official signed distribution",
+        "method": "FFT-NS-1",
+        "download_url": "https://mafft.ddbj.nig.ac.jp/alignment/software/mafft-7.526-win64-signed.zip",
+        "input_sha256": "2d27c54eb7cc945ed8009f7eb181012a82ea36eea7cd8318cb9db5fa75b3670d",
+        "alignment_sha256": "f0a996f66db6c2963aebf50a8510f3f257392ec343266374bb461b255741c3af",
+        "mafft_bat_sha256": "705d28f1143ced805c2de187911c68a3ec409434cb6a4c07a80d95419dc27819",
+        "alignment_generation_command": [
+          "C:\\Users\\Administrator\\.codex\\worktrees\\candidate-evidence\\Task1\\tools\\mafft\\mafft-win\\mafft.bat",
+          "--amino",
+          "--retree",
+          "1",
+          "--maxiterate",
+          "0",
+          "--thread",
+          "4",
+          "--out",
+          "C:\\Users\\Administrator\\.codex\\worktrees\\candidate-evidence\\Task1\\results\\candidate_evidence\\msa\\GvpV\\alignment.fasta",
+          "C:\\Users\\Administrator\\.codex\\worktrees\\candidate-evidence\\Task1\\results\\candidate_evidence\\msa\\GvpV\\input.fasta"
+        ],
+        "would_be_command_on_cache_miss": [
+          "C:\\Users\\Administrator\\.codex\\worktrees\\candidate-evidence\\Task1\\tools\\mafft\\mafft-win\\mafft.bat",
+          "--amino",
+          "--retree",
+          "1",
+          "--maxiterate",
+          "0",
+          "--thread",
+          "4",
+          "--out",
+          "C:\\Users\\Administrator\\.codex\\worktrees\\candidate-evidence\\Task1\\cache\\msa_alignments\\GvpV\\alignment.fasta",
+          "C:\\Users\\Administrator\\.codex\\worktrees\\candidate-evidence\\Task1\\cache\\msa_alignments\\GvpV\\input.fasta"
+        ],
+        "threads": 4,
+        "n_sequences": 107,
+        "alignment_columns": 162,
+        "validated_ungapped_identity": true,
+        "reused_validated_alignment": true,
+        "elapsed_seconds_this_invocation": 0.002,
+        "distribution_archive_sha256": "7c3a508c8512af04007d68019c6fbd4ff00d891244b58f87ec9aa0e53fbae8a7"
+      }
+    }
+  ],
+  "inputs": [
+    {
+      "path": "D:\\研究内容\\Task1\\result6\\preprocessed\\cleaned_gvp_dataset.csv",
+      "sha256": "b503ddf49e84890fa6326a903e3d0dcf05bcd4800f7b155949071bad4821878c"
+    },
+    {
+      "path": "D:\\研究内容\\Task1\\results\\parameter_sensitivity_stable_motif_abc_parallel\\stable_motif_results_decisions_20261015_045257\\stage_c_confirmatory\\w20_s15\\confirmatory\\exp3_domain_discovery\\GvpA\\motif_catalog_M2.csv",
+      "sha256": "1193bb1e327ea6739a7cb417d98cd60b6da076b6ac62bbc4266a1646194b391c"
+    },
+    {
+      "path": "D:\\研究内容\\Task1\\results\\parameter_sensitivity_stable_motif_abc_parallel\\stable_motif_results_decisions_20261015_045257\\stage_c_confirmatory\\w20_s15\\confirmatory\\exp3_domain_discovery\\GvpA\\motif_occurrences_M2.csv",
+      "sha256": "2d53f52c1d7ffba9fba3214b45046b80cd1a7cbccaa11577dcc749cf6fe2644c"
+    },
+    {
+      "path": "D:\\研究内容\\Task1\\results\\parameter_sensitivity_stable_motif_abc_parallel\\stable_motif_results_decisions_20261015_045257\\stage_c_confirmatory\\w20_s15\\confirmatory\\exp3_domain_discovery\\GvpC\\motif_catalog_M2.csv",
+      "sha256": "c1bf20cc84616d84d294090624827e0e84c9db9ac7f6ee70e749e825c8c7f3df"
+    },
+    {
+      "path": "D:\\研究内容\\Task1\\results\\parameter_sensitivity_stable_motif_abc_parallel\\stable_motif_results_decisions_20261015_045257\\stage_c_confirmatory\\w20_s15\\confirmatory\\exp3_domain_discovery\\GvpC\\motif_occurrences_M2.csv",
+      "sha256": "807e218a3884f8fd5b46747d3b827849aa58dcc01e07d378033d4fc0f6bb0c8d"
+    },
+    {
+      "path": "D:\\研究内容\\Task1\\results\\parameter_sensitivity_stable_motif_abc_parallel\\stable_motif_results_decisions_20261015_045257\\stage_c_confirmatory\\w20_s15\\confirmatory\\exp3_domain_discovery\\GvpD\\motif_catalog_M2.csv",
+      "sha256": "e53002a2b0060db7a809f4ca4b1068458ee3417d007a2ada3e265a8d555b0868"
+    },
+    {
+      "path": "D:\\研究内容\\Task1\\results\\parameter_sensitivity_stable_motif_abc_parallel\\stable_motif_results_decisions_20261015_045257\\stage_c_confirmatory\\w20_s15\\confirmatory\\exp3_domain_discovery\\GvpD\\motif_occurrences_M2.csv",
+      "sha256": "f5630b77bcbab8f09d92caa87a61add3aa7d1eeff002e9a3fc9d9039c5b3519c"
+    },
+    {
+      "path": "D:\\研究内容\\Task1\\results\\parameter_sensitivity_stable_motif_abc_parallel\\stable_motif_results_decisions_20261015_045257\\stage_c_confirmatory\\w20_s15\\confirmatory\\exp3_domain_discovery\\GvpF\\motif_catalog_M2.csv",
+      "sha256": "a766034f89683874bf7221c0d31a3a1cb9bde7565bc1fbb9cad1f81cf9bcb3e4"
+    },
+    {
+      "path": "D:\\研究内容\\Task1\\results\\parameter_sensitivity_stable_motif_abc_parallel\\stable_motif_results_decisions_20261015_045257\\stage_c_confirmatory\\w20_s15\\confirmatory\\exp3_domain_discovery\\GvpF\\motif_occurrences_M2.csv",
+      "sha256": "ef9c6950211f9c156e47b9cdd963187d2f15d58a55e03484ee8e9f732d7cb5fd"
+    },
+    {
+      "path": "D:\\研究内容\\Task1\\results\\parameter_sensitivity_stable_motif_abc_parallel\\stable_motif_results_decisions_20261015_045257\\stage_c_confirmatory\\w20_s15\\confirmatory\\exp3_domain_discovery\\GvpG\\motif_catalog_M2.csv",
+      "sha256": "de413c90ed7b97f75a8b94b4e763c1b6462f8bc5005bbed666b821b9b8d3a06e"
+    },
+    {
+      "path": "D:\\研究内容\\Task1\\results\\parameter_sensitivity_stable_motif_abc_parallel\\stable_motif_results_decisions_20261015_045257\\stage_c_confirmatory\\w20_s15\\confirmatory\\exp3_domain_discovery\\GvpG\\motif_occurrences_M2.csv",
+      "sha256": "b021f230e382a8213fd5f570e6d47a7951ff9e43f6e0617eff337f4c6b81d2cb"
+    },
+    {
+      "path": "D:\\研究内容\\Task1\\results\\parameter_sensitivity_stable_motif_abc_parallel\\stable_motif_results_decisions_20261015_045257\\stage_c_confirmatory\\w20_s15\\confirmatory\\exp3_domain_discovery\\GvpH\\motif_catalog_M2.csv",
+      "sha256": "d74fe1ce6f5c569971112bbbc553785d2ee721077ee07668838ab91b619f0624"
+    },
+    {
+      "path": "D:\\研究内容\\Task1\\results\\parameter_sensitivity_stable_motif_abc_parallel\\stable_motif_results_decisions_20261015_045257\\stage_c_confirmatory\\w20_s15\\confirmatory\\exp3_domain_discovery\\GvpH\\motif_occurrences_M2.csv",
+      "sha256": "779f6ad197b908a294d0484fd10015596428fa09f98c587b2cca832ee39139bf"
+    },
+    {
+      "path": "D:\\研究内容\\Task1\\results\\parameter_sensitivity_stable_motif_abc_parallel\\stable_motif_results_decisions_20261015_045257\\stage_c_confirmatory\\w20_s15\\confirmatory\\exp3_domain_discovery\\GvpJ\\motif_catalog_M2.csv",
+      "sha256": "daf611b0cb857ac32443bed09f5c4a57e90741ddd851e165281fa405b0dc0546"
+    },
+    {
+      "path": "D:\\研究内容\\Task1\\results\\parameter_sensitivity_stable_motif_abc_parallel\\stable_motif_results_decisions_20261015_045257\\stage_c_confirmatory\\w20_s15\\confirmatory\\exp3_domain_discovery\\GvpJ\\motif_occurrences_M2.csv",
+      "sha256": "c11c32b0acc7908ab512419ea2ced17db76a011f176a7d96d12d033ca18aaa57"
+    },
+    {
+      "path": "D:\\研究内容\\Task1\\results\\parameter_sensitivity_stable_motif_abc_parallel\\stable_motif_results_decisions_20261015_045257\\stage_c_confirmatory\\w20_s15\\confirmatory\\exp3_domain_discovery\\GvpK\\motif_catalog_M2.csv",
+      "sha256": "0bc1827565fffe992938f234ee50ec5dcc11b6b209cef0fd4693f87379d4a00d"
+    },
+    {
+      "path": "D:\\研究内容\\Task1\\results\\parameter_sensitivity_stable_motif_abc_parallel\\stable_motif_results_decisions_20261015_045257\\stage_c_confirmatory\\w20_s15\\confirmatory\\exp3_domain_discovery\\GvpK\\motif_occurrences_M2.csv",
+      "sha256": "a8e2d748aba72d8b59ca6cf6200d478f49f1a528a367fc64cf5a717adc074159"
+    },
+    {
+      "path": "D:\\研究内容\\Task1\\results\\parameter_sensitivity_stable_motif_abc_parallel\\stable_motif_results_decisions_20261015_045257\\stage_c_confirmatory\\w20_s15\\confirmatory\\exp3_domain_discovery\\GvpL\\motif_catalog_M2.csv",
+      "sha256": "1cb324ceeecec90b5ee22013950c355c2f16c5c755a0a4b7dd707116bda35057"
+    },
+    {
+      "path": "D:\\研究内容\\Task1\\results\\parameter_sensitivity_stable_motif_abc_parallel\\stable_motif_results_decisions_20261015_045257\\stage_c_confirmatory\\w20_s15\\confirmatory\\exp3_domain_discovery\\GvpL\\motif_occurrences_M2.csv",
+      "sha256": "517f03817be2296bf72318d99c76920beb0ab6aa2783dcb291c8c6dbb9f70b10"
+    },
+    {
+      "path": "D:\\研究内容\\Task1\\results\\parameter_sensitivity_stable_motif_abc_parallel\\stable_motif_results_decisions_20261015_045257\\stage_c_confirmatory\\w20_s15\\confirmatory\\exp3_domain_discovery\\GvpM\\motif_catalog_M2.csv",
+      "sha256": "3ef37773b851de78cf00cd49f51ebeffdf7f99c7352058a99c45652a49694010"
+    },
+    {
+      "path": "D:\\研究内容\\Task1\\results\\parameter_sensitivity_stable_motif_abc_parallel\\stable_motif_results_decisions_20261015_045257\\stage_c_confirmatory\\w20_s15\\confirmatory\\exp3_domain_discovery\\GvpM\\motif_occurrences_M2.csv",
+      "sha256": "060fe5c00273e0402be721ebe43bf06693b39f5a6351abddb82ef3b4a3b442f8"
+    },
+    {
+      "path": "D:\\研究内容\\Task1\\results\\parameter_sensitivity_stable_motif_abc_parallel\\stable_motif_results_decisions_20261015_045257\\stage_c_confirmatory\\w20_s15\\confirmatory\\exp3_domain_discovery\\GvpN\\motif_catalog_M2.csv",
+      "sha256": "c476a5cd7f8200129be8794c3c39dab16b43e3f702a3a476489f1bd8a69d05d7"
+    },
+    {
+      "path": "D:\\研究内容\\Task1\\results\\parameter_sensitivity_stable_motif_abc_parallel\\stable_motif_results_decisions_20261015_045257\\stage_c_confirmatory\\w20_s15\\confirmatory\\exp3_domain_discovery\\GvpN\\motif_occurrences_M2.csv",
+      "sha256": "47d98adc7d3a0ec6841a195a531958b0b544463902d401dc1e568f4ba07ac839"
+    },
+    {
+      "path": "D:\\研究内容\\Task1\\results\\parameter_sensitivity_stable_motif_abc_parallel\\stable_motif_results_decisions_20261015_045257\\stage_c_confirmatory\\w20_s15\\confirmatory\\exp3_domain_discovery\\GvpO\\motif_catalog_M2.csv",
+      "sha256": "4fbb111e5307e178f70f3b7f915841dc3a11fcedaf88087ef5636def479e517e"
+    },
+    {
+      "path": "D:\\研究内容\\Task1\\results\\parameter_sensitivity_stable_motif_abc_parallel\\stable_motif_results_decisions_20261015_045257\\stage_c_confirmatory\\w20_s15\\confirmatory\\exp3_domain_discovery\\GvpO\\motif_occurrences_M2.csv",
+      "sha256": "248362912ee7a835603db41196f7af191de8efae05ac8e733c2c3ab1f13769ef"
+    },
+    {
+      "path": "D:\\研究内容\\Task1\\results\\parameter_sensitivity_stable_motif_abc_parallel\\stable_motif_results_decisions_20261015_045257\\stage_c_confirmatory\\w20_s15\\confirmatory\\exp3_domain_discovery\\GvpQ\\motif_catalog_M2.csv",
+      "sha256": "a707743bb92d0630692ce04f82fa8255488d4ef600b5ad21c33ec00438313a96"
+    },
+    {
+      "path": "D:\\研究内容\\Task1\\results\\parameter_sensitivity_stable_motif_abc_parallel\\stable_motif_results_decisions_20261015_045257\\stage_c_confirmatory\\w20_s15\\confirmatory\\exp3_domain_discovery\\GvpQ\\motif_occurrences_M2.csv",
+      "sha256": "478aa27df729a98508f327306b2d1e35242ec8f53aef302ecec167810e018943"
+    },
+    {
+      "path": "D:\\研究内容\\Task1\\results\\parameter_sensitivity_stable_motif_abc_parallel\\stable_motif_results_decisions_20261015_045257\\stage_c_confirmatory\\w20_s15\\confirmatory\\exp3_domain_discovery\\GvpT\\motif_catalog_M2.csv",
+      "sha256": "401eb090dd466637b04a6334028e7edf48dec5d422a46b13182293803b181432"
+    },
+    {
+      "path": "D:\\研究内容\\Task1\\results\\parameter_sensitivity_stable_motif_abc_parallel\\stable_motif_results_decisions_20261015_045257\\stage_c_confirmatory\\w20_s15\\confirmatory\\exp3_domain_discovery\\GvpT\\motif_occurrences_M2.csv",
+      "sha256": "e079838dfe44897513ce8b0538317c5b2a42518ad4298f05fc42ea12b30bebcd"
+    },
+    {
+      "path": "D:\\研究内容\\Task1\\results\\parameter_sensitivity_stable_motif_abc_parallel\\stable_motif_results_decisions_20261015_045257\\stage_c_confirmatory\\w20_s15\\confirmatory\\exp3_domain_discovery\\GvpU\\motif_catalog_M2.csv",
+      "sha256": "d2f4ae79a0d92aa805603335cb16357c646c3e39d9cf1cb287d57da114683445"
+    },
+    {
+      "path": "D:\\研究内容\\Task1\\results\\parameter_sensitivity_stable_motif_abc_parallel\\stable_motif_results_decisions_20261015_045257\\stage_c_confirmatory\\w20_s15\\confirmatory\\exp3_domain_discovery\\GvpU\\motif_occurrences_M2.csv",
+      "sha256": "66b8a8a8a1eb81cef709c9caa59d03fdfdc37ed9d8857e50f6ac9deeeddcbe0b"
+    },
+    {
+      "path": "D:\\研究内容\\Task1\\results\\parameter_sensitivity_stable_motif_abc_parallel\\stable_motif_results_decisions_20261015_045257\\stage_c_confirmatory\\w20_s15\\confirmatory\\exp3_domain_discovery\\GvpV\\motif_catalog_M2.csv",
+      "sha256": "b40c560c62508f2d7151067a16e8105bd4c5bca040d15aed1d3fbdae617cb3bb"
+    },
+    {
+      "path": "D:\\研究内容\\Task1\\results\\parameter_sensitivity_stable_motif_abc_parallel\\stable_motif_results_decisions_20261015_045257\\stage_c_confirmatory\\w20_s15\\confirmatory\\exp3_domain_discovery\\GvpV\\motif_occurrences_M2.csv",
+      "sha256": "e65b952751834ac6162a6cbea7706efaeb53242156493fd575b9b5e9dea640c8"
+    }
+  ],
+  "zero_candidate_families": [
+    {
+      "family": "GvpH",
+      "n_candidates": 0,
+      "n_occurrences": 0
+    }
+  ],
+  "configuration": {
+    "weighting": "unit_protein_weights",
+    "minimum_column_occupancy": 0.5,
+    "minimum_occurrence_valid_coverage": 0.5,
+    "protein_aggregation": "median_of_valid_occurrence_means",
+    "candidate_aggregation": "equal_protein_mean_sd_median_min_max",
+    "analysis_type": "descriptive_only",
+    "versions": {
+      "python": "3.12.14 (main, Aug 25 2026, 14:01:42) [MSC v.1944 64 bit (AMD64)]",
+      "numpy": "2.5.4",
+      "pandas": "3.0.1"
+    },
+    "argv": [
+      "C:\\Users\\Administrator\\.codex\\worktrees\\candidate-evidence\\Task1\\scripts\\candidate_evidence\\conservation.py",
+      "--source-root",
+      "D:\\研究内容\\Task1",
+      "--output-root",
+      "results/candidate_evidence/msa"
+    ]
+  }
+}

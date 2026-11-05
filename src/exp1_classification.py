@@ -29,11 +29,7 @@ from pathlib import Path
 from collections import Counter
 
 sys.path.insert(0, str(Path(__file__).parent.resolve()))
-from config import (
-    EXP1_DIR, PREPROCESSED_DIR,
-    EXP1_CV_FOLDS, EXP1_RF_ESTIMATORS, EXP1_RANDOM_STATE,
-    MIN_FAMILY_SIZE,
-)
+from config import EXP1_DIR, SEQUENCE_TABLE, EXP1_CV_FOLDS, EXP1_RF_ESTIMATORS, EXP1_RANDOM_STATE, MIN_FAMILY_SIZE
 
 from sklearn.ensemble import RandomForestClassifier
 from sklearn.model_selection import StratifiedKFold
@@ -46,7 +42,7 @@ from sklearn.preprocessing import LabelEncoder
 
 def load_dataset():
     """加载预处理后的数据集"""
-    csv_path = PREPROCESSED_DIR / "cleaned_gvp_dataset.csv"
+    csv_path = SEQUENCE_TABLE
     if not csv_path.exists():
         print(f"错误: 找不到 {csv_path}")
         print("请先运行 data_preprocessing.py")
@@ -421,7 +417,7 @@ def main():
         # 降维可视化
         from utils.visualization import plot_dimensionality_reduction
         dim_reduction_path = EXP1_DIR / f"exp1_dim_reduction_{method}.png"
-        plot_dimensionality_reduction(X, labels, method, le.classes_, dim_reduction_path)
+        plot_dimensionality_reduction(X, labels, method, dim_reduction_path)
 
         result = evaluate_classification(X, y, le, method)
         all_results.append(result)

@@ -1,0 +1,7 @@
+motif_uid,family,method,cluster_label,rank_within_method,min_start,max_end,mean_start,mean_end,position_std,n_windows,n_unique_sequences,support_ratio,dominant_family,cross_species_count,median_window_jaccard,median_protein_jaccard,median_occurrence_jaccard,median_recovery_fraction,stable_repeat_fraction,split_repeat_fraction,merge_repeat_fraction,seed_recovery_count,seed_total,pca_window_jaccard,null_empirical_p,null_fdr
+GvpM_M2_motif_001,GvpM,M2,1,1,30,50,30.0,50.0,0.0,247,247,1.0,GvpM,247,1.0,1.0,1.0,1.0,0.84,0.16,0.0,5,5,1.0,1.0,1.0
+GvpM_M2_motif_002,GvpM,M2,2,2,0,20,0.0,20.0,0.0,247,247,1.0,GvpM,247,1.0,1.0,1.0,1.0,0.96,0.04,0.0,5,5,1.0,1.0,1.0
+GvpM_M2_motif_003,GvpM,M2,3,3,15,35,15.0,35.0,0.0,247,247,1.0,GvpM,247,1.0,1.0,1.0,1.0,0.94,0.06,0.0,5,5,1.0,1.0,1.0
+GvpM_M2_motif_004,GvpM,M2,5,4,45,65,45.0,65.0,0.0,247,247,1.0,GvpM,247,1.0,1.0,1.0,1.0,1.0,0.0,0.0,5,5,1.0,1.0,1.0
+GvpM_M2_motif_005,GvpM,M2,0,5,60,80,60.0,80.0,0.0,228,228,0.9230769230769231,GvpM,228,1.0,1.0,1.0,1.0,1.0,0.0,0.0,5,5,1.0,1.0,1.0
+GvpM_M2_motif_006,GvpM,M2,4,6,75,230,86.80147058823529,106.80147058823529,19.793722955159435,272,156,0.631578947368421,GvpM,156,1.0,1.0,1.0,1.0,1.0,0.0,0.0,5,5,0.9227941176470589,1.0,1.0

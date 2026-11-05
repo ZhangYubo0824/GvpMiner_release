@@ -1,0 +1,9 @@
+﻿strict_structure,annotation_support,cross_model_match_j050,candidates
+True,True,True,76
+True,True,False,119
+True,False,True,72
+True,False,False,81
+False,True,True,23
+False,True,False,6
+False,False,True,72
+False,False,False,73

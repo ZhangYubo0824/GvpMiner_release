@@ -1,34 +1,13 @@
 #!/usr/bin/env python3
-"""
-实验3: 微观功能域无监督发现 (⭐核心实验)
-=========================================
-滑动窗口 → 两种蛋白语言模型方法 (ESM-2/ProtBERT) → 双层聚类 → InterPro交叉验证 → Motif发现
+"""Local ESM-2/ProtBERT window discovery with UMAP and HDBSCAN.
 
-方法:
-    M2: ESM-2 语言模型嵌入 → KMeans + DBSCAN
-    M3: ProtBERT 语言模型嵌入 → KMeans + DBSCAN
-
-用法:
-    python exp3_domain_discovery.py                         # 全部家族+全部方法
-    python exp3_domain_discovery.py --families GvpA GvpN    # 指定家族
-    python exp3_domain_discovery.py --methods M2 M3         # 指定方法
-    python exp3_domain_discovery.py --families GvpA --methods M2  # 组合
-
-输出:
-    work/results/exp3_domain_discovery/
-        {family}/
-            windows_metadata.csv              — 滑动窗口元数据
-            embeddings_{M2|M3}.npy            — 窗口嵌入缓存
-            clustering_{method}_labels.npy    — 聚类标签
-            clustering_{method}_metrics.json  — 聚类质量指标
-            motif_positions_{method}.csv      — 发现的Motif位置
-            motif_heatmap_{family}.png        — 两方法Motif位置热图
-        clustering_comparison.csv             — 两方法聚类质量对比
-        clustering_comparison.png             — 聚类质量柱状图
+The paper profile uses a 20-aa window and 15-aa stride. New outputs are
+written under work/results; use the A/B/C workflow for final stable selection.
 """
 
 import sys
 import csv
+import hashlib
 import json
 import argparse
 import numpy as np
@@ -38,11 +17,13 @@ from tqdm import tqdm
 
 sys.path.insert(0, str(Path(__file__).parent.resolve()))
 from config import (
-    EXP3_DIR, PREPROCESSED_DIR, INTERPRO_DIR, GLOBAL_RESIDUE_CACHE_DIR,
+    EXP3_DIR, PREPROCESSED_DIR, SEQUENCE_TABLE, GLOBAL_RESIDUE_CACHE_DIR,
     EXP3_WINDOW_SIZE, EXP3_WINDOW_STEP,
-    EXP3_DBSCAN_MIN_SAMPLES,
-    MIN_FAMILY_SIZE,
+    EXP3_MIN_WINDOWS,
+    MIN_FAMILY_SIZE, ESM2_MODEL_NAME, ESM2_REPR_LAYER,
+    PROTBERT_MODEL_NAME,
 )
+from embeddings import residue_cache
 from motif_representative_windows import build_family_method_representatives
 
 
@@ -108,52 +89,227 @@ def get_window_embedder(method_name):
         raise ValueError(f"未知嵌入方法: {method_name}")
 
 
-def embed_windows(method_name, sequences, windows, cache_dir):
-    """
-    逻辑优化：先提取全序列残基嵌入，再通过切片计算窗口均值
-    """
-    cache_path = cache_dir / f"embeddings_{method_name}_optimized.npy"
-    if cache_path.exists():
-        return np.load(cache_path)
+def sha256_file(path):
+    digest = hashlib.sha256()
+    with Path(path).open("rb") as handle:
+        for block in iter(lambda: handle.read(1024 * 1024), b""):
+            digest.update(block)
+    return digest.hexdigest()
 
-    import hashlib
+
+def fingerprint_window_ids(windows):
+    digest = hashlib.sha256()
+    for window in windows:
+        digest.update(f"{window['window_id']}\n".encode("utf-8"))
+    return digest.hexdigest()
+
+
+def _window_cache_paths(cache_dir, method_name):
+    cache_dir = Path(cache_dir)
+    stem = f"embeddings_{method_name}_optimized"
+    return cache_dir / f"{stem}.npy", cache_dir / f"{stem}.manifest.json"
+
+
+def _embedding_model_signature(method_name):
+    if method_name == "M2":
+        return {"model_name": ESM2_MODEL_NAME, "repr_layer": ESM2_REPR_LAYER}
+    if method_name == "M3":
+        return {"model_name": PROTBERT_MODEL_NAME, "repr_layer": None}
+    raise ValueError(f"未知嵌入方法: {method_name}")
+
+
+def _expected_window_cache_manifest(
+    method_name,
+    windows,
+    *,
+    window_size,
+    window_step,
+    dataset_fingerprint,
+    array_shape=None,
+    dtype=None,
+):
+    manifest = {
+        "schema_version": 1,
+        "method": method_name,
+        "window_size": int(window_size),
+        "window_step": int(window_step),
+        "dataset_fingerprint": str(dataset_fingerprint),
+        "window_count": len(windows),
+        "window_id_fingerprint": fingerprint_window_ids(windows),
+        **_embedding_model_signature(method_name),
+    }
+    if array_shape is not None:
+        manifest["array_shape"] = list(array_shape)
+    if dtype is not None:
+        manifest["dtype"] = str(np.dtype(dtype))
+    return manifest
+
+
+def save_window_embedding_cache(
+    cache_dir,
+    method_name,
+    array,
+    windows,
+    *,
+    window_size,
+    window_step,
+    dataset_fingerprint,
+):
+    cache_path, manifest_path = _window_cache_paths(cache_dir, method_name)
+    cache_path.parent.mkdir(parents=True, exist_ok=True)
+    array = np.asarray(array)
+    manifest = _expected_window_cache_manifest(
+        method_name,
+        windows,
+        window_size=window_size,
+        window_step=window_step,
+        dataset_fingerprint=dataset_fingerprint,
+        array_shape=array.shape,
+        dtype=array.dtype,
+    )
+
+    temporary_cache = cache_path.with_suffix(".npy.tmp")
+    with temporary_cache.open("wb") as handle:
+        np.save(handle, array, allow_pickle=False)
+    temporary_cache.replace(cache_path)
+
+    temporary_manifest = manifest_path.with_suffix(".json.tmp")
+    with temporary_manifest.open("w", encoding="utf-8") as handle:
+        json.dump(manifest, handle, indent=2, sort_keys=True)
+        handle.write("\n")
+    temporary_manifest.replace(manifest_path)
+
+
+def load_window_embedding_cache(
+    cache_dir,
+    method_name,
+    windows,
+    *,
+    window_size,
+    window_step,
+    dataset_fingerprint,
+):
+    cache_path, manifest_path = _window_cache_paths(cache_dir, method_name)
+    if not cache_path.exists() and not manifest_path.exists():
+        return None
+    if not cache_path.is_file() or not manifest_path.is_file():
+        raise ValueError(
+            f"incomplete window cache: expected {cache_path.name} and "
+            f"{manifest_path.name}"
+        )
+
+    with manifest_path.open("r", encoding="utf-8") as handle:
+        actual = json.load(handle)
+    expected = _expected_window_cache_manifest(
+        method_name,
+        windows,
+        window_size=window_size,
+        window_step=window_step,
+        dataset_fingerprint=dataset_fingerprint,
+    )
+    for key, value in expected.items():
+        if actual.get(key) != value:
+            raise ValueError(
+                f"window cache manifest mismatch: {key}: "
+                f"expected {value!r}, got {actual.get(key)!r}"
+            )
+
+    array = np.load(cache_path, allow_pickle=False)
+    for key, value in {
+        "array_shape": list(array.shape),
+        "dtype": str(array.dtype),
+    }.items():
+        if actual.get(key) != value:
+            raise ValueError(
+                f"window cache manifest mismatch: {key}: "
+                f"expected {value!r}, got {actual.get(key)!r}"
+            )
+    expected_shape = (len(windows), residue_cache.EXPECTED_DIMS[method_name])
+    if array.shape != expected_shape:
+        raise ValueError(
+            f"window cache manifest mismatch: array_shape: "
+            f"expected {list(expected_shape)!r}, got {list(array.shape)!r}"
+        )
+    return array
+
+
+def embed_windows(
+    method_name,
+    windows,
+    cache_dir,
+    *,
+    window_size,
+    window_step,
+    dataset_fingerprint,
+    residue_cache_dirs,
+    residue_cache_fallback_dir,
+    audit_callback=None,
+    force_recompute=False,
+):
+    """Pool validated per-residue embeddings without retaining all proteins."""
+    cached = None
+    if not force_recompute:
+        cached = load_window_embedding_cache(
+            cache_dir,
+            method_name,
+            windows,
+            window_size=window_size,
+            window_step=window_step,
+            dataset_fingerprint=dataset_fingerprint,
+        )
+    if cached is not None:
+        return cached
 
     print(f"    提取 {method_name} 残基嵌入并计算窗口向量...")
-    embedder = get_window_embedder(method_name)  # 获取 ESM2 或 ProtBERT 实例
+    embedder_holder = {}
 
-    # 1. 预计算所有唯一序列的残基嵌入
-    unique_seqs = list(set(sequences))
-    seq_to_embedding = {}
+    def compute_residue_embedding(sequence):
+        if "embedder" not in embedder_holder:
+            embedder_holder["embedder"] = get_window_embedder(method_name)
+        return embedder_holder["embedder"].embed_per_residue(sequence)
 
-    for seq in tqdm(unique_seqs, desc="    [pLM] 序列推理"):
-        # 计算序列哈希作为缓存键
-        seq_hash = hashlib.md5(seq.encode('utf-8')).hexdigest()
-        seq_cache_path = GLOBAL_RESIDUE_CACHE_DIR / f"{method_name}_{seq_hash}.npy"
+    dimension = residue_cache.EXPECTED_DIMS[method_name]
+    vectors = np.empty((len(windows), dimension), dtype=np.float32)
 
-        if seq_cache_path.exists():
-            seq_to_embedding[seq] = np.load(seq_cache_path)
-        else:
-            emb = embedder.embed_per_residue(seq)
-            np.save(seq_cache_path, emb)
-            seq_to_embedding[seq] = emb
+    indexes_by_sequence = defaultdict(list)
+    for index, window in enumerate(windows):
+        indexes_by_sequence[window["window_seq_full"]].append(index)
 
-    # 2. 根据窗口元数据进行内存切片和池化
-    window_vectors = []
-    for w in tqdm(windows, desc="    [Memory] 窗口切片"):
-        parent_seq = w["window_seq_full"]  # 需要在 generate_sliding_windows 中保留原序列参考
-        start, end = w["start"], w["end"]
+    for sequence, indexes in tqdm(
+        indexes_by_sequence.items(),
+        desc="    [pLM/cache] 序列处理",
+    ):
+        result = residue_cache.load_or_compute(
+            method=method_name,
+            sequence=sequence,
+            primary_dirs=residue_cache_dirs,
+            supplement_dir=residue_cache_fallback_dir,
+            compute=lambda seq=sequence: compute_residue_embedding(seq),
+            audit_callback=audit_callback,
+        )
+        residue_array = result.array
+        for index in indexes:
+            window = windows[index]
+            start = int(window["start"])
+            end = int(window["end"])
+            if start < 0 or end > len(sequence) or end <= start:
+                raise ValueError(
+                    f"Invalid window bounds for {window['window_id']}: "
+                    f"{start}:{end} on sequence length {len(sequence)}"
+                )
+            vectors[index] = residue_array[start:end].mean(axis=0)
+        del residue_array
 
-        # 从全序列矩阵中截取对应段落并取均值
-        res_embeds = seq_to_embedding[parent_seq][start:end, :]
-        if res_embeds.shape[0] == 0:
-            window_vec = np.zeros(seq_to_embedding[parent_seq].shape[1])
-        else:
-            window_vec = res_embeds.mean(axis=0)
-        window_vectors.append(window_vec)
-
-    X = np.array(window_vectors)
-    np.save(cache_path, X)
-    return X
+    save_window_embedding_cache(
+        cache_dir,
+        method_name,
+        vectors,
+        windows,
+        window_size=window_size,
+        window_step=window_step,
+        dataset_fingerprint=dataset_fingerprint,
+    )
+    return vectors
 
 
 # ============================================================
@@ -189,11 +345,15 @@ def _load_cached_clustering(method_name, cache_dir, expected_size=None):
     return None, None
 
 
-def run_clustering(X, method_name, cache_dir):
+def run_clustering(X, method_name, cache_dir, *, force_recompute=False):
     from sklearn.metrics import silhouette_score, davies_bouldin_score, calinski_harabasz_score
     """执行聚类 (UMAP + HDBSCAN)"""
 
-    labels, metrics = _load_cached_clustering(method_name, cache_dir, expected_size=len(X))
+    labels, metrics = (None, None)
+    if not force_recompute:
+        labels, metrics = _load_cached_clustering(
+            method_name, cache_dir, expected_size=len(X)
+        )
     if labels is not None:
         return labels, metrics
 
@@ -281,91 +441,18 @@ def run_clustering(X, method_name, cache_dir):
 # ============================================================
 # Step 5: InterPro 交叉验证
 # ============================================================
-def interpro_cross_validation(motif_positions, family_name):
-    """
-    将发现的Motif与InterPro已知domain做位置重叠分析。
-    TODO: 需要根据具体InterPro数据格式实现。
-    """
-    # InterPro 已知domain位置 (需要从data3/interpro/加载)
-    # 这里提供框架，具体实现取决于InterPro数据格式
-    interpro_domains = load_interpro_domains(family_name)
-
-    if not interpro_domains:
-        return {"status": "no_interpro_data", "overlap_rate": None}
-
-    # 计算重叠
-    overlap_count = 0
-    for motif in motif_positions:
-        m_start = motif.get("core_start", motif["min_start"])
-        m_end = motif.get("core_end", motif["max_end"])
-        for domain in interpro_domains:
-            d_start = domain.get("start", 0)
-            d_end = domain.get("end", 0)
-            overlap = max(0, min(m_end, d_end) - max(m_start, d_start))
-            if overlap > 0:
-                overlap_count += 1
-                break
-
-    overlap_rate = overlap_count / len(motif_positions) if motif_positions else 0
-
-    return {
-        "status": "ok",
-        "n_motifs": len(motif_positions),
-        "n_interpro_domains": len(interpro_domains),
-        "n_overlapping": overlap_count,
-        "overlap_rate": overlap_rate,
-    }
 
 
-def load_interpro_domains(family_name):
-    """加载InterPro已知domain信息"""
-    # 尝试加载对应文件
-    if not INTERPRO_DIR.exists():
-        return []
-
-    # 映射家族到Pfam
-    family_pfam_map = {
-        "GvpA": ["PF00741"],
-        "GvpJ": ["PF00741"],
-        "GvpC": ["PF01304"],
-        "GvpD": ["PF07088"],
-        "GvpF": ["PF06386"],
-        "GvpL": ["PF06386"],
-        "GvpG": ["PF05120"],
-        "GvpO": ["PF05800"],
-    }
-
-    pfam_ids = family_pfam_map.get(family_name, [])
-    domains = []
-
-    for pfam_id in pfam_ids:
-        tsv_path = INTERPRO_DIR / f"pfam_{pfam_id}_proteins.tsv"
-        if tsv_path.exists():
-            try:
-                with open(tsv_path, "r", encoding="utf-8") as f:
-                    reader = csv.DictReader(f, delimiter="\t")
-                    for row in reader:
-                        domains.append({
-                            "pfam_id": pfam_id,
-                            "uniprot": row.get("uniprot_accession", ""),
-                            "length": int(row.get("length", 0)) if row.get("length") else 0,
-                        })
-            except Exception:
-                pass
-
-    return domains
 
 
 # ============================================================
 # 主流程
 # ============================================================
-def load_dataset():
+def load_dataset(csv_path=None):
     """加载预处理后的数据集"""
-    csv_path = PREPROCESSED_DIR / "cleaned_gvp_dataset.csv"
+    csv_path = Path(csv_path or (PREPROCESSED_DIR / "cleaned_gvp_dataset.csv"))
     if not csv_path.exists():
-        print(f"错误: 找不到 {csv_path}")
-        print("请先运行 data_preprocessing.py")
-        sys.exit(1)
+        raise FileNotFoundError(f"找不到预处理数据集: {csv_path}")
 
     records = []
     with open(csv_path, "r", encoding="utf-8") as f:
@@ -376,23 +463,57 @@ def load_dataset():
     return records
 
 
-def main():
-    parser = argparse.ArgumentParser(description="实验3: 功能域无监督发现")
-    parser.add_argument("--families", nargs="+", default=None,
-                        help="指定家族, 默认处理所有大家族")
-    parser.add_argument("--methods", nargs="+", default=["M2", "M3"],
-                        choices=["M2", "M3"],
-                        help="选择嵌入方法 (默认全部)")
-    parser.add_argument("--top-n", type=int, default=None,
-                        help="仅处理数据量最大的前N个家族")
-    args = parser.parse_args()
+def make_cache_audit_callback(path):
+    path = Path(path)
+    fields = [
+        "method", "sequence_hash", "path", "source", "shape", "dtype", "validation",
+    ]
 
+    def append_record(record):
+        path.parent.mkdir(parents=True, exist_ok=True)
+        write_header = not path.exists() or path.stat().st_size == 0
+        row = dict(record)
+        if isinstance(row.get("shape"), (list, tuple)):
+            row["shape"] = "x".join(map(str, row["shape"]))
+        with path.open("a", encoding="utf-8", newline="") as handle:
+            writer = csv.DictWriter(handle, fieldnames=fields, extrasaction="ignore")
+            if write_header:
+                writer.writeheader()
+            writer.writerow(row)
+
+    return append_record
+
+
+def run_exp3(
+    *,
+    dataset_csv,
+    output_dir,
+    window_size,
+    window_step,
+    methods,
+    families=None,
+    top_n=None,
+    residue_cache_dirs=(),
+    residue_cache_fallback_dir=GLOBAL_RESIDUE_CACHE_DIR,
+    audit_callback=None,
+    force_recompute=False,
+):
+    dataset_csv = Path(dataset_csv)
+    output_dir = Path(output_dir)
+    residue_cache_dirs = [Path(path) for path in residue_cache_dirs]
+    residue_cache_fallback_dir = Path(residue_cache_fallback_dir)
+    if int(window_size) <= 0 or int(window_step) <= 0:
+        raise ValueError("window_size and window_step must be positive")
+    unknown_methods = sorted(set(methods) - set(residue_cache.EXPECTED_DIMS))
+    if unknown_methods:
+        raise ValueError(f"Unsupported embedding methods: {unknown_methods}")
+
+    output_dir.mkdir(parents=True, exist_ok=True)
+    dataset_fingerprint = sha256_file(dataset_csv)
     print("=" * 60)
     print("实验3: 微观功能域无监督发现 (核心实验)")
     print("=" * 60)
-
-    # 加载数据
-    records = load_dataset()
+    records = load_dataset(dataset_csv)
 
     # 按家族分组
     family_groups = defaultdict(list)
@@ -400,17 +521,17 @@ def main():
         family_groups[rec["family"]].append(rec)
 
     # 筛选家族
-    if args.families:
-        target_families = args.families
+    if families:
+        target_families = list(families)
     else:
         # 默认: 按数据量排序, 排除太小的
         sorted_families = sorted(family_groups.items(), key=lambda x: -len(x[1]))
         target_families = [f for f, recs in sorted_families if len(recs) >= MIN_FAMILY_SIZE]
 
-    if args.top_n:
-        target_families = target_families[:args.top_n]
+    if top_n:
+        target_families = target_families[:top_n]
 
-    print(f"\n将处理 {len(target_families)} 个家族, 方法: {args.methods}")
+    print(f"\n将处理 {len(target_families)} 个家族, 方法: {list(methods)}")
     for f in target_families:
         print(f"  {f}: {len(family_groups[f])} 条序列")
 
@@ -423,15 +544,29 @@ def main():
         print(f"{'='*60}")
 
         family_records = family_groups[family_name]
-        metrics = process_family(family_name, family_records, args.methods, EXP3_DIR)
+        metrics = process_family(
+            family_name,
+            family_records,
+            methods,
+            output_dir,
+            window_size=window_size,
+            window_step=window_step,
+            residue_cache_dirs=residue_cache_dirs,
+            residue_cache_fallback_dir=residue_cache_fallback_dir,
+            dataset_fingerprint=dataset_fingerprint,
+            audit_callback=audit_callback,
+            force_recompute=force_recompute,
+        )
 
         if metrics:
             all_family_metrics.extend(metrics)
 
     # 保存汇总对比
     if all_family_metrics:
-        summary_path = EXP3_DIR / "clustering_comparison.csv"
-        fieldnames = ["family", "method", "k_optimal", "n_motifs",
+        summary_path = output_dir / "clustering_comparison.csv"
+        fieldnames = ["family", "method", "window_size", "window_step",
+                       "n_windows_raw", "n_windows_deduplicated",
+                       "k_optimal", "n_motifs",
                        "n_core_samples", "noise_ratio", "silhouette_final",
                        "davies_bouldin", "calinski_harabasz"]
         with open(summary_path, "w", newline="", encoding="utf-8") as f:
@@ -446,23 +581,85 @@ def main():
             from utils.visualization import plot_clustering_comparison
             plot_clustering_comparison(
                 all_family_metrics,
-                EXP3_DIR / "clustering_comparison.png",
+                output_dir / "clustering_comparison.png",
             )
         except Exception as e:
             print(f"[警告] 汇总图绘制失败: {e}")
 
     print(f"\n{'='*60}")
     print("实验3完成! ✓")
-    print(f"结果保存在: {EXP3_DIR}")
+    print(f"结果保存在: {output_dir}")
     print(f"{'='*60}")
+    return all_family_metrics
+
+
+def main():
+    parser = argparse.ArgumentParser(description="实验3: 功能域无监督发现")
+    parser.add_argument("--families", nargs="+", default=None,
+                        help="指定家族, 默认处理所有大家族")
+    parser.add_argument("--methods", nargs="+", default=["M2", "M3"],
+                        choices=["M2", "M3"],
+                        help="选择嵌入方法 (默认全部)")
+    parser.add_argument("--top-n", type=int, default=None,
+                        help="仅处理数据量最大的前N个家族")
+    parser.add_argument("--window-size", type=int, default=EXP3_WINDOW_SIZE)
+    parser.add_argument("--window-step", type=int, default=EXP3_WINDOW_STEP)
+    parser.add_argument(
+        "--dataset-csv",
+        type=Path,
+        default=SEQUENCE_TABLE,
+    )
+    parser.add_argument("--output-dir", type=Path, default=EXP3_DIR)
+    parser.add_argument(
+        "--residue-cache-dir",
+        action="append",
+        type=Path,
+        default=[],
+        help="只读逐残基 embedding 缓存目录（可重复）",
+    )
+    parser.add_argument(
+        "--residue-cache-fallback-dir",
+        type=Path,
+        default=GLOBAL_RESIDUE_CACHE_DIR,
+        help="缓存缺失时唯一允许写入的补充目录",
+    )
+    parser.add_argument(
+        "--cache-audit-csv",
+        type=Path,
+        default=None,
+        help="可选的脱敏逐残基缓存审计 CSV",
+    )
+    parser.add_argument(
+        "--force-recompute",
+        action="store_true",
+        help="Rebuild window embeddings and clustering while still reusing residue caches",
+    )
+    args = parser.parse_args()
+
+    run_exp3(
+        dataset_csv=args.dataset_csv,
+        output_dir=args.output_dir,
+        window_size=args.window_size,
+        window_step=args.window_step,
+        methods=args.methods,
+        families=args.families,
+        top_n=args.top_n,
+        residue_cache_dirs=args.residue_cache_dir,
+        residue_cache_fallback_dir=args.residue_cache_fallback_dir,
+        audit_callback=(
+            make_cache_audit_callback(args.cache_audit_csv)
+            if args.cache_audit_csv is not None
+            else None
+        ),
+        force_recompute=args.force_recompute,
+    )
 
 
 def deduplicate_exact_windows_within_parent(windows):
     """
     保守去冗余：仅移除同一原始序列内完全重复的窗口序列。
 
-    旧逻辑按 embedding 余弦相似度裁剪重叠窗口，会把连续 motif 轨迹压缩到极少数点。
-    这里保留所有不同窗口序列，只清理明显重复项。
+    保留不同窗口序列及其位置轨迹，不按嵌入相似度裁剪重叠窗口。
     """
     seq_groups = defaultdict(list)
     for i, w in enumerate(windows):
@@ -486,164 +683,49 @@ def deduplicate_exact_windows_within_parent(windows):
     return keep_global
 
 
-def build_cluster_position_profile(cluster_windows):
-    profile = defaultdict(int)
-    for window in cluster_windows:
-        start = int(window["start"])
-        end = int(window["end"])
-        for pos in range(start, end):
-            profile[pos] += 1
-    return dict(profile)
+def summarize_motif_clusters(windows, labels, method_name):
+    """Summarize stable window clusters without inferring motif-core boundaries."""
+    motif_clusters = defaultdict(list)
+    for window, label in zip(windows, labels):
+        if int(label) != -1:
+            motif_clusters[int(label)].append(window)
 
-
-def _segments_from_positions(positions):
-    if not positions:
-        return []
-
-    segments = []
-    start = positions[0]
-    prev = positions[0]
-    for pos in positions[1:]:
-        if pos == prev + 1:
-            prev = pos
-            continue
-        segments.append((start, prev + 1))
-        start = pos
-        prev = pos
-    segments.append((start, prev + 1))
-    return segments
-
-
-def _segment_metrics(profile, start, end):
-    values = [int(profile[pos]) for pos in range(start, end)]
-    return {
-        "core_start": start,
-        "core_end": end,
-        "core_length": end - start,
-        "coverage_peak": max(values) if values else 0,
-        "coverage_mass": int(sum(values)),
-    }
-
-
-def extract_core_interval(profile, min_core_length=5, threshold_ratio=0.7):
-    if not profile:
-        return {
-            "core_start": 0,
-            "core_end": 0,
-            "core_length": 0,
-            "coverage_peak": 0,
-            "coverage_mass": 0,
-        }
-
-    peak = max(int(value) for value in profile.values())
-    cutoff = max(1, int(np.floor(peak * threshold_ratio)))
-    dense_positions = sorted(pos for pos, count in profile.items() if count >= cutoff)
-    if not dense_positions:
-        dense_positions = sorted(pos for pos, count in profile.items() if count == peak)
-
-    peak_positions = sorted(pos for pos, count in profile.items() if count == peak)
-    peak_segments = _segments_from_positions(peak_positions)
-    eligible_peak_segments = [
-        _segment_metrics(profile, start, end)
-        for start, end in peak_segments
-        if (end - start) >= min_core_length
-    ]
-    if eligible_peak_segments:
-        return max(
-            eligible_peak_segments,
-            key=lambda seg: (seg["coverage_mass"], seg["core_length"], -seg["core_start"]),
-        )
-
-    dense_segments = [
-        _segment_metrics(profile, start, end)
-        for start, end in _segments_from_positions(dense_positions)
-    ]
-    return max(
-        dense_segments,
-        key=lambda seg: (seg["coverage_mass"], seg["coverage_peak"], seg["core_length"], -seg["core_start"]),
-    )
-
-
-def compute_conservation_score(fragments):
-    usable = [fragment for fragment in fragments if fragment]
-    if not usable:
-        return 0.0
-
-    width = min(len(fragment) for fragment in usable)
-    if width <= 0:
-        return 0.0
-
-    scores = []
-    for idx in range(width):
-        counts = Counter(fragment[idx] for fragment in usable)
-        scores.append(counts.most_common(1)[0][1] / len(usable))
-    return float(np.mean(scores)) if scores else 0.0
-
-
-def collect_unique_core_fragments(cluster_windows, core_start, core_end):
-    unique_fragments = []
-    seen_parents = set()
-
-    for window in cluster_windows:
-        parent_id = window.get("parent_id")
-        if not parent_id or parent_id in seen_parents:
-            continue
-
-        full_seq = window.get("window_seq_full", "")
-        if not full_seq or len(full_seq) < core_end:
-            continue
-
-        seen_parents.add(parent_id)
-        unique_fragments.append({
-            "parent_id": parent_id,
-            "fragment": full_seq[core_start:core_end],
+    summaries = []
+    for cluster_label, cluster_windows in motif_clusters.items():
+        starts = [int(window["start"]) for window in cluster_windows]
+        ends = [int(window["end"]) for window in cluster_windows]
+        families = Counter(str(window["family"]) for window in cluster_windows)
+        parent_ids = {str(window["parent_id"]) for window in cluster_windows}
+        summaries.append({
+            "motif_id": int(cluster_label),
+            "cluster_label": int(cluster_label),
+            "method": method_name,
+            "n_windows": len(cluster_windows),
+            "n_unique_sequences": len(parent_ids),
+            "position_std": float(np.std(starts)) if starts else 0.0,
+            "mean_start": float(np.mean(starts)),
+            "mean_end": float(np.mean(ends)),
+            "min_start": min(starts),
+            "max_end": max(ends),
+            "families": dict(families),
+            "dominant_family": families.most_common(1)[0][0] if families else "",
+            "cross_species_count": len(parent_ids),
+            "support_protein_ids": sorted(parent_ids),
         })
-
-    return unique_fragments
-
-
-def build_motif_consensus(fragments):
-    usable = [fragment for fragment in fragments if fragment]
-    if not usable:
-        return ""
-
-    width = min(len(fragment) for fragment in usable)
-    if width <= 0:
-        return ""
-
-    consensus = []
-    for idx in range(width):
-        counts = Counter(fragment[idx] for fragment in usable)
-        consensus.append(counts.most_common(1)[0][0])
-    return "".join(consensus)
-
-
-def build_position_frequency_matrix(fragments):
-    usable = [fragment for fragment in fragments if fragment]
-    if not usable:
-        return []
-
-    width = min(len(fragment) for fragment in usable)
-    if width <= 0:
-        return []
-
-    matrix = []
-    for idx in range(width):
-        counts = Counter(fragment[idx] for fragment in usable)
-        total = float(sum(counts.values()))
-        matrix.append({
-            aa: counts[aa] / total for aa in sorted(counts)
-        })
-    return matrix
+    return summaries
 
 
 def finalize_motif_catalog(family_name, method_name, motifs):
     def _sort_key(row):
+        stability_floor = min(
+            float(row.get("median_window_jaccard", 0.0) or 0.0),
+            float(row.get("median_protein_jaccard", 0.0) or 0.0),
+            float(row.get("median_occurrence_jaccard", 0.0) or 0.0),
+        )
         return (
             -int(row.get("n_unique_sequences", 0) or 0),
-            -float(row.get("coverage_peak", 0) or 0.0),
-            -float(row.get("conservation_score", 0) or 0.0),
-            int(row.get("core_start", 0) or 0),
+            -int(row.get("n_windows", 0) or 0),
+            -stability_floor,
             int(row.get("cluster_label", row.get("motif_id", 0)) or 0),
         )
 
@@ -701,8 +783,6 @@ def build_sequence_motif_occurrences(windows, labels, motifs, method_name):
         for occ_idx, segment_windows in enumerate(_split_windows_into_occurrence_segments(cluster_windows), start=1):
             starts = [int(window["start"]) for window in segment_windows]
             ends = [int(window["end"]) for window in segment_windows]
-            profile = build_cluster_position_profile(segment_windows)
-            core = extract_core_interval(profile)
 
             occurrence = {
                 "occurrence_id": f"{motif['motif_uid']}_occ_{occ_idx:03d}",
@@ -714,9 +794,6 @@ def build_sequence_motif_occurrences(windows, labels, motifs, method_name):
                 "occ_start": min(starts),
                 "occ_end": max(ends),
                 "occ_length": max(ends) - min(starts),
-                "occ_core_start": int(core["core_start"]),
-                "occ_core_end": int(core["core_end"]),
-                "occ_core_length": int(core["core_length"]),
                 "n_support_windows": len(segment_windows),
                 "support_window_ids": [window.get("window_id", "") for window in segment_windows],
             }
@@ -726,79 +803,36 @@ def build_sequence_motif_occurrences(windows, labels, motifs, method_name):
     return occurrences
 
 
-def extract_motif_positions(windows, labels, method_name):
-    motif_positions = []
-    motif_clusters = defaultdict(list)
-
-    for w, label in zip(windows, labels):
-        if label == -1:
-            continue
-        motif_clusters[label].append(w)
-
-    for motif_id, cluster_windows in motif_clusters.items():
-        starts = [w["start"] for w in cluster_windows]
-        ends = [w["end"] for w in cluster_windows]
-        families = Counter(w["family"] for w in cluster_windows)
-        parent_ids = set(w["parent_id"] for w in cluster_windows)
-        profile = build_cluster_position_profile(cluster_windows)
-        core = extract_core_interval(profile)
-
-        fragment_records = collect_unique_core_fragments(
-            cluster_windows,
-            core["core_start"],
-            core["core_end"],
-        )
-        core_fragments = [item["fragment"] for item in fragment_records]
-        motif_consensus = build_motif_consensus(core_fragments)
-        position_frequency_matrix = build_position_frequency_matrix(core_fragments)
-
-        motif_positions.append({
-            "motif_id": int(motif_id),
-            "cluster_label": int(motif_id),
-            "method": method_name,
-            "n_windows": len(cluster_windows),
-            "n_unique_sequences": len(parent_ids),
-            "core_start": core["core_start"],
-            "core_end": core["core_end"],
-            "core_length": core["core_length"],
-            "coverage_peak": core["coverage_peak"],
-            "coverage_mass": core["coverage_mass"],
-            "position_std": float(np.std(starts)) if starts else 0.0,
-            "conservation_score": compute_conservation_score(core_fragments),
-            "is_primary_core": True,
-            "mean_start": np.mean(starts),
-            "mean_end": np.mean(ends),
-            "min_start": min(starts),
-            "max_end": max(ends),
-            "families": dict(families),
-            "dominant_family": families.most_common(1)[0][0] if families else "",
-            "cross_species_count": len(parent_ids),
-            "motif_consensus": motif_consensus,
-            "support_protein_ids": [item["parent_id"] for item in fragment_records],
-            "support_fragments": core_fragments,
-            "position_frequency_matrix": position_frequency_matrix,
-        })
-
-    return motif_positions
-
-
-def process_family(family_name, family_records, methods, output_dir):
-    family_dir = output_dir / family_name
+def process_family(
+    family_name,
+    family_records,
+    methods,
+    output_dir,
+    *,
+    window_size=EXP3_WINDOW_SIZE,
+    window_step=EXP3_WINDOW_STEP,
+    residue_cache_dirs=(),
+    residue_cache_fallback_dir=GLOBAL_RESIDUE_CACHE_DIR,
+    dataset_fingerprint="unspecified-dataset",
+    audit_callback=None,
+    force_recompute=False,
+):
+    family_dir = Path(output_dir) / family_name
     family_dir.mkdir(parents=True, exist_ok=True)
 
     sequences = [r["sequence"] for r in family_records]
     seq_ids = [r.get("protein_id", f"seq_{i}") for i, r in enumerate(family_records)]
     families = [r["family"] for r in family_records]
 
-    print(f"  Step 1: 婊戝姩绐楀彛 (size={EXP3_WINDOW_SIZE}, step={EXP3_WINDOW_STEP})")
+    print(f"  Step 1: sliding windows (size={window_size}, step={window_step})")
     windows, window_seqs = generate_sliding_windows(
         sequences, seq_ids, families,
-        EXP3_WINDOW_SIZE, EXP3_WINDOW_STEP,
+        window_size, window_step,
     )
     print(f"    Generated {len(windows)} windows from {len(sequences)} sequences")
 
-    if len(windows) < EXP3_DBSCAN_MIN_SAMPLES * 3:
-        print(f"    [SKIP] Too few windows ({len(windows)})")
+    if len(windows) < EXP3_MIN_WINDOWS:
+        print(f"    [skip] Too few windows ({len(windows)})")
         return None
 
     windows_csv_path = family_dir / "windows_metadata.csv"
@@ -814,19 +848,32 @@ def process_family(family_name, family_records, methods, output_dir):
 
     for method in methods:
         representative_embeddings = None
-        print(f"\n  鏂规硶: {method}")
-        print(f"  {'鈹€'*40}")
+        print(f"\n  Method: {method}")
+        print(f"  {'-'*40}")
 
-        X = embed_windows(method, sequences, windows, family_dir).astype(np.float32)
+        X = embed_windows(
+            method,
+            windows,
+            family_dir,
+            window_size=window_size,
+            window_step=window_step,
+            dataset_fingerprint=dataset_fingerprint,
+            residue_cache_dirs=residue_cache_dirs,
+            residue_cache_fallback_dir=residue_cache_fallback_dir,
+            audit_callback=audit_callback,
+            force_recompute=force_recompute,
+        ).astype(np.float32)
         if np.isnan(X).any():
-            print("    [WARNING] Embeddings contain NaN values; replacing them with zero")
+            print("    [warning] Embeddings contain NaN; replacing with zero")
             X = np.nan_to_num(X)
 
         windows_full = windows
         X_full = X
         keep_idx = deduplicate_exact_windows_within_parent(windows_full)
         X_dedup = X_full[keep_idx]
-        labels_dedup, metrics = run_clustering(X_dedup, method, family_dir)
+        labels_dedup, metrics = run_clustering(
+            X_dedup, method, family_dir, force_recompute=force_recompute
+        )
         labels = np.full(len(X_full), -1)
         labels[keep_idx] = labels_dedup
         use_windows = windows_full
@@ -834,9 +881,13 @@ def process_family(family_name, family_records, methods, output_dir):
 
         metrics["method"] = method
         metrics["family"] = family_name
+        metrics["window_size"] = int(window_size)
+        metrics["window_step"] = int(window_step)
+        metrics["n_windows_raw"] = len(X_full)
+        metrics["n_windows_deduplicated"] = len(X_dedup)
         all_metrics.append(metrics)
 
-        motifs = extract_motif_positions(use_windows, labels, method)
+        motifs = summarize_motif_clusters(use_windows, labels, method)
         motifs = finalize_motif_catalog(family_name, method, motifs)
         motif_occurrences = build_sequence_motif_occurrences(use_windows, labels, motifs, method)
         total_sequences = max(1, len(set(seq_ids)))
@@ -859,54 +910,49 @@ def process_family(family_name, family_records, methods, output_dir):
             )
 
         motif_csv = family_dir / f"motif_positions_{method}.csv"
-        if motifs:
-            with open(motif_csv, "w", newline="", encoding="utf-8") as f:
-                fieldnames = [
-                    "motif_id", "method", "n_windows", "n_unique_sequences",
-                    "core_start", "core_end", "core_length", "coverage_peak",
-                    "coverage_mass", "position_std", "conservation_score", "is_primary_core",
-                    "mean_start", "mean_end", "min_start", "max_end",
-                    "dominant_family", "cross_species_count",
-                ]
-                writer = csv.DictWriter(f, fieldnames=fieldnames, extrasaction="ignore")
-                writer.writeheader()
-                writer.writerows(motifs)
+        with open(motif_csv, "w", newline="", encoding="utf-8") as f:
+            fieldnames = [
+                "motif_id", "method", "n_windows", "n_unique_sequences",
+                "position_std",
+                "mean_start", "mean_end", "min_start", "max_end",
+                "dominant_family", "cross_species_count",
+            ]
+            writer = csv.DictWriter(f, fieldnames=fieldnames, extrasaction="ignore")
+            writer.writeheader()
+            writer.writerows(motifs)
 
-            catalog_csv = family_dir / f"motif_catalog_{method}.csv"
-            with open(catalog_csv, "w", newline="", encoding="utf-8") as f:
-                fieldnames = [
+        catalog_csv = family_dir / f"motif_catalog_{method}.csv"
+        with open(catalog_csv, "w", newline="", encoding="utf-8") as f:
+            fieldnames = [
                     "motif_uid", "family", "method", "cluster_label", "rank_within_method",
-                    "motif_consensus", "core_start", "core_end", "core_length",
                     "min_start", "max_end", "mean_start", "mean_end", "position_std",
                     "n_windows", "n_unique_sequences", "support_ratio",
-                    "coverage_peak", "coverage_mass", "conservation_score",
                     "dominant_family", "cross_species_count",
                 ]
-                writer = csv.DictWriter(f, fieldnames=fieldnames, extrasaction="ignore")
-                writer.writeheader()
-                writer.writerows(motifs)
+            writer = csv.DictWriter(f, fieldnames=fieldnames, extrasaction="ignore")
+            writer.writeheader()
+            writer.writerows(motifs)
 
-            catalog_json = family_dir / f"motif_catalog_{method}.json"
-            with open(catalog_json, "w", encoding="utf-8") as f:
-                json.dump(motifs, f, indent=2, ensure_ascii=False)
+        catalog_json = family_dir / f"motif_catalog_{method}.json"
+        with open(catalog_json, "w", encoding="utf-8") as f:
+            json.dump(motifs, f, indent=2, ensure_ascii=False)
 
-            occurrence_csv = family_dir / f"motif_occurrences_{method}.csv"
-            with open(occurrence_csv, "w", newline="", encoding="utf-8") as f:
-                fieldnames = [
-                    "occurrence_id", "motif_uid", "family", "method", "cluster_label",
-                    "parent_id", "occ_start", "occ_end", "occ_length",
-                    "occ_core_start", "occ_core_end", "occ_core_length",
-                    "n_support_windows", "support_window_ids",
-                ]
-                writer = csv.DictWriter(f, fieldnames=fieldnames, extrasaction="ignore")
-                writer.writeheader()
-                writer.writerows(motif_occurrences)
+        occurrence_csv = family_dir / f"motif_occurrences_{method}.csv"
+        with open(occurrence_csv, "w", newline="", encoding="utf-8") as f:
+            fieldnames = [
+                "occurrence_id", "motif_uid", "family", "method", "cluster_label",
+                "parent_id", "occ_start", "occ_end", "occ_length",
+                "n_support_windows", "support_window_ids",
+            ]
+            writer = csv.DictWriter(f, fieldnames=fieldnames, extrasaction="ignore")
+            writer.writeheader()
+            writer.writerows(motif_occurrences)
 
-            occurrence_json = family_dir / f"motif_occurrences_{method}.json"
-            with open(occurrence_json, "w", encoding="utf-8") as f:
-                json.dump(motif_occurrences, f, indent=2, ensure_ascii=False)
+        occurrence_json = family_dir / f"motif_occurrences_{method}.json"
+        with open(occurrence_json, "w", encoding="utf-8") as f:
+            json.dump(motif_occurrences, f, indent=2, ensure_ascii=False)
 
-        print(f"    Identified {len(motifs)} candidate motif regions")
+        print(f"    Discovered {len(motifs)} candidate motif regions")
 
     try:
         from utils.visualization import plot_motif_heatmap
@@ -915,8 +961,8 @@ def process_family(family_name, family_records, methods, output_dir):
         for method, motifs in all_motif_positions.items():
             positions = [
                 (
-                    int(m.get("core_start", m["min_start"])),
-                    int(m.get("core_end", m["max_end"])),
+                    int(m["min_start"]),
+                    int(m["max_end"]),
                     m["motif_id"],
                 )
                 for m in motifs
@@ -928,7 +974,7 @@ def process_family(family_name, family_records, methods, output_dir):
             family_dir / f"motif_heatmap_{family_name}.png",
         )
     except Exception as e:
-        print(f"  [WARNING] Motif heatmap generation failed: {e}")
+        print(f"  [warning] Motif heatmap generation failed: {e}")
 
     return all_metrics
 

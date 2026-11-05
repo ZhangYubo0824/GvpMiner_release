@@ -1,0 +1,33 @@
+﻿family,term_description,supported_candidates,all_family_candidates,annotation_ids
+GvpC,COG:Q,3,29,COG:Q
+GvpC,COG:S,14,29,COG:S
+GvpC,GO:0003677,2,29,GO:0003677
+GvpC,GO:0005575,5,29,GO:0005575
+GvpC,GO:0005622,5,29,GO:0005622
+GvpC,GO:0005623,5,29,GO:0005623
+GvpC,GO:0033172,5,29,GO:0033172
+GvpC,GO:0043226,5,29,GO:0043226
+GvpC,GO:0043228,5,29,GO:0043228
+GvpC,GO:0043229,5,29,GO:0043229
+GvpC,GO:0043232,5,29,GO:0043232
+GvpC,GO:0044422,5,29,GO:0044422
+GvpC,GO:0044424,5,29,GO:0044424
+GvpC,GO:0044446,5,29,GO:0044446
+GvpC,GO:0044464,5,29,GO:0044464
+GvpC,Gas vesicle C repeat,14,29,IPR018185
+GvpC,"Gas vesicle protein GvpC, halobacteria",3,29,IPR008639
+GvpC,Gas vesicles protein GVPc repeated domain,14,29,PF01304
+GvpC,Halobacterial gas vesicle protein C (GVPC) repeat,3,29,PF05465
+GvpC,gas vesicle minor protein,3,29,K23263
+GvpD,AAA+ ATPase domain,21,56,IPR003593
+GvpD,Circadian clock KaiC-related,14,56,IPR051347
+GvpD,Circadian clock protein kinase KaiC,14,56,IPR030665
+GvpD,GvpD basic region 2,2,56,PF20440
+GvpD,"GvpD gas vesicle protein, P-loop domain",38,56,PF07088
+GvpD,"GvpD, P-loop domain",38,56,IPR009788
+GvpD,"GvpD, basic region 2",2,56,IPR046777
+GvpD,KaiC,15,56,PF06745
+GvpD,KaiC domain,14,56,IPR010624
+GvpD,KaiC-like domain,15,56,IPR014774
+GvpD,circadian clock protein KaiC,14,56,K08482
+GvpD,gas vesicle operon resressor,21,56,K23307

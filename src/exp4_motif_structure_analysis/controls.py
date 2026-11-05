@@ -79,24 +79,6 @@ def sample_windows_from_candidates(
     return [candidates[int(index)] for index in indices]
 
 
-def sample_within_protein_windows(
-    *,
-    sequence_length: int,
-    window_length: int,
-    excluded_intervals: Iterable[Window],
-    num_controls: int,
-    rng_seed: int | None = None,
-) -> list[Window]:
-    candidates = candidate_within_protein_windows(
-        sequence_length=sequence_length,
-        window_length=window_length,
-        excluded_intervals=excluded_intervals,
-    )
-    return sample_windows_from_candidates(
-        candidates,
-        num_controls=num_controls,
-        rng_seed=rng_seed,
-    )
 
 
 def _relative_position(start: int, end: int, sequence_length: int) -> float:
@@ -105,35 +87,6 @@ def _relative_position(start: int, end: int, sequence_length: int) -> float:
     return ((start + end) / 2.0) / float(sequence_length)
 
 
-def sample_position_matched_windows(
-    *,
-    motif_sequence_id: str,
-    motif_family: str,
-    motif_start: int,
-    motif_end: int,
-    sequences: dict[str, dict[str, object]],
-    num_controls: int,
-    position_tolerance: float = 0.1,
-) -> list[tuple[str, Window]]:
-    motif_length = motif_end - motif_start
-    source_length = int(sequences.get(motif_sequence_id, {}).get("sequence_length", 0) or 0)
-    target_position = _relative_position(motif_start, motif_end, source_length)
-    candidates = []
-    for sequence_id, row in sorted(sequences.items()):
-        if sequence_id == motif_sequence_id:
-            continue
-        if str(row.get("family", "")) != motif_family:
-            continue
-        seq_len = int(row.get("sequence_length", len(str(row.get("sequence", "")))) or 0)
-        if seq_len < motif_length:
-            continue
-        start = int(round(target_position * seq_len - motif_length / 2.0))
-        start = max(0, min(seq_len - motif_length, start))
-        window = (start, start + motif_length)
-        actual_position = _relative_position(window[0], window[1], seq_len)
-        if abs(actual_position - target_position) <= position_tolerance:
-            candidates.append((sequence_id, window))
-    return candidates[:num_controls]
 
 
 def build_position_sequence_index(sequences: dict[str, dict[str, object]]) -> PositionSequenceIndex:
@@ -166,6 +119,7 @@ def sample_position_matched_windows_from_index(
     index: PositionSequenceIndex,
     num_controls: int,
     position_tolerance: float = 0.1,
+    rng_seed: int = 42,
 ) -> list[tuple[str, Window]]:
     if num_controls <= 0:
         return []
@@ -185,7 +139,10 @@ def sample_position_matched_windows_from_index(
     starts = np.maximum(0, np.minimum(lengths - motif_length, starts))
     actual_positions = ((starts + starts + motif_length) / 2.0) / lengths
     valid = valid & (np.abs(actual_positions - target_position) <= position_tolerance)
-    selected_indices = np.nonzero(valid)[0][:num_controls]
+    valid_indices = np.nonzero(valid)[0]
+    selected_indices = np.random.default_rng(rng_seed).choice(
+        valid_indices, size=min(num_controls, len(valid_indices)), replace=False
+    )
     return [
         (sequence_ids[int(index_value)], (int(starts[int(index_value)]), int(starts[int(index_value)] + motif_length)))
         for index_value in selected_indices
@@ -195,7 +152,6 @@ def sample_position_matched_windows_from_index(
 def sample_composition_matched_windows(
     *,
     motif_sequence: str,
-    motif_sequence_id: str,
     motif_family: str,
     window_length: int,
     sequences: dict[str, dict[str, object]],
@@ -223,7 +179,7 @@ def sample_composition_matched_windows(
             )
             scored.append((distance, sequence_id, window))
     scored.sort(key=lambda item: (item[0], item[1], item[2][0]))
-    return [(sequence_id, window) for _, sequence_id, window in scored[:num_controls]]
+    return _best_distinct_protein_windows(scored, num_controls)
 
 
 def build_composition_window_index(
@@ -281,27 +237,23 @@ def build_composition_feature_index(index: CompositionWindowIndex) -> Compositio
     return result
 
 
-def sample_composition_matched_windows_from_index(
-    *,
-    motif_sequence: str,
-    motif_sequence_id: str,
-    motif_family: str,
-    window_length: int,
-    index: CompositionWindowIndex,
-    num_controls: int,
+
+
+def _best_distinct_protein_windows(
+    scored: Sequence[tuple[float, str, Window]], num_controls: int
 ) -> list[tuple[str, Window]]:
     if num_controls <= 0:
         return []
-    motif_features = amino_acid_composition_features(motif_sequence)
-    scored: list[tuple[float, str, Window]] = []
-    for sequence_id, window, candidate_features in index.get((motif_family, window_length), []):
-        distance = sum(
-            abs(float(candidate_features[key]) - float(motif_features[key]))
-            for key in ("hydrophobic_fraction", "charged_fraction", "aromatic_fraction", "polar_fraction", "motif_entropy")
-        )
-        scored.append((distance, sequence_id, window))
-    scored.sort(key=lambda item: (item[0], item[1], item[2][0]))
-    return [(sequence_id, window) for _, sequence_id, window in scored[:num_controls]]
+    chosen: list[tuple[str, Window]] = []
+    used_proteins: set[str] = set()
+    for _, sequence_id, window in scored:
+        if sequence_id in used_proteins:
+            continue
+        chosen.append((sequence_id, window))
+        used_proteins.add(sequence_id)
+        if len(chosen) >= num_controls:
+            break
+    return chosen
 
 
 def sample_composition_matched_windows_from_feature_index(
@@ -322,11 +274,16 @@ def sample_composition_matched_windows_from_feature_index(
     distances = np.abs(block.features[:, 0] - motif_vector[0])
     for column_index in range(1, len(COMPOSITION_FEATURE_KEYS)):
         distances = distances + np.abs(block.features[:, column_index] - motif_vector[column_index])
-    selected_indices = np.lexsort((block.starts, block.sequence_ranks, distances))[:num_controls]
-    return [
-        (
-            block.sequence_ids[int(index_value)],
-            (int(block.starts[int(index_value)]), int(block.ends[int(index_value)])),
-        )
-        for index_value in selected_indices
-    ]
+    ordered_indices = np.lexsort((block.starts, block.sequence_ranks, distances))
+    chosen: list[tuple[str, Window]] = []
+    used_proteins: set[str] = set()
+    for index_value in ordered_indices:
+        index_value = int(index_value)
+        sequence_id = block.sequence_ids[index_value]
+        if sequence_id in used_proteins:
+            continue
+        chosen.append((sequence_id, (int(block.starts[index_value]), int(block.ends[index_value]))))
+        used_proteins.add(sequence_id)
+        if len(chosen) >= num_controls:
+            break
+    return chosen

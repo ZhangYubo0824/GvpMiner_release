@@ -1,0 +1,11 @@
+﻿structure_state,annotation_state,count
+strict,supported,195
+strict,tested_not_supported,19
+strict,unevaluable,134
+supported_not_strict,supported,28
+supported_not_strict,tested_not_supported,5
+supported_not_strict,unevaluable,128
+tested_not_supported,supported,1
+tested_not_supported,unevaluable,4
+unevaluable,tested_not_supported,6
+unevaluable,unevaluable,2

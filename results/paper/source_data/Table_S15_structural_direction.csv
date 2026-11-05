@@ -1,0 +1,4 @@
+﻿endpoint,testable,significant,positive_median_difference,negative_median_difference,zero_median_difference
+接触密度,514,460,257,202,1
+相对 SASA,514,448,204,244,0
+长程接触数,514,386,53,138,195

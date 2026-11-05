@@ -4,9 +4,7 @@ channels:
 dependencies:
   - python=3.12
   - pip
-  - r-base
   - pip:
       - -r requirements.txt
 
-# Install Bioconductor clusterProfiler in R separately; see README.md.
-# GPU-specific PyTorch/CUDA builds and ESMFold/OpenFold must match the target server.
+# Install GPU-specific packages and R/Bioconductor tools separately as documented.

@@ -1,0 +1,380 @@
+{
+  "references": {
+    "Hsal_pGvpM_2021": {
+      "family": "GvpM",
+      "sequence": "MEPTKDETHAIVEFVDVLLRDGAVIQADVIVTVADIPLIGISLRAAIAGMTTMTEYGLFEEWDAAHRQQSEAFTTSPTADRRED",
+      "sequence_verified": true,
+      "sequence_source": "2021 primary article Figure 5A wild-type line, visually checked against full sequence; independently identical to CAA39180.1",
+      "sequence_url": "https://www.frontiersin.org/files/Articles/794240/xml-images/fmicb-12-794240-g005.webp",
+      "database_accession": "CAA39180.1",
+      "experimental_organism": "Halobacterium salinarum PHH1 p-vac",
+      "assay_host": "Haloferax volcanii WR340",
+      "provenance_note": "CAA39180.1 record labels strain NRC817; experimental identity is established from the paper Figure 5 sequence, not assumed from that strain name."
+    },
+    "Hsal_pGvpJ_2021": {
+      "family": "GvpJ",
+      "sequence": "MSDPKPTRSQGDLAEMLEMLLDKGVVVNADIAVSVGDTELLGIELRAAIASFETAAEYGLEFPTGTDMERVESAANISPDQSDPASETQSETESTNPLSDDSTPTASTSAEETK",
+      "sequence_verified": true,
+      "sequence_source": "2021 primary article Figure 1A wild-type line, visually checked against full sequence; independently identical to CAA39177.1",
+      "sequence_url": "https://www.frontiersin.org/files/Articles/794240/xml-images/fmicb-12-794240-g001.webp",
+      "database_accession": "CAA39177.1",
+      "experimental_organism": "Halobacterium salinarum PHH1 p-vac",
+      "assay_host": "Haloferax volcanii WFD11",
+      "provenance_note": "Database strain label NRC817 differs; use directly published wild-type sequence for coordinate reference."
+    },
+    "Hurt2024_Ana_GvpA_WT": {
+      "family": "GvpA",
+      "sequence": "MAVEKTNSSSSLAEVIDRILDKGIVIDAWVRVSLVGIELLAIEARIVIASVETYLKYAEAVGLTQSAAVPA",
+      "sequence_verified": true,
+      "sequence_source": "Published Supplementary Table S2, sheet CustomMade MoClo Parts, cell C7; first CDS through stop; translated with standard code",
+      "independent_check": "Code S1 K22R segment matches reference residues 2-36 after the explicitly named K22R change",
+      "source_doi": "10.1021/acssynbio.4c00283.s002",
+      "experimental_host": "E. coli with the A. flos-aquae ARG cluster"
+    }
+  },
+  "events": [
+    {
+      "event_id": "M_H9A",
+      "family": "GvpM",
+      "reference_id": "Hsal_pGvpM_2021",
+      "doi": "10.3389/fmicb.2021.794240",
+      "positions": [
+        9
+      ],
+      "expected_residues": "H",
+      "experimental_change": "H9A",
+      "effect": "loss",
+      "function": "gas vesicle formation",
+      "source_scope": "local_perturbation",
+      "source_anchor": "Table 1; Figure 5A; Supplementary Figure 5C",
+      "case_group": "GvpM_HAI_9_11"
+    },
+    {
+      "event_id": "M_A10D",
+      "family": "GvpM",
+      "reference_id": "Hsal_pGvpM_2021",
+      "doi": "10.3389/fmicb.2021.794240",
+      "positions": [
+        10
+      ],
+      "expected_residues": "A",
+      "experimental_change": "A10D",
+      "effect": "loss",
+      "function": "gas vesicle formation",
+      "source_scope": "local_perturbation",
+      "source_anchor": "Table 1; Figure 5A; Supplementary Figure 5C",
+      "case_group": "GvpM_HAI_9_11"
+    },
+    {
+      "event_id": "M_I11A",
+      "family": "GvpM",
+      "reference_id": "Hsal_pGvpM_2021",
+      "doi": "10.3389/fmicb.2021.794240",
+      "positions": [
+        11
+      ],
+      "expected_residues": "I",
+      "experimental_change": "I11A",
+      "effect": "loss",
+      "function": "gas vesicle formation",
+      "source_scope": "local_perturbation",
+      "source_anchor": "Table 1; Figure 5A; Supplementary Figure 5C",
+      "case_group": "GvpM_HAI_9_11"
+    },
+    {
+      "event_id": "M_I11D",
+      "family": "GvpM",
+      "reference_id": "Hsal_pGvpM_2021",
+      "doi": "10.3389/fmicb.2021.794240",
+      "positions": [
+        11
+      ],
+      "expected_residues": "I",
+      "experimental_change": "I11D",
+      "effect": "loss",
+      "function": "gas vesicle formation",
+      "source_scope": "local_perturbation",
+      "source_anchor": "Table 1; Figure 5A",
+      "case_group": "GvpM_HAI_9_11"
+    },
+    {
+      "event_id": "M_V12Y",
+      "family": "GvpM",
+      "reference_id": "Hsal_pGvpM_2021",
+      "doi": "10.3389/fmicb.2021.794240",
+      "positions": [
+        12
+      ],
+      "expected_residues": "V",
+      "experimental_change": "V12Y",
+      "effect": "altered",
+      "function": "fewer and longer gas vesicles",
+      "source_scope": "local_perturbation",
+      "source_anchor": "Table 1; Supplementary Figure 5B",
+      "case_group": "GvpM_Nterminal_shape"
+    },
+    {
+      "event_id": "M_G22A",
+      "family": "GvpM",
+      "reference_id": "Hsal_pGvpM_2021",
+      "doi": "10.3389/fmicb.2021.794240",
+      "positions": [
+        22
+      ],
+      "expected_residues": "G",
+      "experimental_change": "G22A",
+      "effect": "altered",
+      "function": "fewer and longer gas vesicles",
+      "source_scope": "local_perturbation",
+      "source_anchor": "Table 1; Supplementary Figure 5B",
+      "case_group": "GvpM_GAV_22_24"
+    },
+    {
+      "event_id": "M_V15A",
+      "family": "GvpM",
+      "reference_id": "Hsal_pGvpM_2021",
+      "doi": "10.3389/fmicb.2021.794240",
+      "positions": [
+        15
+      ],
+      "expected_residues": "V",
+      "experimental_change": "V15A",
+      "effect": "reduced",
+      "function": "gas vesicle abundance",
+      "source_scope": "local_perturbation",
+      "source_anchor": "Table 1; Supplementary Figure 5B",
+      "case_group": "GvpM_Nterminal_abundance"
+    },
+    {
+      "event_id": "M_E2A_null",
+      "family": "GvpM",
+      "reference_id": "Hsal_pGvpM_2021",
+      "doi": "10.3389/fmicb.2021.794240",
+      "positions": [
+        2
+      ],
+      "expected_residues": "E",
+      "experimental_change": "E2A",
+      "effect": "no_detectable_effect",
+      "function": "gas vesicle formation and morphology",
+      "source_scope": "local_perturbation",
+      "source_anchor": "Table 1; Supplementary Figure 5A",
+      "case_group": "GvpM_Nterminal_null"
+    },
+    {
+      "event_id": "M_P3A_null",
+      "family": "GvpM",
+      "reference_id": "Hsal_pGvpM_2021",
+      "doi": "10.3389/fmicb.2021.794240",
+      "positions": [
+        3
+      ],
+      "expected_residues": "P",
+      "experimental_change": "P3A",
+      "effect": "no_detectable_effect",
+      "function": "gas vesicle formation and morphology (not interaction)",
+      "source_scope": "local_perturbation",
+      "source_anchor": "Table 1; Supplementary Figure 5A",
+      "case_group": "GvpM_Nterminal_null"
+    },
+    {
+      "event_id": "M_L19A_null",
+      "family": "GvpM",
+      "reference_id": "Hsal_pGvpM_2021",
+      "doi": "10.3389/fmicb.2021.794240",
+      "positions": [
+        19
+      ],
+      "expected_residues": "L",
+      "experimental_change": "L19A",
+      "effect": "no_detectable_effect",
+      "function": "gas vesicle formation and morphology (not interaction)",
+      "source_scope": "local_perturbation",
+      "source_anchor": "Table 1; Supplementary Figure 5A",
+      "case_group": "GvpM_Nterminal_null"
+    },
+    {
+      "event_id": "J_D22K_shape",
+      "family": "GvpJ",
+      "reference_id": "Hsal_pGvpJ_2021",
+      "doi": "10.3389/fmicb.2021.794240",
+      "positions": [
+        22
+      ],
+      "expected_residues": "D",
+      "experimental_change": "D22K",
+      "effect": "altered",
+      "function": "mixed cylindrical and spindle gas vesicle morphology",
+      "source_scope": "local_perturbation",
+      "source_anchor": "Figure 2B; Results mutations in GvpJ",
+      "case_group": "GvpJ_shape"
+    },
+    {
+      "event_id": "J_E69A_shape",
+      "family": "GvpJ",
+      "reference_id": "Hsal_pGvpJ_2021",
+      "doi": "10.3389/fmicb.2021.794240",
+      "positions": [
+        69
+      ],
+      "expected_residues": "E",
+      "experimental_change": "E69A",
+      "effect": "altered",
+      "function": "cylindrical gas vesicle morphology",
+      "source_scope": "local_perturbation",
+      "source_anchor": "Figure 2B; Results mutations in GvpJ",
+      "case_group": "GvpJ_shape"
+    },
+    {
+      "event_id": "J_R46A_stability",
+      "family": "GvpJ",
+      "reference_id": "Hsal_pGvpJ_2021",
+      "doi": "10.3389/fmicb.2021.794240",
+      "positions": [
+        46
+      ],
+      "expected_residues": "R",
+      "experimental_change": "R46A",
+      "effect": "altered",
+      "function": "vesicles observed but not recovered by flotation; stability interpretation",
+      "source_scope": "local_perturbation",
+      "source_anchor": "Figure 1B; Results mutations in GvpJ",
+      "case_group": "GvpJ_RAAIA"
+    },
+    {
+      "event_id": "J_K23A_stability",
+      "family": "GvpJ",
+      "reference_id": "Hsal_pGvpJ_2021",
+      "doi": "10.3389/fmicb.2021.794240",
+      "positions": [
+        23
+      ],
+      "expected_residues": "K",
+      "experimental_change": "K23A",
+      "effect": "altered",
+      "function": "vesicles observed but not recovered by flotation; stability interpretation",
+      "source_scope": "local_perturbation",
+      "source_anchor": "Figure 1B; Results mutations in GvpJ",
+      "case_group": "GvpJ_loop_stability"
+    },
+    {
+      "event_id": "J_A47D",
+      "family": "GvpJ",
+      "reference_id": "Hsal_pGvpJ_2021",
+      "doi": "10.3389/fmicb.2021.794240",
+      "positions": [
+        47
+      ],
+      "expected_residues": "A",
+      "experimental_change": "A47D",
+      "effect": "loss",
+      "function": "gas vesicle formation; increased J/L split-GFP signal",
+      "source_scope": "local_perturbation",
+      "source_anchor": "Figures 3B and 4A; Results interaction of GvpJ with GvpL",
+      "case_group": "GvpJ_RAAIA"
+    },
+    {
+      "event_id": "J_Y58E",
+      "family": "GvpJ",
+      "reference_id": "Hsal_pGvpJ_2021",
+      "doi": "10.3389/fmicb.2021.794240",
+      "positions": [
+        58
+      ],
+      "expected_residues": "Y",
+      "experimental_change": "Y58E",
+      "effect": "loss",
+      "function": "gas vesicle formation; reduced J/L split-GFP signal",
+      "source_scope": "local_perturbation",
+      "source_anchor": "Figures 3B and 4A; Results interaction of GvpJ with GvpL",
+      "case_group": "GvpJ_EYGL"
+    },
+    {
+      "event_id": "J_L60A",
+      "family": "GvpJ",
+      "reference_id": "Hsal_pGvpJ_2021",
+      "doi": "10.3389/fmicb.2021.794240",
+      "positions": [
+        60
+      ],
+      "expected_residues": "L",
+      "experimental_change": "L60A",
+      "effect": "loss",
+      "function": "gas vesicle formation; increased J/L split-GFP signal",
+      "source_scope": "local_perturbation",
+      "source_anchor": "Figures 3B and 4A; Results interaction of GvpJ with GvpL",
+      "case_group": "GvpJ_EYGL"
+    },
+    {
+      "event_id": "A_T6A",
+      "family": "GvpA",
+      "reference_id": "Hurt2024_Ana_GvpA_WT",
+      "doi": "10.1021/acssynbio.4c00283",
+      "positions": [
+        6
+      ],
+      "expected_residues": "T",
+      "experimental_change": "T6A",
+      "effect": "increased",
+      "function": "nonlinear ultrasound signal of E. coli expressing the ARG cluster",
+      "source_scope": "local_perturbation",
+      "source_anchor": "Figure 3E; Round 1 directed evolution",
+      "event_type": "single_site_acoustic_intervention",
+      "reported_fold_vs_WT": 3.07
+    },
+    {
+      "event_id": "A_K22R",
+      "family": "GvpA",
+      "reference_id": "Hurt2024_Ana_GvpA_WT",
+      "doi": "10.1021/acssynbio.4c00283",
+      "positions": [
+        22
+      ],
+      "expected_residues": "K",
+      "experimental_change": "K22R",
+      "effect": "increased",
+      "function": "nonlinear ultrasound signal of E. coli expressing the ARG cluster",
+      "source_scope": "local_perturbation",
+      "source_anchor": "Figure 3E; Round 1 directed evolution",
+      "event_type": "single_site_acoustic_intervention",
+      "reported_fold_vs_WT": 3.44
+    },
+    {
+      "event_id": "A_T6A_L40A",
+      "family": "GvpA",
+      "reference_id": "Hurt2024_Ana_GvpA_WT",
+      "doi": "10.1021/acssynbio.4c00283",
+      "positions": [
+        6,
+        40
+      ],
+      "expected_residues": "TL",
+      "experimental_change": "T6A/L40A",
+      "effect": "increased",
+      "function": "nonlinear ultrasound signal of E. coli expressing the ARG cluster",
+      "source_scope": "local_perturbation",
+      "source_anchor": "Figure 4E; Round 2 directed evolution",
+      "event_type": "combination_acoustic_intervention",
+      "reported_fold_vs_WT": 5.32
+    },
+    {
+      "event_id": "A_T6A_I48V",
+      "family": "GvpA",
+      "reference_id": "Hurt2024_Ana_GvpA_WT",
+      "doi": "10.1021/acssynbio.4c00283",
+      "positions": [
+        6,
+        48
+      ],
+      "expected_residues": "TI",
+      "experimental_change": "T6A/I48V",
+      "effect": "increased",
+      "function": "nonlinear ultrasound signal of E. coli expressing the ARG cluster",
+      "source_scope": "local_perturbation",
+      "source_anchor": "Figure 4E; Round 2 directed evolution",
+      "event_type": "combination_acoustic_intervention",
+      "reported_fold_vs_WT": 5.37
+    }
+  ],
+  "scope": "Curated sequence-verified experimental site inputs used for the current evidence mapping; unverified reference leads are excluded."
+}

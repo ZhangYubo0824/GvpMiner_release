@@ -31,7 +31,6 @@ PALETTE = {
 }
 
 CMAP_DIVERGING = "RdBu_r"
-CMAP_SEQUENTIAL = "Blues"
 
 ENDPOINT_LABEL = {
     "contact_density":                     "Contact density",
@@ -62,7 +61,6 @@ CONTROL_LABEL = {
 
 PRIMARY_FEATURES = {
     "contact_density", "relative_SASA", "long_range_contact_count",
-    "local_RMSD_or_structural_similarity",
 }
 
 
@@ -121,6 +119,23 @@ def _build_stat_index(stat_rows: Sequence[dict[str, object]]) -> dict[tuple[str,
                 (_to_float(row.get("q_value")) or 1.0) < (_to_float(existing.get("q_value")) or 1.0)):
                 index[key] = row
     return index
+
+
+def _headline_stat_rows(stat_rows: Sequence[dict[str, object]]) -> list[dict[str, object]]:
+    """Use only the prespecified structural comparison for new Exp4 figures."""
+    if not any("primary_q_value" in row for row in stat_rows):
+        return list(stat_rows)
+    selected = []
+    for row in stat_rows:
+        primary_q = _to_float(row.get("primary_q_value"))
+        if (
+            str(row.get("control_type", "")) == "composition_matched"
+            and str(row.get("feature", "")) in PRIMARY_FEATURES
+            and primary_q is not None
+            and math.isfinite(primary_q)
+        ):
+            selected.append({**row, "q_value": primary_q})
+    return selected
 
 
 def _adaptive_fontsize(n_cells: int, base: int = 9) -> float:
@@ -275,13 +290,14 @@ def _generate_publication_figures_direct(
     warnings: list[str] = []
 
     def save_current(fig, stem):
-        nonlocal paths
         paths.extend(_save(fig, stem, output_dir, formats))
         plt.close(fig)
 
-    stat_index = _build_stat_index(stat_rows)
+    primary_mode = any("primary_q_value" in row for row in stat_rows)
+    headline_rows = _headline_stat_rows(stat_rows)
+    stat_index = _build_stat_index(headline_rows)
 
-    signif_rows = [r for r in stat_rows if _to_float(r.get("q_value")) is not None]
+    signif_rows = [r for r in headline_rows if _to_float(r.get("q_value")) is not None]
     features_raw = sorted({str(r.get("feature", "")) for r in signif_rows})
     if not features_raw:
         features_raw = sorted(PRIMARY_FEATURES)
@@ -404,7 +420,8 @@ def _generate_publication_figures_direct(
         ax.set_xticklabels(top15, rotation=45, ha="right", fontsize=fs)
         ax.set_yticks(range(len(features_raw)))
         ax.set_yticklabels(feature_labels, fontsize=fs)
-        ax.set_title("Structural Enrichment  (Feature × Top 15 clusters)", fontweight="bold")
+        title = "Primary Structural Associations" if primary_mode else "Exploratory Structural Enrichment"
+        ax.set_title(f"{title}  (Feature × Top 15 clusters)", fontweight="bold")
         cbar = fig.colorbar(im, ax=ax, label="Median effect  (motif − control)", shrink=0.82)
         cbar.ax.yaxis.label.set_size(9)
         fig.tight_layout()
@@ -433,7 +450,8 @@ def _generate_publication_figures_direct(
                     fontweight="bold")
         ax.set_xticks(range(len(ep_names)))
         ax.set_xticklabels([_label(n) for n in ep_names], rotation=45, ha="right", fontsize=9)
-        ax.set_title(f"Significant Endpoint Hits  (q < 0.05, {n_clust} clusters)", fontweight="bold")
+        prefix = "Primary Endpoint Hits" if primary_mode else "Exploratory Endpoint Hits"
+        ax.set_title(f"{prefix}  (q < 0.05, {n_clust} clusters)", fontweight="bold")
         ax.set_ylabel("Number of significant clusters")
         ax.spines["top"].set_visible(False)
         ax.spines["right"].set_visible(False)
@@ -448,15 +466,14 @@ def _generate_publication_figures_direct(
     motif_cd = [_to_float(r.get("contact_density")) for r in feature_rows]
     motif_cd = [v for v in motif_cd if v is not None]
     if control_contact_density is None:
-        ctrl_cd = [_to_float(r.get("contact_density")) for r in control_rows]
+        box_controls = (
+            [r for r in control_rows if r.get("control_type") == "composition_matched"]
+            if any("primary_q_value" in r for r in stat_rows) else control_rows
+        )
+        ctrl_cd = [_to_float(r.get("contact_density")) for r in box_controls]
     else:
         ctrl_cd = [_to_float(value) for value in control_contact_density]
     ctrl_cd  = [v for v in ctrl_cd if v is not None]
-
-    cd_stats = [r for r in stat_rows if str(r.get("feature", "")) == "contact_density"]
-    cd_p_vals = [v for r in cd_stats if (v := _to_float(r.get("p_value"))) is not None]
-    cd_effects = [v for r in cd_stats if (v := _to_float(r.get("effect_median_difference"))) is not None]
-    has_wilcoxon = any(_to_float(r.get("wilcoxon_p_value")) is not None for r in cd_stats)
 
     fig, ax = plt.subplots(figsize=(5.5, 5))
     bp = ax.boxplot(
@@ -478,22 +495,15 @@ def _generate_publication_figures_direct(
                        zorder=3, edgecolors="none")
 
     ax.set_xticks([1, 2])
-    ax.set_xticklabels([f"Motif\n(n={len(motif_cd)})", f"Controls\n(n={len(ctrl_cd)})"],
+    control_label = "Composition background" if any("primary_q_value" in r for r in stat_rows) else "Controls"
+    ax.set_xticklabels([f"Motif\n(n={len(motif_cd)})", f"{control_label}\n(n={len(ctrl_cd)})"],
                        fontsize=11)
-    ax.set_title("Motif vs Control: Contact Density", fontweight="bold")
+    ax.set_title("Contact Density Distributions (Descriptive)", fontweight="bold")
     ax.set_ylabel("Contact density")
     ax.spines["top"].set_visible(False)
     ax.spines["right"].set_visible(False)
 
-    ann_lines = []
-    test_method = "Wilcoxon signed-rank" if has_wilcoxon else "Permutation test"
-    ann_lines.append(f"Test: {test_method}")
-    if cd_p_vals:
-        mp = float(np.median(cd_p_vals))
-        ann_lines.append(f"Median p = {mp:.4f}  {_sig_stars(mp)}")
-    if cd_effects:
-        me = float(np.median(cd_effects))
-        ann_lines.append(f"Median Δ = {me:+.4f}")
+    ann_lines = ["Pooled windows; see paired primary tests for inference"]
     if ann_lines:
         ax.text(0.98, 0.95, "\n".join(ann_lines), transform=ax.transAxes,
                 ha="right", va="top", fontsize=8.5,
@@ -599,7 +609,11 @@ def _generate_publication_figures_direct(
 
         ax.set_xlabel("Effect size  (median difference, motif − control)")
         ax.set_ylabel("−log10(q-value)")
-        ax.set_title("Volcano Plot: Structural Enrichment", fontweight="bold")
+        ax.set_title(
+            "Volcano Plot: Primary Structural Associations" if primary_mode
+            else "Volcano Plot: Exploratory Structural Enrichment",
+            fontweight="bold",
+        )
         ax.legend(fontsize=7, loc="upper left", ncol=max(1, n_feat // 7),
                   framealpha=0.8, edgecolor="#DDDDDD")
         ax.spines["top"].set_visible(False)

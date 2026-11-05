@@ -1,10 +1,7 @@
 from __future__ import annotations
 
-import csv
 from pathlib import Path
-from typing import Mapping, Sequence
 
-from .motif_sets import MotifSet, write_motif_sets_long
 
 
 def build_clusterprofiler_r_script() -> str:
@@ -124,49 +121,5 @@ def write_clusterprofiler_r_script(path: Path) -> Path:
     return path
 
 
-def write_clusterprofiler_inputs(
-    *,
-    motif_set_rows: Sequence[MotifSet],
-    term2gene_rows: Sequence[Mapping[str, object]] | None,
-    term2name_rows: Sequence[Mapping[str, object]] | None,
-    output_dir: Path,
-) -> dict[str, Path]:
-    output_dir = Path(output_dir)
-    output_dir.mkdir(parents=True, exist_ok=True)
-    motif_sets_path = output_dir / "motif_sets_long.csv"
-    write_motif_sets_long(motif_set_rows, motif_sets_path)
-
-    paths = {"motif_sets": motif_sets_path}
-    if term2gene_rows is not None:
-        term2gene_path = output_dir / "term2gene.csv"
-        with term2gene_path.open("w", encoding="utf-8", newline="") as handle:
-            writer = csv.DictWriter(handle, fieldnames=["term_id", "protein_id"])
-            writer.writeheader()
-            writer.writerows(term2gene_rows)
-        paths["term2gene"] = term2gene_path
-    if term2name_rows is not None:
-        term2name_path = output_dir / "term2name.csv"
-        with term2name_path.open("w", encoding="utf-8", newline="") as handle:
-            writer = csv.DictWriter(handle, fieldnames=["term_id", "term_name"])
-            writer.writeheader()
-            writer.writerows(term2name_rows)
-        paths["term2name"] = term2name_path
-    return paths
 
 
-def build_clusterprofiler_command(
-    *,
-    r_script: Path,
-    term2gene: Path,
-    term2name: Path,
-    motif_sets: Path,
-    output: Path,
-    rscript_executable: str = "Rscript",
-) -> str:
-    return (
-        f'{rscript_executable} "{r_script}" '
-        f'--term2gene="{term2gene}" '
-        f'--term2name="{term2name}" '
-        f'--motif-sets="{motif_sets}" '
-        f'--output="{output}"'
-    )

@@ -1,0 +1,10 @@
+# Optional model dependencies; includes the core requirements.
+-r requirements.txt
+torch>=2.2,<3
+fair-esm==2.0.0
+transformers==4.46.3
+pydssp>=0.9,<1
+
+# Select the PyTorch/CUDA build for the target server.
+# ESMFold/OpenFold and external annotation tools require additional installation.
+# MotifAE's exact inference/alignment requirements are under baselines/motifae/.

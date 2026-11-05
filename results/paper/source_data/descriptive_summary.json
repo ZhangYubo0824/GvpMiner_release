@@ -1,0 +1,489 @@
+{
+  "families": [
+    {
+      "family": "GvpA",
+      "candidates": 21,
+      "strict_structure": 1,
+      "annotation_testable": 7,
+      "annotation_supported": 5,
+      "dual_support": 1,
+      "cross_model_match_j050": 11,
+      "median_plddt": 53.63255087719298,
+      "median_conservation": 0.6646045522391717
+    },
+    {
+      "family": "GvpC",
+      "candidates": 29,
+      "strict_structure": 27,
+      "annotation_testable": 18,
+      "annotation_supported": 17,
+      "dual_support": 15,
+      "cross_model_match_j050": 18,
+      "median_plddt": 91.34141803278689,
+      "median_conservation": 0.5339565750722916
+    },
+    {
+      "family": "GvpD",
+      "candidates": 56,
+      "strict_structure": 54,
+      "annotation_testable": 54,
+      "annotation_supported": 52,
+      "dual_support": 52,
+      "cross_model_match_j050": 40,
+      "median_plddt": 91.76617027863777,
+      "median_conservation": 0.46413936239008985
+    },
+    {
+      "family": "GvpF",
+      "candidates": 66,
+      "strict_structure": 64,
+      "annotation_testable": 66,
+      "annotation_supported": 66,
+      "dual_support": 64,
+      "cross_model_match_j050": 12,
+      "median_plddt": 95.73768448275862,
+      "median_conservation": 0.5749531110674736
+    },
+    {
+      "family": "GvpG",
+      "candidates": 21,
+      "strict_structure": 12,
+      "annotation_testable": 5,
+      "annotation_supported": 5,
+      "dual_support": 4,
+      "cross_model_match_j050": 9,
+      "median_plddt": 73.36408002978156,
+      "median_conservation": 0.4560156787098582
+    },
+    {
+      "family": "GvpJ",
+      "candidates": 69,
+      "strict_structure": 2,
+      "annotation_testable": 11,
+      "annotation_supported": 10,
+      "dual_support": 0,
+      "cross_model_match_j050": 40,
+      "median_plddt": 55.90269512195122,
+      "median_conservation": 0.6225398709808189
+    },
+    {
+      "family": "GvpK",
+      "candidates": 77,
+      "strict_structure": 53,
+      "annotation_testable": 12,
+      "annotation_supported": 7,
+      "dual_support": 3,
+      "cross_model_match_j050": 33,
+      "median_plddt": 78.28174813432835,
+      "median_conservation": 0.7021024285100848
+    },
+    {
+      "family": "GvpL",
+      "candidates": 1,
+      "strict_structure": 1,
+      "annotation_testable": 1,
+      "annotation_supported": 1,
+      "dual_support": 1,
+      "cross_model_match_j050": 0,
+      "median_plddt": 94.96386549566228,
+      "median_conservation": 0.5577292002500319
+    },
+    {
+      "family": "GvpM",
+      "candidates": 6,
+      "strict_structure": 0,
+      "annotation_testable": 6,
+      "annotation_supported": 0,
+      "dual_support": 0,
+      "cross_model_match_j050": 6,
+      "median_plddt": 54.551472503373816,
+      "median_conservation": 0.7720738981595131
+    },
+    {
+      "family": "GvpN",
+      "candidates": 84,
+      "strict_structure": 79,
+      "annotation_testable": 67,
+      "annotation_supported": 55,
+      "dual_support": 51,
+      "cross_model_match_j050": 30,
+      "median_plddt": 92.05592637630662,
+      "median_conservation": 0.5823264732986827
+    },
+    {
+      "family": "GvpO",
+      "candidates": 17,
+      "strict_structure": 11,
+      "annotation_testable": 7,
+      "annotation_supported": 6,
+      "dual_support": 4,
+      "cross_model_match_j050": 13,
+      "median_plddt": 80.33014457831325,
+      "median_conservation": 0.5431997479071965
+    },
+    {
+      "family": "GvpQ",
+      "candidates": 7,
+      "strict_structure": 0,
+      "annotation_testable": 0,
+      "annotation_supported": 0,
+      "dual_support": 0,
+      "cross_model_match_j050": 6,
+      "median_plddt": 49.27658943577431,
+      "median_conservation": 0.640402374510316
+    },
+    {
+      "family": "GvpT",
+      "candidates": 17,
+      "strict_structure": 7,
+      "annotation_testable": 0,
+      "annotation_supported": 0,
+      "dual_support": 0,
+      "cross_model_match_j050": 9,
+      "median_plddt": 68.43906558849955,
+      "median_conservation": 0.663509528483065
+    },
+    {
+      "family": "GvpU",
+      "candidates": 35,
+      "strict_structure": 30,
+      "annotation_testable": 0,
+      "annotation_supported": 0,
+      "dual_support": 0,
+      "cross_model_match_j050": 13,
+      "median_plddt": 82.08248051948053,
+      "median_conservation": 0.49330795610666933
+    },
+    {
+      "family": "GvpV",
+      "candidates": 16,
+      "strict_structure": 7,
+      "annotation_testable": 0,
+      "annotation_supported": 0,
+      "dual_support": 0,
+      "cross_model_match_j050": 3,
+      "median_plddt": 66.88294791666667,
+      "median_conservation": 0.5332517115012614
+    }
+  ],
+  "endpoints": [
+    {
+      "endpoint": "接触密度",
+      "testable": 514,
+      "significant": 460,
+      "positive_median_difference": 257,
+      "negative_median_difference": 202,
+      "zero_median_difference": 1
+    },
+    {
+      "endpoint": "相对 SASA",
+      "testable": 514,
+      "significant": 448,
+      "positive_median_difference": 204,
+      "negative_median_difference": 244,
+      "zero_median_difference": 0
+    },
+    {
+      "endpoint": "长程接触数",
+      "testable": 514,
+      "significant": 386,
+      "positive_median_difference": 53,
+      "negative_median_difference": 138,
+      "zero_median_difference": 195
+    }
+  ],
+  "combinations": [
+    {
+      "strict_structure": true,
+      "annotation_support": true,
+      "cross_model_match_j050": true,
+      "candidates": 76
+    },
+    {
+      "strict_structure": true,
+      "annotation_support": true,
+      "cross_model_match_j050": false,
+      "candidates": 119
+    },
+    {
+      "strict_structure": true,
+      "annotation_support": false,
+      "cross_model_match_j050": true,
+      "candidates": 72
+    },
+    {
+      "strict_structure": true,
+      "annotation_support": false,
+      "cross_model_match_j050": false,
+      "candidates": 81
+    },
+    {
+      "strict_structure": false,
+      "annotation_support": true,
+      "cross_model_match_j050": true,
+      "candidates": 23
+    },
+    {
+      "strict_structure": false,
+      "annotation_support": true,
+      "cross_model_match_j050": false,
+      "candidates": 6
+    },
+    {
+      "strict_structure": false,
+      "annotation_support": false,
+      "cross_model_match_j050": true,
+      "candidates": 72
+    },
+    {
+      "strict_structure": false,
+      "annotation_support": false,
+      "cross_model_match_j050": false,
+      "candidates": 73
+    }
+  ],
+  "annotation_terms": [
+    {
+      "family": "GvpC",
+      "term_description": "COG:Q",
+      "supported_candidates": 3,
+      "all_family_candidates": 29,
+      "annotation_ids": "COG:Q"
+    },
+    {
+      "family": "GvpC",
+      "term_description": "COG:S",
+      "supported_candidates": 14,
+      "all_family_candidates": 29,
+      "annotation_ids": "COG:S"
+    },
+    {
+      "family": "GvpC",
+      "term_description": "GO:0005575",
+      "supported_candidates": 5,
+      "all_family_candidates": 29,
+      "annotation_ids": "GO:0005575"
+    },
+    {
+      "family": "GvpC",
+      "term_description": "GO:0005622",
+      "supported_candidates": 5,
+      "all_family_candidates": 29,
+      "annotation_ids": "GO:0005622"
+    },
+    {
+      "family": "GvpC",
+      "term_description": "GO:0005623",
+      "supported_candidates": 5,
+      "all_family_candidates": 29,
+      "annotation_ids": "GO:0005623"
+    },
+    {
+      "family": "GvpC",
+      "term_description": "GO:0033172",
+      "supported_candidates": 5,
+      "all_family_candidates": 29,
+      "annotation_ids": "GO:0033172"
+    },
+    {
+      "family": "GvpC",
+      "term_description": "GO:0043226",
+      "supported_candidates": 5,
+      "all_family_candidates": 29,
+      "annotation_ids": "GO:0043226"
+    },
+    {
+      "family": "GvpC",
+      "term_description": "GO:0043228",
+      "supported_candidates": 5,
+      "all_family_candidates": 29,
+      "annotation_ids": "GO:0043228"
+    },
+    {
+      "family": "GvpC",
+      "term_description": "GO:0043229",
+      "supported_candidates": 5,
+      "all_family_candidates": 29,
+      "annotation_ids": "GO:0043229"
+    },
+    {
+      "family": "GvpC",
+      "term_description": "GO:0043232",
+      "supported_candidates": 5,
+      "all_family_candidates": 29,
+      "annotation_ids": "GO:0043232"
+    },
+    {
+      "family": "GvpC",
+      "term_description": "GO:0044422",
+      "supported_candidates": 5,
+      "all_family_candidates": 29,
+      "annotation_ids": "GO:0044422"
+    },
+    {
+      "family": "GvpC",
+      "term_description": "GO:0044424",
+      "supported_candidates": 5,
+      "all_family_candidates": 29,
+      "annotation_ids": "GO:0044424"
+    },
+    {
+      "family": "GvpC",
+      "term_description": "GO:0044446",
+      "supported_candidates": 5,
+      "all_family_candidates": 29,
+      "annotation_ids": "GO:0044446"
+    },
+    {
+      "family": "GvpC",
+      "term_description": "GO:0044464",
+      "supported_candidates": 5,
+      "all_family_candidates": 29,
+      "annotation_ids": "GO:0044464"
+    },
+    {
+      "family": "GvpC",
+      "term_description": "Gas vesicle C repeat",
+      "supported_candidates": 14,
+      "all_family_candidates": 29,
+      "annotation_ids": "IPR018185"
+    },
+    {
+      "family": "GvpC",
+      "term_description": "Gas vesicle protein GvpC, halobacteria",
+      "supported_candidates": 3,
+      "all_family_candidates": 29,
+      "annotation_ids": "IPR008639"
+    },
+    {
+      "family": "GvpC",
+      "term_description": "Gas vesicles protein GVPc repeated domain",
+      "supported_candidates": 14,
+      "all_family_candidates": 29,
+      "annotation_ids": "PF01304"
+    },
+    {
+      "family": "GvpC",
+      "term_description": "Halobacterial gas vesicle protein C (GVPC) repeat",
+      "supported_candidates": 3,
+      "all_family_candidates": 29,
+      "annotation_ids": "PF05465"
+    },
+    {
+      "family": "GvpC",
+      "term_description": "gas vesicle minor protein",
+      "supported_candidates": 3,
+      "all_family_candidates": 29,
+      "annotation_ids": "K23263"
+    },
+    {
+      "family": "GvpD",
+      "term_description": "AAA+ ATPase domain",
+      "supported_candidates": 21,
+      "all_family_candidates": 56,
+      "annotation_ids": "IPR003593"
+    },
+    {
+      "family": "GvpD",
+      "term_description": "Circadian clock KaiC-related",
+      "supported_candidates": 14,
+      "all_family_candidates": 56,
+      "annotation_ids": "IPR051347"
+    },
+    {
+      "family": "GvpD",
+      "term_description": "Circadian clock protein kinase KaiC",
+      "supported_candidates": 14,
+      "all_family_candidates": 56,
+      "annotation_ids": "IPR030665"
+    },
+    {
+      "family": "GvpD",
+      "term_description": "GvpD basic region 2",
+      "supported_candidates": 2,
+      "all_family_candidates": 56,
+      "annotation_ids": "PF20440"
+    },
+    {
+      "family": "GvpD",
+      "term_description": "GvpD gas vesicle protein, P-loop domain",
+      "supported_candidates": 36,
+      "all_family_candidates": 56,
+      "annotation_ids": "PF07088"
+    },
+    {
+      "family": "GvpD",
+      "term_description": "GvpD, P-loop domain",
+      "supported_candidates": 36,
+      "all_family_candidates": 56,
+      "annotation_ids": "IPR009788"
+    },
+    {
+      "family": "GvpD",
+      "term_description": "GvpD, basic region 2",
+      "supported_candidates": 2,
+      "all_family_candidates": 56,
+      "annotation_ids": "IPR046777"
+    },
+    {
+      "family": "GvpD",
+      "term_description": "KaiC",
+      "supported_candidates": 15,
+      "all_family_candidates": 56,
+      "annotation_ids": "PF06745"
+    },
+    {
+      "family": "GvpD",
+      "term_description": "KaiC domain",
+      "supported_candidates": 14,
+      "all_family_candidates": 56,
+      "annotation_ids": "IPR010624"
+    },
+    {
+      "family": "GvpD",
+      "term_description": "KaiC-like domain",
+      "supported_candidates": 15,
+      "all_family_candidates": 56,
+      "annotation_ids": "IPR014774"
+    },
+    {
+      "family": "GvpD",
+      "term_description": "circadian clock protein KaiC",
+      "supported_candidates": 14,
+      "all_family_candidates": 56,
+      "annotation_ids": "K08482"
+    },
+    {
+      "family": "GvpD",
+      "term_description": "gas vesicle operon resressor",
+      "supported_candidates": 21,
+      "all_family_candidates": 56,
+      "annotation_ids": "K23307"
+    }
+  ],
+  "cases": [
+    {
+      "candidate": "GvpJ-018",
+      "structure_strict": false,
+      "annotation_supported": true,
+      "cross_best_residue_jaccard": 0.928,
+      "candidate_mean_plddt": 63.387827586206896,
+      "msa_mean_conservation": 0.7178526224072181
+    },
+    {
+      "candidate": "GvpM-002",
+      "structure_strict": false,
+      "annotation_supported": false,
+      "cross_best_residue_jaccard": 1.0,
+      "candidate_mean_plddt": 52.4240020242915,
+      "msa_mean_conservation": 0.7638910379457478
+    }
+  ],
+  "not_strict": 174,
+  "not_strict_low_plddt": 169,
+  "annotation_unevaluable": {
+    "unevaluable_insufficient_annotated_foreground": 193,
+    "unevaluable_no_eligible_gene_sets": 59,
+    "unevaluable_no_family_annotations": 16
+  }
+}

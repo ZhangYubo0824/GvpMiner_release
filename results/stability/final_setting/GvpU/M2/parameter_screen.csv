@@ -1,0 +1,2 @@
+min_cluster_size,min_samples,raw_cluster_number,stable_cluster_number,median_window_jaccard,median_protein_jaccard,median_occurrence_jaccard,noise_ratio,stable_window_coverage,stable_protein_coverage,median_ami_all,median_noise_agreement
+40,10,74,35,0.8953802416488984,0.8980241778239959,0.8953802416488984,0.07821170558056748,0.4712595539734059,0.9981549815498155,0.8963322645039522,0.9288294530216901

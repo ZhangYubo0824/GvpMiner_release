@@ -1,0 +1,8 @@
+motif_cluster,n_instances,n_sequences,mean_motif_pLDDT,high_confidence_fraction,best_feature,best_control_type,best_q_value,best_effect_median_difference,primary_n_proteins,primary_structural_association,low_prediction_confidence,exploratory_best_q_value,significant_endpoints
+GvpQ_M2_motif_001,469,469,50.89694152131395,0.0042643923240938165,contact_density,composition_matched,1.5334547269880806e-77,-0.028653061224489768,469,True,True,4.6003641809642415e-77,3
+GvpQ_M2_motif_002,377,377,49.05798143236074,0.0,relative_SASA,composition_matched,2.0866444063086403e-62,0.0955971909322556,377,True,True,3.1299666094629602e-62,3
+GvpQ_M2_motif_003,287,287,50.71946167247387,0.0,contact_density,composition_matched,3.85504314858107e-42,-0.023684210526315808,287,True,True,5.434680223785819e-43,3
+GvpQ_M2_motif_004,269,262,45.98818587360595,0.007434944237918215,contact_density,composition_matched,2.841352832300285e-29,0.02105263157894738,262,True,True,1.7213097138902316e-42,3
+GvpQ_M2_motif_005,137,137,51.51409124087591,0.0,long_range_contact_count,composition_matched,2.3540935151156504e-20,-0.2,137,True,True,5.868416672082398e-25,3
+GvpQ_M2_motif_006,119,119,49.27658943577431,0.0,relative_SASA,composition_matched,1.0249558302948422e-20,0.09239874591814379,119,True,True,4.865019521434518e-21,3
+GvpQ_M2_motif_007,115,115,46.429965217391306,0.0,contact_density,composition_matched,4.9379821697006036e-18,0.015263157894736867,115,True,True,3.434892042492393e-21,3

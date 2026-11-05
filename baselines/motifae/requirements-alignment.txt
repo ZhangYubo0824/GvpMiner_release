@@ -1,0 +1,2 @@
+# Alignment, qualification and handoff use Python 3.11+ standard library only.
+# Linux runtime: licensed fixed GibbsCluster 2.0f, gdb, tcsh, perl, pidfd.

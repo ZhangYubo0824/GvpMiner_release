@@ -1,0 +1,12 @@
+{
+  "family": "GvpQ",
+  "software": "MAFFT v7.526 Windows official signed distribution",
+  "method": "FFT-NS-1",
+  "input_sha256": "f42bbd5b78667be7ff2961edeec53d8f5abc87430e5f8ae7232a8cbebf604336",
+  "alignment_sha256": "ea842ac3c96af8b59298a922c80f26c372b0338008fe781cdf818928c1059d56",
+  "identifiers_sha256": "25072a8b963b1ea61cd850dd02dee95c2419982385fd3fa729ed4117389cdb98",
+  "threads": 4,
+  "n_sequences": 471,
+  "alignment_columns": 923,
+  "validated_ungapped_identity": true
+}

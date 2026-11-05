@@ -13,7 +13,6 @@ except ImportError:
 
 from .controls import (
     CompositionFeatureIndex,
-    CompositionWindowIndex,
     PositionSequenceIndex,
     build_composition_feature_index,
     build_composition_window_index,
@@ -24,6 +23,7 @@ from .controls import (
     sample_position_matched_windows_from_index,
     sample_windows_from_candidates,
 )
+from .control_audit import ControlAudit
 from .features import StructureFeatureCache, build_structure_feature_cache, compute_interval_features_cached
 from .figures import generate_publication_figures_from_summaries
 
@@ -34,8 +34,10 @@ from .resume import load_resume_state
 from .rmsd import backfill_local_rmsd_resumable
 from .stats import (
     ControlFeatureAccumulator,
+    PRIMARY_CONTROL_TYPE,
     PRIMARY_ENDPOINTS,
     SECONDARY_ENDPOINTS,
+    assign_primary_q_values,
     summarize_structural_enrichment_from_control_accumulator,
 )
 from .structure_backends import get_structure_backend
@@ -142,38 +144,6 @@ def _write_progress(
     )
 
 
-def _write_checkpoint(
-    output_dir: Path,
-    *,
-    stage: str,
-    feature_rows: list[dict[str, object]],
-    control_rows: list[dict[str, object]],
-    skipped_rows: list[dict[str, object]],
-    stat_rows: list[dict[str, object]] | None = None,
-    family: str = "",
-    method: str = "",
-    warnings: Sequence[str] = (),
-) -> None:
-    output_dir.mkdir(parents=True, exist_ok=True)
-    write_csv_rows(output_dir / "motif_structure_features.csv", feature_rows, MOTIF_FEATURE_FIELDS)
-    write_csv_rows(output_dir / "matched_control_features.csv", control_rows, CONTROL_FEATURE_FIELDS)
-    write_csv_rows(output_dir / "skipped_motif_instances.csv", skipped_rows)
-    if stat_rows is not None:
-        write_csv_rows(output_dir / "structural_enrichment_results.csv", stat_rows)
-    _write_progress(
-        output_dir,
-        stage=stage,
-        family=family,
-        method=method,
-        complete=False,
-        warnings=warnings,
-        counts={
-            "motif_features": len(feature_rows),
-            "control_features": len(control_rows),
-            "skipped_motif_instances": len(skipped_rows),
-            "structural_tests": len(stat_rows or []),
-        },
-    )
 
 
 def _require_columns(rows: Sequence[dict[str, str]], required: Sequence[str], table_name: str) -> None:
@@ -405,7 +375,6 @@ def _build_controls_for_motif(
     composition_control_cache: dict[tuple[str, str, str, int, int, str], list[tuple[str, tuple[int, int]]]],
     structure_dir: Path,
     excluded_intervals: dict[str, list[tuple[int, int]]],
-    composition_index: CompositionWindowIndex | None,
     composition_feature_index: CompositionFeatureIndex | None,
     num_random_controls: int,
     seed: int,
@@ -446,6 +415,7 @@ def _build_controls_for_motif(
             motif_end=end,
             index=position_index,
             num_controls=num_random_controls,
+            rng_seed=seed + stable_seed_offset(f"{sequence_id}:{start}-{end}") % 100000,
         )
     control_specs.extend(
         ("position_matched", control_sequence_id, window)
@@ -472,7 +442,6 @@ def _build_controls_for_motif(
             if composition_feature_index is not None
             else sample_composition_matched_windows(
                 motif_sequence=motif_sequence,
-                motif_sequence_id=sequence_id,
                 motif_family=family,
                 window_length=motif_length,
                 sequences=sequences,
@@ -541,6 +510,8 @@ def run_exp4_motif_structure_analysis(
     contact_threshold: float = 8.0,
     long_range_min_separation: int = 12,
     low_plddt_cutoff: float = 70.0,
+    exp3_profile: str = "unknown",
+    exp3_run_signature: str = "",
     resume: bool = False,
     rmsd_workers: int = 1,
     show_progress: bool = True,
@@ -620,6 +591,7 @@ def run_exp4_motif_structure_analysis(
     )
 
     control_accumulator = ControlFeatureAccumulator(PRIMARY_ENDPOINTS + SECONDARY_ENDPOINTS)
+    control_audit = ControlAudit(motif_rows)
     control_contact_density: list[float] = []
     if resume_state is not None:
         feature_rows: list[dict[str, object]] = [dict(row) for row in resume_state.feature_rows]
@@ -687,8 +659,9 @@ def run_exp4_motif_structure_analysis(
         actual_control_count = 0
         for control_row in control_rows:
             control_accumulator.add(control_row)
+            control_audit.add(control_row)
             actual_control_count += 1
-            if generate_figures:
+            if generate_figures and control_row.get("control_type") == "composition_matched":
                 contact_density = _to_float(control_row.get("contact_density"))
                 if contact_density is not None:
                     control_contact_density.append(contact_density)
@@ -768,7 +741,7 @@ def run_exp4_motif_structure_analysis(
                     "motif_cluster": motif_cluster,
                     "prediction_backend": "precomputed",
                     "structure_path": str(parsed.source_path),
-                    "cluster_score": motif_row.get("cluster_score", motif_row.get("conservation_score", "")),
+                    "cluster_score": motif_row.get("cluster_score", ""),
                     "cluster_frequency": motif_row.get("cluster_frequency", motif_row.get("n_support_windows", "")),
                     **features,
                 }
@@ -787,7 +760,6 @@ def run_exp4_motif_structure_analysis(
                     composition_control_cache=composition_control_cache,
                     structure_dir=Path(structure_dir),
                     excluded_intervals=excluded,
-                    composition_index=composition_index,
                     composition_feature_index=composition_feature_index,
                     num_random_controls=num_random_controls,
                     seed=seed,
@@ -798,7 +770,8 @@ def run_exp4_motif_structure_analysis(
                 control_writer.writerows(control_batch)
                 for control_row in control_batch:
                     control_accumulator.add(control_row)
-                    if generate_figures:
+                    control_audit.add(control_row)
+                    if generate_figures and control_row.get("control_type") == "composition_matched":
                         contact_density = _to_float(control_row.get("contact_density"))
                         if contact_density is not None:
                             control_contact_density.append(contact_density)
@@ -896,6 +869,7 @@ def run_exp4_motif_structure_analysis(
             },
         )
 
+    assign_primary_q_values(stat_rows)
     write_csv_rows(output_dir / "structural_enrichment_results.csv", stat_rows)
     _write_progress(
         output_dir,
@@ -920,6 +894,8 @@ def run_exp4_motif_structure_analysis(
         stat_rows=stat_rows,
     )
     write_csv_rows(output_dir / "motif_cluster_summary.csv", cluster_summary_rows)
+    control_diagnostic_rows = control_audit.summaries(feature_rows)
+    write_csv_rows(output_dir / "control_diagnostics.csv", control_diagnostic_rows)
 
     figure_paths: list[Path] = []
     output_warnings: list[str] = []
@@ -933,12 +909,18 @@ def run_exp4_motif_structure_analysis(
             stat_rows=stat_rows,
             formats=figure_formats,
         )
+    if exp3_profile == "pilot":
+        output_warnings.append(
+            "Exp3 motifs came from the pilot stability profile; use a confirmatory motif set for manuscript conclusions."
+        )
 
     summary = {
         "sequence_table": str(sequence_table),
         "motif_table": str(motif_table) if motif_table is not None else "exp3_adapter",
         "structure_dir": str(structure_dir),
         "prediction_backend": prediction_backend,
+        "exp3_profile": exp3_profile,
+        "exp3_run_signature": exp3_run_signature,
         "predict_missing_structures": bool(predict_missing_structures),
         "output_dir": str(output_dir),
         "motif_instances_requested": len(motif_rows),
@@ -946,10 +928,12 @@ def run_exp4_motif_structure_analysis(
         "control_windows_analyzed": control_count,
         "structural_tests": len(stat_rows),
         "motif_cluster_summaries": len(cluster_summary_rows),
+        "control_diagnostic_rows": len(control_diagnostic_rows),
         "publication_figures": len(figure_paths),
         "output_warnings": output_warnings,
         "skipped_motif_instances": len(skipped_rows),
         "primary_endpoints": PRIMARY_ENDPOINTS,
+        "primary_control_type": PRIMARY_CONTROL_TYPE,
         "secondary_endpoints": SECONDARY_ENDPOINTS,
     }
     write_analysis_report(

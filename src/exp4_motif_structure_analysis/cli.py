@@ -2,6 +2,7 @@ from __future__ import annotations
 
 import argparse
 from concurrent.futures import ProcessPoolExecutor
+import json
 from pathlib import Path
 from typing import Sequence
 try:
@@ -23,10 +24,12 @@ try:
 except ImportError:
     _root = Path(__file__).resolve().parents[2]
     OUTPUT_DIR = _root / "work" / "results"
-    _prior_results = OUTPUT_DIR
-    EXP4_SEQUENCE_TABLE = _prior_results / "preprocessed" / "cleaned_gvp_dataset.csv"
-    EXP4_EXP3_INPUT_DIR = _prior_results / "exp3_domain_discovery"
-    EXP4_STRUCTURE_INPUT_DIR = _prior_results / "structures"
+    _prior_results = _root / "data" / "reference"
+    EXP4_SEQUENCE_TABLE = OUTPUT_DIR / "preprocessed" / "cleaned_gvp_dataset.csv"
+    if not EXP4_SEQUENCE_TABLE.is_file():
+        EXP4_SEQUENCE_TABLE = _prior_results / "preprocessed" / "cleaned_gvp_dataset.csv"
+    EXP4_EXP3_INPUT_DIR = OUTPUT_DIR / "exp3_domain_discovery"
+    EXP4_STRUCTURE_INPUT_DIR = OUTPUT_DIR / "structures"
 
 MOTIF_STRUCTURE_DIR = OUTPUT_DIR / "exp4_motif_structure_analysis"
 SUPPORTED_MOTIF_METHODS = (
@@ -35,14 +38,11 @@ SUPPORTED_MOTIF_METHODS = (
     "MEME",
     "GLAM2",
     "STREME",
-    "SLiMFinder",
-    "DiMotif",
     "MotifAE",
+    "InterPLM",
 )
 
 
-def default_project_root() -> Path:
-    return OUTPUT_DIR.parent
 
 
 def _default_sequence_table() -> Path:
@@ -57,7 +57,7 @@ def _default_output_root() -> Path:
     return MOTIF_STRUCTURE_DIR
 
 
-def _default_structure_dir(family: str, method: str, backend: str) -> Path:
+def _default_structure_dir(family: str, backend: str) -> Path:
     return EXP4_STRUCTURE_INPUT_DIR / backend / family
 
 
@@ -117,7 +117,17 @@ def build_arg_parser() -> argparse.ArgumentParser:
     parser.add_argument("--exp3-dir", type=Path, default=None)
     parser.add_argument("--families", nargs="+", default=None)
     parser.add_argument("--methods", nargs="+", choices=SUPPORTED_MOTIF_METHODS, default=None)
-    parser.add_argument("--structure-dir", type=Path, default=None)
+    structure_group = parser.add_mutually_exclusive_group()
+    structure_group.add_argument("--structure-dir", type=Path, default=None)
+    structure_group.add_argument(
+        "--structure-root",
+        type=Path,
+        default=None,
+        help=(
+            "Root containing <backend>/<family> full-length structure caches; "
+            "used with --from-exp3."
+        ),
+    )
     parser.add_argument("--output-dir", type=Path, default=None)
     parser.add_argument(
         "--predict-missing-structures",
@@ -178,6 +188,18 @@ def build_arg_parser() -> argparse.ArgumentParser:
     return parser
 
 
+def resolve_structure_dir(
+    args: argparse.Namespace,
+    *,
+    family: str,
+) -> Path:
+    if args.structure_dir is not None:
+        return Path(args.structure_dir)
+    if args.structure_root is not None:
+        return Path(args.structure_root) / args.prediction_backend / family
+    return _default_structure_dir(family, args.prediction_backend)
+
+
 def _run_one_exp3_unit(
     args: argparse.Namespace,
     *,
@@ -188,10 +210,9 @@ def _run_one_exp3_unit(
     family: str,
     method: str,
 ) -> dict[str, object]:
-    structure_dir = args.structure_dir or _default_structure_dir(
-        family,
-        method,
-        args.prediction_backend,
+    structure_dir = resolve_structure_dir(
+        args,
+        family=family,
     )
     if not structure_dir.exists() and not args.predict_missing_structures:
         raise SystemExit(
@@ -209,7 +230,27 @@ def _run_one_exp3_unit(
         families=[family],
         methods=[method],
     )
+    manifest_path = exp3_dir.parent / "motif_stability" / family / method / "run_manifest.json"
+    exp3_manifest = json.loads(manifest_path.read_text(encoding="utf-8")) if manifest_path.is_file() else {}
+    exp3_profile = str(exp3_manifest.get("profile") or "unknown")
+    exp3_run_signature = str(exp3_manifest.get("run_signature") or "")
     output_dir = output_root / family / method
+    progress_path = output_dir / "analysis_progress.json"
+    summary_path = output_dir / "analysis_summary.json"
+    resume_run = args.resume and progress_path.is_file()
+    if args.resume and progress_path.is_file() and summary_path.is_file():
+        progress = json.loads(progress_path.read_text(encoding="utf-8"))
+        if progress.get("complete") is True and progress.get("stage") == "complete":
+            summary = json.loads(summary_path.read_text(encoding="utf-8"))
+            if "motif_instances_analyzed" not in summary:
+                raise ValueError(
+                    f"Completed Exp4 summary is invalid: {summary_path}"
+                )
+            if not exp3_run_signature or summary.get("exp3_run_signature") == exp3_run_signature:
+                print(f"Skipping completed {family} {method}: {summary_path}")
+                return summary
+            print(f"Exp3 signature changed for {family} {method}; recomputing Exp4.")
+            resume_run = False
     print(f"Analyzing {family} {method}: {len(motif_rows)} motif instances")
     return run_exp4_motif_structure_analysis(
         sequence_table=sequence_table,
@@ -224,7 +265,9 @@ def _run_one_exp3_unit(
         contact_threshold=args.contact_threshold,
         long_range_min_separation=args.long_range_min_separation,
         low_plddt_cutoff=args.low_plddt_cutoff,
-        resume=args.resume,
+        resume=resume_run,
+        exp3_profile=exp3_profile,
+        exp3_run_signature=exp3_run_signature,
         rmsd_workers=args.rmsd_workers,
         show_progress=not args.no_progress,
         generate_figures=args.generate_figures,

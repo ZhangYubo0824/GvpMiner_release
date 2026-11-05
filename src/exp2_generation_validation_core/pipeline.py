@@ -24,14 +24,12 @@ if str(SRC_ROOT) not in sys.path:
 
 from common.validation import (
     AA_STANDARD,
-    EXP1_DIR,
     SequenceRecord,
     compute_embeddings,
 )
-from config import NCBI_DIR, EXP2_DIR
+from config import NCBI_DIR, EXP2_DIR, EXP1_DIR
 
 
-EXP2_GENERATION_MODEL_DIR = EXP2_DIR / "gvp_biogpt_model"
 T02_FAMILY_PATTERN_PREFIX = "Gvp"
 
 # ---------------------------------------------------------------------------
@@ -414,9 +412,7 @@ def generate_t02_sequences(
     temperature: float = 1.0,
     top_k: int = 50,
     top_p: float = 0.95,
-    max_attempts_multiplier: int = 12,
 ) -> List[str]:
-    del max_attempts_multiplier
     import torch
     from transformers import GPT2LMHeadModel, PreTrainedTokenizerFast
 
@@ -508,9 +504,7 @@ def load_exp1_classifier_bundle(
     *,
     method: str,
     exp1_dir: Path = EXP1_DIR,
-    local_artifact_dir: Optional[Path] = None,
 ):
-    del local_artifact_dir
     path = resolve_classifier_bundle_path(exp1_dir, method)
     if not path.exists():
         raise FileNotFoundError(
@@ -535,7 +529,6 @@ def predict_with_exp1_classifier(
     classifier, label_encoder, source_path = load_exp1_classifier_bundle(
         method=method,
         exp1_dir=exp1_dir,
-        local_artifact_dir=output_dir,
     )
     cache_path = Path(output_dir) / "embedding_cache" / f"generated_{target_family}_{method}.npy"
     X = compute_embeddings(method, list(sequences), cache_path=cache_path)
@@ -1043,7 +1036,7 @@ def run_pipeline(args) -> List[Dict[str, Any]]:
 
 def build_arg_parser() -> argparse.ArgumentParser:
     parser = argparse.ArgumentParser(
-        description="New Exp3: reuse T02 sequence-generation flow and classify with Exp1 saved models."
+        description="Experiment 2: family-conditioned generation validated with saved Exp1 classifiers."
     )
     parser.add_argument("--target-family", default=None)
     parser.add_argument("--families", nargs="+", default=None)

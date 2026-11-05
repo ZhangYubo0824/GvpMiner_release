@@ -1,0 +1,85 @@
+{
+  "references": {
+    "Hurt2024_Ana_GvpA_WT": {
+      "family": "GvpA",
+      "sequence": "MAVEKTNSSSSLAEVIDRILDKGIVIDAWVRVSLVGIELLAIEARIVIASVETYLKYAEAVGLTQSAAVPA",
+      "sequence_verified": true,
+      "sequence_source": "Published Supplementary Table S2, sheet CustomMade MoClo Parts, cell C7; first CDS through stop; translated with standard code",
+      "independent_check": "Code S1 K22R segment matches reference residues 2-36 after the explicitly named K22R change",
+      "source_doi": "10.1021/acssynbio.4c00283.s002",
+      "experimental_host": "E. coli with the A. flos-aquae ARG cluster"
+    }
+  },
+  "events": [
+    {
+      "event_id": "A_T6A",
+      "family": "GvpA",
+      "reference_id": "Hurt2024_Ana_GvpA_WT",
+      "doi": "10.1021/acssynbio.4c00283",
+      "positions": [
+        6
+      ],
+      "expected_residues": "T",
+      "experimental_change": "T6A",
+      "effect": "increased",
+      "function": "nonlinear ultrasound signal of E. coli expressing the ARG cluster",
+      "source_scope": "local_perturbation",
+      "source_anchor": "Figure 3E; Round 1 directed evolution",
+      "event_type": "single_site_acoustic_intervention",
+      "reported_fold_vs_WT": 3.07
+    },
+    {
+      "event_id": "A_K22R",
+      "family": "GvpA",
+      "reference_id": "Hurt2024_Ana_GvpA_WT",
+      "doi": "10.1021/acssynbio.4c00283",
+      "positions": [
+        22
+      ],
+      "expected_residues": "K",
+      "experimental_change": "K22R",
+      "effect": "increased",
+      "function": "nonlinear ultrasound signal of E. coli expressing the ARG cluster",
+      "source_scope": "local_perturbation",
+      "source_anchor": "Figure 3E; Round 1 directed evolution",
+      "event_type": "single_site_acoustic_intervention",
+      "reported_fold_vs_WT": 3.44
+    },
+    {
+      "event_id": "A_T6A_L40A",
+      "family": "GvpA",
+      "reference_id": "Hurt2024_Ana_GvpA_WT",
+      "doi": "10.1021/acssynbio.4c00283",
+      "positions": [
+        6,
+        40
+      ],
+      "expected_residues": "TL",
+      "experimental_change": "T6A/L40A",
+      "effect": "increased",
+      "function": "nonlinear ultrasound signal of E. coli expressing the ARG cluster",
+      "source_scope": "local_perturbation",
+      "source_anchor": "Figure 4E; Round 2 directed evolution",
+      "event_type": "combination_acoustic_intervention",
+      "reported_fold_vs_WT": 5.32
+    },
+    {
+      "event_id": "A_T6A_I48V",
+      "family": "GvpA",
+      "reference_id": "Hurt2024_Ana_GvpA_WT",
+      "doi": "10.1021/acssynbio.4c00283",
+      "positions": [
+        6,
+        48
+      ],
+      "expected_residues": "TI",
+      "experimental_change": "T6A/I48V",
+      "effect": "increased",
+      "function": "nonlinear ultrasound signal of E. coli expressing the ARG cluster",
+      "source_scope": "local_perturbation",
+      "source_anchor": "Figure 4E; Round 2 directed evolution",
+      "event_type": "combination_acoustic_intervention",
+      "reported_fold_vs_WT": 5.37
+    }
+  ]
+}

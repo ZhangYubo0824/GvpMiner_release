@@ -1,7 +1,0 @@
-method,status,reason,sample_size,family_cluster_count,rank_coefficient,rank_robust_se,rank_odds_ratio,rank_ci_low,rank_ci_high,rank_p_value,rank_q_value,converged,iteration_count,hessian_condition_number,standard_error_type
-GLAM2,not_estimable,non-convergence or separation,120,12,,,,,,,,False,0,,family_cluster_robust
-M2,not_estimable,non-convergence or separation,2236,12,,,,,,,,False,0,,family_cluster_robust
-M3,not_estimable,non-convergence or separation,2144,12,,,,,,,,False,0,,family_cluster_robust
-MEME,not_estimable,non-convergence or separation,164,12,,,,,,,,False,0,,family_cluster_robust
-MotifAE,not_estimable,non-convergence or separation,499,12,,,,,,,,False,0,,family_cluster_robust
-STREME,not_estimable,non-convergence or separation,291,12,,,,,,,,False,0,,family_cluster_robust

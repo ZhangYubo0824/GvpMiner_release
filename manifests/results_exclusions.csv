@@ -1,9 +1,0 @@
-source_scope,reason
-result6/exp1_classification/*.npy; *.pkl,"Embeddings and trained classifier bundles are reproducible work/model artifacts, not reported results."
-"result6/exp2_generation_validation/{embedding_cache,gvp_biogpt_model,dataset_*.txt}","Embedding caches, checkpoints, optimizer state, and training corpora are intermediate artifacts."
-"result6/exp3_domain_discovery/{*.npy,windows_metadata.csv,duplicate JSON catalogs}","Embeddings, cluster-label arrays, sliding-window caches, and duplicate serializations are intermediate."
-result6/result_baseline/**/raw,Raw tool workspaces and per-tool caches are intermediate; normalized final outputs are retained.
-"result6|results7/exp4*/{matched_control_features,motif_structure_features,analysis_progress}",Row-level control/features and resumable progress state are intermediate; final statistics and audits are retained.
-"results7/exp5_external_functional_enrichment_corrected/{annotations,batch_results,family_term2gene,signatures}","Annotation caches, split batches, logs, and completion signatures are intermediate; corrected merged and support outputs are retained."
-result6/motif_validation/cluster_commonality_validation/motif_window_secondary_structure.csv,Occurrence-level secondary-structure cache is intermediate; cluster/family summaries are retained.
-result6/motif_validation/literature_enrichment/,Superseded by literature_enrichment_corrected_20260615.

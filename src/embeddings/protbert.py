@@ -6,33 +6,24 @@ M3: ProtBERT-BFD 蛋白质语言模型嵌入
 """
 
 import re
-import sys
-from pathlib import Path
-
 import numpy as np
 import torch
+import sys
 from tqdm import tqdm
-
-from config import (
-    MODELS_DIR,
-    PROTBERT_EMBEDDING_DIM,
-    PROTBERT_MODEL_NAME,
-    PROTBERT_USE_HALF,
-)
 
 
 class ProtBERTEmbedder:
     """ProtBERT-BFD 序列嵌入提取器"""
 
-    def __init__(self, model_name=None, device=None, use_half=None):
+    def __init__(self, model_name=None, device=None, use_half=True):
         if model_name is None:
-            local_model = Path(MODELS_DIR) / "prot_bert_bfd"
-            model_name = str(local_model if local_model.exists() else PROTBERT_MODEL_NAME)
+            from config import MODELS_DIR
+            model_name = str(MODELS_DIR / "prot_bert_bfd")
 
         self.model_name = model_name
         self.name = "M3_ProtBERT"
-        self.dim = PROTBERT_EMBEDDING_DIM
-        self.use_half = PROTBERT_USE_HALF if use_half is None else use_half
+        self.dim = 1024
+        self.use_half = use_half
 
         if device is None:
             self.device = torch.device("cuda" if torch.cuda.is_available() else "cpu")
@@ -44,6 +35,10 @@ class ProtBERTEmbedder:
 
     def _load_model(self):
         """加载ProtBERT模型"""
+        import os
+        if not os.path.exists(self.model_name):
+            raise FileNotFoundError(f"模型路径不存在: {self.model_name}")
+
         try:
             from transformers import BertTokenizer, BertModel
         except ImportError:

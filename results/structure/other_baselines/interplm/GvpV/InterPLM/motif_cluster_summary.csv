@@ -1,0 +1,7 @@
+motif_cluster,n_instances,n_sequences,mean_motif_pLDDT,high_confidence_fraction,best_feature,best_control_type,best_q_value,best_effect_median_difference,primary_n_proteins,primary_structural_association,low_prediction_confidence,exploratory_best_q_value,significant_endpoints
+GvpV_InterPLM_L33_F01787,9,9,46.64,0.0,relative_SASA,composition_matched,0.046875,0.1983989822558757,9,True,True,0.011101973684210526,1
+GvpV_InterPLM_L33_F03091,2,2,72.33500000000001,0.5,contact_density,composition_matched,1.0,0.0,2,False,False,0.7139486426915568,0
+GvpV_InterPLM_L33_F03310,12,11,44.90864285714286,0.0,contact_density,composition_matched,0.6469649815643992,0.0,11,False,True,0.0052734375,0
+GvpV_InterPLM_L33_F04097,45,40,48.63237151490485,0.0,relative_SASA,composition_matched,2.8812792152166367e-09,0.13564284418852052,40,True,True,2.4556356947869062e-11,2
+GvpV_InterPLM_L33_F06319,2,2,49.596666666666664,0.0,contact_density,composition_matched,0.9519315235887426,0.03333333333333338,2,False,True,0.590854049124047,0
+GvpV_InterPLM_L33_F09406,7,7,53.52619047619048,0.0,relative_SASA,composition_matched,0.2109375,-0.13107673119335872,7,False,True,0.03245192307692308,0

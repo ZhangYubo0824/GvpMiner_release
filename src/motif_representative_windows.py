@@ -1,6 +1,5 @@
 from __future__ import annotations
 
-import argparse
 import csv
 from collections import defaultdict
 from pathlib import Path
@@ -199,58 +198,5 @@ def build_family_method_representatives(
     return output_path, rows
 
 
-def build_representative_tables(
-    *,
-    exp3_dir: Path,
-    families: Sequence[str] | None = None,
-    methods: Sequence[str] = ("M2", "M3"),
-) -> list[tuple[Path, int]]:
-    exp3_dir = Path(exp3_dir)
-    selected_families = set(families or [])
-    outputs: list[tuple[Path, int]] = []
-    for family_dir in sorted(path for path in exp3_dir.iterdir() if path.is_dir()):
-        if selected_families and family_dir.name not in selected_families:
-            continue
-        windows_path = family_dir / "windows_metadata.csv"
-        if not windows_path.exists():
-            continue
-        windows = read_csv_rows(windows_path)
-        for method in methods:
-            required = [
-                family_dir / f"clustering_{method}_labels.npy",
-                family_dir / f"embeddings_{method}_optimized.npy",
-                family_dir / f"motif_catalog_{method}.csv",
-            ]
-            if not all(path.exists() for path in required):
-                continue
-            output_path, rows = build_family_method_representatives(
-                family_dir=family_dir,
-                method=method,
-                windows=windows,
-            )
-            outputs.append((output_path, len(rows)))
-    return outputs
 
 
-def cli(argv: Sequence[str] | None = None) -> int:
-    parser = argparse.ArgumentParser(
-        description="Build centroid-nearest real-window representations for Exp3 motifs."
-    )
-    project_root = Path(__file__).resolve().parent.parent
-    parser.add_argument(
-        "--exp3-dir",
-        type=Path,
-        default=project_root / "work" / "results" / "exp3_domain_discovery",
-    )
-    parser.add_argument("--families", nargs="*", default=None)
-    parser.add_argument("--methods", nargs="+", choices=["M2", "M3"], default=["M2", "M3"])
-    args = parser.parse_args(argv)
-    outputs = build_representative_tables(
-        exp3_dir=args.exp3_dir,
-        families=args.families,
-        methods=args.methods,
-    )
-    for path, count in outputs:
-        print(f"{path}: {count} motifs")
-    print(f"wrote {len(outputs)} representative tables")
-    return 0

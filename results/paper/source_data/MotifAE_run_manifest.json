@@ -1,0 +1,447 @@
+{
+  "run": "guarded_first_20261101_all",
+  "checkpoint": "published MotifAE k3/80000",
+  "checkpoint_sha256": "e322c859a593c6c3dba461a2fae6c648ccd064a46422221f05f25c6eac03f28d",
+  "checkpoint_verification": "The completed family preflight checks enforce the fixed published checkpoint hash.",
+  "extraction_protocol": "preprint-v1",
+  "inference": "full protein; ESM-2 650M layer 33; special tokens removed",
+  "gibbs_parameters": "-g 1 -l 5 -T -j 1 -I 1 -D 1",
+  "sampler": "version_locked_gdb_empty_g1_guard",
+  "localization_scope": "selected_top1000_alignment_instances",
+  "families": {
+    "GvpA": {
+      "status": "completed",
+      "inputs": {
+        "family": "GvpA",
+        "discovery_dir": "/data/coding/motifae_results/discovery/GvpA/run_002",
+        "preparation_dir": "/data/coding/motifae_results/discovery/GvpA/run_002/gibbs_inputs",
+        "fasta": "/data/coding/results6/preprocessed/by_family/GvpA_cleaned.fasta",
+        "proteins": 1757,
+        "max_protein_length": 509,
+        "groups": 798,
+        "candidate_instances": 76701,
+        "selected_instances": 67733,
+        "signature": {
+          "preparation_sha256": "dab50a33ca5fe7bbcbb6c21dfdbc76d521d7a0916a6814c5ea70298b7c37ba65",
+          "fasta_sha256": "75e981667d94ccb05d64545b07acb131f9aa7965058834229b567e4088e01fc3",
+          "pipeline_manifest_sha256": "1d917ed3b967dfbcaad5b002163a3d6ce2130440fb7749041ff179b6517263d5",
+          "raw_candidates_sha256": "beaa2fc0c10f6429f4580378f63a2f551cecce283672413756068c13d5406f6c"
+        }
+      },
+      "motifs": 548,
+      "occurrences": 67012,
+      "background_proteins": 1757,
+      "foreground_proteins": 1757,
+      "unassessed_instances": 8968,
+      "localization_scope": "selected_top1000_alignment_instances"
+    },
+    "GvpC": {
+      "status": "completed",
+      "inputs": {
+        "family": "GvpC",
+        "discovery_dir": "/data/coding/motifae_results/discovery/GvpC/run_20261101205309",
+        "preparation_dir": "/data/coding/motifae_results/discovery/GvpC/run_20261101205309/gibbs_inputs",
+        "fasta": "/data/coding/results6/preprocessed/by_family/GvpC_cleaned.fasta",
+        "proteins": 440,
+        "max_protein_length": 1026,
+        "groups": 829,
+        "candidate_instances": 13617,
+        "selected_instances": 13617,
+        "signature": {
+          "preparation_sha256": "66464a233bc5ea3d9a397cf316bd8b39e4cf78c2b729bd4719bbf32abc6e4f89",
+          "fasta_sha256": "cf0ce1beb4c54022403087aa784c8ca3104e9710f6ed2b5b836117786ded575a",
+          "pipeline_manifest_sha256": "034995cc0546915b8f0f897154e1ce98d50786d51a98ec0f202943030d4603cb",
+          "raw_candidates_sha256": "a61e7c215578719a03f0c63b25dc59e31d294f73060cdb5943f9dd202c486908"
+        }
+      },
+      "motifs": 424,
+      "occurrences": 12700,
+      "background_proteins": 440,
+      "foreground_proteins": 439,
+      "unassessed_instances": 0,
+      "localization_scope": "selected_top1000_alignment_instances"
+    },
+    "GvpD": {
+      "status": "completed",
+      "inputs": {
+        "family": "GvpD",
+        "discovery_dir": "/data/coding/motifae_results/discovery/GvpD/run_inference_20261031_230540",
+        "preparation_dir": "/data/coding/motifae_results/discovery/GvpD/run_inference_20261031_230540/gibbs_inputs",
+        "fasta": "/data/coding/results6/preprocessed/by_family/GvpD_cleaned.fasta",
+        "proteins": 108,
+        "max_protein_length": 1013,
+        "groups": 738,
+        "candidate_instances": 16952,
+        "selected_instances": 16952,
+        "signature": {
+          "preparation_sha256": "e30b18c6d4f1a3c26026a220a743d71cf1168f7f5312db6765955c80a61ca906",
+          "fasta_sha256": "7b2d07c6cd77c70be8153607c51de251722290563aea33054949ea94326e5520",
+          "pipeline_manifest_sha256": "be69d54b4dd69ddc80b0960ec5018f0ac1503c079a3bf4da0c23eef9317a6437",
+          "raw_candidates_sha256": "24554c9e710349df049984a51bb65965784420d61c1b0f1d2382146d4c2796c9"
+        }
+      },
+      "motifs": 479,
+      "occurrences": 16039,
+      "background_proteins": 108,
+      "foreground_proteins": 108,
+      "unassessed_instances": 0,
+      "localization_scope": "selected_top1000_alignment_instances"
+    },
+    "GvpF": {
+      "status": "completed",
+      "inputs": {
+        "family": "GvpF",
+        "discovery_dir": "/data/coding/motifae_results/discovery/GvpF/run_inference_20261031_230540",
+        "preparation_dir": "/data/coding/motifae_results/discovery/GvpF/run_inference_20261031_230540/gibbs_inputs",
+        "fasta": "/data/coding/results6/preprocessed/by_family/GvpF_cleaned.fasta",
+        "proteins": 599,
+        "max_protein_length": 446,
+        "groups": 608,
+        "candidate_instances": 36386,
+        "selected_instances": 33283,
+        "signature": {
+          "preparation_sha256": "10f4e180a644424ea6de899643bf8e5add29ea71f7c7169f0ac22059e7972ae0",
+          "fasta_sha256": "63b2286d55a55e69a55572e722971766636a528299e6645446a5c5013098433c",
+          "pipeline_manifest_sha256": "21772617ae4b5c05cef322472cdbdd6994bed6c685ddda79f133c46d0111f0a9",
+          "raw_candidates_sha256": "a0eff097ab63303a8df75a808c7be7a27796eeaed125765b582b4f1b74a81a4d"
+        }
+      },
+      "motifs": 407,
+      "occurrences": 32276,
+      "background_proteins": 599,
+      "foreground_proteins": 599,
+      "unassessed_instances": 3103,
+      "localization_scope": "selected_top1000_alignment_instances"
+    },
+    "GvpG": {
+      "status": "completed",
+      "inputs": {
+        "family": "GvpG",
+        "discovery_dir": "/data/coding/motifae_results/discovery/GvpG/run_inference_20261031_230540",
+        "preparation_dir": "/data/coding/motifae_results/discovery/GvpG/run_inference_20261031_230540/gibbs_inputs",
+        "fasta": "/data/coding/results6/preprocessed/by_family/GvpG_cleaned.fasta",
+        "proteins": 664,
+        "max_protein_length": 323,
+        "groups": 783,
+        "candidate_instances": 17491,
+        "selected_instances": 17491,
+        "signature": {
+          "preparation_sha256": "0729b234afb9dfc773faaa60323568d8f6da882876621cdd4d5822fd2244b4a1",
+          "fasta_sha256": "db9372e71e6b4839f0f785098eba04b22e523d631c31de959f7a8ac63da23518",
+          "pipeline_manifest_sha256": "75cd446bdbe395815a78217f8a9a14f7e0b3385204db9643f760253668e6e7dc",
+          "raw_candidates_sha256": "f773bdb883f7a3d327c92fbb73bf543690ecb455387967d86e9125fa6031ef91"
+        }
+      },
+      "motifs": 426,
+      "occurrences": 16823,
+      "background_proteins": 664,
+      "foreground_proteins": 664,
+      "unassessed_instances": 0,
+      "localization_scope": "selected_top1000_alignment_instances"
+    },
+    "GvpH": {
+      "status": "completed",
+      "inputs": {
+        "family": "GvpH",
+        "discovery_dir": "/data/coding/motifae_results/discovery/GvpH/run_inference_20261031_230540",
+        "preparation_dir": "/data/coding/motifae_results/discovery/GvpH/run_inference_20261031_230540/gibbs_inputs",
+        "fasta": "/data/coding/results6/preprocessed/by_family/GvpH_cleaned.fasta",
+        "proteins": 173,
+        "max_protein_length": 395,
+        "groups": 580,
+        "candidate_instances": 10389,
+        "selected_instances": 10389,
+        "signature": {
+          "preparation_sha256": "8af7ddee9bcead2c622264c0b64e7bd669545cf056c554720e123db481b7e6f6",
+          "fasta_sha256": "51e8a1cb80439d828dc582ea2c46841a1d69bb7ba5f88dda00f38b778cd13e8e",
+          "pipeline_manifest_sha256": "cb2bc7af2a87b952fe340341a2281302c45a665119f949ae7e1db647723db981",
+          "raw_candidates_sha256": "ea25e8eabc4586851a3a70c5e961c71bda594601fe23644c57aa9d10ab6dd374"
+        }
+      },
+      "motifs": 380,
+      "occurrences": 9986,
+      "background_proteins": 173,
+      "foreground_proteins": 173,
+      "unassessed_instances": 0,
+      "localization_scope": "selected_top1000_alignment_instances"
+    },
+    "GvpJ": {
+      "status": "completed",
+      "inputs": {
+        "family": "GvpJ",
+        "discovery_dir": "/data/coding/motifae_results/discovery/GvpJ/run_inference_20261031_230540",
+        "preparation_dir": "/data/coding/motifae_results/discovery/GvpJ/run_inference_20261031_230540/gibbs_inputs",
+        "fasta": "/data/coding/results6/preprocessed/by_family/GvpJ_cleaned.fasta",
+        "proteins": 6044,
+        "max_protein_length": 593,
+        "groups": 1489,
+        "candidate_instances": 310343,
+        "selected_instances": 176936,
+        "signature": {
+          "preparation_sha256": "f41d33e272411b376f5db563bcbf35d33b131b8725a5981cca587d88be53ec18",
+          "fasta_sha256": "db349e426eca188b3731d6da447493f333c07b20658c9e574022c0f6a754193e",
+          "pipeline_manifest_sha256": "04b959a19854edf67543095bb5266c2dfe1b824cb234909bffa857259bfe0c0a",
+          "raw_candidates_sha256": "f3385f99c7d212992ec5c87ed5387b1e91b1a3cb90d76af656f19ecbadbb761a"
+        }
+      },
+      "motifs": 1072,
+      "occurrences": 172584,
+      "background_proteins": 6044,
+      "foreground_proteins": 6044,
+      "unassessed_instances": 133407,
+      "localization_scope": "selected_top1000_alignment_instances"
+    },
+    "GvpK": {
+      "status": "completed",
+      "inputs": {
+        "family": "GvpK",
+        "discovery_dir": "/data/coding/motifae_results/discovery/GvpK/run_inference_20261031_230540",
+        "preparation_dir": "/data/coding/motifae_results/discovery/GvpK/run_inference_20261031_230540/gibbs_inputs",
+        "fasta": "/data/coding/results6/preprocessed/by_family/GvpK_cleaned.fasta",
+        "proteins": 9695,
+        "max_protein_length": 484,
+        "groups": 1157,
+        "candidate_instances": 313104,
+        "selected_instances": 130689,
+        "signature": {
+          "preparation_sha256": "a2216d43b9e055faa8f58ad8d3e925aa61504d1ef2a8e705a2003d6280694d46",
+          "fasta_sha256": "55fef8518301940b4703bdaf2d60c507b36337e96a60f8ee718b5fc36aef01c4",
+          "pipeline_manifest_sha256": "77919215c318d270c50abf0743267f6bdc7fd4f80f6d60acb4b9efaa9a6b0ee3",
+          "raw_candidates_sha256": "be383d3a86d7fae7482ba05118e39df874e518522423efb50cf3080416c79ef3"
+        }
+      },
+      "motifs": 847,
+      "occurrences": 129524,
+      "background_proteins": 9695,
+      "foreground_proteins": 9682,
+      "unassessed_instances": 182415,
+      "localization_scope": "selected_top1000_alignment_instances"
+    },
+    "GvpL": {
+      "status": "completed",
+      "inputs": {
+        "family": "GvpL",
+        "discovery_dir": "/data/coding/motifae_results/discovery/GvpL/run_inference_20261031_230540",
+        "preparation_dir": "/data/coding/motifae_results/discovery/GvpL/run_inference_20261031_230540/gibbs_inputs",
+        "fasta": "/data/coding/results6/preprocessed/by_family/GvpL_cleaned.fasta",
+        "proteins": 358,
+        "max_protein_length": 412,
+        "groups": 740,
+        "candidate_instances": 36816,
+        "selected_instances": 35769,
+        "signature": {
+          "preparation_sha256": "95a37552a7e2f0de9f360b01ece4a79e29815f0686186681456a1721fb2ad885",
+          "fasta_sha256": "ee69287995a6620bdca57ded0aa28659ef55280792e3c7d32ff5183cd493c1ed",
+          "pipeline_manifest_sha256": "822c437038d689af0158263207419682b76d446b5c632206a54124f7f51cc37b",
+          "raw_candidates_sha256": "d1c4aaef4d55a72fd1954923798a68199b25067fd4b6af68cb789810dce9315c"
+        }
+      },
+      "motifs": 523,
+      "occurrences": 34883,
+      "background_proteins": 358,
+      "foreground_proteins": 358,
+      "unassessed_instances": 1047,
+      "localization_scope": "selected_top1000_alignment_instances"
+    },
+    "GvpM": {
+      "status": "completed",
+      "inputs": {
+        "family": "GvpM",
+        "discovery_dir": "/data/coding/motifae_results/discovery/GvpM/run_inference_20261031_230540",
+        "preparation_dir": "/data/coding/motifae_results/discovery/GvpM/run_inference_20261031_230540/gibbs_inputs",
+        "fasta": "/data/coding/results6/preprocessed/by_family/GvpM_cleaned.fasta",
+        "proteins": 247,
+        "max_protein_length": 235,
+        "groups": 269,
+        "candidate_instances": 7154,
+        "selected_instances": 7154,
+        "signature": {
+          "preparation_sha256": "dd9519b07ba5f83ce85d0af72e5f3e5f7f85404147a704339d4c4c4025ead2c6",
+          "fasta_sha256": "61917f6ccb0ac669390f39e49742aff112b22af76cf1770ed83ac04529472498",
+          "pipeline_manifest_sha256": "d6be536b45bb7ba3916371e6ba7df0ad4f0363bfa14ab7f2e4437d8dd16319e0",
+          "raw_candidates_sha256": "595fd28c8d358bffa943e82c16edc4a8ca5c5bf5c7ba49db7a4a22d97b82866a"
+        }
+      },
+      "motifs": 190,
+      "occurrences": 6996,
+      "background_proteins": 247,
+      "foreground_proteins": 247,
+      "unassessed_instances": 0,
+      "localization_scope": "selected_top1000_alignment_instances"
+    },
+    "GvpN": {
+      "status": "completed",
+      "inputs": {
+        "family": "GvpN",
+        "discovery_dir": "/data/coding/motifae_results/discovery/GvpN/run_inference_20261031_230540",
+        "preparation_dir": "/data/coding/motifae_results/discovery/GvpN/run_inference_20261031_230540/gibbs_inputs",
+        "fasta": "/data/coding/results6/preprocessed/by_family/GvpN_cleaned.fasta",
+        "proteins": 1542,
+        "max_protein_length": 757,
+        "groups": 1162,
+        "candidate_instances": 171288,
+        "selected_instances": 128736,
+        "signature": {
+          "preparation_sha256": "0b286dbc1eb2a113096eef98ab858fc8e4856a66f86538b0fa619d245b8f0e7d",
+          "fasta_sha256": "79131c4371a1f20ffd64194e35a8458e9917a0cffea6b488d169b76daf9ead38",
+          "pipeline_manifest_sha256": "19bc80b02090ecf001a1d54ad4c2de4a0d2bb988ef84af5aa4b30f4a1f69957a",
+          "raw_candidates_sha256": "a1c3eaea66a7e001a73a73c942e730e05b15eb90db9bab22f8b778e9b6bf3e75"
+        }
+      },
+      "motifs": 880,
+      "occurrences": 126233,
+      "background_proteins": 1542,
+      "foreground_proteins": 1542,
+      "unassessed_instances": 42552,
+      "localization_scope": "selected_top1000_alignment_instances"
+    },
+    "GvpO": {
+      "status": "completed",
+      "inputs": {
+        "family": "GvpO",
+        "discovery_dir": "/data/coding/motifae_results/discovery/GvpO/run_inference_20261031_230540",
+        "preparation_dir": "/data/coding/motifae_results/discovery/GvpO/run_inference_20261031_230540/gibbs_inputs",
+        "fasta": "/data/coding/results6/preprocessed/by_family/GvpO_cleaned.fasta",
+        "proteins": 2804,
+        "max_protein_length": 481,
+        "groups": 1218,
+        "candidate_instances": 173361,
+        "selected_instances": 123549,
+        "signature": {
+          "preparation_sha256": "b5b5d8663ee8f4da6459a67f8c6cde9d7a90fe85e9d572a653ff880fdd722175",
+          "fasta_sha256": "55df5e41d530347fff5b6c06114d66ea6c7506d59d47382ac903372a90464587",
+          "pipeline_manifest_sha256": "225d24078dd93f8306f67eef7601337712a5ff5de8fa753d7808382d27d2c819",
+          "raw_candidates_sha256": "a81627b263efa91d9453dd44bf771dab489592ea117688feb914674ab30535b2"
+        }
+      },
+      "motifs": 875,
+      "occurrences": 121826,
+      "background_proteins": 2804,
+      "foreground_proteins": 2804,
+      "unassessed_instances": 49812,
+      "localization_scope": "selected_top1000_alignment_instances"
+    },
+    "GvpQ": {
+      "status": "completed",
+      "inputs": {
+        "family": "GvpQ",
+        "discovery_dir": "/data/coding/motifae_results/discovery/GvpQ/run_inference_20261031_230540",
+        "preparation_dir": "/data/coding/motifae_results/discovery/GvpQ/run_inference_20261031_230540/gibbs_inputs",
+        "fasta": "/data/coding/results6/preprocessed/by_family/GvpQ_cleaned.fasta",
+        "proteins": 471,
+        "max_protein_length": 717,
+        "groups": 467,
+        "candidate_instances": 14636,
+        "selected_instances": 13609,
+        "signature": {
+          "preparation_sha256": "4025a60278dc35c90b8e4f80f2448280278cd25c354aaa43798c740d422781c1",
+          "fasta_sha256": "420fab56ea5ddbd2d4937839527648041bd067cbd7e17ca2ee26c1f483defd6c",
+          "pipeline_manifest_sha256": "e37b12bc1b6afbca36d9a57a6d03b48b514be7619b31d531b2cf2b40a9f84e85",
+          "raw_candidates_sha256": "cb67925613f5015f84dcede99400f0cee91dc52020c16416aa7fc1fff5e389b9"
+        }
+      },
+      "motifs": 271,
+      "occurrences": 13203,
+      "background_proteins": 471,
+      "foreground_proteins": 471,
+      "unassessed_instances": 1027,
+      "localization_scope": "selected_top1000_alignment_instances"
+    },
+    "GvpT": {
+      "status": "completed",
+      "inputs": {
+        "family": "GvpT",
+        "discovery_dir": "/data/coding/motifae_results/discovery/GvpT/run_inference_20261031_230540",
+        "preparation_dir": "/data/coding/motifae_results/discovery/GvpT/run_inference_20261031_230540/gibbs_inputs",
+        "fasta": "/data/coding/results6/preprocessed/by_family/GvpT_cleaned.fasta",
+        "proteins": 572,
+        "max_protein_length": 868,
+        "groups": 480,
+        "candidate_instances": 58948,
+        "selected_instances": 56178,
+        "signature": {
+          "preparation_sha256": "f5ffa4a7440577150e75c15d9ebe55e07e4ac16069af9f4d39bb9dc86ee8da7d",
+          "fasta_sha256": "956cacb674de30a5304b378e70af3edeb2f3b95b53ce4f8ab2360f6423e872a1",
+          "pipeline_manifest_sha256": "bbc5fd07be50e64a09f58a0cfb57b6db0a0832a187761f3c65028ffe3033b036",
+          "raw_candidates_sha256": "d41c2185a67fc021a6f8bb5bf775179bc687722c68f692ae08022ccac872c8da"
+        }
+      },
+      "motifs": 385,
+      "occurrences": 55895,
+      "background_proteins": 572,
+      "foreground_proteins": 572,
+      "unassessed_instances": 2770,
+      "localization_scope": "selected_top1000_alignment_instances"
+    },
+    "GvpU": {
+      "status": "completed",
+      "inputs": {
+        "family": "GvpU",
+        "discovery_dir": "/data/coding/motifae_results/discovery/GvpU/run_inference_20261031_230540",
+        "preparation_dir": "/data/coding/motifae_results/discovery/GvpU/run_inference_20261031_230540/gibbs_inputs",
+        "fasta": "/data/coding/results6/preprocessed/by_family/GvpU_cleaned.fasta",
+        "proteins": 1084,
+        "max_protein_length": 381,
+        "groups": 651,
+        "candidate_instances": 49743,
+        "selected_instances": 45411,
+        "signature": {
+          "preparation_sha256": "589238cb504a6fcb430d48ea16e62c48c7cf0a10560b278b688ea6a0017c6c4a",
+          "fasta_sha256": "18e9834276bb9584ec51bcbacf5588cde8bc6957ec694fb54e82159ddebe31fd",
+          "pipeline_manifest_sha256": "a41cabd4927997947f268772c287d8b4895c702abc144d87ba18e076644b2e49",
+          "raw_candidates_sha256": "c401c51fd6298cc54232c127ca5905a9429c947d8a8b7c6d504df05b5142d335"
+        }
+      },
+      "motifs": 482,
+      "occurrences": 44544,
+      "background_proteins": 1084,
+      "foreground_proteins": 1084,
+      "unassessed_instances": 4332,
+      "localization_scope": "selected_top1000_alignment_instances"
+    },
+    "GvpV": {
+      "status": "completed",
+      "inputs": {
+        "family": "GvpV",
+        "discovery_dir": "/data/coding/motifae_results/discovery/GvpV/run_inference_20261031_230540",
+        "preparation_dir": "/data/coding/motifae_results/discovery/GvpV/run_inference_20261031_230540/gibbs_inputs",
+        "fasta": "/data/coding/results6/preprocessed/by_family/GvpV_cleaned.fasta",
+        "proteins": 107,
+        "max_protein_length": 131,
+        "groups": 281,
+        "candidate_instances": 3033,
+        "selected_instances": 3033,
+        "signature": {
+          "preparation_sha256": "c9aaf3d6f04113f82dfbcdf0a96dd686a242f4687da3df9c0f5623967b2eea75",
+          "fasta_sha256": "de3cf73e0175c9375da0d276d4912dc7e92bf87aaa10d74d5b7c9a8c2b153ca6",
+          "pipeline_manifest_sha256": "7bb628656d232e184ffa33bc57682b81a2d27c76cb28b66ff372de556aebcffc",
+          "raw_candidates_sha256": "6610d1e27228b6741d6d7e13eeecae5f3b95c0389e58406a510924e991a08fe6"
+        }
+      },
+      "motifs": 189,
+      "occurrences": 2870,
+      "background_proteins": 107,
+      "foreground_proteins": 107,
+      "unassessed_instances": 0,
+      "localization_scope": "selected_top1000_alignment_instances"
+    }
+  },
+  "source_code_sha256": {
+    "run_motifae_pipeline.py": "c3b44713ef0e8f793ead738162255f00ad22f47857dfbb30a1c5f3e747724efb",
+    "motifae_process_control.py": "26174493b504b274ebbd1bcf5a0d0cf4cfd709431f4ac21e8551ea345ede21c8",
+    "motifae_official_inference.py": "4972bf81606a59b80d7d32433531b7a9990a99da36b9828f6a73c44e43cbf7d6",
+    "motifae_native_guard.py": "3dda74d7f225a0effccf29295817785857509d41529cef0cc4632a555c8f2109",
+    "motifae_handoff.py": "0bc26bb8c1f9cbd3cbdeb717a97d2e0096c7ed1045f62c07410c0b41d26762f0",
+    "motifae_guarded_batch.py": "7cb52eff04c8fa5baeaec0a139ee0ba0b0f082d557fe5d61c25d2a32cb2c77f2",
+    "motifae_gibbs_results.py": "cde94fe15fe6158f3d11668b8790cc09fca68f7b82f049d3428a013d1c3c8f80",
+    "motifae_gibbs_reparse.py": "b096e98f2359af249678ac2fd027b0f476556ac25d91a902cc158ad0f9b37b26",
+    "motifae_gibbs_qualification.py": "7dcfee6049113fad7c8002258635ff534a64696fc821ed94b5fa2b0aa384576b",
+    "motifae_gibbs_inputs.py": "ce6173db3c05febdf3dc211ede05bf966933024318638c41e58bc95b761e736b",
+    "motifae_gibbs_guard_recovery.py": "c3ad7ca0a2f99e076c78183764ad3cb09cb34e909c62f5712dd0b7a04a280295",
+    "motifae_family_alignment.py": "d3689167613ad70c8e2e8920d91e1023417f907d3c68078da0d5a0cf2145b2ab",
+    "motifae_candidate_filter.py": "f1dc3486046c97af2b91072e08e79c662314f556a2090ee36cfb421652483288",
+    "motifae_adapter_paper_peptides.py": "74e68f5c054f1dc090192d91e0e232f85a7fbcce079b33aa729fa49ee15554ef",
+    "adapter_common.py": "ee0dd4769d32259d3dc72f345c084f8ace549bb33ffb2eca0639ad52d13cbb64"
+  },
+  "metric_calculation_manifest_sha256": "9985f48e1a384c914da4485558a6d62f4463096b349cd6a33229fbbb15c792b9"
+}

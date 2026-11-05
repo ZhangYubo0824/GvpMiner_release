@@ -12,8 +12,8 @@ PRIMARY_ENDPOINTS = [
     "contact_density",
     "relative_SASA",
     "long_range_contact_count",
-    "local_RMSD_or_structural_similarity",
 ]
+PRIMARY_CONTROL_TYPE = "composition_matched"
 
 
 SECONDARY_ENDPOINTS = [
@@ -42,6 +42,23 @@ def benjamini_hochberg(p_values: Sequence[float]) -> list[float]:
         running_min = q
         q_values[original_index] = min(1.0, q)
     return q_values
+
+
+def assign_primary_q_values(stat_rows: list[dict[str, object]]) -> None:
+    """Correct only the prespecified physical endpoints and background control."""
+    selected = []
+    for row in stat_rows:
+        row["primary_q_value"] = ""
+        if (
+            str(row.get("control_type", "")) == PRIMARY_CONTROL_TYPE
+            and str(row.get("feature", "")) in PRIMARY_ENDPOINTS
+        ):
+            selected.append(row)
+    for row, q_value in zip(
+        selected,
+        benjamini_hochberg([float(row["p_value"]) for row in selected]),
+    ):
+        row["primary_q_value"] = q_value
 
 
 def paired_permutation_p_value(differences: Sequence[float], *, num_permutations: int = 2000, seed: int = 42) -> float:
@@ -189,31 +206,6 @@ def _summarize_with_control_mean(
     return results
 
 
-def summarize_structural_enrichment(
-    motif_rows: Sequence[dict[str, object]],
-    control_rows: Sequence[dict[str, object]],
-    *,
-    endpoints: Sequence[str] | None = None,
-    control_type: str = "within_random",
-    seed: int = 42,
-) -> list[dict[str, object]]:
-    controls_by_instance: dict[str, list[dict[str, object]]] = defaultdict(list)
-    for row in control_rows:
-        if str(row.get("control_type", "")) == control_type:
-            controls_by_instance[str(row.get("motif_instance_id", ""))].append(row)
-
-    def control_mean_for(instance_id: str, endpoint: str) -> float | None:
-        values = [_to_float(row.get(endpoint)) for row in controls_by_instance.get(instance_id, [])]
-        valid_values = [value for value in values if value is not None]
-        return float(np.mean(valid_values)) if valid_values else None
-
-    return _summarize_with_control_mean(
-        motif_rows,
-        control_mean_for=control_mean_for,
-        endpoints=list(endpoints or PRIMARY_ENDPOINTS),
-        control_type=control_type,
-        seed=seed,
-    )
 
 
 def summarize_structural_enrichment_from_control_accumulator(

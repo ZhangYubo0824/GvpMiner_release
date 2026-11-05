@@ -1,0 +1,14 @@
+{
+  "schema_version": 1,
+  "normal_origin": "motifae_results/GvpA_gibbs_pilot_001/pilot_001/GvpA_feature000001_48244",
+  "normal_input_origin": "motifae_results/discovery/GvpA/run_002/gibbs_inputs/peptides/feature_000001.txt",
+  "fault_origin": "confirmed empty-g1 AIGSE x23 + SSAPQ x1 regression input; no family mapping",
+  "files_sha256": {
+    "fault_peptides.txt": "9fd74dbe5265df11fdf90e28dbfc2c2a0581328679c2ac91f38c3943706f7dfb",
+    "normal_peptides.txt": "74b9e60a92b611302f54b7729003ec93629c829216304ac8b5e4b9a73004c7ae",
+    "normal_reference/cores/gibbs.1g.cores": "91cad124cd8054601ffcd3ccb80d0d596741a3b5b2e506265030a43f9ef1b9e1",
+    "normal_reference/data/pepdata.txt": "a4a99595cb2ee2c0a3cc449c021fb3be18343ef81e6932b896f12a48a85f2f28",
+    "normal_reference/res/gibbs.1g.ds.out": "b00a56f96fc592750762a723b340f57a944d17b53c2ce2c24f118793b9110bdb",
+    "normal_reference/res/gibbs.1g.out": "55b34d89064104a7627d7a1a03aa64a9a3feba7201197224c44d5c8797e79826"
+  }
+}

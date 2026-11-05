@@ -1,0 +1,16 @@
+{
+  "candidates": 522,
+  "occurrences": 84012,
+  "structure_testable": 514,
+  "structure_supported": 509,
+  "structure_strict": 348,
+  "annotation_testable": 254,
+  "annotation_supported": 224,
+  "strict_and_annotation": 195,
+  "reviewed_literature_candidates": 5,
+  "reviewed_literature_mapping_rows": 8,
+  "excluded_unreviewed_or_rejected_mapping_rows": {
+    "D": 131558,
+    "pending_review": 2847
+  }
+}

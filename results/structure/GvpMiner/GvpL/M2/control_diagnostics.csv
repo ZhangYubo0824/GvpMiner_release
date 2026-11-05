@@ -1,0 +1,4 @@
+motif_cluster,control_type,n_motif_instances,n_motif_proteins,n_instances_with_control,instance_coverage_fraction,n_controls,n_unique_control_proteins,max_control_protein_reuse,fraction_overlap_any_motif,fraction_overlap_same_cluster
+GvpL_M2_motif_001,within_random,75,74,0,0.0,0,0,0,0.0,0.0
+GvpL_M2_motif_001,position_matched,75,74,75,1.0,750,313,8,0.18266666666666667,0.18266666666666667
+GvpL_M2_motif_001,composition_matched,75,74,75,1.0,750,128,28,0.0,0.0

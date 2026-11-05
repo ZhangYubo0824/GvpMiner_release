@@ -31,7 +31,7 @@ METHOD_COLORS = {
 
 
 def plot_confusion_matrices(cms, method_names, class_names, save_path):
-    """绘制多个混淆矩阵并排 (三方法对比)"""
+    """绘制多个混淆矩阵并排 (多方法对比)"""
     n = len(cms)
     fig, axes = plt.subplots(1, n, figsize=(6 * n, 5))
     if n == 1:
@@ -52,7 +52,7 @@ def plot_confusion_matrices(cms, method_names, class_names, save_path):
 
 def plot_classification_comparison(results_dict, save_path):
     """
-    绘制三种方法分类性能柱状图对比。
+    绘制分类方法的性能柱状图对比。
     results_dict: {"M2_ESM2": {"acc": 0.95, "f1": 0.93}, ...}
     """
     methods = list(results_dict.keys())
@@ -81,23 +81,6 @@ def plot_classification_comparison(results_dict, save_path):
     print(f"  保存: {save_path}")
 
 
-def plot_elbow_silhouette(silhouette_scores, k_range, k_optimal, method_name, save_path):
-    """绘制 Silhouette Score vs K 曲线"""
-    fig, ax = plt.subplots(figsize=(8, 5))
-    ks = list(range(k_range[0], k_range[0] + len(silhouette_scores)))
-    ax.plot(ks, silhouette_scores, "o-", color=METHOD_COLORS.get(method_name, "#333"),
-            linewidth=2, markersize=6)
-    ax.axvline(x=k_optimal, color="red", linestyle="--", alpha=0.7, label=f"Optimal k={k_optimal}")
-    ax.set_xlabel("Number of Clusters (k)")
-    ax.set_ylabel("Silhouette Score")
-    ax.set_title(f"K-Means Elbow Analysis — {method_name}", fontweight="bold")
-    ax.legend()
-    ax.grid(alpha=0.3)
-
-    plt.tight_layout()
-    plt.savefig(save_path)
-    plt.close()
-    print(f"  保存: {save_path}")
 
 
 def plot_motif_heatmap(motif_positions, family_name, method_names, save_path):
@@ -161,7 +144,7 @@ def plot_clustering_comparison(metrics_list, save_path):
     print(f"  保存: {save_path}")
 
 
-def plot_dimensionality_reduction(X, y_labels, method_name, class_names, save_path):
+def plot_dimensionality_reduction(X, y_labels, method_name, save_path):
     """
     绘制降维可视化图 (PCA, t-SNE, UMAP).
     对于高维嵌入矩阵 X 进行降维，并在 2D 平面散点图上按家庭大类着色。

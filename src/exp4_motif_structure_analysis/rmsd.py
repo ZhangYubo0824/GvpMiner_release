@@ -106,7 +106,7 @@ def _cached_kabsch_rmsd(coords_a: np.ndarray, coords_b: np.ndarray) -> float:
 
 
 def _kabsch_rmsd(coords_a: np.ndarray, coords_b: np.ndarray) -> float:
-    """Compute the legacy fragment dissimilarity with an exact cache fast path."""
+    """Compute fragment dissimilarity with an exact cache fast path."""
     if _USE_DISTANCE_SIGNATURE_CACHE:
         return _cached_kabsch_rmsd(coords_a, coords_b)
     return _uncached_kabsch_rmsd(coords_a, coords_b)
@@ -223,50 +223,6 @@ def _verify_batched_rmsd_exact(
         _DISTANCE_SIGNATURE_CACHE.clear()
 
 
-def _backfill_local_rmsd(
-    feature_rows: list[dict[str, object]],
-    structures: dict[str, ParsedStructure],
-    *,
-    flank: int = 5,
-) -> None:
-    """Backfill local_RMSD_or_structural_similarity for each motif instance.
-
-    For each motif instance, compute its average pairwise RMSD with all other
-    instances in the same motif_cluster (using motif +/- flank residues).
-    """
-    by_cluster: dict[str, list[int]] = defaultdict(list)
-    for idx, row in enumerate(feature_rows):
-        by_cluster[str(row.get("motif_cluster", ""))].append(idx)
-
-    for cluster, indices in by_cluster.items():
-        if len(indices) < 2:
-            continue
-        # Extract coordinate fragments
-        fragments: list[tuple[int, np.ndarray | None]] = []
-        for idx in indices:
-            row = feature_rows[idx]
-            parsed = structures.get(str(row.get("sequence_id", "")))
-            if parsed is None:
-                fragments.append((idx, None))
-                continue
-            start = max(0, int(float(row.get("motif_start", 0))) - flank)
-            end = min(len(parsed.ca_coords), int(float(row.get("motif_end", 0))) + flank)
-            if end <= start:
-                fragments.append((idx, None))
-                continue
-            fragments.append((idx, np.asarray(parsed.ca_coords[start:end], dtype=float)))
-
-        # Compute pairwise RMSD
-        for i, (idx_a, coords_a) in enumerate(fragments):
-            if coords_a is None:
-                continue
-            rmsds = []
-            for j, (idx_b, coords_b) in enumerate(fragments):
-                if i == j or coords_b is None:
-                    continue
-                rmsds.append(_kabsch_rmsd(coords_a, coords_b))
-            if rmsds:
-                feature_rows[idx_a]["local_RMSD_or_structural_similarity"] = float(np.mean(rmsds))
 
 
 def _row_context(
@@ -589,7 +545,7 @@ def backfill_local_rmsd_resumable(
         elif _USE_DISTANCE_SIGNATURE_CACHE:
             print("Using exact cached fragment-distance signatures.", flush=True)
         else:
-            print("Distance-cache exactness check failed; using the legacy RMSD path.", flush=True)
+            print("Distance-cache exactness check failed; using the direct RMSD path.", flush=True)
 
     completed_rows = 0
     total_rows = len(feature_rows)

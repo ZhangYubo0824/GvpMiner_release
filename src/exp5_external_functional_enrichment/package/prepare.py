@@ -27,7 +27,7 @@ def parse_fasta(path: Path, *, family: str) -> list[SequenceRecord]:
     chunks: list[str] = []
 
     def flush() -> None:
-        nonlocal current_id, current_desc, chunks
+        nonlocal chunks
         if not current_id:
             return
         records.append(

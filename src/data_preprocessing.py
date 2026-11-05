@@ -2,7 +2,7 @@
 """
 数据预处理 (Exp0)
 ==================
-从 data3/ncbi 加载所有 Gvp 家族数据 → 质控过滤 → 去冗余 → 输出统一数据集。
+从 data/ncbi 加载所有 Gvp 家族数据 → 质控过滤 → 去冗余 → 输出统一数据集。
 
 用法:
     python data_preprocessing.py
@@ -10,7 +10,7 @@
     python data_preprocessing.py --families GvpA GvpJ GvpN  # 仅处理指定家族
 
 输出:
-    results/preprocessed/
+    work/results/preprocessed/
         cleaned_gvp_dataset.csv     — 全量清洗后数据
         family_statistics.csv       — 各家族统计摘要
         filtered_sequences.fasta    — 去冗余后的FASTA
@@ -34,7 +34,7 @@ from config import (
 
 
 def load_ncbi_metadata(families=None):
-    """从 data3/ncbi 各家族目录读取 _metadata.csv"""
+    """从 data/ncbi 各家族目录读取 _metadata.csv"""
     all_families = families if families else GVP_FAMILIES
     all_records = []
     load_stats = {}
@@ -228,7 +228,7 @@ def filter_small_families(records, min_size=None):
     return records, small_families
 
 
-def save_outputs(records, small_families, load_stats, filter_stats):
+def save_outputs(records, small_families, load_stats):
     """保存预处理结果"""
     PREPROCESSED_DIR.mkdir(parents=True, exist_ok=True)
 
@@ -331,7 +331,7 @@ def main():
     print("\n" + "=" * 60)
     print("Step 2: 质量过滤")
     print("=" * 60)
-    records, filter_stats = quality_filter(records)
+    records, _ = quality_filter(records)
 
     print("\n" + "=" * 60)
     print("Step 3: 序列去冗余")
@@ -349,7 +349,7 @@ def main():
     print("\n" + "=" * 60)
     print("Step 5: 保存结果")
     print("=" * 60)
-    save_outputs(records, small_families, load_stats, filter_stats)
+    save_outputs(records, small_families, load_stats)
 
     print("\n数据预处理完成! ✓")
 

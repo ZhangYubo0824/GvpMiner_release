@@ -1,0 +1,11 @@
+motif_cluster,n_instances,n_sequences,mean_motif_pLDDT,high_confidence_fraction,best_feature,best_control_type,best_q_value,best_effect_median_difference,primary_n_proteins,primary_structural_association,low_prediction_confidence,exploratory_best_q_value,significant_endpoints
+GvpD_GLAM2_001,104,104,92.7582235283771,0.9903846153846154,long_range_contact_count,composition_matched,2.6910468860047293e-17,-12.4375,104,True,False,4.702991992021744e-17,3
+GvpD_GLAM2_002,104,104,93.92941168207928,0.9903846153846154,long_range_contact_count,composition_matched,2.786501413993506e-17,-6.311111111111112,104,True,False,8.359504241980519e-17,3
+GvpD_GLAM2_003,101,101,91.29891227638382,1.0,long_range_contact_count,composition_matched,2.786501413993506e-17,11.777777777777779,101,True,False,8.359504241980519e-17,2
+GvpD_GLAM2_004,99,99,91.2155204843398,1.0,contact_density,composition_matched,2.4961812141273386e-14,-0.009897959183673477,99,True,False,2.1208032292997924e-16,2
+GvpD_GLAM2_005,100,100,91.94773173502391,0.99,long_range_contact_count,composition_matched,2.786501413993506e-17,-7.894444444444445,100,True,False,8.359504241980519e-17,3
+GvpD_GLAM2_006,98,98,91.80462147634667,0.9897959183673469,long_range_contact_count,composition_matched,1.51785262420297e-06,-3.1166666666666654,98,True,False,3.6281072488443616e-12,2
+GvpD_GLAM2_007,77,77,85.2047789634535,1.0,contact_density,composition_matched,0.0010563709668546387,-0.0016326530612244539,77,True,False,1.3853423058883956e-13,2
+GvpD_GLAM2_008,97,97,95.35026004369723,0.9896907216494846,long_range_contact_count,composition_matched,4.635667103985134e-15,-5.888888888888889,97,True,False,1.8021728171901885e-16,3
+GvpD_GLAM2_009,84,84,93.41848825470665,1.0,long_range_contact_count,composition_matched,1.3304197180153395e-10,22.88888888888889,84,True,False,1.324132736857155e-12,3
+GvpD_GLAM2_010,82,82,88.49706080139373,1.0,long_range_contact_count,composition_matched,2.2240803439856108e-14,-9.104166666666668,82,True,False,2.610876925548326e-14,1

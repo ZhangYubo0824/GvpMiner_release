@@ -1,8 +1,8 @@
 from __future__ import annotations
 
 import argparse
-import csv
 from itertools import chain
+import os
 from pathlib import Path
 from typing import Sequence
 
@@ -15,9 +15,6 @@ from . import prepare
 from . import reproducibility
 
 
-def _read_csv_rows(path: Path) -> list[dict[str, str]]:
-    with Path(path).open("r", encoding="utf-8-sig", newline="") as handle:
-        return [dict(row) for row in csv.DictReader(handle)]
 
 
 def _default_project_root() -> Path:
@@ -25,7 +22,9 @@ def _default_project_root() -> Path:
 
 
 def _default_results_dir() -> Path:
-    return _default_project_root() / "work" / "results"
+    return Path(
+        os.environ.get("GVP_OUTPUT_DIR", _default_project_root() / "work" / "results")
+    ).expanduser().resolve()
 
 
 def _default_ncbi_root() -> Path:
@@ -162,10 +161,31 @@ def main(argv: Sequence[str] | None = None) -> None:
             methods=args.methods,
         ):
             occurrence_rows.extend(motif_sets.read_occurrence_csv(path))
+        proteins_by_family, unique_accessions = motif_sets.build_sequence_lookup(sequence_rows)
+        excluded_proteins = {
+            (
+                str(row.get("family") or "").strip(),
+                str(row.get("method") or "").strip(),
+                motif_sets.occurrence_protein_id(row),
+            )
+            for row in occurrence_rows
+            if motif_sets.occurrence_protein_id(row)
+            if not motif_sets.resolve_index_protein_id(
+                str(row.get("family") or "").strip(),
+                motif_sets.occurrence_protein_id(row),
+                proteins_by_family,
+                unique_accessions,
+            )
+        }
         rows = motif_sets.build_motif_sets(occurrence_rows, sequence_rows)
         output_path = args.output_dir / "motif_sets_long.csv"
         motif_sets.write_motif_sets_long(rows, output_path)
         print(f"Wrote {len(rows)} motif cluster set definitions to {output_path}")
+        if excluded_proteins:
+            print(
+                f"Excluded {len(excluded_proteins)} family/method/protein IDs absent from "
+                f"the sequence index: {args.sequence_index}"
+            )
         return
 
     if args.command == "write-r-script":

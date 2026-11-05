@@ -1,0 +1,3 @@
+﻿candidate,structure_strict,annotation_supported,cross_best_residue_jaccard,candidate_mean_plddt,msa_mean_conservation
+GvpJ-018,False,True,0.928,63.387827586206896,0.7178526224072181
+GvpM-002,False,False,1.0,52.4240020242915,0.7638910379457478

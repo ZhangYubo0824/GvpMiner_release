@@ -1,0 +1,94 @@
+{
+  "candidate_metrics": [
+    {
+      "family_count": 16,
+      "mcs_lower_boundary": true,
+      "mcs_upper_boundary": true,
+      "noise_ratio": 0.09694911331051904,
+      "pair": {
+        "window_size": 20,
+        "window_step": 10
+      },
+      "qualified_family_count": 15,
+      "qualified_family_fraction": 0.9375,
+      "runtime_seconds": 0.0,
+      "stability_floor": 0.8298235423670923,
+      "stable_cluster_number": 42.0,
+      "stable_protein_coverage": 0.9970973278589217,
+      "stable_window_coverage": 0.4277322850923358,
+      "window_size": 20,
+      "window_step": 10
+    },
+    {
+      "family_count": 16,
+      "mcs_lower_boundary": true,
+      "mcs_upper_boundary": true,
+      "noise_ratio": 0.07238395492392614,
+      "pair": {
+        "window_size": 20,
+        "window_step": 15
+      },
+      "qualified_family_count": 16,
+      "qualified_family_fraction": 1.0,
+      "runtime_seconds": 0.0,
+      "stability_floor": 0.8972787399964217,
+      "stable_cluster_number": 23.0,
+      "stable_protein_coverage": 0.9983244787267149,
+      "stable_window_coverage": 0.5060092088207124,
+      "window_size": 20,
+      "window_step": 15
+    },
+    {
+      "family_count": 16,
+      "mcs_lower_boundary": true,
+      "mcs_upper_boundary": true,
+      "noise_ratio": 0.1312797538646365,
+      "pair": {
+        "window_size": 30,
+        "window_step": 5
+      },
+      "qualified_family_count": 16,
+      "qualified_family_fraction": 1.0,
+      "runtime_seconds": 0.0,
+      "stability_floor": 0.778503665087724,
+      "stable_cluster_number": 64.5,
+      "stable_protein_coverage": 0.9290903988447545,
+      "stable_window_coverage": 0.38148137784265435,
+      "window_size": 30,
+      "window_step": 5
+    }
+  ],
+  "completed_at": "2026-10-03T14:33:34.782198+00:00",
+  "evaluated_pairs": [
+    {
+      "window_size": 30,
+      "window_step": 5
+    },
+    {
+      "window_size": 20,
+      "window_step": 10
+    },
+    {
+      "window_size": 20,
+      "window_step": 15
+    }
+  ],
+  "lineage_signature": "76f364eeb24c3b7dea541c6390253577553d032c3be27b8e0e865a7cbcad68c4",
+  "review_record": "comparisons/stage_b_review_v3_bf1303e3d6826182.json",
+  "review_record_sha256": "bf1303e3d6826182df5fc41afd7d75c86b079b0bd08e0938de6e1cbaf4d25ae0",
+  "selected_pairs": [
+    {
+      "window_size": 20,
+      "window_step": 15
+    },
+    {
+      "window_size": 20,
+      "window_step": 10
+    }
+  ],
+  "selection_mode": "algorithmic_review_existing_results",
+  "selection_recorded_at": "2026-10-15T04:45:15.029328+00:00",
+  "selection_rule_version": "local-motif-2026-10-12-v3",
+  "selection_source": "algorithmic_reissue",
+  "stage": "B"
+}

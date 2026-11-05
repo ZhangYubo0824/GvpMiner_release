@@ -1,0 +1,1921 @@
+{
+  "recommendation": {
+    "candidates": [
+      {
+        "eligible": false,
+        "family_coverage": {
+          "GvpF": 0.9415692821368948,
+          "GvpH": 0.930635838150289,
+          "GvpK": 0.9398659102630221,
+          "GvpL": 0.776536312849162,
+          "GvpM": 1.0,
+          "GvpN": 1.0
+        },
+        "family_coverage_shortfalls": {
+          "GvpL": -0.13128491620111726
+        },
+        "locality": {
+          "GvpF": {
+            "median_span_fraction": 0.08163265306122448,
+            "near_full_fraction": 0.0,
+            "near_full_protein_fraction": 0.0,
+            "occurrence_count": 14171,
+            "protein_count": 564
+          },
+          "GvpH": {
+            "median_span_fraction": 0.9941520467836257,
+            "near_full_fraction": 0.8148148148148148,
+            "near_full_protein_fraction": 0.8198757763975155,
+            "occurrence_count": 162,
+            "protein_count": 161
+          },
+          "GvpK": {
+            "median_span_fraction": 0.20202020202020202,
+            "near_full_fraction": 0.0002611855553032024,
+            "near_full_protein_fraction": 0.00252414398595259,
+            "occurrence_count": 88060,
+            "protein_count": 9112
+          },
+          "GvpL": {
+            "median_span_fraction": 0.06734006734006734,
+            "near_full_fraction": 0.0,
+            "near_full_protein_fraction": 0.0,
+            "occurrence_count": 1376,
+            "protein_count": 278
+          },
+          "GvpM": {
+            "median_span_fraction": 0.20833333333333334,
+            "near_full_fraction": 0.0,
+            "near_full_protein_fraction": 0.0,
+            "occurrence_count": 2542,
+            "protein_count": 247
+          },
+          "GvpN": {
+            "median_span_fraction": 0.06472491909385113,
+            "near_full_fraction": 0.0,
+            "near_full_protein_fraction": 0.0,
+            "occurrence_count": 56446,
+            "protein_count": 1542
+          }
+        },
+        "metrics": {
+          "noise_ratio": 0.13678807643693797,
+          "qualified_family_fraction": 1.0,
+          "stability_floor": 0.8415662650602409,
+          "stable_cluster_number": 74.5,
+          "stable_protein_coverage": 0.9407175961999585,
+          "stable_window_coverage": 0.43193639795427685
+        },
+        "pair": {
+          "window_size": 20,
+          "window_step": 3
+        },
+        "reasons": [
+          "family_coverage_below_baseline_tolerance",
+          "whole_protein_motif"
+        ],
+        "selected": false
+      },
+      {
+        "eligible": false,
+        "family_coverage": {
+          "GvpF": 0.9582637729549248,
+          "GvpH": 0.4393063583815029,
+          "GvpK": 0.9276946879834966,
+          "GvpL": 0.6201117318435754,
+          "GvpM": 1.0,
+          "GvpN": 1.0
+        },
+        "family_coverage_shortfalls": {
+          "GvpL": -0.2877094972067039
+        },
+        "locality": {
+          "GvpF": {
+            "median_span_fraction": 0.08196721311475409,
+            "near_full_fraction": 0.0,
+            "near_full_protein_fraction": 0.0,
+            "occurrence_count": 10000,
+            "protein_count": 574
+          },
+          "GvpH": {
+            "median_span_fraction": 0.24922360248447206,
+            "near_full_fraction": 0.0,
+            "near_full_protein_fraction": 0.0,
+            "occurrence_count": 78,
+            "protein_count": 76
+          },
+          "GvpK": {
+            "median_span_fraction": 0.1941747572815534,
+            "near_full_fraction": 0.0,
+            "near_full_protein_fraction": 0.0,
+            "occurrence_count": 54404,
+            "protein_count": 8994
+          },
+          "GvpL": {
+            "median_span_fraction": 0.1065722722798516,
+            "near_full_fraction": 0.0,
+            "near_full_protein_fraction": 0.0,
+            "occurrence_count": 516,
+            "protein_count": 222
+          },
+          "GvpM": {
+            "median_span_fraction": 0.20408163265306123,
+            "near_full_fraction": 0.0,
+            "near_full_protein_fraction": 0.0,
+            "occurrence_count": 2885,
+            "protein_count": 247
+          },
+          "GvpN": {
+            "median_span_fraction": 0.06134969325153374,
+            "near_full_fraction": 0.0,
+            "near_full_protein_fraction": 0.0,
+            "occurrence_count": 42429,
+            "protein_count": 1542
+          }
+        },
+        "metrics": {
+          "noise_ratio": 0.11913340094804566,
+          "qualified_family_fraction": 0.8333333333333334,
+          "stability_floor": 0.7831211990908533,
+          "stable_cluster_number": 68.0,
+          "stable_protein_coverage": 0.9429792304692107,
+          "stable_window_coverage": 0.396478119358448
+        },
+        "pair": {
+          "window_size": 20,
+          "window_step": 5
+        },
+        "reasons": [
+          "family_coverage_below_baseline_tolerance"
+        ],
+        "selected": false
+      },
+      {
+        "eligible": true,
+        "family_coverage": {
+          "GvpF": 1.0,
+          "GvpH": 0.6242774566473989,
+          "GvpK": 0.8948942753996906,
+          "GvpL": 0.9972067039106145,
+          "GvpM": 1.0,
+          "GvpN": 0.9987029831387808
+        },
+        "family_coverage_shortfalls": {},
+        "locality": {
+          "GvpF": {
+            "median_span_fraction": 0.08196721311475409,
+            "near_full_fraction": 0.0,
+            "near_full_protein_fraction": 0.0,
+            "occurrence_count": 6073,
+            "protein_count": 599
+          },
+          "GvpH": {
+            "median_span_fraction": 0.25477707006369427,
+            "near_full_fraction": 0.0,
+            "near_full_protein_fraction": 0.0,
+            "occurrence_count": 108,
+            "protein_count": 108
+          },
+          "GvpK": {
+            "median_span_fraction": 0.18867924528301888,
+            "near_full_fraction": 0.0,
+            "near_full_protein_fraction": 0.0,
+            "occurrence_count": 32667,
+            "protein_count": 8676
+          },
+          "GvpL": {
+            "median_span_fraction": 0.0949367088607595,
+            "near_full_fraction": 0.0,
+            "near_full_protein_fraction": 0.0,
+            "occurrence_count": 844,
+            "protein_count": 357
+          },
+          "GvpM": {
+            "median_span_fraction": 0.20408163265306123,
+            "near_full_fraction": 0.0,
+            "near_full_protein_fraction": 0.0,
+            "occurrence_count": 1640,
+            "protein_count": 247
+          },
+          "GvpN": {
+            "median_span_fraction": 0.060240963855421686,
+            "near_full_fraction": 0.0,
+            "near_full_protein_fraction": 0.0,
+            "occurrence_count": 18920,
+            "protein_count": 1540
+          }
+        },
+        "metrics": {
+          "noise_ratio": 0.08935028561480754,
+          "qualified_family_fraction": 0.8333333333333334,
+          "stability_floor": 0.7878582954245129,
+          "stable_cluster_number": 44.0,
+          "stable_protein_coverage": 0.9979548435246977,
+          "stable_window_coverage": 0.3741465645620555
+        },
+        "pair": {
+          "window_size": 20,
+          "window_step": 10
+        },
+        "reasons": [],
+        "selected": true
+      },
+      {
+        "eligible": true,
+        "family_coverage": {
+          "GvpF": 0.9599332220367279,
+          "GvpH": 1.0,
+          "GvpK": 0.8710675605982465,
+          "GvpL": 0.888268156424581,
+          "GvpM": 1.0,
+          "GvpN": 0.9993514915693904
+        },
+        "family_coverage_shortfalls": {},
+        "locality": {
+          "GvpF": {
+            "median_span_fraction": 0.08196721311475409,
+            "near_full_fraction": 0.0,
+            "near_full_protein_fraction": 0.0,
+            "occurrence_count": 4757,
+            "protein_count": 575
+          },
+          "GvpH": {
+            "median_span_fraction": 0.4088050314465409,
+            "near_full_fraction": 0.0,
+            "near_full_protein_fraction": 0.0,
+            "occurrence_count": 179,
+            "protein_count": 173
+          },
+          "GvpK": {
+            "median_span_fraction": 0.18867924528301888,
+            "near_full_fraction": 0.0,
+            "near_full_protein_fraction": 0.0,
+            "occurrence_count": 21608,
+            "protein_count": 8445
+          },
+          "GvpL": {
+            "median_span_fraction": 0.06944444444444445,
+            "near_full_fraction": 0.1504424778761062,
+            "near_full_protein_fraction": 0.2138364779874214,
+            "occurrence_count": 452,
+            "protein_count": 318
+          },
+          "GvpM": {
+            "median_span_fraction": 0.20202020202020202,
+            "near_full_fraction": 0.0,
+            "near_full_protein_fraction": 0.0,
+            "occurrence_count": 1372,
+            "protein_count": 247
+          },
+          "GvpN": {
+            "median_span_fraction": 0.05917159763313609,
+            "near_full_fraction": 0.0,
+            "near_full_protein_fraction": 0.0,
+            "occurrence_count": 16203,
+            "protein_count": 1541
+          }
+        },
+        "metrics": {
+          "noise_ratio": 0.04483276094855948,
+          "qualified_family_fraction": 1.0,
+          "stability_floor": 0.8961814769829437,
+          "stable_cluster_number": 39.0,
+          "stable_protein_coverage": 0.9796423568030592,
+          "stable_window_coverage": 0.4548354578882361
+        },
+        "pair": {
+          "window_size": 20,
+          "window_step": 15
+        },
+        "reasons": [],
+        "selected": true
+      },
+      {
+        "eligible": false,
+        "family_coverage": {
+          "GvpF": 0.991652754590985,
+          "GvpH": 0.005780346820809248,
+          "GvpK": 0.8921093347086126,
+          "GvpL": 0.9972067039106145,
+          "GvpM": 1.0,
+          "GvpN": 0.996757457846952
+        },
+        "family_coverage_shortfalls": {
+          "GvpH": -0.1329479768786127
+        },
+        "locality": {
+          "GvpF": {
+            "median_span_fraction": 0.10245901639344263,
+            "near_full_fraction": 0.0018762899493401713,
+            "near_full_protein_fraction": 0.050505050505050504,
+            "occurrence_count": 15989,
+            "protein_count": 594
+          },
+          "GvpH": {
+            "median_span_fraction": 0.6860759493670886,
+            "near_full_fraction": 0.0,
+            "near_full_protein_fraction": 0.0,
+            "occurrence_count": 1,
+            "protein_count": 1
+          },
+          "GvpK": {
+            "median_span_fraction": 0.25510204081632654,
+            "near_full_fraction": 0.004476642376998249,
+            "near_full_protein_fraction": 0.03665163602728639,
+            "occurrence_count": 70812,
+            "protein_count": 8649
+          },
+          "GvpL": {
+            "median_span_fraction": 0.15488215488215487,
+            "near_full_fraction": 0.06374085684430512,
+            "near_full_protein_fraction": 0.17086834733893558,
+            "occurrence_count": 957,
+            "protein_count": 357
+          },
+          "GvpM": {
+            "median_span_fraction": 0.2358490566037736,
+            "near_full_fraction": 0.0,
+            "near_full_protein_fraction": 0.0,
+            "occurrence_count": 2372,
+            "protein_count": 247
+          },
+          "GvpN": {
+            "median_span_fraction": 0.08116883116883117,
+            "near_full_fraction": 0.0,
+            "near_full_protein_fraction": 0.0,
+            "occurrence_count": 52554,
+            "protein_count": 1537
+          }
+        },
+        "metrics": {
+          "noise_ratio": 0.0834229923087938,
+          "qualified_family_fraction": 0.8333333333333334,
+          "stability_floor": 0.7668027145399631,
+          "stable_cluster_number": 117.5,
+          "stable_protein_coverage": 0.9942051062189685,
+          "stable_window_coverage": 0.3939125826602756
+        },
+        "pair": {
+          "window_size": 25,
+          "window_step": 3
+        },
+        "reasons": [
+          "family_coverage_below_baseline_tolerance"
+        ],
+        "selected": false
+      },
+      {
+        "eligible": false,
+        "family_coverage": {
+          "GvpF": 0.9816360601001669,
+          "GvpH": 0.9248554913294798,
+          "GvpK": 0.9181021144920062,
+          "GvpL": 0.8100558659217877,
+          "GvpM": 1.0,
+          "GvpN": 0.9993514915693904
+        },
+        "family_coverage_shortfalls": {
+          "GvpL": -0.0977653631284916
+        },
+        "locality": {
+          "GvpF": {
+            "median_span_fraction": 0.10204081632653061,
+            "near_full_fraction": 0.0,
+            "near_full_protein_fraction": 0.0,
+            "occurrence_count": 13290,
+            "protein_count": 588
+          },
+          "GvpH": {
+            "median_span_fraction": 0.5448717948717948,
+            "near_full_fraction": 0.0,
+            "near_full_protein_fraction": 0.0,
+            "occurrence_count": 323,
+            "protein_count": 160
+          },
+          "GvpK": {
+            "median_span_fraction": 0.24752475247524752,
+            "near_full_fraction": 0.0010405089034455034,
+            "near_full_protein_fraction": 0.0049432648017076735,
+            "occurrence_count": 42287,
+            "protein_count": 8901
+          },
+          "GvpL": {
+            "median_span_fraction": 0.09124087591240876,
+            "near_full_fraction": 0.0,
+            "near_full_protein_fraction": 0.0,
+            "occurrence_count": 848,
+            "protein_count": 290
+          },
+          "GvpM": {
+            "median_span_fraction": 0.25510204081632654,
+            "near_full_fraction": 0.0,
+            "near_full_protein_fraction": 0.0,
+            "occurrence_count": 2695,
+            "protein_count": 247
+          },
+          "GvpN": {
+            "median_span_fraction": 0.07668711656441718,
+            "near_full_fraction": 0.0,
+            "near_full_protein_fraction": 0.0,
+            "occurrence_count": 38215,
+            "protein_count": 1541
+          }
+        },
+        "metrics": {
+          "noise_ratio": 0.1122695904975336,
+          "qualified_family_fraction": 0.8333333333333334,
+          "stability_floor": 0.8586969314170573,
+          "stable_cluster_number": 119.0,
+          "stable_protein_coverage": 0.9532457757148234,
+          "stable_window_coverage": 0.5537011361573203
+        },
+        "pair": {
+          "window_size": 25,
+          "window_step": 5
+        },
+        "reasons": [
+          "family_coverage_below_baseline_tolerance"
+        ],
+        "selected": false
+      },
+      {
+        "eligible": true,
+        "family_coverage": {
+          "GvpF": 0.9499165275459098,
+          "GvpH": 0.9132947976878613,
+          "GvpK": 0.903971119133574,
+          "GvpL": 0.9804469273743017,
+          "GvpM": 1.0,
+          "GvpN": 0.9993514915693904
+        },
+        "family_coverage_shortfalls": {},
+        "locality": {
+          "GvpF": {
+            "median_span_fraction": 0.10204081632653061,
+            "near_full_fraction": 0.0,
+            "near_full_protein_fraction": 0.0,
+            "occurrence_count": 3661,
+            "protein_count": 569
+          },
+          "GvpH": {
+            "median_span_fraction": 0.47065568643802774,
+            "near_full_fraction": 0.0,
+            "near_full_protein_fraction": 0.0,
+            "occurrence_count": 158,
+            "protein_count": 158
+          },
+          "GvpK": {
+            "median_span_fraction": 0.2336448598130841,
+            "near_full_fraction": 0.0019275781357565745,
+            "near_full_protein_fraction": 0.006389776357827476,
+            "occurrence_count": 29052,
+            "protein_count": 8764
+          },
+          "GvpL": {
+            "median_span_fraction": 0.08896797153024912,
+            "near_full_fraction": 0.0,
+            "near_full_protein_fraction": 0.0,
+            "occurrence_count": 1168,
+            "protein_count": 351
+          },
+          "GvpM": {
+            "median_span_fraction": 0.25252525252525254,
+            "near_full_fraction": 0.0,
+            "near_full_protein_fraction": 0.0,
+            "occurrence_count": 1821,
+            "protein_count": 247
+          },
+          "GvpN": {
+            "median_span_fraction": 0.078125,
+            "near_full_fraction": 0.0,
+            "near_full_protein_fraction": 0.0,
+            "occurrence_count": 21328,
+            "protein_count": 1541
+          }
+        },
+        "metrics": {
+          "noise_ratio": 0.11751577572307023,
+          "qualified_family_fraction": 0.8333333333333334,
+          "stability_floor": 0.7773058782810054,
+          "stable_cluster_number": 23.0,
+          "stable_protein_coverage": 0.9651817274601058,
+          "stable_window_coverage": 0.3668714656392811
+        },
+        "pair": {
+          "window_size": 25,
+          "window_step": 10
+        },
+        "reasons": [
+          "lower_priority_than_selected_candidates"
+        ],
+        "selected": false
+      },
+      {
+        "eligible": false,
+        "family_coverage": {
+          "GvpF": 1.0,
+          "GvpH": 0.9595375722543352,
+          "GvpK": 0.7182052604435276,
+          "GvpL": 0.7988826815642458,
+          "GvpM": 1.0,
+          "GvpN": 0.9993514915693904
+        },
+        "family_coverage_shortfalls": {
+          "GvpK": -0.13212996389891696,
+          "GvpL": -0.10893854748603349
+        },
+        "locality": {
+          "GvpF": {
+            "median_span_fraction": 0.10245901639344263,
+            "near_full_fraction": 0.0,
+            "near_full_protein_fraction": 0.0,
+            "occurrence_count": 3568,
+            "protein_count": 599
+          },
+          "GvpH": {
+            "median_span_fraction": 0.1497005988023952,
+            "near_full_fraction": 0.0,
+            "near_full_protein_fraction": 0.0,
+            "occurrence_count": 304,
+            "protein_count": 166
+          },
+          "GvpK": {
+            "median_span_fraction": 0.22321428571428573,
+            "near_full_fraction": 0.0018301148554840337,
+            "near_full_protein_fraction": 0.004164871463449663,
+            "occurrence_count": 15846,
+            "protein_count": 6963
+          },
+          "GvpL": {
+            "median_span_fraction": 0.0859106529209622,
+            "near_full_fraction": 0.0,
+            "near_full_protein_fraction": 0.0,
+            "occurrence_count": 850,
+            "protein_count": 286
+          },
+          "GvpM": {
+            "median_span_fraction": 0.24509803921568626,
+            "near_full_fraction": 0.0,
+            "near_full_protein_fraction": 0.0,
+            "occurrence_count": 1300,
+            "protein_count": 247
+          },
+          "GvpN": {
+            "median_span_fraction": 0.07462686567164178,
+            "near_full_fraction": 0.0,
+            "near_full_protein_fraction": 0.0,
+            "occurrence_count": 14466,
+            "protein_count": 1541
+          }
+        },
+        "metrics": {
+          "noise_ratio": 0.09674476710239291,
+          "qualified_family_fraction": 0.5,
+          "stability_floor": 0.7652621332220831,
+          "stable_cluster_number": 28.5,
+          "stable_protein_coverage": 0.9794445319118628,
+          "stable_window_coverage": 0.3602568036161698
+        },
+        "pair": {
+          "window_size": 25,
+          "window_step": 15
+        },
+        "reasons": [
+          "qualified_family_fraction_below_0.80",
+          "family_coverage_below_baseline_tolerance"
+        ],
+        "selected": false
+      },
+      {
+        "eligible": false,
+        "family_coverage": {
+          "GvpF": 0.8597662771285476,
+          "GvpH": 0.3236994219653179,
+          "GvpK": 0.8773594636410521,
+          "GvpL": 0.276536312849162,
+          "GvpM": 1.0,
+          "GvpN": 0.9993514915693904
+        },
+        "family_coverage_shortfalls": {
+          "GvpF": -0.08180300500834725,
+          "GvpL": -0.6312849162011173
+        },
+        "locality": {
+          "GvpF": {
+            "median_span_fraction": 0.12244897959183673,
+            "near_full_fraction": 0.0,
+            "near_full_protein_fraction": 0.0,
+            "occurrence_count": 13633,
+            "protein_count": 515
+          },
+          "GvpH": {
+            "median_span_fraction": 0.5434782608695652,
+            "near_full_fraction": 0.17543859649122806,
+            "near_full_protein_fraction": 0.17857142857142858,
+            "occurrence_count": 57,
+            "protein_count": 56
+          },
+          "GvpK": {
+            "median_span_fraction": 0.30303030303030304,
+            "near_full_fraction": 0.005534430179586612,
+            "near_full_protein_fraction": 0.03456383729132377,
+            "occurrence_count": 53122,
+            "protein_count": 8506
+          },
+          "GvpL": {
+            "median_span_fraction": 0.3576923076923077,
+            "near_full_fraction": 0.3669064748201439,
+            "near_full_protein_fraction": 0.5151515151515151,
+            "occurrence_count": 139,
+            "protein_count": 99
+          },
+          "GvpM": {
+            "median_span_fraction": 0.2830188679245283,
+            "near_full_fraction": 0.0005125576627370579,
+            "near_full_protein_fraction": 0.004048582995951417,
+            "occurrence_count": 1951,
+            "protein_count": 247
+          },
+          "GvpN": {
+            "median_span_fraction": 0.09646302250803858,
+            "near_full_fraction": 0.0,
+            "near_full_protein_fraction": 0.0,
+            "occurrence_count": 53207,
+            "protein_count": 1541
+          }
+        },
+        "metrics": {
+          "noise_ratio": 0.08502685789646691,
+          "qualified_family_fraction": 1.0,
+          "stability_floor": 0.7673757021011025,
+          "stable_cluster_number": 103.0,
+          "stable_protein_coverage": 0.8685628703847998,
+          "stable_window_coverage": 0.33558472709092246
+        },
+        "pair": {
+          "window_size": 30,
+          "window_step": 3
+        },
+        "reasons": [
+          "coverage_below_baseline_tolerance",
+          "family_coverage_below_baseline_tolerance",
+          "whole_protein_motif"
+        ],
+        "selected": false
+      },
+      {
+        "eligible": true,
+        "family_coverage": {
+          "GvpF": 0.9415692821368948,
+          "GvpH": 0.13872832369942195,
+          "GvpK": 0.8503352243424446,
+          "GvpL": 0.9078212290502793,
+          "GvpM": 1.0,
+          "GvpN": 1.0
+        },
+        "family_coverage_shortfalls": {},
+        "locality": {
+          "GvpF": {
+            "median_span_fraction": 0.12295081967213115,
+            "near_full_fraction": 0.0,
+            "near_full_protein_fraction": 0.0,
+            "occurrence_count": 9678,
+            "protein_count": 564
+          },
+          "GvpH": {
+            "median_span_fraction": 0.5185185185185185,
+            "near_full_fraction": 0.0,
+            "near_full_protein_fraction": 0.0,
+            "occurrence_count": 25,
+            "protein_count": 24
+          },
+          "GvpK": {
+            "median_span_fraction": 0.30303030303030304,
+            "near_full_fraction": 0.004002504969096305,
+            "near_full_protein_fraction": 0.017831149927219795,
+            "occurrence_count": 36727,
+            "protein_count": 8244
+          },
+          "GvpL": {
+            "median_span_fraction": 0.15069132562951001,
+            "near_full_fraction": 0.07307692307692308,
+            "near_full_protein_fraction": 0.11692307692307692,
+            "occurrence_count": 520,
+            "protein_count": 325
+          },
+          "GvpM": {
+            "median_span_fraction": 0.30927835051546393,
+            "near_full_fraction": 0.0,
+            "near_full_protein_fraction": 0.0,
+            "occurrence_count": 2503,
+            "protein_count": 247
+          },
+          "GvpN": {
+            "median_span_fraction": 0.0967741935483871,
+            "near_full_fraction": 0.0,
+            "near_full_protein_fraction": 0.0,
+            "occurrence_count": 39869,
+            "protein_count": 1542
+          }
+        },
+        "metrics": {
+          "noise_ratio": 0.10758775086299263,
+          "qualified_family_fraction": 1.0,
+          "stability_floor": 0.7548117137880783,
+          "stable_cluster_number": 63.5,
+          "stable_protein_coverage": 0.924695255593587,
+          "stable_window_coverage": 0.3649389286067535
+        },
+        "pair": {
+          "window_size": 30,
+          "window_step": 5
+        },
+        "reasons": [],
+        "selected": true
+      },
+      {
+        "eligible": false,
+        "family_coverage": {
+          "GvpF": 0.994991652754591,
+          "GvpH": 0.9248554913294798,
+          "GvpK": 0.8300154718927282,
+          "GvpL": 0.9357541899441341,
+          "GvpM": 1.0,
+          "GvpN": 0.9993514915693904
+        },
+        "family_coverage_shortfalls": {},
+        "locality": {
+          "GvpF": {
+            "median_span_fraction": 0.12244897959183673,
+            "near_full_fraction": 0.00715307582260372,
+            "near_full_protein_fraction": 0.050335570469798654,
+            "occurrence_count": 4194,
+            "protein_count": 596
+          },
+          "GvpH": {
+            "median_span_fraction": 0.9780193236714976,
+            "near_full_fraction": 0.98125,
+            "near_full_protein_fraction": 0.98125,
+            "occurrence_count": 160,
+            "protein_count": 160
+          },
+          "GvpK": {
+            "median_span_fraction": 0.2777777777777778,
+            "near_full_fraction": 0.0032218326542215485,
+            "near_full_protein_fraction": 0.008450354169255624,
+            "occurrence_count": 21106,
+            "protein_count": 8047
+          },
+          "GvpL": {
+            "median_span_fraction": 0.10676156583629894,
+            "near_full_fraction": 0.0,
+            "near_full_protein_fraction": 0.0,
+            "occurrence_count": 1024,
+            "protein_count": 335
+          },
+          "GvpM": {
+            "median_span_fraction": 0.29411764705882354,
+            "near_full_fraction": 0.0,
+            "near_full_protein_fraction": 0.0,
+            "occurrence_count": 1765,
+            "protein_count": 247
+          },
+          "GvpN": {
+            "median_span_fraction": 0.09615384615384616,
+            "near_full_fraction": 0.0,
+            "near_full_protein_fraction": 0.0,
+            "occurrence_count": 19679,
+            "protein_count": 1541
+          }
+        },
+        "metrics": {
+          "noise_ratio": 0.10823994354269584,
+          "qualified_family_fraction": 0.8333333333333334,
+          "stability_floor": 0.7669777526395174,
+          "stable_cluster_number": 26.5,
+          "stable_protein_coverage": 0.9653729213493625,
+          "stable_window_coverage": 0.4495783730570563
+        },
+        "pair": {
+          "window_size": 30,
+          "window_step": 10
+        },
+        "reasons": [
+          "whole_protein_motif"
+        ],
+        "selected": false
+      },
+      {
+        "eligible": false,
+        "family_coverage": {
+          "GvpF": 1.0,
+          "GvpH": 0.9132947976878613,
+          "GvpK": 0.7569881382155751,
+          "GvpL": 0.6703910614525139,
+          "GvpM": 1.0,
+          "GvpN": 0.9883268482490273
+        },
+        "family_coverage_shortfalls": {
+          "GvpK": -0.09334708612686948,
+          "GvpL": -0.23743016759776536
+        },
+        "locality": {
+          "GvpF": {
+            "median_span_fraction": 0.12244897959183673,
+            "near_full_fraction": 0.0,
+            "near_full_protein_fraction": 0.0,
+            "occurrence_count": 5106,
+            "protein_count": 599
+          },
+          "GvpH": {
+            "median_span_fraction": 0.46154283117473305,
+            "near_full_fraction": 0.0,
+            "near_full_protein_fraction": 0.0,
+            "occurrence_count": 158,
+            "protein_count": 158
+          },
+          "GvpK": {
+            "median_span_fraction": 0.2727272727272727,
+            "near_full_fraction": 0.0,
+            "near_full_protein_fraction": 0.0,
+            "occurrence_count": 18364,
+            "protein_count": 7339
+          },
+          "GvpL": {
+            "median_span_fraction": 0.10676156583629894,
+            "near_full_fraction": 0.0,
+            "near_full_protein_fraction": 0.0,
+            "occurrence_count": 401,
+            "protein_count": 240
+          },
+          "GvpM": {
+            "median_span_fraction": 0.2912621359223301,
+            "near_full_fraction": 0.0,
+            "near_full_protein_fraction": 0.0,
+            "occurrence_count": 1267,
+            "protein_count": 247
+          },
+          "GvpN": {
+            "median_span_fraction": 0.08849557522123894,
+            "near_full_fraction": 0.0,
+            "near_full_protein_fraction": 0.0,
+            "occurrence_count": 13855,
+            "protein_count": 1524
+          }
+        },
+        "metrics": {
+          "noise_ratio": 0.0734766449775267,
+          "qualified_family_fraction": 0.8333333333333334,
+          "stability_floor": 0.7941638414740708,
+          "stable_cluster_number": 38.0,
+          "stable_protein_coverage": 0.9508108229684442,
+          "stable_window_coverage": 0.4172678641782675
+        },
+        "pair": {
+          "window_size": 30,
+          "window_step": 15
+        },
+        "reasons": [
+          "family_coverage_below_baseline_tolerance"
+        ],
+        "selected": false
+      },
+      {
+        "eligible": false,
+        "family_coverage": {
+          "GvpF": 0.8864774624373957,
+          "GvpH": 0.24855491329479767,
+          "GvpK": 0.7520123839009288,
+          "GvpL": 0.17318435754189945,
+          "GvpM": 0.9595141700404858,
+          "GvpN": 0.9325551232166018
+        },
+        "family_coverage_shortfalls": {
+          "GvpF": -0.05509181969949917,
+          "GvpK": -0.09832284044151574,
+          "GvpL": -0.7346368715083799,
+          "GvpM": -0.04048582995951422,
+          "GvpN": -0.06744487678339817
+        },
+        "locality": {
+          "GvpF": {
+            "median_span_fraction": 0.14285714285714285,
+            "near_full_fraction": 0.0009022309711286089,
+            "near_full_protein_fraction": 0.02071563088512241,
+            "occurrence_count": 12192,
+            "protein_count": 531
+          },
+          "GvpH": {
+            "median_span_fraction": 0.3782051282051282,
+            "near_full_fraction": 0.0,
+            "near_full_protein_fraction": 0.0,
+            "occurrence_count": 57,
+            "protein_count": 43
+          },
+          "GvpK": {
+            "median_span_fraction": 0.36082474226804123,
+            "near_full_fraction": 0.010358773029349858,
+            "near_full_protein_fraction": 0.06010703993412927,
+            "occurrence_count": 42283,
+            "protein_count": 7287
+          },
+          "GvpL": {
+            "median_span_fraction": 0.9927007299270073,
+            "near_full_fraction": 0.6071428571428571,
+            "near_full_protein_fraction": 0.8225806451612904,
+            "occurrence_count": 84,
+            "protein_count": 62
+          },
+          "GvpM": {
+            "median_span_fraction": 0.32710280373831774,
+            "near_full_fraction": 0.0,
+            "near_full_protein_fraction": 0.0,
+            "occurrence_count": 1475,
+            "protein_count": 237
+          },
+          "GvpN": {
+            "median_span_fraction": 0.11363636363636363,
+            "near_full_fraction": 2.433563710697946e-05,
+            "near_full_protein_fraction": 0.0006954102920723226,
+            "occurrence_count": 41092,
+            "protein_count": 1438
+          }
+        },
+        "metrics": {
+          "noise_ratio": 0.1537529988840926,
+          "qualified_family_fraction": 0.6666666666666666,
+          "stability_floor": 0.715518270838309,
+          "stable_cluster_number": 99.5,
+          "stable_protein_coverage": 0.8192449231691623,
+          "stable_window_coverage": 0.2871801423641679
+        },
+        "pair": {
+          "window_size": 35,
+          "window_step": 3
+        },
+        "reasons": [
+          "qualified_family_fraction_below_0.80",
+          "stability_below_baseline_tolerance",
+          "coverage_below_baseline_tolerance",
+          "family_coverage_below_baseline_tolerance",
+          "whole_protein_motif"
+        ],
+        "selected": false
+      },
+      {
+        "eligible": false,
+        "family_coverage": {
+          "GvpF": 0.9415692821368948,
+          "GvpH": 0.930635838150289,
+          "GvpK": 0.7864809081527347,
+          "GvpL": 0.3407821229050279,
+          "GvpM": 1.0,
+          "GvpN": 1.0
+        },
+        "family_coverage_shortfalls": {
+          "GvpK": -0.06385431618970983,
+          "GvpL": -0.5670391061452513
+        },
+        "locality": {
+          "GvpF": {
+            "median_span_fraction": 0.14344262295081966,
+            "near_full_fraction": 0.0,
+            "near_full_protein_fraction": 0.0,
+            "occurrence_count": 9588,
+            "protein_count": 564
+          },
+          "GvpH": {
+            "median_span_fraction": 0.9880239520958084,
+            "near_full_fraction": 0.9937888198757764,
+            "near_full_protein_fraction": 0.9937888198757764,
+            "occurrence_count": 161,
+            "protein_count": 161
+          },
+          "GvpK": {
+            "median_span_fraction": 0.35,
+            "near_full_fraction": 0.010670081092616303,
+            "near_full_protein_fraction": 0.03936491274111009,
+            "occurrence_count": 28116,
+            "protein_count": 7621
+          },
+          "GvpL": {
+            "median_span_fraction": 0.3645833333333333,
+            "near_full_fraction": 0.40397350993377484,
+            "near_full_protein_fraction": 0.5,
+            "occurrence_count": 151,
+            "protein_count": 122
+          },
+          "GvpM": {
+            "median_span_fraction": 0.3645833333333333,
+            "near_full_fraction": 0.0005382131324004305,
+            "near_full_protein_fraction": 0.004048582995951417,
+            "occurrence_count": 1858,
+            "protein_count": 247
+          },
+          "GvpN": {
+            "median_span_fraction": 0.11290322580645161,
+            "near_full_fraction": 0.0,
+            "near_full_protein_fraction": 0.0,
+            "occurrence_count": 37317,
+            "protein_count": 1542
+          }
+        },
+        "metrics": {
+          "noise_ratio": 0.06788612792925333,
+          "qualified_family_fraction": 0.8333333333333334,
+          "stability_floor": 0.7734887193947334,
+          "stable_cluster_number": 73.5,
+          "stable_protein_coverage": 0.9361025601435919,
+          "stable_window_coverage": 0.48156981887905237
+        },
+        "pair": {
+          "window_size": 35,
+          "window_step": 5
+        },
+        "reasons": [
+          "family_coverage_below_baseline_tolerance",
+          "whole_protein_motif"
+        ],
+        "selected": false
+      },
+      {
+        "eligible": false,
+        "family_coverage": {
+          "GvpF": 1.0,
+          "GvpH": 0.08670520231213873,
+          "GvpK": 0.6752321981424149,
+          "GvpL": 0.9636871508379888,
+          "GvpM": 1.0,
+          "GvpN": 0.9993514915693904
+        },
+        "family_coverage_shortfalls": {
+          "GvpH": -0.052023121387283225,
+          "GvpK": -0.1751030262000297
+        },
+        "locality": {
+          "GvpF": {
+            "median_span_fraction": 0.14285714285714285,
+            "near_full_fraction": 0.005741626794258373,
+            "near_full_protein_fraction": 0.05008347245409015,
+            "occurrence_count": 5225,
+            "protein_count": 599
+          },
+          "GvpH": {
+            "median_span_fraction": 0.6108597285067874,
+            "near_full_fraction": 0.4,
+            "near_full_protein_fraction": 0.4,
+            "occurrence_count": 15,
+            "protein_count": 15
+          },
+          "GvpK": {
+            "median_span_fraction": 0.3181818181818182,
+            "near_full_fraction": 0.004505971769815418,
+            "near_full_protein_fraction": 0.012685312547760966,
+            "occurrence_count": 18420,
+            "protein_count": 6543
+          },
+          "GvpL": {
+            "median_span_fraction": 0.5,
+            "near_full_fraction": 0.1791907514450867,
+            "near_full_protein_fraction": 0.17971014492753623,
+            "occurrence_count": 346,
+            "protein_count": 345
+          },
+          "GvpM": {
+            "median_span_fraction": 0.35353535353535354,
+            "near_full_fraction": 0.0,
+            "near_full_protein_fraction": 0.0,
+            "occurrence_count": 1574,
+            "protein_count": 247
+          },
+          "GvpN": {
+            "median_span_fraction": 0.11217948717948718,
+            "near_full_fraction": 0.0,
+            "near_full_protein_fraction": 0.0,
+            "occurrence_count": 18349,
+            "protein_count": 1541
+          }
+        },
+        "metrics": {
+          "noise_ratio": 0.056196522175339006,
+          "qualified_family_fraction": 0.8333333333333334,
+          "stability_floor": 0.8955121472951841,
+          "stable_cluster_number": 23.0,
+          "stable_protein_coverage": 0.9815193212036897,
+          "stable_window_coverage": 0.4706560486144936
+        },
+        "pair": {
+          "window_size": 35,
+          "window_step": 10
+        },
+        "reasons": [
+          "family_coverage_below_baseline_tolerance"
+        ],
+        "selected": false
+      },
+      {
+        "eligible": false,
+        "family_coverage": {
+          "GvpF": 1.0,
+          "GvpH": 0.9190751445086706,
+          "GvpK": 0.6503611971104231,
+          "GvpL": 0.1452513966480447,
+          "GvpM": 1.0,
+          "GvpN": 1.0
+        },
+        "family_coverage_shortfalls": {
+          "GvpK": -0.1999740272320215,
+          "GvpL": -0.7625698324022345
+        },
+        "locality": {
+          "GvpF": {
+            "median_span_fraction": 0.14285714285714285,
+            "near_full_fraction": 0.0,
+            "near_full_protein_fraction": 0.0,
+            "occurrence_count": 4741,
+            "protein_count": 599
+          },
+          "GvpH": {
+            "median_span_fraction": 0.5428571428571428,
+            "near_full_fraction": 0.0,
+            "near_full_protein_fraction": 0.0,
+            "occurrence_count": 319,
+            "protein_count": 159
+          },
+          "GvpK": {
+            "median_span_fraction": 0.3125,
+            "near_full_fraction": 0.0030467611604185984,
+            "near_full_protein_fraction": 0.0072992700729927005,
+            "occurrence_count": 15098,
+            "protein_count": 6302
+          },
+          "GvpL": {
+            "median_span_fraction": 0.966542750929368,
+            "near_full_fraction": 0.75,
+            "near_full_protein_fraction": 0.75,
+            "occurrence_count": 52,
+            "protein_count": 52
+          },
+          "GvpM": {
+            "median_span_fraction": 0.33980582524271846,
+            "near_full_fraction": 0.0,
+            "near_full_protein_fraction": 0.0,
+            "occurrence_count": 1193,
+            "protein_count": 247
+          },
+          "GvpN": {
+            "median_span_fraction": 0.10324483775811209,
+            "near_full_fraction": 0.0,
+            "near_full_protein_fraction": 0.0,
+            "occurrence_count": 14223,
+            "protein_count": 1542
+          }
+        },
+        "metrics": {
+          "noise_ratio": 0.033827865253120884,
+          "qualified_family_fraction": 0.8333333333333334,
+          "stability_floor": 0.9465943070730305,
+          "stable_cluster_number": 42.0,
+          "stable_protein_coverage": 0.9595375722543353,
+          "stable_window_coverage": 0.5542433351220969
+        },
+        "pair": {
+          "window_size": 35,
+          "window_step": 15
+        },
+        "reasons": [
+          "family_coverage_below_baseline_tolerance",
+          "whole_protein_motif"
+        ],
+        "selected": false
+      },
+      {
+        "eligible": false,
+        "family_coverage": {
+          "GvpF": 0.676126878130217,
+          "GvpH": 0.2774566473988439,
+          "GvpK": 0.7835243109321771,
+          "GvpL": 0.6703910614525139,
+          "GvpM": 0.5344129554655871,
+          "GvpN": 0.9811932555123216
+        },
+        "family_coverage_shortfalls": {
+          "GvpF": -0.26544240400667785,
+          "GvpK": -0.06681091341026746,
+          "GvpL": -0.23743016759776536,
+          "GvpM": -0.4655870445344129
+        },
+        "locality": {
+          "GvpF": {
+            "median_span_fraction": 0.16393442622950818,
+            "near_full_fraction": 9.998000399920016e-05,
+            "near_full_protein_fraction": 0.0024691358024691358,
+            "occurrence_count": 10002,
+            "protein_count": 405
+          },
+          "GvpH": {
+            "median_span_fraction": 0.4025157232704403,
+            "near_full_fraction": 0.01694915254237288,
+            "near_full_protein_fraction": 0.020833333333333332,
+            "occurrence_count": 59,
+            "protein_count": 48
+          },
+          "GvpK": {
+            "median_span_fraction": 0.3885350318471338,
+            "near_full_fraction": 0.008757214750789003,
+            "near_full_protein_fraction": 0.04057971014492753,
+            "occurrence_count": 35171,
+            "protein_count": 7590
+          },
+          "GvpL": {
+            "median_span_fraction": 0.17049180327868851,
+            "near_full_fraction": 0.03023758099352052,
+            "near_full_protein_fraction": 0.058333333333333334,
+            "occurrence_count": 463,
+            "protein_count": 240
+          },
+          "GvpM": {
+            "median_span_fraction": 0.37383177570093457,
+            "near_full_fraction": 0.0,
+            "near_full_protein_fraction": 0.0,
+            "occurrence_count": 700,
+            "protein_count": 132
+          },
+          "GvpN": {
+            "median_span_fraction": 0.12987012987012986,
+            "near_full_fraction": 2.6072899827918862e-05,
+            "near_full_protein_fraction": 0.0006609385327164573,
+            "occurrence_count": 38354,
+            "protein_count": 1513
+          }
+        },
+        "metrics": {
+          "noise_ratio": 0.21947824219440443,
+          "qualified_family_fraction": 1.0,
+          "stability_floor": 0.6780998895802101,
+          "stable_cluster_number": 94.5,
+          "stable_protein_coverage": 0.6732589697913655,
+          "stable_window_coverage": 0.2199554062186103
+        },
+        "pair": {
+          "window_size": 40,
+          "window_step": 3
+        },
+        "reasons": [
+          "stability_below_baseline_tolerance",
+          "coverage_below_baseline_tolerance",
+          "family_coverage_below_baseline_tolerance"
+        ],
+        "selected": false
+      },
+      {
+        "eligible": false,
+        "family_coverage": {
+          "GvpF": 0.9265442404006677,
+          "GvpH": 0.0,
+          "GvpK": 0.760090843398369,
+          "GvpL": 0.26536312849162014,
+          "GvpM": 1.0,
+          "GvpN": 0.9993514915693904
+        },
+        "family_coverage_shortfalls": {
+          "GvpH": -0.13872832369942195,
+          "GvpK": -0.09024438094407561,
+          "GvpL": -0.6424581005586592
+        },
+        "locality": {
+          "GvpF": {
+            "median_span_fraction": 0.16393442622950818,
+            "near_full_fraction": 0.001549077594704971,
+            "near_full_protein_fraction": 0.01981981981981982,
+            "occurrence_count": 7101,
+            "protein_count": 555
+          },
+          "GvpH": {
+            "median_span_fraction": null,
+            "near_full_fraction": null,
+            "near_full_protein_fraction": null,
+            "occurrence_count": 0,
+            "protein_count": 0
+          },
+          "GvpK": {
+            "median_span_fraction": 0.39603960396039606,
+            "near_full_fraction": 0.013493102406605579,
+            "near_full_protein_fraction": 0.054597310878717914,
+            "occurrence_count": 29793,
+            "protein_count": 7363
+          },
+          "GvpL": {
+            "median_span_fraction": 0.35587188612099646,
+            "near_full_fraction": 0.4112903225806452,
+            "near_full_protein_fraction": 0.5368421052631579,
+            "occurrence_count": 124,
+            "protein_count": 95
+          },
+          "GvpM": {
+            "median_span_fraction": 0.41237113402061853,
+            "near_full_fraction": 0.0005205622071837585,
+            "near_full_protein_fraction": 0.004048582995951417,
+            "occurrence_count": 1921,
+            "protein_count": 247
+          },
+          "GvpN": {
+            "median_span_fraction": 0.12987012987012986,
+            "near_full_fraction": 2.9841838257236645e-05,
+            "near_full_protein_fraction": 0.0006489292667099286,
+            "occurrence_count": 33510,
+            "protein_count": 1541
+          }
+        },
+        "metrics": {
+          "noise_ratio": 0.05586998893611466,
+          "qualified_family_fraction": 0.8333333333333334,
+          "stability_floor": 0.8774744590002683,
+          "stable_cluster_number": 57.0,
+          "stable_protein_coverage": 0.8433175418995184,
+          "stable_window_coverage": 0.3698152755901609
+        },
+        "pair": {
+          "window_size": 40,
+          "window_step": 5
+        },
+        "reasons": [
+          "coverage_below_baseline_tolerance",
+          "family_coverage_below_baseline_tolerance",
+          "no_stable_motif_in_family",
+          "whole_protein_motif"
+        ],
+        "selected": false
+      },
+      {
+        "eligible": false,
+        "family_coverage": {
+          "GvpF": 0.991652754590985,
+          "GvpH": 1.0,
+          "GvpK": 0.6654278930525447,
+          "GvpL": 0.9189944134078212,
+          "GvpM": 1.0,
+          "GvpN": 0.9876783398184177
+        },
+        "family_coverage_shortfalls": {
+          "GvpK": -0.1849073312898999
+        },
+        "locality": {
+          "GvpF": {
+            "median_span_fraction": 0.16326530612244897,
+            "near_full_fraction": 0.00437764482708303,
+            "near_full_protein_fraction": 0.050505050505050504,
+            "occurrence_count": 6853,
+            "protein_count": 594
+          },
+          "GvpH": {
+            "median_span_fraction": 0.9803921568627451,
+            "near_full_fraction": 0.9828571428571429,
+            "near_full_protein_fraction": 0.9942196531791907,
+            "occurrence_count": 175,
+            "protein_count": 173
+          },
+          "GvpK": {
+            "median_span_fraction": 0.3508771929824561,
+            "near_full_fraction": 0.004169284368039294,
+            "near_full_protein_fraction": 0.01132485262178095,
+            "occurrence_count": 17509,
+            "protein_count": 6446
+          },
+          "GvpL": {
+            "median_span_fraction": 0.1532567049808429,
+            "near_full_fraction": 0.13219616204690832,
+            "near_full_protein_fraction": 0.1884498480243161,
+            "occurrence_count": 469,
+            "protein_count": 329
+          },
+          "GvpM": {
+            "median_span_fraction": 0.39215686274509803,
+            "near_full_fraction": 0.0,
+            "near_full_protein_fraction": 0.0,
+            "occurrence_count": 1518,
+            "protein_count": 247
+          },
+          "GvpN": {
+            "median_span_fraction": 0.1238390092879257,
+            "near_full_fraction": 0.0,
+            "near_full_protein_fraction": 0.0,
+            "occurrence_count": 18867,
+            "protein_count": 1523
+          }
+        },
+        "metrics": {
+          "noise_ratio": 0.10406398624154733,
+          "qualified_family_fraction": 0.6666666666666666,
+          "stability_floor": 0.8779337966594789,
+          "stable_cluster_number": 47.0,
+          "stable_protein_coverage": 0.9896655472047013,
+          "stable_window_coverage": 0.5669106895762809
+        },
+        "pair": {
+          "window_size": 40,
+          "window_step": 10
+        },
+        "reasons": [
+          "qualified_family_fraction_below_0.80",
+          "family_coverage_below_baseline_tolerance",
+          "whole_protein_motif"
+        ],
+        "selected": false
+      },
+      {
+        "eligible": false,
+        "family_coverage": {
+          "GvpF": 1.0,
+          "GvpH": 0.9132947976878613,
+          "GvpK": 0.6913389078145968,
+          "GvpL": 1.0,
+          "GvpM": 1.0,
+          "GvpN": 0.9987029831387808
+        },
+        "family_coverage_shortfalls": {
+          "GvpK": -0.15899631652784774
+        },
+        "locality": {
+          "GvpF": {
+            "median_span_fraction": 0.16393442622950818,
+            "near_full_fraction": 0.007987220447284345,
+            "near_full_protein_fraction": 0.05008347245409015,
+            "occurrence_count": 3756,
+            "protein_count": 599
+          },
+          "GvpH": {
+            "median_span_fraction": 0.9562841530054644,
+            "near_full_fraction": 0.9936708860759493,
+            "near_full_protein_fraction": 0.9936708860759493,
+            "occurrence_count": 158,
+            "protein_count": 158
+          },
+          "GvpK": {
+            "median_span_fraction": 0.3508771929824561,
+            "near_full_fraction": 0.0,
+            "near_full_protein_fraction": 0.0,
+            "occurrence_count": 19014,
+            "protein_count": 6697
+          },
+          "GvpL": {
+            "median_span_fraction": 0.9742647058823529,
+            "near_full_fraction": 0.9636871508379888,
+            "near_full_protein_fraction": 0.9636871508379888,
+            "occurrence_count": 358,
+            "protein_count": 358
+          },
+          "GvpM": {
+            "median_span_fraction": 0.3883495145631068,
+            "near_full_fraction": 0.0,
+            "near_full_protein_fraction": 0.0,
+            "occurrence_count": 1053,
+            "protein_count": 247
+          },
+          "GvpN": {
+            "median_span_fraction": 0.12012012012012012,
+            "near_full_fraction": 0.0,
+            "near_full_protein_fraction": 0.0,
+            "occurrence_count": 15596,
+            "protein_count": 1540
+          }
+        },
+        "metrics": {
+          "noise_ratio": 0.034036770583533174,
+          "qualified_family_fraction": 1.0,
+          "stability_floor": 0.9836021505376344,
+          "stable_cluster_number": 23.0,
+          "stable_protein_coverage": 0.9993514915693904,
+          "stable_window_coverage": 0.7571537970379666
+        },
+        "pair": {
+          "window_size": 40,
+          "window_step": 15
+        },
+        "reasons": [
+          "family_coverage_below_baseline_tolerance",
+          "whole_protein_motif"
+        ],
+        "selected": false
+      }
+    ],
+    "family_coverage_input_sha256": {
+      "w20_s10/pilot/motif_stability/GvpF/M2/selected_setting.json": "da85cc1bf9387074eb29b65dbc90db05298bfa34f2a5e0e5e1c71486047e1b0d",
+      "w20_s10/pilot/motif_stability/GvpH/M2/selected_setting.json": "67a8754e2ab624d8f8717138d3879d25272ea275ff28ac3c18fc3367444f255a",
+      "w20_s10/pilot/motif_stability/GvpK/M2/selected_setting.json": "4c7e52072a6a4590f42c043a955e9e923a92a6ebcb45270534cb7d42960bf38d",
+      "w20_s10/pilot/motif_stability/GvpL/M2/selected_setting.json": "c488f7846ee20eea877d767d97fe2263222ad6c9ab3e744bcbd9200787343c69",
+      "w20_s10/pilot/motif_stability/GvpM/M2/selected_setting.json": "28282d077984d1a4eb4c846f22821a154c009be833625f4bb7b332c54dfb0519",
+      "w20_s10/pilot/motif_stability/GvpN/M2/selected_setting.json": "d84d4703c5f4f6df0c9a68cff6e0e1b2d82ed8dfb349cd0684b9633e61698f11",
+      "w20_s15/pilot/motif_stability/GvpF/M2/selected_setting.json": "27c60b6058b34df28af8be46b1f1107c98948503b6e363551b93aec98b89d08c",
+      "w20_s15/pilot/motif_stability/GvpH/M2/selected_setting.json": "87fa6908d40455ab4a508e713afe9967f4bb7c4af66fb759a884d6ba935986b1",
+      "w20_s15/pilot/motif_stability/GvpK/M2/selected_setting.json": "77131df717c106d4a4dbecf4eb4c967c63782ae108988ab4b6dbeb94491a4e0a",
+      "w20_s15/pilot/motif_stability/GvpL/M2/selected_setting.json": "73ea52ac568b217b4e7679a3d030a45e6f17cba7ba3cb69f0e5406b063b113ca",
+      "w20_s15/pilot/motif_stability/GvpM/M2/selected_setting.json": "86c3617de5dd7b48c8185315f920f2844a40b0b53774f127b8c024a66e76c73e",
+      "w20_s15/pilot/motif_stability/GvpN/M2/selected_setting.json": "1303f4c724536814de95e22f6adacf4e090b057c549a5985b35c4ab277b18a5e",
+      "w20_s3/pilot/motif_stability/GvpF/M2/selected_setting.json": "99397c34ad8e1a0d8148206c63b3656ec5b0f41e7da2604d17f158515de7088b",
+      "w20_s3/pilot/motif_stability/GvpH/M2/selected_setting.json": "fc21aa7f43b6ba8718acf276c4078f6b7c0db38ae34e735eeab22327e4ed5b17",
+      "w20_s3/pilot/motif_stability/GvpK/M2/selected_setting.json": "5d9b49e456fafa9d2abe7a670b15b6ad7e12aec9c252c98d33c153477e93d924",
+      "w20_s3/pilot/motif_stability/GvpL/M2/selected_setting.json": "2c336e84cbecff2d0daf6c30304017872317a909fc9b3c03217ba5ec8fe408eb",
+      "w20_s3/pilot/motif_stability/GvpM/M2/selected_setting.json": "fef313b44320481fe15924115a6806ad195b16fdf71ce019da063b26e08dd6e8",
+      "w20_s3/pilot/motif_stability/GvpN/M2/selected_setting.json": "7bd6c5da51e5f0e670c2b7bb52ec474573cc161887c73a2022c5d23c0151cd98",
+      "w20_s5/pilot/motif_stability/GvpF/M2/selected_setting.json": "b74f7df0b2da823de0316ebb83af2f5bcc329396c314a3af3978ca91750f7156",
+      "w20_s5/pilot/motif_stability/GvpH/M2/selected_setting.json": "b136a8cd19d4b307c0ffda3288aab1ee46eee54c26bfb94f9f7975b8ffff1afe",
+      "w20_s5/pilot/motif_stability/GvpK/M2/selected_setting.json": "0a80a2425b6182fcc61d3971450298b417c7aab2663c76b050b07d1eca78e09c",
+      "w20_s5/pilot/motif_stability/GvpL/M2/selected_setting.json": "e4276ba81721a043f60e603df911abe7a66039c67d433d68e1a89eb98bc90d2e",
+      "w20_s5/pilot/motif_stability/GvpM/M2/selected_setting.json": "0086923c44556a866c8b49965c9a53000408573321539fc0ca95d33c849fc732",
+      "w20_s5/pilot/motif_stability/GvpN/M2/selected_setting.json": "a21c4b92e6a37bd697598049dbc3f793f1e451dae907fefe05c4c2536059f633",
+      "w25_s10/pilot/motif_stability/GvpF/M2/selected_setting.json": "7604a7994689d3bf7637e078b1baac77d5c89c1e698f143d1795e4d3435763b4",
+      "w25_s10/pilot/motif_stability/GvpH/M2/selected_setting.json": "a83e492ad174f11c5b816443fbdb1b3879e5c864a932d0df3658b2aac572c501",
+      "w25_s10/pilot/motif_stability/GvpK/M2/selected_setting.json": "9aa8cb57e9aac61dbaff51bcde99ba97ce6a78d5a368d5ece335ad6f32ff7540",
+      "w25_s10/pilot/motif_stability/GvpL/M2/selected_setting.json": "37e66b60e90228053bab8ea73546a53f8790cd917258e33ab541a59109032fe3",
+      "w25_s10/pilot/motif_stability/GvpM/M2/selected_setting.json": "c64b516e492760f4b42c4b37e0a2e2034fd33366a72d12a166c9f2481bd9c780",
+      "w25_s10/pilot/motif_stability/GvpN/M2/selected_setting.json": "ffbf6cd3b099bb6b237adcb08b7433407d537f4a43d182aed188106a72806e7c",
+      "w25_s15/pilot/motif_stability/GvpF/M2/selected_setting.json": "2410035bffc3de7695962c1ac85205dbfc9b601b78034171053f3d7fd9c90312",
+      "w25_s15/pilot/motif_stability/GvpH/M2/selected_setting.json": "3009eea6a3fa0ef3c9e0203d542c109dfe82be21bee473448ad00a91ab38b571",
+      "w25_s15/pilot/motif_stability/GvpK/M2/selected_setting.json": "04a9ce076545afd9c6b7d95602112ee23924c3087c6cbaf491f6cd59275f1fb0",
+      "w25_s15/pilot/motif_stability/GvpL/M2/selected_setting.json": "82cbb0257752dc16bb2b356e7859c0bf93dea7a179eab6258f0f42a399c57bb5",
+      "w25_s15/pilot/motif_stability/GvpM/M2/selected_setting.json": "86c3617de5dd7b48c8185315f920f2844a40b0b53774f127b8c024a66e76c73e",
+      "w25_s15/pilot/motif_stability/GvpN/M2/selected_setting.json": "5c4239e7e72ee5979f747924bcbf5f9247aac4f561b1fde1b03b98301c3710f3",
+      "w25_s3/pilot/motif_stability/GvpF/M2/selected_setting.json": "a2cf1b2d99c98c31ace658670fe9c7de9963f0a002226b06b30bd8e3e1508a64",
+      "w25_s3/pilot/motif_stability/GvpH/M2/selected_setting.json": "00fd8c461652b4e13fcca7a5562697e18add1b884ccdadc64f9645c0a7ebd63c",
+      "w25_s3/pilot/motif_stability/GvpK/M2/selected_setting.json": "ce1ab039824b525f6ac9041683410e6251d87c7310f05a42679f0162a159830c",
+      "w25_s3/pilot/motif_stability/GvpL/M2/selected_setting.json": "c45824a81ca54b948c2fc95c520f4e9742cba5d14843c781015da08f95ea588c",
+      "w25_s3/pilot/motif_stability/GvpM/M2/selected_setting.json": "92ffc94f0822c00bc7627f36654580b0821fddf0badc17ba91bd54de05806f30",
+      "w25_s3/pilot/motif_stability/GvpN/M2/selected_setting.json": "b81bc264b91e0d2be4dc54231446aac1f2620945c2dbd24ffa199ffc025cc507",
+      "w25_s5/pilot/motif_stability/GvpF/M2/selected_setting.json": "297767368e1dfee324b6dcce87edbb971b90c92d44ba618a7fae6391fcd9cbb5",
+      "w25_s5/pilot/motif_stability/GvpH/M2/selected_setting.json": "da3cc96c267dd843b4396727eb45664dead4035bf321946aa75eea2f74ff5ec5",
+      "w25_s5/pilot/motif_stability/GvpK/M2/selected_setting.json": "e24a23345eff63365ca6f58e8f500122e1abca7cabe24a2e55bfc279c87cf67c",
+      "w25_s5/pilot/motif_stability/GvpL/M2/selected_setting.json": "fc12ca25233dc19343b2a7aa473eceb60908476d923f46e957bbd622019057e4",
+      "w25_s5/pilot/motif_stability/GvpM/M2/selected_setting.json": "723b116a3cd67c930c7ce22f767be82998ce128bf87ea00ef270a863b2b50bd7",
+      "w25_s5/pilot/motif_stability/GvpN/M2/selected_setting.json": "73be22c59a1e6f347909adf3eb5d5389d604dff3bf8e55600aad3da61854b4cb",
+      "w30_s10/pilot/motif_stability/GvpF/M2/selected_setting.json": "47d7a0dacacc9882c9f57b811c85f57092d1b0a53ed49f3bdb102e37af1dd68f",
+      "w30_s10/pilot/motif_stability/GvpH/M2/selected_setting.json": "a3f5fbaca569299d7e274d834bbb798da11057ef91d7c9b2ef59ce916d887beb",
+      "w30_s10/pilot/motif_stability/GvpK/M2/selected_setting.json": "0f6215368979854d05d529e978599e014c6e81548712b99b955b365578d531fb",
+      "w30_s10/pilot/motif_stability/GvpL/M2/selected_setting.json": "9c70dcc5f9303bb832a94450217c3103a296f96af7f8f2368cb856fd7b24dbb9",
+      "w30_s10/pilot/motif_stability/GvpM/M2/selected_setting.json": "c64b516e492760f4b42c4b37e0a2e2034fd33366a72d12a166c9f2481bd9c780",
+      "w30_s10/pilot/motif_stability/GvpN/M2/selected_setting.json": "da991c937a9d28469510bbde867c1e9ced180063dcbdbf59fe1b393b509843ec",
+      "w30_s15/pilot/motif_stability/GvpF/M2/selected_setting.json": "977806eb919716aa997433eda4da9c5896bca6c31b67a3b3efb87260f602cead",
+      "w30_s15/pilot/motif_stability/GvpH/M2/selected_setting.json": "5b175cd59b1bb2e3bcdb9392fc92869c0f7e56b66912383909ec8095ad61b723",
+      "w30_s15/pilot/motif_stability/GvpK/M2/selected_setting.json": "27a73786b032199ff79dd8a79fb00cf9bfa204fae9523543d1d7a8b5d04e26c0",
+      "w30_s15/pilot/motif_stability/GvpL/M2/selected_setting.json": "ebdfec0cacf896980c4fb025235e9c60c0c94ed4fb94d935ab0a01636f3cc561",
+      "w30_s15/pilot/motif_stability/GvpM/M2/selected_setting.json": "86c3617de5dd7b48c8185315f920f2844a40b0b53774f127b8c024a66e76c73e",
+      "w30_s15/pilot/motif_stability/GvpN/M2/selected_setting.json": "be8e2e8ac88e2815d75eac416cab1ac03e980861feef3ad312c0ef35f9271bc6",
+      "w30_s3/pilot/motif_stability/GvpF/M2/selected_setting.json": "bd2362c8cb51c1d7feb2c5697a844e418673c77670c741e3a1061b0ca56db3a3",
+      "w30_s3/pilot/motif_stability/GvpH/M2/selected_setting.json": "62fabb577dfe140fc7442f15b53058a00ca95504b751b51d9033f95a51ee773c",
+      "w30_s3/pilot/motif_stability/GvpK/M2/selected_setting.json": "0a3443a7903c622d995ee8159aff14d8f9214d4e00ca2d0c829d5298e8b953ab",
+      "w30_s3/pilot/motif_stability/GvpL/M2/selected_setting.json": "b84b01a390ce7e86c71f1e470eb6a80038dcb62b9f3af207f45f48f162244d4a",
+      "w30_s3/pilot/motif_stability/GvpM/M2/selected_setting.json": "3154bd78d0b3f036fb0ebe8dcb77db3923f38826383cec52f5951e4ee2eee7b0",
+      "w30_s3/pilot/motif_stability/GvpN/M2/selected_setting.json": "2b7187e8276680aa48f1a53729d30f54823399ea71fedd3be968e7bde033d38a",
+      "w30_s5/pilot/motif_stability/GvpF/M2/selected_setting.json": "31e27b4282cf24f7178487259830f1eca002fa93cc9a1038f3bf4e1203f51ecd",
+      "w30_s5/pilot/motif_stability/GvpH/M2/selected_setting.json": "d33d6e24a0ebab0100a2d384758344549ca51e96b7d2c516cbe0515152c911cb",
+      "w30_s5/pilot/motif_stability/GvpK/M2/selected_setting.json": "f74753bd7a02ac97f2aadff37119c45527a54542558f600f049f0977064e9de3",
+      "w30_s5/pilot/motif_stability/GvpL/M2/selected_setting.json": "978a4d0d40b921ef5cdee2d13ed072c3c411bc5ace726f061099094a43bfc35c",
+      "w30_s5/pilot/motif_stability/GvpM/M2/selected_setting.json": "2c56f09bbf55b31808f54dd51623508c67564bd4f8dec1d05170fe44c01f81f0",
+      "w30_s5/pilot/motif_stability/GvpN/M2/selected_setting.json": "661f32642049f89e309929107828eaea4664e416bfcd33fd35a5bafd338b47bc",
+      "w35_s10/pilot/motif_stability/GvpF/M2/selected_setting.json": "903f281dfe2d18c5d68204ef01569b49c00197177a05c5034e40767524b4cdad",
+      "w35_s10/pilot/motif_stability/GvpH/M2/selected_setting.json": "6b7841b3111e6fb18603efd08df30d65ed7f95ec36717739e0ddb2418c528c4a",
+      "w35_s10/pilot/motif_stability/GvpK/M2/selected_setting.json": "758b45119fbdb19b469b9d78b0d976dfd9951edb48a7775c6f5e2fa9b31d98cb",
+      "w35_s10/pilot/motif_stability/GvpL/M2/selected_setting.json": "5b685ab27c86855a43e259f0339583bb41c583984b821c53981ea5bbcc2acbeb",
+      "w35_s10/pilot/motif_stability/GvpM/M2/selected_setting.json": "50ea923ed9f605a2df6d377056cc7ab8913fdf566a7d634f51e81a97f3895adc",
+      "w35_s10/pilot/motif_stability/GvpN/M2/selected_setting.json": "a06c11f992e8d1dc14ddbfc3752ae148ae25ea81f5f503571011d10b13207f58",
+      "w35_s15/pilot/motif_stability/GvpF/M2/selected_setting.json": "accde6ddd812de908ed9d102fb9156ed29b006437e6cdd91d3bdde678728fdb1",
+      "w35_s15/pilot/motif_stability/GvpH/M2/selected_setting.json": "777aef308bddf10f0e0d99e65e0f7683e59acade1458fd35547af4d8cac1781a",
+      "w35_s15/pilot/motif_stability/GvpK/M2/selected_setting.json": "9d1758b12b651ab262071e3ca70b8f8ebd59ac783c98b8d69b4f61d6fd479579",
+      "w35_s15/pilot/motif_stability/GvpL/M2/selected_setting.json": "70adc5ff8582250df5cd6332157512f12172ab5354f84bf35f1bff0fe9da4788",
+      "w35_s15/pilot/motif_stability/GvpM/M2/selected_setting.json": "9441115f25539fbbf731533957602c2f677fd233e49ce861d7eaa64349aaa986",
+      "w35_s15/pilot/motif_stability/GvpN/M2/selected_setting.json": "bb8612c1635190037ba425a8d8f5b6d200e84036bde5c802dc1383bd97133631",
+      "w35_s3/pilot/motif_stability/GvpF/M2/selected_setting.json": "e52f3294216973fe93f928aeb05e12b77d8c0197ed1b65af1e4aab4f8f73ac71",
+      "w35_s3/pilot/motif_stability/GvpH/M2/selected_setting.json": "7f095cd7197535861fb39904f4f411cd0cf40fdbf074a3d8e9d4b598f2f0e9e4",
+      "w35_s3/pilot/motif_stability/GvpK/M2/selected_setting.json": "8d03dccab74c5fab0924c562b0225f32e320e41cf1bda8a9f79653a8b3913d0d",
+      "w35_s3/pilot/motif_stability/GvpL/M2/selected_setting.json": "57307cc18bec2779ad4d5c8c1554cb714fd638086afec3765cce72064d8f2871",
+      "w35_s3/pilot/motif_stability/GvpM/M2/selected_setting.json": "ecf34e5caf33988cf1a6aefccc4115a983e564cf50617c73787e3576d73f8be6",
+      "w35_s3/pilot/motif_stability/GvpN/M2/selected_setting.json": "4e38a97343cf1b28d610b0944b7fd3e74148b61c864f0d169b1f600b35abb658",
+      "w35_s5/pilot/motif_stability/GvpF/M2/selected_setting.json": "a5651ac51d01381c3adfc5fab8fcd4fe5f6629c11540bb523ca7e199c9f39051",
+      "w35_s5/pilot/motif_stability/GvpH/M2/selected_setting.json": "ccbfa995add529eca7bcb97a0e9607d7b1e9c77669d1807842d5912f9a9ea001",
+      "w35_s5/pilot/motif_stability/GvpK/M2/selected_setting.json": "b2d4f3b6c7abb3d95b4e908bbb2ea82d6c2b3d41d0903a04dda24c84eba21ca4",
+      "w35_s5/pilot/motif_stability/GvpL/M2/selected_setting.json": "cdb0596fd645cd59d3f6fdefbfaf1d4f5ab8c40246f3904a3d482c68e8ab04fd",
+      "w35_s5/pilot/motif_stability/GvpM/M2/selected_setting.json": "9ceffc81bf5b2763992a8501d9f1671573cfac6a833666a5ce8f28d69e2ee687",
+      "w35_s5/pilot/motif_stability/GvpN/M2/selected_setting.json": "811ddd7e484043c9d74ee10a9c18a48deb75ed4fd93bd6f73b5439220058809b",
+      "w40_s10/pilot/motif_stability/GvpF/M2/selected_setting.json": "096a1a2c92a681a0b86ca3f9a9135622589ebf0899d70e3b9355dc34db233926",
+      "w40_s10/pilot/motif_stability/GvpH/M2/selected_setting.json": "bf4a0cd87397543f3f1a6e9aa058ad95492ffe813b73ff469a960c3a862eba41",
+      "w40_s10/pilot/motif_stability/GvpK/M2/selected_setting.json": "9d768f751eb2f01a9df458db01cb74c86561db82fd2c90b3f280ff076f6d486b",
+      "w40_s10/pilot/motif_stability/GvpL/M2/selected_setting.json": "64252c35cd204e8722ce49f6824d0a9afb55817ab2b3bf384202866449c3e8a4",
+      "w40_s10/pilot/motif_stability/GvpM/M2/selected_setting.json": "50ea923ed9f605a2df6d377056cc7ab8913fdf566a7d634f51e81a97f3895adc",
+      "w40_s10/pilot/motif_stability/GvpN/M2/selected_setting.json": "fce04df316c523ea6954196a5159584bb77284192270a483f672b900893b23a4",
+      "w40_s15/pilot/motif_stability/GvpF/M2/selected_setting.json": "8de0e7678849bab3c7170b24fbfa52677210e564a357dd0c63092a05ccd9be07",
+      "w40_s15/pilot/motif_stability/GvpH/M2/selected_setting.json": "c58e2c4c07d2be1827a53e4ca40df0805568049548791b182bfe3d0652676f44",
+      "w40_s15/pilot/motif_stability/GvpK/M2/selected_setting.json": "3b7be20d8137118189c4c0a78942930a6b7142546ea7bbacd216fc6fc15b1d6b",
+      "w40_s15/pilot/motif_stability/GvpL/M2/selected_setting.json": "927df06fb89f7919b36bdbde4f038a7b5c5d015f48b16c1748a1433d0c502405",
+      "w40_s15/pilot/motif_stability/GvpM/M2/selected_setting.json": "e4daede8d8eae6b9f34913ee87cdfe2d2a210ac45d486f6d0344d766e77a97ee",
+      "w40_s15/pilot/motif_stability/GvpN/M2/selected_setting.json": "90721e614423e66431c3cb88adb64598a81cd1ecab4622546eef9b97a8591d41",
+      "w40_s3/pilot/motif_stability/GvpF/M2/selected_setting.json": "b318372818e15d14d046e73aa37c97281e9c3783b6819d337f304fb44f699bc9",
+      "w40_s3/pilot/motif_stability/GvpH/M2/selected_setting.json": "f94bd4e4da4a43cc8f195b85b6a5c0cff7cb48c209841584359a3dc1c2519de8",
+      "w40_s3/pilot/motif_stability/GvpK/M2/selected_setting.json": "361297d7c2f14287dd67792725ac669456ae9d6e0bf4d537f217fc26d8425d94",
+      "w40_s3/pilot/motif_stability/GvpL/M2/selected_setting.json": "1fe9b8e65057af40d3e823bf6bbd3c3e167e1b4092a4d6052786448ed780cb5b",
+      "w40_s3/pilot/motif_stability/GvpM/M2/selected_setting.json": "c76e37d3267dce751a5020e383f73b16a89dc9f57b0db2eb9a1372e6e3ab41f2",
+      "w40_s3/pilot/motif_stability/GvpN/M2/selected_setting.json": "b81a618643775a3cb4e9d01173d00bfed8b201dbb6cda8e0f778bfc70054b4db",
+      "w40_s5/pilot/motif_stability/GvpF/M2/selected_setting.json": "20bda0903e36bc71c43cd140ddc139119acfbf59a46ab8ec3f085632809e4819",
+      "w40_s5/pilot/motif_stability/GvpH/M2/selected_setting.json": "9bc1394c4ee0cd4ede6cca1c03a1ea7a231c2e6779bf6248655433ecb8dab82f",
+      "w40_s5/pilot/motif_stability/GvpK/M2/selected_setting.json": "8dab882b0798c6a0202bdfef07e08233001ee3f0aa19af2dd4ac5195f50f93c2",
+      "w40_s5/pilot/motif_stability/GvpL/M2/selected_setting.json": "e6cfa685fbd0cd89d3e49b26491217453b0560a2ceccdb94fea6d2da11ec805e",
+      "w40_s5/pilot/motif_stability/GvpM/M2/selected_setting.json": "a580e4c663c85a49dccad54e0a168de7679da5205658ee1838a6cebd4953b56f",
+      "w40_s5/pilot/motif_stability/GvpN/M2/selected_setting.json": "222cf99bd15001fbfe6aedee9a18242390f03c61a051d729ba6e85cd3a38b52c"
+    },
+    "locality_input_sha256": {
+      "w20_s10/pilot/motif_stability/GvpF/M2/stable_cluster_labels.npy": "e75da37dd30f7a503892abd58b354bf60b68ffb4f6b797b3146c220d192cfb50",
+      "w20_s10/pilot/motif_stability/GvpH/M2/stable_cluster_labels.npy": "fb885a2e6e8ee0a16cd3dc614a85eec0ae1408001024e4d4ba764872deecb36a",
+      "w20_s10/pilot/motif_stability/GvpK/M2/stable_cluster_labels.npy": "607f18a0672512af71056c6c25bdd1bef834c3461a15b5db52596b5db4f45a32",
+      "w20_s10/pilot/motif_stability/GvpL/M2/stable_cluster_labels.npy": "a3446cfa9d5e8d497b34b9b05f82c5ede71d32a41cc9d48d4c4324dfdd44639c",
+      "w20_s10/pilot/motif_stability/GvpM/M2/stable_cluster_labels.npy": "f75c7d48a8a6c2836b76bde52d601e55ff5716603712f592a49a59f4dada383b",
+      "w20_s10/pilot/motif_stability/GvpN/M2/stable_cluster_labels.npy": "77878e40595516bd587985c85ca0c4497ff153f62182cc9ff0a9b4b3c2137768",
+      "w20_s10/raw_exp3/GvpF/windows_metadata.csv": "0cc0386589a245ef385b84c231874f3a9b9f20257f1e9d5282d8e7adb6e63f3e",
+      "w20_s10/raw_exp3/GvpH/windows_metadata.csv": "b574ae7c6cb5b671b709da8e14cb9e402862b2552b580c30cdecc5e8f4934396",
+      "w20_s10/raw_exp3/GvpK/windows_metadata.csv": "82e248a57373fe0b6a8d1332bb11f161fabf1da860d2db86f847418725fd20eb",
+      "w20_s10/raw_exp3/GvpL/windows_metadata.csv": "80c794125c89a204ea3e7106d56c133d46c288d956b32ab654edbda77b129044",
+      "w20_s10/raw_exp3/GvpM/windows_metadata.csv": "b1cfc48eabfd7741702d443ba9d4138eb6bd958205258f3eb866ba9f24b3ebd8",
+      "w20_s10/raw_exp3/GvpN/windows_metadata.csv": "151991729066b77039eb38fc2dcb7211c85c6865a623f665576a290d7ef2bd86",
+      "w20_s15/pilot/motif_stability/GvpF/M2/stable_cluster_labels.npy": "916e0366e0476cd6fe2fa9b53ea70a674ec38d60f4b7219fcc0ba2421f329259",
+      "w20_s15/pilot/motif_stability/GvpH/M2/stable_cluster_labels.npy": "df604e40b2c6450c9224df4cc3510754cc80a5bbd89964a6b907bda833132331",
+      "w20_s15/pilot/motif_stability/GvpK/M2/stable_cluster_labels.npy": "2872c0a716173504173368a2b737eff0d8b0c2ffa8343973c0429f828dd1aafe",
+      "w20_s15/pilot/motif_stability/GvpL/M2/stable_cluster_labels.npy": "4ebfffed27f7a48e3eb93741b1952a87892518a7ea54fbba6bf8445ccb7d2a3e",
+      "w20_s15/pilot/motif_stability/GvpM/M2/stable_cluster_labels.npy": "75ea0ef481eb9ae82e7b770b4318e8a9374e758ea0bf0f7991c36f5b93d7f4b5",
+      "w20_s15/pilot/motif_stability/GvpN/M2/stable_cluster_labels.npy": "e0e85e99f7dc0c3ff310b1da5435799062a1d317cab0747e66d2cc9a5777776f",
+      "w20_s15/raw_exp3/GvpF/windows_metadata.csv": "f97651ff32132400b7d7e6f2ffcf5dd75ca93b34ea41eb0cf1d2ee6d8499037b",
+      "w20_s15/raw_exp3/GvpH/windows_metadata.csv": "a9051ff693c1c748d7205080d05833969a484142764bebf88e6f32014e1e7a02",
+      "w20_s15/raw_exp3/GvpK/windows_metadata.csv": "d01a3687898ce103459888a078767f4fe2432c3ffc152b2367eaa0641dee3960",
+      "w20_s15/raw_exp3/GvpL/windows_metadata.csv": "84c50eb6a758960992502446a135fc093ea8a29907568fe215f05d5c51f80c8e",
+      "w20_s15/raw_exp3/GvpM/windows_metadata.csv": "aa68beb8baf5d36239b61c8fb12a7cb0717491072dac7eef10b000c6f57bea4c",
+      "w20_s15/raw_exp3/GvpN/windows_metadata.csv": "95999b08717517ba938b23d3321fa1f5a7f687382539fde9eb571ba175ab3077",
+      "w20_s3/pilot/motif_stability/GvpF/M2/stable_cluster_labels.npy": "7bb3669488fb7d40a35ca87303c9a85d6b53906f972fa820232bea3570fe6fed",
+      "w20_s3/pilot/motif_stability/GvpH/M2/stable_cluster_labels.npy": "1602674c3d5954746542c6761fcdffedde55c0ebeb0133b34301b4d167c0d12c",
+      "w20_s3/pilot/motif_stability/GvpK/M2/stable_cluster_labels.npy": "56f1b4f65d56b90608fa713f911facc7a7a8a70e586a24a4bb8beb21ea1eb14d",
+      "w20_s3/pilot/motif_stability/GvpL/M2/stable_cluster_labels.npy": "fb25649f5c14ee3223b13277dfcf20854182d051e98e15f158a31c601683ae58",
+      "w20_s3/pilot/motif_stability/GvpM/M2/stable_cluster_labels.npy": "7ae2f0df8839ea6b1b0c8f8af987a8ef804e1f59a4249895e59d32d13738da3e",
+      "w20_s3/pilot/motif_stability/GvpN/M2/stable_cluster_labels.npy": "890185c0a709a064d68d3b61d6a40a0c3badc8a6ebc0101a37c1614a45343a90",
+      "w20_s3/raw_exp3/GvpF/windows_metadata.csv": "6146e19a532a1444bddfe2b8c4fa92e121e169444959f86bfa7ab73cb26e19f5",
+      "w20_s3/raw_exp3/GvpH/windows_metadata.csv": "041a772cb33c52b014139f93cc02c25bb656089773bf090374458f9c13adf9d6",
+      "w20_s3/raw_exp3/GvpK/windows_metadata.csv": "e3a95c9d3822d5e55f4ff2d8ca1932fb17d961b36e3f066e4201edf7a61a52f6",
+      "w20_s3/raw_exp3/GvpL/windows_metadata.csv": "ef88c826a004336bffab25bce341f8afd48ea3e3aadc51e3d8ba142e9f065783",
+      "w20_s3/raw_exp3/GvpM/windows_metadata.csv": "3fc1d157de3fabe57d6dc849092508e3194495de2f5b580425300e8536d882f5",
+      "w20_s3/raw_exp3/GvpN/windows_metadata.csv": "f1a0a9d09125ee709c1f61c6048751f9e53afbd078d8648d54d3ec7496402027",
+      "w20_s5/pilot/motif_stability/GvpF/M2/stable_cluster_labels.npy": "e4ab84d6f457502a9502fb7a496a26b97caaa6d3d55968274b4bb97eb40a9b2d",
+      "w20_s5/pilot/motif_stability/GvpH/M2/stable_cluster_labels.npy": "8990239ba1b4f3de70b559d6c118927c7ac4df6d5b56a44c40092533f02186f6",
+      "w20_s5/pilot/motif_stability/GvpK/M2/stable_cluster_labels.npy": "a3f984ee46bd2a42d3dd9861a3f87b6a4937dcb3323a04de491be4718736129c",
+      "w20_s5/pilot/motif_stability/GvpL/M2/stable_cluster_labels.npy": "1ff1d81c803fcbd591de1bd1baeebed7460405a6d4647948d5c0802c0bd7ee05",
+      "w20_s5/pilot/motif_stability/GvpM/M2/stable_cluster_labels.npy": "b1336bebdff0751ea5c5e7c59a2bf2460b11abdcc964ce49bd8fa547ee7bc542",
+      "w20_s5/pilot/motif_stability/GvpN/M2/stable_cluster_labels.npy": "4afc729b997117041d0903ca43e6543293f5864d50abcbab56dc749ded76671d",
+      "w20_s5/raw_exp3/GvpF/windows_metadata.csv": "7ec817b4cb984355855416fd01e146ad3db329b0dfc7821d5410efe4c7a405a0",
+      "w20_s5/raw_exp3/GvpH/windows_metadata.csv": "c75552a7f75fb2486e31fbb923893b3ee16289e8debe24413c5ab81eab136871",
+      "w20_s5/raw_exp3/GvpK/windows_metadata.csv": "9d77ddac3ea1add95e198a1f3497626f0a64029b6f8411635e66ac59e99f79ea",
+      "w20_s5/raw_exp3/GvpL/windows_metadata.csv": "6a9852cc93dde42412719badbad4468900ab154f3ab9a980bad071330b3f0458",
+      "w20_s5/raw_exp3/GvpM/windows_metadata.csv": "b6e0dc3466cde7bcc2652e984396e69132387c83ba60d2aa4bbdab44169199df",
+      "w20_s5/raw_exp3/GvpN/windows_metadata.csv": "fd4326fc630d495cdac3845e2c4deabf0891f9e07ae5d17de32feae6e5e93b19",
+      "w25_s10/pilot/motif_stability/GvpF/M2/stable_cluster_labels.npy": "5143ff662b40a6dc51838ebd0b8a88be055f520175a7329ccee72f22a78aec87",
+      "w25_s10/pilot/motif_stability/GvpH/M2/stable_cluster_labels.npy": "bd388df74f858a1425c63e77e0b96958d4620fe4dd0fcd8d69ddf123666ec336",
+      "w25_s10/pilot/motif_stability/GvpK/M2/stable_cluster_labels.npy": "14b2dfa92e7e86df4cab4fd79738b3777be0af384959f0dd33a75f7c65b26b8a",
+      "w25_s10/pilot/motif_stability/GvpL/M2/stable_cluster_labels.npy": "fa5c562ca497ac2ad750c790233d3f7d78ea452204781c4a88a6baacdf198e82",
+      "w25_s10/pilot/motif_stability/GvpM/M2/stable_cluster_labels.npy": "ffbc5a99b54651ffb6f5aabbd71b94e782bb706054b9016baca2cbd8e9577f0c",
+      "w25_s10/pilot/motif_stability/GvpN/M2/stable_cluster_labels.npy": "f92bf6fa2a0c02f6e719722e23a3c491d128392ddd2fd9a6e9a2f6e810ad0eb1",
+      "w25_s10/raw_exp3/GvpF/windows_metadata.csv": "9befad91804811a5cea126ce0676fb8a8163624deb1e37dec8094ec4f47f1f27",
+      "w25_s10/raw_exp3/GvpH/windows_metadata.csv": "657a56891c19c5c873f42bcf0257cfb0bad7a3b42553fe58176d59a93af76bad",
+      "w25_s10/raw_exp3/GvpK/windows_metadata.csv": "a6be973118d7aecce2bb7f746283766fad5410774d389b098a459e2ee6205a81",
+      "w25_s10/raw_exp3/GvpL/windows_metadata.csv": "66abfe42dfd7c4f234df04c4ba402b5ac3457ab4d34b7cd802fbe1335d49e650",
+      "w25_s10/raw_exp3/GvpM/windows_metadata.csv": "456f7e80fb16798d6e049460a4119d9426de3951b0bd71f29819842278a2d184",
+      "w25_s10/raw_exp3/GvpN/windows_metadata.csv": "b9a99c3c9950050b962a0da4db3b679ece9391817a945f5cb52025bd6a40b8e4",
+      "w25_s15/pilot/motif_stability/GvpF/M2/stable_cluster_labels.npy": "bdb117b9ae3839592ef5049999258a56779366786ece1164ba2909b64c1cf732",
+      "w25_s15/pilot/motif_stability/GvpH/M2/stable_cluster_labels.npy": "413ea9d1345943e0824b21b0ef60e08f9d77aad4b6e2112accca6df5314deb9f",
+      "w25_s15/pilot/motif_stability/GvpK/M2/stable_cluster_labels.npy": "7acd231521fad79006c271e7790152f1f125af9ed8dd7068d682f33a346a7008",
+      "w25_s15/pilot/motif_stability/GvpL/M2/stable_cluster_labels.npy": "5ae0b90e57b998cfd2847b69177da440c2526055cf9791c7ffcef400c3929ff2",
+      "w25_s15/pilot/motif_stability/GvpM/M2/stable_cluster_labels.npy": "756023cffc847feaa3532815e648e4aa03ff31c44c0138efe892a499a21a9a17",
+      "w25_s15/pilot/motif_stability/GvpN/M2/stable_cluster_labels.npy": "a4e1bba0bd29d86ff22cbf691429c722a6f9a5ccc7aba2ce0dd9d1ca14989f10",
+      "w25_s15/raw_exp3/GvpF/windows_metadata.csv": "e836bcc9835f323ea9d56a779aeeb62d1c2c827e98a848bb83936ad628b398f0",
+      "w25_s15/raw_exp3/GvpH/windows_metadata.csv": "ccc6a41133c7743316819e2cd0ee8e2c175a711369b19ed998fa53cbead2604c",
+      "w25_s15/raw_exp3/GvpK/windows_metadata.csv": "39b8f1cfa2d26d75ace9176e4dbae1117bb5bb54f266ec46e611445eeff0bf33",
+      "w25_s15/raw_exp3/GvpL/windows_metadata.csv": "f0bc704b45e2ae724f18226c81bf007b1092ee34291e94d98a3d9c1fff4cc1fd",
+      "w25_s15/raw_exp3/GvpM/windows_metadata.csv": "0fecca4ae2c0c026756db663299fe51a927a1e84dc101cd918bc3544c21199a4",
+      "w25_s15/raw_exp3/GvpN/windows_metadata.csv": "2634870ec6eba76c0becfbfcea844f76cc5ba6f74a772c3866969e7e890055d3",
+      "w25_s3/pilot/motif_stability/GvpF/M2/stable_cluster_labels.npy": "41569dc0d327ee7b547114f9fc6e3368e3afa20288816fa4375f9609229cb085",
+      "w25_s3/pilot/motif_stability/GvpH/M2/stable_cluster_labels.npy": "ef72a423b79b4440da7267a95831fcc2992b0dded856e393d02c5742cc307ebf",
+      "w25_s3/pilot/motif_stability/GvpK/M2/stable_cluster_labels.npy": "d82b49ee488b63d0c3ec28d42f39a9cfe67f8e84e87ac3e47530a2f8963bcdb8",
+      "w25_s3/pilot/motif_stability/GvpL/M2/stable_cluster_labels.npy": "3aaa4b542d817730681151e7378b37625f52b31b02e9b41e829b76fa41421187",
+      "w25_s3/pilot/motif_stability/GvpM/M2/stable_cluster_labels.npy": "42a977aee4047db4f7612661f5d2f3fbb92d0ca211ea3e20744c21aca9c54c9e",
+      "w25_s3/pilot/motif_stability/GvpN/M2/stable_cluster_labels.npy": "df5c4298feab3568ad2ca54b34b5373f3b5c20aa110958f1e7e20b877abd3f42",
+      "w25_s3/raw_exp3/GvpF/windows_metadata.csv": "25348f5fcb9f4fbd4ba898b56111ee29cd23f75d3e8928eb1e0bd8d677cfabd2",
+      "w25_s3/raw_exp3/GvpH/windows_metadata.csv": "7acda3af1308ba5019b60acc7edfe61bba7680c49957b7308544257e784b0f63",
+      "w25_s3/raw_exp3/GvpK/windows_metadata.csv": "4468f7101003e8e1f5752f22a17ff30bec4b9aafe46f80f8af967df2fe39229e",
+      "w25_s3/raw_exp3/GvpL/windows_metadata.csv": "af1ba86cba75cd2c68f7f6d7f17cafc6e05eeeccfa640d411b26aebb187476ac",
+      "w25_s3/raw_exp3/GvpM/windows_metadata.csv": "a66a4fd03c543ce674a602388f5b08ee649561d4027b46e2e114172e324b78c9",
+      "w25_s3/raw_exp3/GvpN/windows_metadata.csv": "835a72ecb208ecf0b6c1c996829424f74f17c3fb5a7c830311787bb43800dae3",
+      "w25_s5/pilot/motif_stability/GvpF/M2/stable_cluster_labels.npy": "5cf0155c3143f39d4691659c79e77a979b45629229134f62c5ce8afabda64b35",
+      "w25_s5/pilot/motif_stability/GvpH/M2/stable_cluster_labels.npy": "01da3b9426a40dd5c85582200791309ab4f5c6b79a75cfc2b585e3f467a55a4a",
+      "w25_s5/pilot/motif_stability/GvpK/M2/stable_cluster_labels.npy": "464f34649df603d3a9b10741191fe9a6d90ab273b945dae0bfbb6082205d1464",
+      "w25_s5/pilot/motif_stability/GvpL/M2/stable_cluster_labels.npy": "647584c279839d48887871dae2c7909008709f12b17cc297e903292e7933bb6d",
+      "w25_s5/pilot/motif_stability/GvpM/M2/stable_cluster_labels.npy": "af8c2aadfac31ca576046733c3ce1647d22900e9f71f259784525ae901dd3fdb",
+      "w25_s5/pilot/motif_stability/GvpN/M2/stable_cluster_labels.npy": "f682062690b3b41e75b0f6bc1bd412f2c2099ae8b576686da91063c2f5840d8a",
+      "w25_s5/raw_exp3/GvpF/windows_metadata.csv": "66c55841ef80839471fd11bc547efb4c90c7d04bf9887be15514deff8a2ae064",
+      "w25_s5/raw_exp3/GvpH/windows_metadata.csv": "4e764c8b9b0e2a697a35fc615c9f190e4c98be7859d1216d880da9822065ffa7",
+      "w25_s5/raw_exp3/GvpK/windows_metadata.csv": "1aca1d3e6a18bd3549e00bdaf5ca6eb41cfc2d09e54ecf232be53788d0c7c0c2",
+      "w25_s5/raw_exp3/GvpL/windows_metadata.csv": "166b2ccfe37b1e55a442317853e4c4803d0d0d0713b80c3226f3c08490481d36",
+      "w25_s5/raw_exp3/GvpM/windows_metadata.csv": "002fb831b56e59c0d723b3d663385a0411cfbb3799fcb4d4454ba452d176c328",
+      "w25_s5/raw_exp3/GvpN/windows_metadata.csv": "ef4b30974857d43551c459b23e4c3675b450a9df73539959d6f9ae9b5bb8d3f0",
+      "w30_s10/pilot/motif_stability/GvpF/M2/stable_cluster_labels.npy": "79d5b175206e6061b12aeab8c970b15f424edb59ba670a6c5710b29f25d36ff6",
+      "w30_s10/pilot/motif_stability/GvpH/M2/stable_cluster_labels.npy": "73fadc8a5adb0a992b4fc9345aff230435f3114b7046b269974d78ba9f69f764",
+      "w30_s10/pilot/motif_stability/GvpK/M2/stable_cluster_labels.npy": "cd6b8ce0c7b2313aa42347289fbdc336e48c9f0d335153f97b3cb7932993d787",
+      "w30_s10/pilot/motif_stability/GvpL/M2/stable_cluster_labels.npy": "d7ecdae4f0007bfdce04eb2cb9a4cbc5beceead290996d9547a5f2b25c4b74e2",
+      "w30_s10/pilot/motif_stability/GvpM/M2/stable_cluster_labels.npy": "8072e80dd13d9eea0bc8780c963cfb6317ba1f98512a793bf02414ed17c8fd6a",
+      "w30_s10/pilot/motif_stability/GvpN/M2/stable_cluster_labels.npy": "8d0d246632ade7d0f8f538cc6ceb23c17b0d39fc8c9ed7983680b83da5b9701c",
+      "w30_s10/raw_exp3/GvpF/windows_metadata.csv": "4e8e557988ccf52ebf0f40bbe78f57e639f64575884057c46c715a5ccfb9053e",
+      "w30_s10/raw_exp3/GvpH/windows_metadata.csv": "50dd2147f0188dd71928b5c618d44f015b5016fdb59d9c280e4529cf9ecb13be",
+      "w30_s10/raw_exp3/GvpK/windows_metadata.csv": "3229d1d89fd72630a322466d197e6f08368aec5129acb20bbc12a95419b0e4fc",
+      "w30_s10/raw_exp3/GvpL/windows_metadata.csv": "b4ff1c5c766776461dac4e52eed7cd3b89f878293c8fea025d7ba2a640f9aed3",
+      "w30_s10/raw_exp3/GvpM/windows_metadata.csv": "294a62262b59819b76205b580fa657c6bf9555cf8e8418fc23dcba95435449a3",
+      "w30_s10/raw_exp3/GvpN/windows_metadata.csv": "c6d7a568d0a3f810dc4b8b70561a9b1b1c1137a0d272a4fe78226e85eee7e3d5",
+      "w30_s15/pilot/motif_stability/GvpF/M2/stable_cluster_labels.npy": "2967b78226c3c648a35bc05195e559a2908a44a05d80a820ee10bfcfd7c0b10b",
+      "w30_s15/pilot/motif_stability/GvpH/M2/stable_cluster_labels.npy": "c88502cf390e276ab4e4d1d55e8b7c1bbe73f43c32cea7c58aea98e0804dc7d3",
+      "w30_s15/pilot/motif_stability/GvpK/M2/stable_cluster_labels.npy": "21ebd74623dcf2362e123b0d5efa907115a295ed54d45eaca7977c99fa2dfaa5",
+      "w30_s15/pilot/motif_stability/GvpL/M2/stable_cluster_labels.npy": "f23f33d36fd0b477d3bc58e53675400a2628c8b35ee27686c5d627ce4cd0f529",
+      "w30_s15/pilot/motif_stability/GvpM/M2/stable_cluster_labels.npy": "a7b54cde17376a85ac5a2edd8c3d62c34967560d5e0f933d1400486c8908d8ac",
+      "w30_s15/pilot/motif_stability/GvpN/M2/stable_cluster_labels.npy": "1e81da84cfc697f8cc68bf034e519676124033f9fad3e27452b2f33b3c50d5c6",
+      "w30_s15/raw_exp3/GvpF/windows_metadata.csv": "075f76c737e93419235ac0ba07ed0149f53814073b4fe72f7bd4537155497c5e",
+      "w30_s15/raw_exp3/GvpH/windows_metadata.csv": "725ad71ec4ac955dbe038fccb7e8d6f6d9d154085717fc30b256da9c1692e89d",
+      "w30_s15/raw_exp3/GvpK/windows_metadata.csv": "fb0ed6df40efd4801dd5072158608f86f7d0d4e8b8a3ad5a63b37036536ee8ee",
+      "w30_s15/raw_exp3/GvpL/windows_metadata.csv": "e26c88bb8437f7b15cb60f23dfe605706f7239ed7943d5c63ef96101725a9e49",
+      "w30_s15/raw_exp3/GvpM/windows_metadata.csv": "af893956e34d35a228d42ad5b8f8d944662e59bb5c75b84001f69d9af6acd4be",
+      "w30_s15/raw_exp3/GvpN/windows_metadata.csv": "637aa8dc64641e431bf1a1833a3e6b67b21f16037f9475378aa95bb5d8e50c78",
+      "w30_s3/pilot/motif_stability/GvpF/M2/stable_cluster_labels.npy": "d3bdf195578419cd2e233a37456dabed75588714bfb5c2296f83c226ab00b784",
+      "w30_s3/pilot/motif_stability/GvpH/M2/stable_cluster_labels.npy": "5147f9e8e76c1173bf6002ee0baf79460c77d71a4eace69556b5a770e4d707fb",
+      "w30_s3/pilot/motif_stability/GvpK/M2/stable_cluster_labels.npy": "dc7175883f2c088d42ae5b31a36aa74c35859acfb56f84869f60bed2324b8385",
+      "w30_s3/pilot/motif_stability/GvpL/M2/stable_cluster_labels.npy": "f122cdb5081189508db46f403036275aaf8aa037e60e90cd31b7d3be80be3351",
+      "w30_s3/pilot/motif_stability/GvpM/M2/stable_cluster_labels.npy": "0ede2821f187ac482d7cffae74a6b5373d94d553a57877cc4a3b7459d012f36d",
+      "w30_s3/pilot/motif_stability/GvpN/M2/stable_cluster_labels.npy": "6bb7021f83a54cb784a47e0a3cd8e93d32d1160c96cb504a9a77bfdd8866af64",
+      "w30_s3/raw_exp3/GvpF/windows_metadata.csv": "eeadba5a38328e5e101168517b5d6368362b9bc868d862832304d6349a9c7c5e",
+      "w30_s3/raw_exp3/GvpH/windows_metadata.csv": "e888fb8cbcf621a025b45098df79adbed0b67fa870c75f8b8e47c09d05da9ea7",
+      "w30_s3/raw_exp3/GvpK/windows_metadata.csv": "e4481158536d02b5abe891adf866b8c141bd3ed4101b4a01f6174004fec5c63d",
+      "w30_s3/raw_exp3/GvpL/windows_metadata.csv": "84b97d815714fc31d1c1e1dd9c4ed17c533ee6f2bd5dd90b86c321afe5555042",
+      "w30_s3/raw_exp3/GvpM/windows_metadata.csv": "f73b255641ad488ad081bde46b7ccea965aee7dcbd5b30a4bdd3270b757d237c",
+      "w30_s3/raw_exp3/GvpN/windows_metadata.csv": "7b3a91795adaa0f2ebcd71c3956cbe08172ed7368bb06096cf928262a4d57318",
+      "w30_s5/pilot/motif_stability/GvpF/M2/stable_cluster_labels.npy": "ac0f6bea83c1ce4dd1fb6cf1be795dacb8a34949b9f4021e087e834e64094a8c",
+      "w30_s5/pilot/motif_stability/GvpH/M2/stable_cluster_labels.npy": "2900bddfefe7751c25a9e32b47a02ecb844c347791532f06d98ef9f62c1fc1d5",
+      "w30_s5/pilot/motif_stability/GvpK/M2/stable_cluster_labels.npy": "b561c3871ff75fd30cb06e4f94f6aa967b3c37c14303014f7133a23f78a2eff3",
+      "w30_s5/pilot/motif_stability/GvpL/M2/stable_cluster_labels.npy": "a2c3afaad53d2276b5900dbc78ce87f2b794e42b08cd4b0baa6a064aed60607c",
+      "w30_s5/pilot/motif_stability/GvpM/M2/stable_cluster_labels.npy": "5e7b54a7b555be92e1a504f3da759671f91d2770b5574bae6d8c7dd0aef048b6",
+      "w30_s5/pilot/motif_stability/GvpN/M2/stable_cluster_labels.npy": "5d3bdfeb17978cadb783cdb5c8b8b36d610741cca20e900e05368c53f20d279d",
+      "w30_s5/raw_exp3/GvpF/windows_metadata.csv": "f52677618184511be79514f411a692abc40cdde329a3e7369ece1e0e9ed033d8",
+      "w30_s5/raw_exp3/GvpH/windows_metadata.csv": "fc84717c38b300ca55a9efb1e798a251f2363737bbae0778e34d115f0cc1127c",
+      "w30_s5/raw_exp3/GvpK/windows_metadata.csv": "e822239df58b4ae124605a997e9b4273e54da376aa406ec4e064eef7b3b5bdeb",
+      "w30_s5/raw_exp3/GvpL/windows_metadata.csv": "4e59a8ff034b937e887667c540b67c9ce9783110a73e5d8d3b252d73d4fac482",
+      "w30_s5/raw_exp3/GvpM/windows_metadata.csv": "431381355b6aeb1b41b6b6fe251262ba46b7088ae53c7d310b8db58bf8cc7c15",
+      "w30_s5/raw_exp3/GvpN/windows_metadata.csv": "70dc12db83c8ffb0ceab2c7a21123984912dbccb5a5f8f1c3bec82bc6d517f58",
+      "w35_s10/pilot/motif_stability/GvpF/M2/stable_cluster_labels.npy": "5ad2b388960b028c2c918f5c70c5033ff2bae6576a6201f1e31e59c7d28b934f",
+      "w35_s10/pilot/motif_stability/GvpH/M2/stable_cluster_labels.npy": "6b4b2cffb4fd18ad141a6ec844743b7e60449e35ac8f6102e61fde989a8a6f6c",
+      "w35_s10/pilot/motif_stability/GvpK/M2/stable_cluster_labels.npy": "820eb8ffd5aace6cfee9a9cf56bb1efc8ab936dcf4ee2d1ee1a9209b6386436f",
+      "w35_s10/pilot/motif_stability/GvpL/M2/stable_cluster_labels.npy": "59b0605dd1645c3da7744e0e5d8eee7f455731bece56900897203d562c5914b5",
+      "w35_s10/pilot/motif_stability/GvpM/M2/stable_cluster_labels.npy": "c9997d101d057e873a17e392d21fa9ff71e6975dbd2f90baeed3d1bc8ec813e1",
+      "w35_s10/pilot/motif_stability/GvpN/M2/stable_cluster_labels.npy": "8d862f968ad08956d17de166b7b14d73ca9815f7cd9180c28d375577815f82d0",
+      "w35_s10/raw_exp3/GvpF/windows_metadata.csv": "8b28a4d0eed5369d1d97e8bf5e7f36711ac28d1965f95ecf8b690a9b977bcb08",
+      "w35_s10/raw_exp3/GvpH/windows_metadata.csv": "df37859479bc3fba91b7602d59d4f9f3c9cfa4a1b0563da62c1b1ab0004700f4",
+      "w35_s10/raw_exp3/GvpK/windows_metadata.csv": "28934d0b731359e602d40a46f99f0c1393bfb3e2a036d282d24c4cb9ea24d76e",
+      "w35_s10/raw_exp3/GvpL/windows_metadata.csv": "92862fce8b887fb7a1d7e496bf5654c8fbb8a0435416a48d153c84dc68f66cee",
+      "w35_s10/raw_exp3/GvpM/windows_metadata.csv": "99d575e532ed1f7aeff16dc0a7a78a7acc877738c98b88bf9a2ccbbd486c7035",
+      "w35_s10/raw_exp3/GvpN/windows_metadata.csv": "5234f451fec1049b4f66ac1760516529b4a4f7f3d53d6b1da5f657ea124590c4",
+      "w35_s15/pilot/motif_stability/GvpF/M2/stable_cluster_labels.npy": "c86ab03ab151a0e9a546f98780c73bee9c58612f0b8ac7cd01eade5d8884f36e",
+      "w35_s15/pilot/motif_stability/GvpH/M2/stable_cluster_labels.npy": "de2592c4dba89e4e4edb8ab3b619fdc79c6ec4c6d85cd2520631526054d36b86",
+      "w35_s15/pilot/motif_stability/GvpK/M2/stable_cluster_labels.npy": "f317b385643799ec4720a403e757a478b97f0ee7c455cc3e52f7b1cc4ce2e7aa",
+      "w35_s15/pilot/motif_stability/GvpL/M2/stable_cluster_labels.npy": "5be4a05edc23a0a525984139fb98996ec55b05da5cc24a131754f837b9d6e0e8",
+      "w35_s15/pilot/motif_stability/GvpM/M2/stable_cluster_labels.npy": "fdaf6a8ac8acec11e1fb577db96abc47a68ff63d731d183e204bd5465494de20",
+      "w35_s15/pilot/motif_stability/GvpN/M2/stable_cluster_labels.npy": "b30afaf35af76947ac101dfd6527560e4a051fe41a37834d0df3994c59892167",
+      "w35_s15/raw_exp3/GvpF/windows_metadata.csv": "a0a8b195ca762f1f59eed701cf89c989897a0b348a5139f0f425800b33e8e486",
+      "w35_s15/raw_exp3/GvpH/windows_metadata.csv": "f80e17490f9df02b30d2ac2cc2c704c785ebd2c3306643f5adee2a74d20f729d",
+      "w35_s15/raw_exp3/GvpK/windows_metadata.csv": "87adbc1120fadb576f9c3e54d374b71154a4070b5703c0fc573a109bd1d3af3a",
+      "w35_s15/raw_exp3/GvpL/windows_metadata.csv": "7a3c0693e2438e6c84537dd6a0f325253aa5357cc98cbfda1075c1ed52015634",
+      "w35_s15/raw_exp3/GvpM/windows_metadata.csv": "4ef0fde7fe4983559616cab1d93c653ceb98876be1fa65956b6fcd6f5f4a7111",
+      "w35_s15/raw_exp3/GvpN/windows_metadata.csv": "950740dd34b6924655af435081b65c5e9e8a89f9c9687267d603ad011083f93d",
+      "w35_s3/pilot/motif_stability/GvpF/M2/stable_cluster_labels.npy": "e7482301078a824d1577d6a39504b95aeed4ed4d41d44a65557df02cab02c504",
+      "w35_s3/pilot/motif_stability/GvpH/M2/stable_cluster_labels.npy": "a15cde096d0c7488ee0c79dbec63e410a25c04b3a45f1431b5daf6391ea295a4",
+      "w35_s3/pilot/motif_stability/GvpK/M2/stable_cluster_labels.npy": "5bd4f4bc82850d6bc4d260c17c56b2ae6a8368c3293f310b5564949b4bd50240",
+      "w35_s3/pilot/motif_stability/GvpL/M2/stable_cluster_labels.npy": "e2b0f014545bd7b4fb7fd1a04f9e27e3b459415eba828647b70b77b8459a6908",
+      "w35_s3/pilot/motif_stability/GvpM/M2/stable_cluster_labels.npy": "3dea3a612ad8f7cb25203644a2ce6428f057d94ff43109baea81eb5bb5f4d35b",
+      "w35_s3/pilot/motif_stability/GvpN/M2/stable_cluster_labels.npy": "d3288152ad6324b00d59accb74dcc1195ba85799892b5c6c252b592e17708f27",
+      "w35_s3/raw_exp3/GvpF/windows_metadata.csv": "8c0989d6d4822f2f90aabaaa7208e5bdf86a1f240c8e220b19866dcf8f823a5c",
+      "w35_s3/raw_exp3/GvpH/windows_metadata.csv": "78b5855460c46e85cc17f524ce73f138c5d59580ebabee86c0176584137889d4",
+      "w35_s3/raw_exp3/GvpK/windows_metadata.csv": "28e8cf0306e4a9e0888f45e2c4bcd0624d2bab60d35997e9061ed88a080eaa52",
+      "w35_s3/raw_exp3/GvpL/windows_metadata.csv": "c09cb226d8f884b4699974b470a0da47a444017121d5e36b563c31b50db3bc3b",
+      "w35_s3/raw_exp3/GvpM/windows_metadata.csv": "fd3287f15857135036004ddc7b021f4c2e246e3cd7baea87f8d5efbc8d888662",
+      "w35_s3/raw_exp3/GvpN/windows_metadata.csv": "41c397449cbf9d4908c341cb32873eee3f9fad9b391a8debbf1b0fe3a071608a",
+      "w35_s5/pilot/motif_stability/GvpF/M2/stable_cluster_labels.npy": "bb1fd0eecb097af652f771642ef69d9bdea0535ba3d8054ad6b925d9fc5d1b94",
+      "w35_s5/pilot/motif_stability/GvpH/M2/stable_cluster_labels.npy": "72d8e0c2cc804f5b2d9a7c5a3f255f68955b230a51dfb4114a873c57125fe22b",
+      "w35_s5/pilot/motif_stability/GvpK/M2/stable_cluster_labels.npy": "fe4845c53b71b82d097579b5c99ebf8b16a9a2d1922513aabaa6df4bb82c9e2d",
+      "w35_s5/pilot/motif_stability/GvpL/M2/stable_cluster_labels.npy": "c5928411a1fb2c957da7abb839b54ea8ee863dbe2c5fbbfd1a1b5dca92fe9360",
+      "w35_s5/pilot/motif_stability/GvpM/M2/stable_cluster_labels.npy": "d79497e88702e773c2fb956de813c18ead25bc6245d060291f336238d4fd5e7b",
+      "w35_s5/pilot/motif_stability/GvpN/M2/stable_cluster_labels.npy": "c4bf542f28e544107063b2afab72d429bb25d9c1b5f4a8452435a6ac787fc8ce",
+      "w35_s5/raw_exp3/GvpF/windows_metadata.csv": "686184b92711a3d0b057f2938d97b13b3168485e6d3fbcf198aba018d02aac02",
+      "w35_s5/raw_exp3/GvpH/windows_metadata.csv": "b3f7f0356539f7c2d815fd12a6249069c9fb5a4e7c7dd8b9bb4da3e9cd538694",
+      "w35_s5/raw_exp3/GvpK/windows_metadata.csv": "7e1848bf456322ced3186c14c0650bdd81163e7ebeeec68fbcdf1a54f625984a",
+      "w35_s5/raw_exp3/GvpL/windows_metadata.csv": "b3da7244b6e19ca3e2ff24ba14d8a738e9c0b046bb49308dced4f99a3aa300af",
+      "w35_s5/raw_exp3/GvpM/windows_metadata.csv": "7c9bfc120dd40003a0b4ecd410f721a1e03928b1afc2da13b16b4b80e3df8d52",
+      "w35_s5/raw_exp3/GvpN/windows_metadata.csv": "6e7a7f5f7e21903650ecdf6733b14fc137c1102840431489a6098eb9b7f00719",
+      "w40_s10/pilot/motif_stability/GvpF/M2/stable_cluster_labels.npy": "ab5db6ce0804698bb23a935cb1384df83d9262794cf008a4da407eb681499987",
+      "w40_s10/pilot/motif_stability/GvpH/M2/stable_cluster_labels.npy": "ad2e91cf6aeee69f23bd20ff57e4b562995968e78755f53efab8582fdef0fbb2",
+      "w40_s10/pilot/motif_stability/GvpK/M2/stable_cluster_labels.npy": "dbea05905c337994ffa13754fa15c402658acac0be0d4a60803168a71b20c7ec",
+      "w40_s10/pilot/motif_stability/GvpL/M2/stable_cluster_labels.npy": "4d7c3d3e596d5066687fb498dd5c6d53aa45e12dbe93351c38a0378627be14ce",
+      "w40_s10/pilot/motif_stability/GvpM/M2/stable_cluster_labels.npy": "889ac93162f4aad47bb767cc76e3307fb2936c3bf5d7d8d7bfe656b2ea7c0200",
+      "w40_s10/pilot/motif_stability/GvpN/M2/stable_cluster_labels.npy": "ec1ce5ab93b9c40ecc1365b14a38a030492cf81939f6601e0848b4fddc8362f9",
+      "w40_s10/raw_exp3/GvpF/windows_metadata.csv": "aee908a2f70dbedaa53d0515e3e654ec342fb06594135ee3fbb06199d963d9f8",
+      "w40_s10/raw_exp3/GvpH/windows_metadata.csv": "eff248bf5889163f52fbd78c00a8ea52617c5eca92b140363376b10354f96b8c",
+      "w40_s10/raw_exp3/GvpK/windows_metadata.csv": "00e959bfe79cb1824c5ab49ee6e8b8737c68fc2537afd452e73fbf99a38e5da8",
+      "w40_s10/raw_exp3/GvpL/windows_metadata.csv": "b511905d4d0ebd6d88354b1d3d1e8767bd2fece943e6bf7c8d77438a4ea2ebc2",
+      "w40_s10/raw_exp3/GvpM/windows_metadata.csv": "3b00c941f9a886d454a220abd2a8b8652ed4754db40dc5dedb9c4af60f409122",
+      "w40_s10/raw_exp3/GvpN/windows_metadata.csv": "d89d817eb7ea4b50c987d48f248a80ecb56d90e1d43b52e579d36f8a28a685e5",
+      "w40_s15/pilot/motif_stability/GvpF/M2/stable_cluster_labels.npy": "d1e92cb30e0b40ce14d81130fc1a732b749ef4fc4a10fa8e376a8e4da97ef74e",
+      "w40_s15/pilot/motif_stability/GvpH/M2/stable_cluster_labels.npy": "0dd1936a37bdb5550529a45fb80cf79a18a7a25f13a98c46bd70c476f6375260",
+      "w40_s15/pilot/motif_stability/GvpK/M2/stable_cluster_labels.npy": "a39c5ff9a0d6f41d2065a200eccd5ea8accba8ef86081f4d3d6c4714f5fa8c10",
+      "w40_s15/pilot/motif_stability/GvpL/M2/stable_cluster_labels.npy": "bd3833039b425fa86092af086a01d4102e268acacdd2163c44868a051b35758e",
+      "w40_s15/pilot/motif_stability/GvpM/M2/stable_cluster_labels.npy": "fb837c36c69393b932e64930fc7e92842c2fe9cfdfdd13431285903cd24fc543",
+      "w40_s15/pilot/motif_stability/GvpN/M2/stable_cluster_labels.npy": "65929b8f48db102ed1315cfff25003c55806f410b3f01b01d4798aa327486eab",
+      "w40_s15/raw_exp3/GvpF/windows_metadata.csv": "bdd4e064979cc5a5af51354e2e878904e43490e42c1ed45e8a96547100b93a1c",
+      "w40_s15/raw_exp3/GvpH/windows_metadata.csv": "38d9c9c978d6ad348c03b9b2448c218c2abc115813660e8364f8e3a9cd0ba586",
+      "w40_s15/raw_exp3/GvpK/windows_metadata.csv": "a4d061ca7644214b5ee0207af28cabb05f60f42d0f7809ccf679f6482710e73c",
+      "w40_s15/raw_exp3/GvpL/windows_metadata.csv": "bcc824b573cbc88cb0c0e72caece0bbb1ed2f588fe5484e9313a0686ad6f850c",
+      "w40_s15/raw_exp3/GvpM/windows_metadata.csv": "6f86f4266e3c1024e49f3f4a8f944be6c613011d2c84892954b56dce7d837865",
+      "w40_s15/raw_exp3/GvpN/windows_metadata.csv": "5d945159150cf13c89a5b91b6615bfb81e153979df48000c2b401cd5f8e32a56",
+      "w40_s3/pilot/motif_stability/GvpF/M2/stable_cluster_labels.npy": "0a1bc7c0281a3edbb1de65507a64b4d75cbe7f2cfb04347cea5b18c2bd93f513",
+      "w40_s3/pilot/motif_stability/GvpH/M2/stable_cluster_labels.npy": "9ce087bb754b9a895e2ef69f15f69c32d07a3ebd4432f79f69098ed26ae43657",
+      "w40_s3/pilot/motif_stability/GvpK/M2/stable_cluster_labels.npy": "c13c552d2a7dead8c7731946a67868ff9e114958ddb78ce78207474764720af3",
+      "w40_s3/pilot/motif_stability/GvpL/M2/stable_cluster_labels.npy": "e2ba3c9f4ddda7b7f91b72c5a63e28ec3e0dd8b21c93b4c410afb686f10205e5",
+      "w40_s3/pilot/motif_stability/GvpM/M2/stable_cluster_labels.npy": "5c51bea96a4f4091b58364e67c5f98f1e3fcf31f0050c025f250a52422bda37b",
+      "w40_s3/pilot/motif_stability/GvpN/M2/stable_cluster_labels.npy": "68c21eeb26be44579a8559245d9bdbdf2000f9fe93c3dbc15d9a3818fb63fa70",
+      "w40_s3/raw_exp3/GvpF/windows_metadata.csv": "66a06c11c0b5c0231aa0a2f98b5452a2d9af2527052dd260046168878b0def53",
+      "w40_s3/raw_exp3/GvpH/windows_metadata.csv": "28a3e692e2561bd9ea334c4fb930a76f6d4bf1dbb34daed1601202c8a2476ed0",
+      "w40_s3/raw_exp3/GvpK/windows_metadata.csv": "b80e11089dcb42f3e650a9ffe696ed22029820f74d317dde12f6210e29f5640c",
+      "w40_s3/raw_exp3/GvpL/windows_metadata.csv": "a2226800f7b0d4f62fd73a3d972137c6fbae87575fd2b8832af65a4aadcc7224",
+      "w40_s3/raw_exp3/GvpM/windows_metadata.csv": "5e7e0a483c18b60605811b058e392374bb5b3927268dcda9acd76483c4f6b25f",
+      "w40_s3/raw_exp3/GvpN/windows_metadata.csv": "e1548ab46834d3f55141ebf23d0cd06568127f1cae45c5f51b355386883f83ff",
+      "w40_s5/pilot/motif_stability/GvpF/M2/stable_cluster_labels.npy": "ba517bd9f9f72862ce54616bc11922078dcebbddad25bc0c2c086aeb2646d142",
+      "w40_s5/pilot/motif_stability/GvpH/M2/stable_cluster_labels.npy": "6317f0034a5afad348c932dbae3e3fb23abcb4c547d31c12df4d39c64b8de2fc",
+      "w40_s5/pilot/motif_stability/GvpK/M2/stable_cluster_labels.npy": "b951f3a12c0344a556e02e1d3bcb2e5748891116db95d098bc0481b2ca98307b",
+      "w40_s5/pilot/motif_stability/GvpL/M2/stable_cluster_labels.npy": "ddf4de560a86f7177f9e6c01b921755ac182b8df13e652b43337c500d409e685",
+      "w40_s5/pilot/motif_stability/GvpM/M2/stable_cluster_labels.npy": "79dd2e727db2446fac88008d3693434787d0b55472faf758ac7fa835b3fe80a1",
+      "w40_s5/pilot/motif_stability/GvpN/M2/stable_cluster_labels.npy": "89a1cbdb25e579940b8515ea18e2a7c92d93d4a507ef946750c48ed49c76696a",
+      "w40_s5/raw_exp3/GvpF/windows_metadata.csv": "b5d9f4b395b33952d9251779bacfefc7908bef506faccae2218d40602d7eb572",
+      "w40_s5/raw_exp3/GvpH/windows_metadata.csv": "cbceecc82ae0a217ffc0abd98890bd1b29b06eab39f3c2a99564a9e4d7a89126",
+      "w40_s5/raw_exp3/GvpK/windows_metadata.csv": "27f60b012d72117cc21033aaaadd9204892a7b18999a8c91a2d212f72237dd82",
+      "w40_s5/raw_exp3/GvpL/windows_metadata.csv": "e176424865a62e027c2e757bef1df8ecea09170f14042df953523c258ad9fd7f",
+      "w40_s5/raw_exp3/GvpM/windows_metadata.csv": "403ba1711072feef19b1672d4b25c94febbe172a9a7c8a6c136ac0c9095bf455",
+      "w40_s5/raw_exp3/GvpN/windows_metadata.csv": "3480c843eeff1fde66cabc74e0428768c4873eaf6617ce56bdb04d868a318bcd"
+    },
+    "next_stage_args": [
+      "--stage",
+      "B",
+      "--auto-select"
+    ],
+    "rule_version": "local-motif-2026-10-12-v3",
+    "selected_pairs": [
+      {
+        "window_size": 30,
+        "window_step": 5
+      },
+      {
+        "window_size": 20,
+        "window_step": 15
+      },
+      {
+        "window_size": 20,
+        "window_step": 10
+      }
+    ],
+    "selection_roles": {
+      "20:10": "rank_2",
+      "20:15": "rank_1",
+      "30:5": "reference"
+    },
+    "source_decision": "/data/coding/results/parameter_sensitivity_stable_motif_abc_parallel/comparisons/stage_a_decision.json",
+    "source_decision_sha256": "8ec8e5a9c6cc91b326f613ccf5feb7c95e63cf8afca50e9fc822e75b70a4af60",
+    "source_stage": "A",
+    "thresholds": {
+      "coverage_tolerance": 0.03,
+      "fragmentation_ratio": 1.5,
+      "max_near_full_family_fraction": 0.5,
+      "near_full_length_fraction": 0.8,
+      "qualified_family_fraction_min": 0.8,
+      "stability_tolerance": 0.02
+    }
+  },
+  "recorded_at": "2026-10-15T04:45:15.029328+00:00",
+  "reviewed_pairs": [
+    {
+      "window_size": 30,
+      "window_step": 5
+    },
+    {
+      "window_size": 20,
+      "window_step": 10
+    },
+    {
+      "window_size": 20,
+      "window_step": 15
+    }
+  ],
+  "selection_source": "algorithmic_reissue",
+  "source_decision_sha256": "8ec8e5a9c6cc91b326f613ccf5feb7c95e63cf8afca50e9fc822e75b70a4af60",
+  "stage": "B"
+}

@@ -1,0 +1,16 @@
+[
+  {
+    "name": "Ana-A-T6A",
+    "row": "A92",
+    "mutation_position": 6,
+    "translated_peptide": "MAVEKANSSSSLAEVIDRILDKGIVIDAWVRVSLVG",
+    "verified": true
+  },
+  {
+    "name": "Ana-A-K22R",
+    "row": "A415",
+    "mutation_position": 22,
+    "translated_peptide": "MAVEKTNSSSSLAEVIDRILDRGIVIDAWVRVSLVG",
+    "verified": true
+  }
+]

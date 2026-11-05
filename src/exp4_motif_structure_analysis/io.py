@@ -69,7 +69,7 @@ class CsvRowWriter:
     def __enter__(self) -> "CsvRowWriter":
         return self
 
-    def __exit__(self, _exc_type, _exc, _traceback) -> None:
+    def __exit__(self, exc_type, exc, traceback) -> None:
         self.close()
 
 
@@ -80,20 +80,5 @@ def write_json(path: Path, payload: Mapping[str, object]) -> None:
     os.replace(temp_path, path)
 
 
-def split_terms(value: object) -> list[str]:
-    text = str(value or "").strip()
-    if not text:
-        return []
-    for sep in [";", "|", ","]:
-        text = text.replace(sep, ";")
-    return [part.strip() for part in text.split(";") if part.strip()]
 
 
-def stable_unique(values: Iterable[str]) -> list[str]:
-    seen = set()
-    result = []
-    for value in values:
-        if value not in seen:
-            result.append(value)
-            seen.add(value)
-    return result

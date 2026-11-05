@@ -41,10 +41,10 @@ def _int_value(row: dict[str, object], key: str, default: int = 0) -> int:
     return int(float(value))
 
 
-def _motif_sequence(sequence: str, start: int, end: int, fallback: str = "") -> str:
+def _motif_sequence(sequence: str, start: int, end: int) -> str:
     if sequence and 0 <= start < end <= len(sequence):
         return sequence[start:end]
-    return fallback
+    return ""
 
 
 def build_exp3_motif_rows(
@@ -75,9 +75,11 @@ def build_exp3_motif_rows(
                 sequence = str(sequence_row.get("sequence", ""))
                 motif_uid = str(occurrence.get("motif_uid") or occurrence.get("motif_id") or occurrence.get("cluster_label") or "")
                 catalog = catalog_by_uid.get(motif_uid, {})
-                start = _int_value(occurrence, "occ_core_start", _int_value(occurrence, "occ_start"))
-                end = _int_value(occurrence, "occ_core_end", _int_value(occurrence, "occ_end"))
-                fallback_sequence = str(catalog.get("motif_consensus", ""))
+                start = _int_value(occurrence, "occ_start")
+                end = _int_value(occurrence, "occ_end")
+                motif_sequence = _motif_sequence(sequence, start, end)
+                if not motif_sequence:
+                    continue
                 motif_rows.append(
                     {
                         "motif_instance_id": f"{motif_uid}:{sequence_id}:{start}-{end}",
@@ -90,9 +92,13 @@ def build_exp3_motif_rows(
                         "cluster_label": str(occurrence.get("cluster_label") or catalog.get("cluster_label", "")),
                         "motif_start": start,
                         "motif_end": end,
-                        "motif_sequence": _motif_sequence(sequence, start, end, fallback=fallback_sequence),
-                        "window_length": str(occurrence.get("occ_core_length") or max(0, end - start)),
-                        "cluster_score": str(catalog.get("conservation_score", "")),
+                        "motif_sequence": motif_sequence,
+                        "window_length": str(occurrence.get("occ_length") or max(0, end - start)),
+                        "cluster_score": str(
+                            catalog.get("stable_repeat_fraction")
+                            or catalog.get("median_protein_jaccard")
+                            or ""
+                        ),
                         "cluster_frequency": str(catalog.get("n_windows", occurrence.get("n_support_windows", ""))),
                     }
                 )

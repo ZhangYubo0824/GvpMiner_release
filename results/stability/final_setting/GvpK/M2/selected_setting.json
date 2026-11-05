@@ -1,0 +1,17 @@
+{
+  "min_cluster_size": 80,
+  "min_samples": 10,
+  "raw_cluster_number": 257,
+  "stable_cluster_number": 77,
+  "median_window_jaccard": 0.7333333333333333,
+  "median_protein_jaccard": 0.7435897435897436,
+  "median_occurrence_jaccard": 0.7333333333333333,
+  "noise_ratio": 0.14644771600265707,
+  "stable_window_coverage": 0.3246412185438648,
+  "stable_protein_coverage": 0.8690046415678184,
+  "median_ami_all": 0.848934629459152,
+  "median_noise_agreement": 0.8787536490653991,
+  "selection_mode": "qualified",
+  "selection_strategy": "stability_plateau",
+  "stability_floor": 0.7333333333333333
+}

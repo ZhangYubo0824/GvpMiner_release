@@ -1,0 +1,5 @@
+motif_uid,member_residue,msa_column_1based,residue_frequency,canonical_coverage,consensus_symbol
+GvpJ_M2_motif_018,D22,1025,0.9731800766283524,1.0,D
+GvpJ_M2_motif_018,K23,1026,1.0,1.0,K
+GvpM_M2_motif_002,H9,14,0.2489795918367346,0.9919028340080972,X
+GvpM_M2_motif_002,I11,16,0.2064777327935222,1.0,X

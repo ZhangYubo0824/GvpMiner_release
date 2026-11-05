@@ -55,7 +55,7 @@ class ESMFoldBackend(StructureBackend):
 
     @classmethod
     def _models_dir(cls) -> Path:
-        return cls._project_root() / "models"
+        return cls._project_root() / "work" / "models"
 
     @classmethod
     def _model_path(cls, model_name: str) -> Path:
@@ -65,7 +65,7 @@ class ESMFoldBackend(StructureBackend):
     def _prepare_model_cache(cls, torch_module) -> None:
         models_dir = cls._models_dir()
         models_dir.mkdir(parents=True, exist_ok=True)
-        torch_module.hub.set_dir(str(cls._project_root()))
+        torch_module.hub.set_dir(str(models_dir / "torch_hub"))
 
     @classmethod
     def _patch_torch_download_dir(cls, torch_module):
@@ -158,7 +158,7 @@ class ESMFoldBackend(StructureBackend):
         def forward_(attention_logits, rows, cols):
             attention_logits.copy_(torch.softmax(attention_logits, dim=-1))
 
-        def backward_(attention_logits, grad_output, v, rows, cols, _value_dim):
+        def backward_(attention_logits, grad_output, v, rows, cols, value_dim):
             grad_attention = torch.matmul(grad_output, v.transpose(-1, -2))
             grad_logits = attention_logits * (
                 grad_attention - torch.sum(grad_attention * attention_logits, dim=-1, keepdim=True)

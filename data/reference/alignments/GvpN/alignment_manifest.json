@@ -1,0 +1,12 @@
+{
+  "family": "GvpN",
+  "software": "MAFFT v7.526 Windows official signed distribution",
+  "method": "FFT-NS-1",
+  "input_sha256": "f20563d2e73c97d535d80c477bb1c16d06850f5b71b9c8dff07db3e9693a2c65",
+  "alignment_sha256": "c90878296a34a3bb579876559b184040fc24d062f0c145bf48426fd480530f2a",
+  "identifiers_sha256": "440b98dbabe70542aff090454b3bef6de885c15adac6cfc203e09c5b6720db85",
+  "threads": 4,
+  "n_sequences": 1542,
+  "alignment_columns": 1771,
+  "validated_ungapped_identity": true
+}

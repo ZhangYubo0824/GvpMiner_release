@@ -1,5 +1,0 @@
-source_path,reason
-data3/ncbi/GvpA_J_hybrid/,Hybrid family data excluded by experiment scope.
-data3/ncbi/GvpL_F_hybrid/,Hybrid family data excluded by experiment scope.
-data3/ncbi/__pycache__/,Generated Python cache is not raw data.
-data3/ncbi/extract_gp_metadata.py,Executable code moved to src/data_collect/.

@@ -1,0 +1,5 @@
+from stable_parameter_workflow.cli import main
+
+
+if __name__ == "__main__":
+    raise SystemExit(main())

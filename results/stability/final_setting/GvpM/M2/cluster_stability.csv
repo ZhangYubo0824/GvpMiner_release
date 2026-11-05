@@ -1,0 +1,7 @@
+min_cluster_size,min_samples,reference_label,n_windows,median_window_jaccard,median_protein_jaccard,median_occurrence_jaccard,median_recovery_fraction,stable_repeat_fraction,stable,split_repeat_fraction,merge_repeat_fraction
+10,10,0,228,1.0,1.0,1.0,1.0,1.0,True,0.0,0.0
+10,10,1,247,1.0,1.0,1.0,1.0,0.84,True,0.16,0.0
+10,10,2,247,1.0,1.0,1.0,1.0,0.96,True,0.04,0.0
+10,10,3,247,1.0,1.0,1.0,1.0,0.94,True,0.06,0.0
+10,10,4,272,1.0,1.0,1.0,1.0,1.0,True,0.0,0.0
+10,10,5,247,1.0,1.0,1.0,1.0,1.0,True,0.0,0.0

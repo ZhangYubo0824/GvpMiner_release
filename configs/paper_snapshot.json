@@ -1,0 +1,274 @@
+{
+  "snapshot_date": "2026-11-03",
+  "main_method": "M2",
+  "window_size": 20,
+  "window_step": 15,
+  "family_method_settings": [
+    {
+      "family": "GvpA",
+      "method": "M2",
+      "min_cluster_size": 80,
+      "min_samples": 10,
+      "stable_cluster_number": 21,
+      "source": "results/stability/final_setting/GvpA/M2/selected_setting.json"
+    },
+    {
+      "family": "GvpA",
+      "method": "M3",
+      "min_cluster_size": 80,
+      "min_samples": 10,
+      "stable_cluster_number": 29,
+      "source": "results/stability/final_setting/GvpA/M3/selected_setting.json"
+    },
+    {
+      "family": "GvpC",
+      "method": "M2",
+      "min_cluster_size": 40,
+      "min_samples": 10,
+      "stable_cluster_number": 29,
+      "source": "results/stability/final_setting/GvpC/M2/selected_setting.json"
+    },
+    {
+      "family": "GvpC",
+      "method": "M3",
+      "min_cluster_size": 40,
+      "min_samples": 10,
+      "stable_cluster_number": 21,
+      "source": "results/stability/final_setting/GvpC/M3/selected_setting.json"
+    },
+    {
+      "family": "GvpD",
+      "method": "M2",
+      "min_cluster_size": 10,
+      "min_samples": 10,
+      "stable_cluster_number": 56,
+      "source": "results/stability/final_setting/GvpD/M2/selected_setting.json"
+    },
+    {
+      "family": "GvpD",
+      "method": "M3",
+      "min_cluster_size": 10,
+      "min_samples": 10,
+      "stable_cluster_number": 54,
+      "source": "results/stability/final_setting/GvpD/M3/selected_setting.json"
+    },
+    {
+      "family": "GvpF",
+      "method": "M2",
+      "min_cluster_size": 20,
+      "min_samples": 10,
+      "stable_cluster_number": 66,
+      "source": "results/stability/final_setting/GvpF/M2/selected_setting.json"
+    },
+    {
+      "family": "GvpF",
+      "method": "M3",
+      "min_cluster_size": 80,
+      "min_samples": 10,
+      "stable_cluster_number": 31,
+      "source": "results/stability/final_setting/GvpF/M3/selected_setting.json"
+    },
+    {
+      "family": "GvpG",
+      "method": "M2",
+      "min_cluster_size": 30,
+      "min_samples": 10,
+      "stable_cluster_number": 21,
+      "source": "results/stability/final_setting/GvpG/M2/selected_setting.json"
+    },
+    {
+      "family": "GvpG",
+      "method": "M3",
+      "min_cluster_size": 60,
+      "min_samples": 10,
+      "stable_cluster_number": 12,
+      "source": "results/stability/final_setting/GvpG/M3/selected_setting.json"
+    },
+    {
+      "family": "GvpH",
+      "method": "M2",
+      "min_cluster_size": 80,
+      "min_samples": 10,
+      "stable_cluster_number": 0,
+      "source": "results/stability/final_setting/GvpH/M2/selected_setting.json"
+    },
+    {
+      "family": "GvpH",
+      "method": "M3",
+      "min_cluster_size": 80,
+      "min_samples": 10,
+      "stable_cluster_number": 1,
+      "source": "results/stability/final_setting/GvpH/M3/selected_setting.json"
+    },
+    {
+      "family": "GvpJ",
+      "method": "M2",
+      "min_cluster_size": 80,
+      "min_samples": 10,
+      "stable_cluster_number": 69,
+      "source": "results/stability/final_setting/GvpJ/M2/selected_setting.json"
+    },
+    {
+      "family": "GvpJ",
+      "method": "M3",
+      "min_cluster_size": 80,
+      "min_samples": 10,
+      "stable_cluster_number": 77,
+      "source": "results/stability/final_setting/GvpJ/M3/selected_setting.json"
+    },
+    {
+      "family": "GvpK",
+      "method": "M2",
+      "min_cluster_size": 80,
+      "min_samples": 10,
+      "stable_cluster_number": 77,
+      "source": "results/stability/final_setting/GvpK/M2/selected_setting.json"
+    },
+    {
+      "family": "GvpK",
+      "method": "M3",
+      "min_cluster_size": 80,
+      "min_samples": 10,
+      "stable_cluster_number": 80,
+      "source": "results/stability/final_setting/GvpK/M3/selected_setting.json"
+    },
+    {
+      "family": "GvpL",
+      "method": "M2",
+      "min_cluster_size": 80,
+      "min_samples": 10,
+      "stable_cluster_number": 1,
+      "source": "results/stability/final_setting/GvpL/M2/selected_setting.json"
+    },
+    {
+      "family": "GvpL",
+      "method": "M3",
+      "min_cluster_size": 80,
+      "min_samples": 10,
+      "stable_cluster_number": 4,
+      "source": "results/stability/final_setting/GvpL/M3/selected_setting.json"
+    },
+    {
+      "family": "GvpM",
+      "method": "M2",
+      "min_cluster_size": 10,
+      "min_samples": 10,
+      "stable_cluster_number": 6,
+      "source": "results/stability/final_setting/GvpM/M2/selected_setting.json"
+    },
+    {
+      "family": "GvpM",
+      "method": "M3",
+      "min_cluster_size": 10,
+      "min_samples": 10,
+      "stable_cluster_number": 7,
+      "source": "results/stability/final_setting/GvpM/M3/selected_setting.json"
+    },
+    {
+      "family": "GvpN",
+      "method": "M2",
+      "min_cluster_size": 80,
+      "min_samples": 10,
+      "stable_cluster_number": 84,
+      "source": "results/stability/final_setting/GvpN/M2/selected_setting.json"
+    },
+    {
+      "family": "GvpN",
+      "method": "M3",
+      "min_cluster_size": 60,
+      "min_samples": 10,
+      "stable_cluster_number": 73,
+      "source": "results/stability/final_setting/GvpN/M3/selected_setting.json"
+    },
+    {
+      "family": "GvpO",
+      "method": "M2",
+      "min_cluster_size": 80,
+      "min_samples": 10,
+      "stable_cluster_number": 17,
+      "source": "results/stability/final_setting/GvpO/M2/selected_setting.json"
+    },
+    {
+      "family": "GvpO",
+      "method": "M3",
+      "min_cluster_size": 80,
+      "min_samples": 10,
+      "stable_cluster_number": 21,
+      "source": "results/stability/final_setting/GvpO/M3/selected_setting.json"
+    },
+    {
+      "family": "GvpQ",
+      "method": "M2",
+      "min_cluster_size": 80,
+      "min_samples": 10,
+      "stable_cluster_number": 7,
+      "source": "results/stability/final_setting/GvpQ/M2/selected_setting.json"
+    },
+    {
+      "family": "GvpQ",
+      "method": "M3",
+      "min_cluster_size": 80,
+      "min_samples": 10,
+      "stable_cluster_number": 6,
+      "source": "results/stability/final_setting/GvpQ/M3/selected_setting.json"
+    },
+    {
+      "family": "GvpT",
+      "method": "M2",
+      "min_cluster_size": 80,
+      "min_samples": 10,
+      "stable_cluster_number": 17,
+      "source": "results/stability/final_setting/GvpT/M2/selected_setting.json"
+    },
+    {
+      "family": "GvpT",
+      "method": "M3",
+      "min_cluster_size": 60,
+      "min_samples": 10,
+      "stable_cluster_number": 17,
+      "source": "results/stability/final_setting/GvpT/M3/selected_setting.json"
+    },
+    {
+      "family": "GvpU",
+      "method": "M2",
+      "min_cluster_size": 40,
+      "min_samples": 10,
+      "stable_cluster_number": 35,
+      "source": "results/stability/final_setting/GvpU/M2/selected_setting.json"
+    },
+    {
+      "family": "GvpU",
+      "method": "M3",
+      "min_cluster_size": 60,
+      "min_samples": 10,
+      "stable_cluster_number": 28,
+      "source": "results/stability/final_setting/GvpU/M3/selected_setting.json"
+    },
+    {
+      "family": "GvpV",
+      "method": "M2",
+      "min_cluster_size": 10,
+      "min_samples": 10,
+      "stable_cluster_number": 16,
+      "source": "results/stability/final_setting/GvpV/M2/selected_setting.json"
+    },
+    {
+      "family": "GvpV",
+      "method": "M3",
+      "min_cluster_size": 30,
+      "min_samples": 10,
+      "stable_cluster_number": 3,
+      "source": "results/stability/final_setting/GvpV/M3/selected_setting.json"
+    }
+  ],
+  "structural_rule": {
+    "primary_alpha": 0.05,
+    "mean_plddt_min": 70,
+    "composition_control_coverage_min": 0.9
+  },
+  "annotation_main_rule": "Any enrichment output; supported when any original within-candidate BH p.adjust <=0.05; minimum 3 foreground members is supplementary only.",
+  "motifae_run": "guarded_first_20261101_all",
+  "motifae_checkpoint_sha256": "e322c859a593c6c3dba461a2fae6c648ccd064a46422221f05f25c6eac03f28d",
+  "note": "Experimental settings; consult the full A/B/C decision records for complete parameter-selection evidence.",
+  "numerical_snapshot_date": "2026-11-03"
+}

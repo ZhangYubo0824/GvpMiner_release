@@ -1,0 +1,8 @@
+motif_uid,family,method,cluster_label,rank_within_method,min_start,max_end,mean_start,mean_end,position_std,n_windows,n_unique_sequences,support_ratio,dominant_family,cross_species_count,median_window_jaccard,median_protein_jaccard,median_occurrence_jaccard,median_recovery_fraction,stable_repeat_fraction,split_repeat_fraction,merge_repeat_fraction,seed_recovery_count,seed_total,pca_window_jaccard,null_empirical_p,null_fdr
+GvpM_M3_motif_001,GvpM,M3,0,1,45,65,45.0,65.0,0.0,247,247,1.0,GvpM,247,1.0,1.0,1.0,1.0,1.0,0.0,0.0,5,5,0.9959514170040485,1.0,1.0
+GvpM_M3_motif_002,GvpM,M3,1,2,30,50,30.0,50.0,0.0,247,247,1.0,GvpM,247,1.0,1.0,1.0,1.0,1.0,0.0,0.0,5,5,0.9959514170040485,1.0,1.0
+GvpM_M3_motif_003,GvpM,M3,2,3,15,35,15.0,35.0,0.0,247,247,1.0,GvpM,247,1.0,1.0,1.0,1.0,1.0,0.0,0.0,5,5,0.9959514170040485,1.0,1.0
+GvpM_M3_motif_004,GvpM,M3,3,4,0,20,0.0,20.0,0.0,247,247,1.0,GvpM,247,1.0,1.0,1.0,1.0,1.0,0.0,0.0,5,5,0.9959514170040485,1.0,1.0
+GvpM_M3_motif_005,GvpM,M3,6,5,60,95,60.481651376146786,80.48165137614679,2.6443869977856385,218,211,0.854251012145749,GvpM,211,1.0,1.0,1.0,1.0,0.98,0.0,0.0,5,5,0.4976851851851852,1.0,1.0
+GvpM_M3_motif_006,GvpM,M3,5,6,60,230,87.01127819548873,107.01127819548873,19.990502083594254,266,157,0.6356275303643725,GvpM,157,0.9954127475117311,0.9921259842519685,0.9954127475117311,0.9954337899543378,0.98,0.0,0.02,5,5,,1.0,1.0
+GvpM_M3_motif_007,GvpM,M3,4,7,60,80,60.0,80.0,0.0,16,16,0.06477732793522267,GvpM,16,1.0,1.0,1.0,1.0,0.9,0.0,0.0,5,5,,0.000999000999000999,0.006993006993006993

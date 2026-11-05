@@ -1,0 +1,11 @@
+﻿motif_uid,display_id,family,best_event_id,mutation,mapped_proteins,all_cluster_proteins,mapped_fraction,annotation_output_status,min_p_adjust,doi,source_anchor,reference_positions,evidence_unit
+GvpA_M2_motif_001,GvpA-001,GvpA,A_K22R,K22R,188,672,0.27976190476190477,output_not_significant,1.0,10.1021/acssynbio.4c00283,Figure 3E; Round 1 directed evolution,[22],single_event_member_accessions
+GvpA_M2_motif_002,GvpA-002,GvpA,A_K22R,K22R,188,535,0.3514018691588785,output_not_significant,1.0,10.1021/acssynbio.4c00283,Figure 3E; Round 1 directed evolution,[22],single_event_member_accessions
+GvpA_M2_motif_009,GvpA-009,GvpA,A_T6A,T6A,8,292,0.0273972602739726,no_result_rows,,10.1021/acssynbio.4c00283,Figure 3E; Round 1 directed evolution,[6],single_event_member_accessions
+GvpA_M2_motif_013,GvpA-013,GvpA,A_T6A,T6A,7,201,0.03482587064676617,output_not_significant,0.759779786940123,10.1021/acssynbio.4c00283,Figure 3E; Round 1 directed evolution,[6],single_event_member_accessions
+GvpA_M2_motif_015,GvpA-015,GvpA,A_K22R,K22R,181,182,0.9945054945054945,output_not_significant,0.999999999120602,10.1021/acssynbio.4c00283,Figure 3E; Round 1 directed evolution,[22],single_event_member_accessions
+GvpA_M2_motif_020,GvpA-020,GvpA,A_K22R,K22R,112,112,1.0,no_result_rows,,10.1021/acssynbio.4c00283,Figure 3E; Round 1 directed evolution,[22],single_event_member_accessions
+GvpJ_M2_motif_035,GvpJ-035,GvpJ,J_K23A_stability,K23A,1,196,0.00510204081632653,output_not_significant,0.96145144864557,10.3389/fmicb.2021.794240,Figure 1B; Results mutations in GvpJ,[23],single_event_member_accessions
+GvpJ_M2_motif_069,GvpJ-069,GvpJ,J_R46A_stability,R46A,4,71,0.056338028169014086,output_not_significant,0.967876201398337,10.3389/fmicb.2021.794240,Figure 1B; Results mutations in GvpJ,[46],single_event_member_accessions
+GvpM_M2_motif_002,GvpM-002,GvpM,M_V15A,V15A,29,247,0.11740890688259109,output_not_significant,1.0,10.3389/fmicb.2021.794240,Table 1; Supplementary Figure 5B,[15],single_event_member_accessions
+GvpM_M2_motif_003,GvpM-003,GvpM,M_G22A,G22A,163,247,0.659919028340081,output_not_significant,1.0,10.3389/fmicb.2021.794240,Table 1; Supplementary Figure 5B,[22],single_event_member_accessions

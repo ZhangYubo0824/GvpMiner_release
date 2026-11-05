@@ -1,23 +1,10 @@
 #!/usr/bin/env python3
-"""
-Comprehensive Gvp (Gas Vesicle Protein) Multi-Database Data Collector (v2)
-==========================================================================
-Collects data for all 23 Gvp families (A–W) from:
-  1. NCBI GenBank / RefSeq  (via Entrez API)
-  2. UniProtKB / Swiss-Prot  (via REST API, full pagination)
-  3. InterPro / Pfam          (via REST API, all families, no limits)
-  4. AlphaFold DB             (via REST API, no limits)
-  5. Literature-curated reference table
+"""Collect Gvp sequence records and metadata from configured public databases.
 
-Changes from v1:
-  - Removed all data quantity limits (NCBI, UniProt, InterPro, AlphaFold)
-  - Expanded InterPro/Pfam entries to cover ALL Gvp families (A-W)
-  - Added text-based InterPro search for families without dedicated accessions
-  - Full pagination support for UniProt REST API
-  - Output to data2/ directory
-
-Usage:
-    python collect_gvp_data.py [--email YOUR_EMAIL] [--skip-alphafold] [--families A,C,N]
+Inputs span NCBI, UniProt, InterPro/Pfam and AlphaFold for the declared families.
+Outputs default to work/data_collection; use --output-dir to select a new run.
+Run with --help for collection options. Collection refreshes are separate from
+verification of the bundled completed-experiment input snapshot.
 """
 
 import sys
@@ -36,7 +23,7 @@ from Bio import Entrez, SeqIO
 # ============================================================
 # Configuration
 # ============================================================
-BASE_DIR = Path(__file__).parent.resolve()
+DEFAULT_OUTPUT_DIR = Path(__file__).resolve().parents[2] / "work/data_collection"
 
 GVP_FAMILIES = list("ABCDEFGHIJKLMNOPQRSTUVW")
 
@@ -931,7 +918,7 @@ def generate_readme(output_dir: Path, ncbi_summary, uniprot_summary, interpro_su
 # Main
 # ============================================================
 def main():
-    parser = argparse.ArgumentParser(description="Gvp multi-database data collector (v2 - no limits)")
+    parser = argparse.ArgumentParser(description="Gvp multi-database data collector")
     parser.add_argument("--email", default="gvp_collector@example.com",
                         help="Email for NCBI Entrez API (required by NCBI policy)")
     parser.add_argument("--skip-alphafold", action="store_true",
@@ -941,15 +928,18 @@ def main():
     parser.add_argument("--skip-ncbi", action="store_true", help="Skip NCBI collection")
     parser.add_argument("--skip-uniprot", action="store_true", help="Skip UniProt collection")
     parser.add_argument("--skip-interpro", action="store_true", help="Skip InterPro collection")
+    parser.add_argument("--output-dir", type=Path, default=DEFAULT_OUTPUT_DIR)
     args = parser.parse_args()
+    output_dir = args.output_dir.resolve()
+    output_dir.mkdir(parents=True, exist_ok=True)
 
     families = [f.strip().upper() for f in args.families.split(",")]
-    log_file = setup_logging(BASE_DIR / "logs")
+    log_file = setup_logging(output_dir / "logs")
 
     logging.info("=" * 60)
-    logging.info("Gvp Multi-Database Data Collection v2 (No Limits) Started")
+    logging.info("Gvp multi-database collection started")
     logging.info(f"Families: {', '.join(f'Gvp{f}' for f in families)}")
-    logging.info(f"Output directory: {BASE_DIR}")
+    logging.info(f"Output directory: {output_dir}")
     logging.info(f"Log file: {log_file}")
     logging.info(f"InterPro entries: {len(INTERPRO_ENTRIES)} accession-based + {len(GVP_TEXT_SEARCH_FAMILIES)} text-search families")
     logging.info("=" * 60)
@@ -962,38 +952,38 @@ def main():
     # 1. NCBI
     if not args.skip_ncbi:
         logging.info("\n>>> Phase 1: NCBI GenBank / RefSeq (no limits) <<<")
-        ncbi_summary = collect_ncbi(BASE_DIR, args.email, families)
+        ncbi_summary = collect_ncbi(output_dir, args.email, families)
     else:
         logging.info(">>> Skipping NCBI <<<")
 
     # 2. UniProt
     if not args.skip_uniprot:
         logging.info("\n>>> Phase 2: UniProtKB / Swiss-Prot (full pagination) <<<")
-        uniprot_summary = collect_uniprot(BASE_DIR, families)
+        uniprot_summary = collect_uniprot(output_dir, families)
     else:
         logging.info(">>> Skipping UniProt <<<")
 
     # 3. InterPro / Pfam
     if not args.skip_interpro:
         logging.info("\n>>> Phase 3: InterPro / Pfam (all families, no limits) <<<")
-        interpro_summary = collect_interpro(BASE_DIR)
+        interpro_summary = collect_interpro(output_dir)
     else:
         logging.info(">>> Skipping InterPro <<<")
 
     # 4. AlphaFold
     if not args.skip_alphafold:
         logging.info("\n>>> Phase 4: AlphaFold DB (no limits) <<<")
-        af_log = collect_alphafold(BASE_DIR)
+        af_log = collect_alphafold(output_dir)
     else:
         logging.info(">>> Skipping AlphaFold <<<")
 
     # 5. Literature
     logging.info("\n>>> Phase 5: Literature-Curated Reference <<<")
-    create_literature_reference(BASE_DIR)
+    create_literature_reference(output_dir)
 
     # 6. README
     logging.info("\n>>> Generating README <<<")
-    generate_readme(BASE_DIR, ncbi_summary, uniprot_summary, interpro_summary, af_log)
+    generate_readme(output_dir, ncbi_summary, uniprot_summary, interpro_summary, af_log)
 
     logging.info("\n" + "=" * 60)
     logging.info("Collection Complete!")

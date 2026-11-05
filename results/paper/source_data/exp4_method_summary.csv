@@ -1,0 +1,7 @@
+﻿method,families,analyzed_motifs,testable_motifs,supported_motifs,strict_motifs,contact_sig,sasa_sig,longrange_sig,positive_contact,negative_sasa,positive_longrange
+GvpMiner,15,520,514,509,348,460,448,386,257,244,53
+GLAM2,16,160,160,159,102,155,150,149,111,127,68
+MEME,16,320,320,289,149,263,259,169,143,150,35
+STREME,16,529,529,515,262,480,480,59,267,277,6
+MotifAE,16,8314,8314,4717,2028,3712,4229,0,1306,1335,0
+InterPLM,16,870,870,301,93,101,291,1,14,49,0

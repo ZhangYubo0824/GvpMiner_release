@@ -1,0 +1,7 @@
+motif_cluster,n_instances,n_sequences,mean_motif_pLDDT,high_confidence_fraction,best_feature,best_control_type,best_q_value,best_effect_median_difference,primary_n_proteins,primary_structural_association,low_prediction_confidence,exploratory_best_q_value,significant_endpoints
+GvpM_M2_motif_001,247,247,61.003840080971656,0.05668016194331984,,,,,,False,True,7.260253319048416e-31,0
+GvpM_M2_motif_002,247,247,52.4240020242915,0.008097165991902834,,,,,,False,True,3.686166456033984e-17,0
+GvpM_M2_motif_003,247,247,53.76526518218623,0.048582995951417005,,,,,,False,True,2.6061723703134036e-13,0
+GvpM_M2_motif_004,247,247,63.719222672064774,0.145748987854251,,,,,,False,True,1.5485150788501923e-40,0
+GvpM_M2_motif_005,228,228,55.337679824561405,0.08771929824561403,,,,,,False,True,6.788761795207725e-23,0
+GvpM_M2_motif_006,156,156,48.470969217386376,0.02564102564102564,,,,,,False,True,2.2640060431798295e-18,0

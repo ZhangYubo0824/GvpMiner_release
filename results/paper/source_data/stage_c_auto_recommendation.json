@@ -1,0 +1,94 @@
+{
+  "candidates": [
+    {
+      "confirmatory_evidence": {
+        "material_conflict_family_count": 3,
+        "material_conflict_fraction": 0.1875,
+        "method_metrics": {
+          "M2": {
+            "median_floor": 0.8222061917054208,
+            "median_protein_coverage": 0.9911804262362922
+          },
+          "M3": {
+            "median_floor": 0.8640335931805605,
+            "median_protein_coverage": 0.9370368010634882
+          }
+        },
+        "qualified_unit_fraction": 0.96875
+      },
+      "eligible": false,
+      "metrics": {
+        "noise_ratio": 0.11317725513082046,
+        "qualified_family_fraction": 1.0,
+        "stability_floor": 0.846880523402303,
+        "stable_cluster_number": 34.75,
+        "stable_protein_coverage": 0.9113780569000023,
+        "stable_window_coverage": 0.37433487623382083
+      },
+      "pair": {
+        "window_size": 20,
+        "window_step": 10
+      },
+      "reasons": [
+        "m2_stability_below_plateau",
+        "m3_coverage_below_plateau"
+      ],
+      "selected": false
+    },
+    {
+      "confirmatory_evidence": {
+        "material_conflict_family_count": 3,
+        "material_conflict_fraction": 0.1875,
+        "method_metrics": {
+          "M2": {
+            "median_floor": 0.8984210213792934,
+            "median_protein_coverage": 0.984786073419865
+          },
+          "M3": {
+            "median_floor": 0.8563701923076923,
+            "median_protein_coverage": 0.9859312495280748
+          }
+        },
+        "qualified_unit_fraction": 0.9375
+      },
+      "eligible": true,
+      "metrics": {
+        "noise_ratio": 0.0792831536511832,
+        "qualified_family_fraction": 1.0,
+        "stability_floor": 0.891466432642852,
+        "stable_cluster_number": 22.0,
+        "stable_protein_coverage": 0.9636856180053175,
+        "stable_window_coverage": 0.4508774405033721
+      },
+      "pair": {
+        "window_size": 20,
+        "window_step": 15
+      },
+      "reasons": [],
+      "selected": true
+    }
+  ],
+  "next_stage_args": [
+    "--stage",
+    "S",
+    "--auto-select"
+  ],
+  "rule_version": "local-motif-2026-10-12-v3",
+  "selected_pairs": [
+    {
+      "window_size": 20,
+      "window_step": 15
+    }
+  ],
+  "source_decision": "/data/coding/results/parameter_sensitivity_stable_motif_abc_parallel/comparisons/stage_c_decision.json",
+  "source_decision_sha256": "6941c1d3ea721605e85ca776fb26c2a993b0019465658438e4be092d540d252e",
+  "source_stage": "C",
+  "thresholds": {
+    "coverage_tolerance": 0.03,
+    "fragmentation_ratio": 1.5,
+    "max_near_full_family_fraction": 0.5,
+    "near_full_length_fraction": 0.8,
+    "qualified_family_fraction_min": 0.8,
+    "stability_tolerance": 0.02
+  }
+}

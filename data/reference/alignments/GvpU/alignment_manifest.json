@@ -1,0 +1,12 @@
+{
+  "family": "GvpU",
+  "software": "MAFFT v7.526 Windows official signed distribution",
+  "method": "FFT-NS-1",
+  "input_sha256": "defb38e1c3f9c15054da54ef47c4aa9d8d899407708805a730bfcd31a6034fa0",
+  "alignment_sha256": "681293cac63faeac4003c563bb29b405876a3335d129779d7a9b476806bb3a69",
+  "identifiers_sha256": "062cceed88228cc86e6ba4257d3c0e00e477c9a6e194c4a05976c78f29265a86",
+  "threads": 4,
+  "n_sequences": 1084,
+  "alignment_columns": 679,
+  "validated_ungapped_identity": true
+}

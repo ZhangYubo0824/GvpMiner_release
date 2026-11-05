@@ -98,23 +98,6 @@ def confidence_category(mean_plddt: float) -> str:
     return "low"
 
 
-def compute_interval_features(
-    parsed: ParsedStructure,
-    start: int,
-    end: int,
-    *,
-    contact_threshold: float = 8.0,
-    long_range_min_separation: int = 12,
-    low_plddt_cutoff: float = 70.0,
-) -> dict[str, object]:
-    return compute_interval_features_cached(
-        build_structure_feature_cache(parsed),
-        start,
-        end,
-        contact_threshold=contact_threshold,
-        long_range_min_separation=long_range_min_separation,
-        low_plddt_cutoff=low_plddt_cutoff,
-    )
 
 
 def compute_interval_features_cached(
@@ -149,15 +132,16 @@ def compute_interval_features_cached(
         seq_sep = np.abs(pair_indices[0] - pair_indices[1])
         long_range_contact_count = int(np.sum((pairwise <= contact_threshold) & (seq_sep >= long_range_min_separation)))
 
-    protein_contact_candidates = 0
-    protein_contacts = 0
-    motif_indices = np.arange(start, end)
-    if cache.contact_tree is not None:
-        contacts_by_residue = cache.contact_tree.query_ball_point(interval_coords, r=contact_threshold)
-        for global_idx, contacts in zip(motif_indices, contacts_by_residue):
-            protein_contact_candidates += sequence_length - 1
-            protein_contacts += sum(int(index) != int(global_idx) for index in contacts)
-    relative_sasa = 1.0 - (protein_contacts / protein_contact_candidates if protein_contact_candidates else 0.0)
+    interval_sasa = (
+        np.asarray(parsed.relative_sasa[start:end], dtype=float)
+        if parsed.relative_sasa is not None else np.asarray([], dtype=float)
+    )
+    relative_sasa: float | str = (
+        float(np.mean(interval_sasa))
+        if interval_sasa.size == end - start and np.all(np.isfinite(interval_sasa))
+        else ""
+    )
+    secondary_available = bool(secondary) and all(item in {"H", "E", "C"} for item in secondary)
 
     radius = float(np.sqrt(np.mean(np.sum((interval_coords - motif_center) ** 2, axis=1)))) if len(interval_coords) else 0.0
     mean_plddt = float(np.mean(interval_plddt))
@@ -174,12 +158,12 @@ def compute_interval_features_cached(
         "confidence_category": confidence_category(mean_plddt),
         "low_confidence_fraction": _safe_fraction(list(interval_plddt < low_plddt_cutoff)),
         "contact_density": float(np.mean(contact_mask)) if pairwise.size else 0.0,
-        "relative_SASA": float(max(0.0, min(1.0, relative_sasa))),
+        "relative_SASA": relative_sasa,
         "long_range_contact_count": long_range_contact_count,
         "local_RMSD_or_structural_similarity": "",
-        "helix_fraction": _safe_fraction([item == "H" for item in secondary]),
-        "sheet_fraction": _safe_fraction([item == "E" for item in secondary]),
-        "coil_fraction": _safe_fraction([item not in {"H", "E"} for item in secondary]),
+        "helix_fraction": _safe_fraction([item == "H" for item in secondary]) if secondary_available else "",
+        "sheet_fraction": _safe_fraction([item == "E" for item in secondary]) if secondary_available else "",
+        "coil_fraction": _safe_fraction([item == "C" for item in secondary]) if secondary_available else "",
         "radius_of_gyration": radius,
         "distance_to_protein_centroid": float(np.linalg.norm(motif_center - cache.protein_center)),
         "surface_residue_fraction": _safe_fraction(list(surface_mask)),

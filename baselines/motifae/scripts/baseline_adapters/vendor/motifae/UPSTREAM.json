@@ -1,0 +1,7 @@
+{
+  "upstream": "https://github.com/CHAOHOU-97/MotifAE",
+  "commit": "8dd6a7588d30726fef98c789dac3042370e829c5",
+  "source": "model/dictionary.py",
+  "sha256": "176debb36a975cd48b7ba883dff72c8e817ac99f7ead4093566a42f91922d6dc",
+  "license": "MIT"
+}

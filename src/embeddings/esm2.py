@@ -2,7 +2,7 @@
 M2: ESM-2 蛋白质语言模型嵌入
 =============================
 使用 Meta AI 的 ESM-2 提取蛋白质序列嵌入。
-默认使用 esm2_t6_8M_UR50D (8M参数, 320D), 4GB显存轻松运行。
+当前实验使用 esm2_t33_650M_UR50D，第33层，1280维表示。
 """
 
 import numpy as np
@@ -17,17 +17,13 @@ class ESM2Embedder:
         """
         Args:
             model_name: ESM-2模型名称, 默认从config读取。可选:
-                - esm2_t6_8M_UR50D   (8M参数, 320D, ~32MB显存)
-                - esm2_t12_35M_UR50D (35M参数, 480D, ~140MB显存)
                 - esm2_t33_650M_UR50D (650M参数, 1280D, ~2.6GB显存)
             device: "cuda" / "cpu" / None(自动检测)
         """
-        if model_name is None:
-            try:
-                from config import ESM2_MODEL_NAME
-                model_name = ESM2_MODEL_NAME
-            except ImportError:
-                model_name = "esm2_t12_35M_UR50D"
+        from config import ESM2_MODEL_NAME
+        model_name = model_name or ESM2_MODEL_NAME
+        if model_name != "esm2_t33_650M_UR50D":
+            raise ValueError("The current experiment profile requires esm2_t33_650M_UR50D")
 
         self.model_name = model_name
         self.name = "M2_ESM2"
@@ -45,10 +41,9 @@ class ESM2Embedder:
         from pathlib import Path
 
         # 优先使用本地模型文件
-        try:
-            from config import MODELS_DIR
-        except ImportError:
-            MODELS_DIR = Path(__file__).parent.parent.parent / "models"
+        from config import MODELS_DIR
+        MODELS_DIR.mkdir(parents=True, exist_ok=True)
+        torch.hub.set_dir(str(MODELS_DIR / "torch_hub"))
 
         local_path = Path(MODELS_DIR) / f"{self.model_name}.pt"
         if local_path.exists():
@@ -62,23 +57,9 @@ class ESM2Embedder:
         self.batch_converter = alphabet.get_batch_converter()
 
         # 确定嵌入维度和层号
-        if "t6" in self.model_name:
-            self.repr_layer = 6
-            self.dim = 320
-        elif "t12" in self.model_name:
-            self.repr_layer = 12
-            self.dim = 480
-        elif "t30" in self.model_name:
-            self.repr_layer = 30
-            self.dim = 640
-        elif "t33" in self.model_name:
-            self.repr_layer = 33
-            self.dim = 1280
-        else:
-            self.repr_layer = 6
-            self.dim = 320
-
-        print(f"[ESM2] 模型加载完成, 嵌入维度={self.dim}, 表征层={self.repr_layer}")
+        self.repr_layer = 33
+        self.dim = 1280
+        print(f"[ESM2] 模型加载完成, 层={self.repr_layer}, 维度={self.dim}")
 
     def embed_single(self, seq):
         """对单条序列提取嵌入 (mean pooling) → (dim,)"""

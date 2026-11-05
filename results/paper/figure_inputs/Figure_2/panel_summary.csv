@@ -1,0 +1,9 @@
+model,representation,metric,n_pairs,median_before,median_after,improved,worse,unchanged,improved_families,worse_families,unchanged_families,worst_ordinary_family
+M2,ESM-2,stability_floor,16,0.8222061917054208,0.8984210213792934,10,5,1,GvpA;GvpC;GvpD;GvpH;GvpK;GvpL;GvpN;GvpT;GvpU;GvpV,GvpF;GvpG;GvpJ;GvpO;GvpQ,GvpM,GvpQ
+M2,ESM-2,stable_protein_coverage,16,0.9911804262362922,0.984786073419865,4,6,6,GvpA;GvpC;GvpF;GvpK,GvpG;GvpH;GvpJ;GvpL;GvpN;GvpO,GvpD;GvpM;GvpQ;GvpT;GvpU;GvpV,GvpL
+M2,ESM-2,stable_window_coverage,16,0.3677294854511724,0.47235068579849293,11,5,0,GvpA;GvpC;GvpD;GvpF;GvpK;GvpL;GvpM;GvpN;GvpT;GvpU;GvpV,GvpG;GvpH;GvpJ;GvpO;GvpQ,,GvpQ
+M2,ESM-2,noise_ratio,16,0.096949113310519,0.0723839549239261,14,2,0,GvpA;GvpD;GvpF;GvpG;GvpH;GvpJ;GvpK;GvpL;GvpM;GvpN;GvpO;GvpQ;GvpT;GvpU,GvpC;GvpV,,GvpV
+M3,ProtBERT-BFD,stability_floor,16,0.8640335931805605,0.8563701923076923,10,5,1,GvpA;GvpD;GvpG;GvpJ;GvpK;GvpN;GvpO;GvpQ;GvpT;GvpU,GvpC;GvpF;GvpH;GvpL;GvpV,GvpM,GvpV
+M3,ProtBERT-BFD,stable_protein_coverage,16,0.9370368010634882,0.9859312495280748,10,3,3,GvpA;GvpF;GvpG;GvpJ;GvpN;GvpO;GvpQ;GvpT;GvpU;GvpV,GvpC;GvpD;GvpK,GvpH;GvpL;GvpM,GvpD
+M3,ProtBERT-BFD,stable_window_coverage,16,0.3672111565237156,0.4292896088102002,11,4,1,GvpA;GvpC;GvpD;GvpF;GvpG;GvpJ;GvpN;GvpO;GvpQ;GvpT;GvpU,GvpH;GvpK;GvpL;GvpV,GvpM,GvpV
+M3,ProtBERT-BFD,noise_ratio,16,0.12038325721526841,0.1046429581432603,11,4,1,GvpA;GvpD;GvpF;GvpJ;GvpK;GvpL;GvpN;GvpO;GvpQ;GvpT;GvpU,GvpC;GvpG;GvpH;GvpV,GvpM,GvpV

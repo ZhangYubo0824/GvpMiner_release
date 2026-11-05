@@ -113,14 +113,6 @@ def iter_interproscan_tsv(
                             yield term
 
 
-def parse_interproscan_tsv(
-    path: Path,
-    *,
-    include_pathways: bool = False,
-) -> list[AnnotationTerm]:
-    return list(
-        iter_interproscan_tsv(path, include_pathways=include_pathways)
-    )
 
 
 def _iter_eggnog_rows(path: Path) -> Iterable[dict[str, str]]:
@@ -171,8 +163,6 @@ def iter_eggnog_annotations(path: Path) -> Iterable[AnnotationTerm]:
                     yield term
 
 
-def parse_eggnog_annotations(path: Path) -> list[AnnotationTerm]:
-    return list(iter_eggnog_annotations(path))
 
 
 def iter_kofamscan_tsv(path: Path) -> Iterable[AnnotationTerm]:
@@ -195,20 +185,8 @@ def iter_kofamscan_tsv(path: Path) -> Iterable[AnnotationTerm]:
                 yield term
 
 
-def parse_kofamscan_tsv(path: Path) -> list[AnnotationTerm]:
-    return list(iter_kofamscan_tsv(path))
 
 
-def deduplicate_terms(terms: Iterable[AnnotationTerm]) -> list[AnnotationTerm]:
-    seen: set[tuple[str, str, str, str]] = set()
-    unique: list[AnnotationTerm] = []
-    for term in terms:
-        key = (term.source, term.namespace, term.term_id, term.protein_id)
-        if key in seen:
-            continue
-        seen.add(key)
-        unique.append(term)
-    return sorted(unique, key=lambda t: (t.source, t.namespace, t.term_id, t.protein_id))
 
 
 def write_filter_audit(audit: AnnotationFilterAudit, path: Path) -> Path:
