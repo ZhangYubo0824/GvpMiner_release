@@ -53,7 +53,7 @@ python scripts/summarize_results.py
 python tools/verify_results.py --hashes
 ```
 
-The results contain 522 M2 candidates, 464 M3 candidates and 10,784 candidates across six compared methods, including 8,378 MotifAE candidates. Unsupported, no-output and unevaluable cases are retained. See [the results guide](docs/RESULTS_GUIDE.md) for field meanings and denominators.
+The main comparison evaluates 10,784 candidates across six methods, including 522 GvpMiner candidates and 8,378 MotifAE candidates. A separate analysis compares results obtained with different protein representations. Unsupported, no-output and unevaluable cases are retained. See [the results guide](docs/RESULTS_GUIDE.md) for field meanings and denominators.
 
 ## Run analyses
 

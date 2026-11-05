@@ -16,6 +16,17 @@ python -m scripts.literature.run --families GvpM --event-ids M_G22A
 
 The evidence exporter validates every parent sequence and 0-based half-open occurrence interval. Cross-model mapping uses actual residues on shared proteins. Taxonomy uses accession metadata. Conservation/profile construction can reuse the bundled verified MSAs after input/hash checks. To realign changed inputs, install MAFFT and supply its executable through the alignment CLI options. Curated site mapping is experimental sequence-coordinate analysis; it does not search or draft literature text, and a compatible mapping still needs scientific review.
 
+## Representation options
+
+The **GvpMiner primary analysis** and **cross-representation comparison** use the following protein representations and command-line settings:
+
+| Analysis | Protein representation | Value for entrypoints accepting `--methods` |
+| --- | --- | --- |
+| GvpMiner primary analysis | ESM-2 | `--methods M2` |
+| Cross-representation comparison | ProtBERT-BFD | `--methods M3` |
+
+Both settings select a representation within GvpMiner. The six-method comparison uses its primary catalogue; the ProtBERT-BFD catalogue supports the separate cross-representation analysis. Directory names and candidate identifiers use the same command-line values.
+
 ## Upstream experiments
 
 Inspect the supported options before launching a GPU or external-tool job:

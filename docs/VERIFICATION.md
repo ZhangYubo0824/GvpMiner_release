@@ -7,7 +7,7 @@ Validation performed with Python 3.12 on Windows:
 - Candidate-coordinate validation, cross-model matching, taxonomy, 522 sequence profiles, conservation analysis and conservation verification executed on the reference inputs.
 - All 1,569 regenerated sequence-representation files matched the released results byte-for-byte after decompression.
 - Figure 2–7 and supplementary S5/S6 plotting commands completed using the supplied numerical inputs.
-- The result checker verifies 10,784 unique six-method candidates, M2=522, M3=464, 84,012 occurrence sequences/coordinates, summary consistency and the presence of fourteen final figures. With `--hashes`, it also checks the released files against their SHA256 values.
+- The result checker verifies 10,784 unique six-method candidates, 522 primary GvpMiner candidates, 464 candidates in the ProtBERT-BFD comparison catalogue, 84,012 occurrence sequences/coordinates, summary consistency and the presence of fourteen final figures. With `--hashes`, it also checks the released files against their SHA256 values.
 
 ## Run checks
 

@@ -4,8 +4,8 @@
 
 | Location | Purpose |
 | --- | --- |
-| `catalogues/GvpMiner_candidate_evidence_latest.csv` | Current 522-candidate M2 index and evidence fields |
-| `catalogues/GvpMiner_M2_M3/` | All selected M2/M3 catalogues and actual occurrence intervals |
+| `catalogues/GvpMiner_candidate_evidence_latest.csv` | Primary GvpMiner catalogue: 522 candidates and their evidence fields |
+| `catalogues/GvpMiner_M2_M3/` | Primary and cross-representation comparison catalogues with actual occurrence intervals |
 | `structure/`, `annotation/` | Final structural endpoints, annotation results and output-coverage records |
 | `stability/final_setting/` | Selected parameters and final stability evidence |
 | `sequence_representation/` | Final per-candidate profiles, aligned fragments and consensus records |
@@ -24,7 +24,7 @@
 | MotifAE | 8378 | 2028 | 5685 | 2542 |
 | InterPLM | 875 | 93 | 382 | 188 |
 
-M2 has 522 candidates and M3 has 464; the six-method main comparison uses M2. MotifAE counts refer to the completed `guarded_first_20261101_all` experiment across sixteen families.
+The primary GvpMiner catalogue uses ESM-2 protein representations and contains 522 candidates. A comparison catalogue using ProtBERT-BFD contains 464 candidates for cross-representation analysis. Only the primary GvpMiner catalogue enters the six-method comparison. MotifAE counts refer to the completed `guarded_first_20261101_all` experiment across sixteen families.
 
 Strict structural support requires the original significant primary structural endpoint, mean pLDDT at least 70 and composition-matched control coverage at least 0.9. Annotation support in the current comparison means any original within-candidate BH-adjusted `p.adjust <= 0.05`, with the presence of an enrichment output recorded separately. Conditional annotation support uses output-bearing candidates as denominator; overall support uses all input candidates. No-output and tested-without-support states are retained separately.
 
